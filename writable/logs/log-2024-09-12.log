@@ -1,0 +1,270 @@
+INFO - 2024-09-12 08:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 08:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:16:25 --> iniciando sesion
+INFO - 2024-09-12 09:16:27 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-09-12 09:16:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:16:28 --> AdministracionController inicio_administracion
+INFO - 2024-09-12 09:16:28 --> AdministracionController Acceso permitido
+INFO - 2024-09-12 09:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:23:09 --> ApoderadosController apoderados
+INFO - 2024-09-12 09:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:23:11 --> Datos a mostrar: Array
+(
+    [0] => Array
+        (
+            [idapoderado] => 5
+            [nombre_apoderado] => Jose Alfonso Redondo
+            [dui_apoderado] => 09871122-2
+            [representante_legal] => Martha lopez Perez
+            [dui_representante] => 98875666-3
+            [estado] => 1
+            [created_at] => 2024-08-16 04:06:47
+            [updated_at] => 2024-08-16 04:21:53
+        )
+
+)
+
+INFO - 2024-09-12 09:23:11 --> retorno
+INFO - 2024-09-12 09:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:37:54 --> ApoderadosController apoderados
+INFO - 2024-09-12 09:37:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 09:37:57 --> Datos a mostrar: Array
+(
+    [0] => Array
+        (
+            [idapoderado] => 5
+            [nombre_apoderado] => Jose Alfonso Redondo
+            [dui_apoderado] => 09871122-2
+            [representante_legal] => Martha lopez Perez
+            [dui_representante] => 98875666-3
+            [estado] => 1
+            [created_at] => 2024-08-16 04:06:47
+            [updated_at] => 2024-08-16 04:21:53
+        )
+
+)
+
+INFO - 2024-09-12 09:37:57 --> retorno
+INFO - 2024-09-12 10:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 10:23:48 --> ApoderadosController apoderados
+INFO - 2024-09-12 10:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 10:23:50 --> Datos a mostrar: Array
+(
+    [0] => Array
+        (
+            [idapoderado] => 5
+            [nombre_apoderado] => Jose Alfonso Redondo
+            [dui_apoderado] => 09871122-2
+            [representante_legal] => Martha lopez Perez
+            [dui_representante] => 98875666-3
+            [estado] => 1
+            [created_at] => 2024-08-16 04:06:47
+            [updated_at] => 2024-08-16 04:21:53
+        )
+
+)
+
+INFO - 2024-09-12 10:23:50 --> retorno
+INFO - 2024-09-12 13:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 13:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 14:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 15:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 15:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 17:08:03 --> iniciando sesion
+INFO - 2024-09-12 17:08:06 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-09-12 17:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 17:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 17:08:06 --> AdministracionController inicio_administracion
+INFO - 2024-09-12 17:08:06 --> AdministracionController Acceso permitido
+INFO - 2024-09-12 17:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 17:08:09 --> SolicitudesController solicitudes
+INFO - 2024-09-12 17:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 17:08:24 --> encryptedSolicitud::: MTI=
+INFO - 2024-09-12 17:08:24 --> numero de solicitud decrypted::: 12
+INFO - 2024-09-12 17:08:25 --> Datos de la refLaboral:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-09-12 17:08:40 --> ***************************************generarContrato***************************************
+INFO - 2024-09-12 17:08:42 --> numero de contrato generado:: ::: 0001-00000035
+INFO - 2024-09-12 17:08:42 --> Reemplazando representanteLegal con JUAN PÉREZ
+INFO - 2024-09-12 17:08:42 --> Reemplazando edadRepresentanteLet con 35
+INFO - 2024-09-12 17:08:42 --> Reemplazando duiRepresentante con 01234567-8
+INFO - 2024-09-12 17:08:42 --> Reemplazando mueblesSolicitados con SOFÁ, MESA, SILLAS
+INFO - 2024-09-12 17:08:42 --> Reemplazando sucursal con SUCURSAL CENTRAL
+INFO - 2024-09-12 17:08:42 --> Reemplazando cantidadCuotas con 12
+INFO - 2024-09-12 17:08:42 --> Reemplazando precioTotal con 5000
+INFO - 2024-09-12 17:08:42 --> Reemplazando valorPrima con 1000
+INFO - 2024-09-12 17:08:42 --> Reemplazando montoCuotas con 333.33
+INFO - 2024-09-12 17:08:42 --> Reemplazando diaLetra con VEINTICINCO
+INFO - 2024-09-12 17:08:42 --> Reemplazando mesLetra con SEPTIEMBRE
+INFO - 2024-09-12 17:08:42 --> Reemplazando anioLetra con VEINTICUATRO
+INFO - 2024-09-12 17:08:42 --> Reemplazando montoTotalPagar con 6000.00
+INFO - 2024-09-12 17:08:42 --> Reemplazando inicioPeriodoPago con 12/09/2024
+INFO - 2024-09-12 17:08:42 --> Reemplazando diasPago con 12
+INFO - 2024-09-12 17:08:42 --> Reemplazando nombreFiador con CARLOS GÓMEZ
+INFO - 2024-09-12 17:08:42 --> Reemplazando domicilioFiador con AVENIDA CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 17:08:42 --> Reemplazando duiFiador con 12345678-9
+INFO - 2024-09-12 17:08:42 --> Reemplazando nitFiador con 123456789012
+INFO - 2024-09-12 17:08:42 --> Reemplazando nombreCliente con MARÍA RODRÍGUEZ
+INFO - 2024-09-12 17:08:42 --> Reemplazando ciudadContrato con SAN SALVADOR
+INFO - 2024-09-12 17:08:42 --> Reemplazando ciudadSucursal con SAN SALVADOR
+INFO - 2024-09-12 17:08:42 --> Reemplazando horaDefault con 10:00 AM
+INFO - 2024-09-12 17:08:42 --> Reemplazando diaCreacionSol con 25
+INFO - 2024-09-12 17:08:42 --> Reemplazando mesCreacionSol con SEPTIEMBRE
+INFO - 2024-09-12 17:08:42 --> Reemplazando anioCreacionSol con 2024
+INFO - 2024-09-12 17:08:42 --> Reemplazando nombreApoderado con LUIS MARTÍNEZ
+INFO - 2024-09-12 17:08:42 --> Reemplazando domicilioApoderado con CALLE CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 17:08:42 --> Reemplazando duiCliente con 98765432-1
+INFO - 2024-09-12 17:08:48 --> llega la sol::: 000001
+INFO - 2024-09-12 17:08:48 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-12 17:09:27 --> ***************************************generarContrato***************************************
+INFO - 2024-09-12 17:09:28 --> numero de contrato generado:: ::: 0001-00000036
+INFO - 2024-09-12 17:09:28 --> Reemplazando representanteLegal con JUAN PÉREZ
+INFO - 2024-09-12 17:09:28 --> Reemplazando edadRepresentanteLet con 35
+INFO - 2024-09-12 17:09:28 --> Reemplazando duiRepresentante con 01234567-8
+INFO - 2024-09-12 17:09:28 --> Reemplazando mueblesSolicitados con SOFÁ, MESA, SILLAS
+INFO - 2024-09-12 17:09:28 --> Reemplazando sucursal con SUCURSAL CENTRAL
+INFO - 2024-09-12 17:09:28 --> Reemplazando cantidadCuotas con 12
+INFO - 2024-09-12 17:09:28 --> Reemplazando precioTotal con 5000
+INFO - 2024-09-12 17:09:28 --> Reemplazando valorPrima con 1000
+INFO - 2024-09-12 17:09:28 --> Reemplazando montoCuotas con 333.33
+INFO - 2024-09-12 17:09:28 --> Reemplazando diaLetra con VEINTICINCO
+INFO - 2024-09-12 17:09:28 --> Reemplazando mesLetra con SEPTIEMBRE
+INFO - 2024-09-12 17:09:28 --> Reemplazando anioLetra con VEINTICUATRO
+INFO - 2024-09-12 17:09:28 --> Reemplazando montoTotalPagar con 6000.00
+INFO - 2024-09-12 17:09:28 --> Reemplazando inicioPeriodoPago con 12/09/2024
+INFO - 2024-09-12 17:09:28 --> Reemplazando diasPago con 12
+INFO - 2024-09-12 17:09:28 --> Reemplazando nombreFiador con CARLOS GÓMEZ
+INFO - 2024-09-12 17:09:28 --> Reemplazando domicilioFiador con AVENIDA CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 17:09:28 --> Reemplazando duiFiador con 12345678-9
+INFO - 2024-09-12 17:09:28 --> Reemplazando nitFiador con 123456789012
+INFO - 2024-09-12 17:09:28 --> Reemplazando nombreCliente con MARÍA RODRÍGUEZ
+INFO - 2024-09-12 17:09:28 --> Reemplazando ciudadContrato con SAN SALVADOR
+INFO - 2024-09-12 17:09:28 --> Reemplazando ciudadSucursal con SAN SALVADOR
+INFO - 2024-09-12 17:09:28 --> Reemplazando horaDefault con 10:00 AM
+INFO - 2024-09-12 17:09:28 --> Reemplazando diaCreacionSol con 25
+INFO - 2024-09-12 17:09:28 --> Reemplazando mesCreacionSol con SEPTIEMBRE
+INFO - 2024-09-12 17:09:28 --> Reemplazando anioCreacionSol con 2024
+INFO - 2024-09-12 17:09:28 --> Reemplazando nombreApoderado con LUIS MARTÍNEZ
+INFO - 2024-09-12 17:09:28 --> Reemplazando domicilioApoderado con CALLE CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 17:09:28 --> Reemplazando duiCliente con 98765432-1
+INFO - 2024-09-12 17:09:34 --> llega la sol::: 000001
+INFO - 2024-09-12 17:09:34 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-12 17:12:07 --> ***************************************generarContrato***************************************
+INFO - 2024-09-12 17:12:08 --> numero de contrato generado:: ::: 0001-00000037
+INFO - 2024-09-12 17:12:08 --> Reemplazando representanteLegal con JUAN PÉREZ
+INFO - 2024-09-12 17:12:08 --> Reemplazando edadRepresentanteLet con 35
+INFO - 2024-09-12 17:12:08 --> Reemplazando duiRepresentante con 01234567-8
+INFO - 2024-09-12 17:12:08 --> Reemplazando mueblesSolicitados con SOFÁ, MESA, SILLAS
+INFO - 2024-09-12 17:12:08 --> Reemplazando sucursal con SUCURSAL CENTRAL
+INFO - 2024-09-12 17:12:08 --> Reemplazando cantidadCuotas con 12
+INFO - 2024-09-12 17:12:08 --> Reemplazando precioTotal con 5000
+INFO - 2024-09-12 17:12:08 --> Reemplazando valorPrima con 1000
+INFO - 2024-09-12 17:12:08 --> Reemplazando montoCuotas con 333.33
+INFO - 2024-09-12 17:12:08 --> Reemplazando diaLetra con VEINTICINCO
+INFO - 2024-09-12 17:12:08 --> Reemplazando mesLetra con SEPTIEMBRE
+INFO - 2024-09-12 17:12:08 --> Reemplazando anioLetra con VEINTICUATRO
+INFO - 2024-09-12 17:12:08 --> Reemplazando montoTotalPagar con 6000.00
+INFO - 2024-09-12 17:12:08 --> Reemplazando inicioPeriodoPago con 12/09/2024
+INFO - 2024-09-12 17:12:08 --> Reemplazando diasPago con 12
+INFO - 2024-09-12 17:12:08 --> Reemplazando nombreFiador con CARLOS GÓMEZ
+INFO - 2024-09-12 17:12:08 --> Reemplazando domicilioFiador con AVENIDA CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 17:12:08 --> Reemplazando duiFiador con 12345678-9
+INFO - 2024-09-12 17:12:08 --> Reemplazando nitFiador con 123456789012
+INFO - 2024-09-12 17:12:08 --> Reemplazando nombreCliente con MARÍA RODRÍGUEZ
+INFO - 2024-09-12 17:12:08 --> Reemplazando ciudadContrato con SAN SALVADOR
+INFO - 2024-09-12 17:12:08 --> Reemplazando ciudadSucursal con SAN SALVADOR
+INFO - 2024-09-12 17:12:08 --> Reemplazando horaDefault con 10:00 AM
+INFO - 2024-09-12 17:12:08 --> Reemplazando diaCreacionSol con 25
+INFO - 2024-09-12 17:12:08 --> Reemplazando mesCreacionSol con SEPTIEMBRE
+INFO - 2024-09-12 17:12:08 --> Reemplazando anioCreacionSol con 2024
+INFO - 2024-09-12 17:12:08 --> Reemplazando nombreApoderado con LUIS MARTÍNEZ
+INFO - 2024-09-12 17:12:08 --> Reemplazando domicilioApoderado con CALLE CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 17:12:08 --> Reemplazando duiCliente con 98765432-1
+INFO - 2024-09-12 17:12:14 --> llega la sol::: 000001
+INFO - 2024-09-12 17:12:14 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-12 19:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 19:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 19:35:03 --> iniciando sesion
+INFO - 2024-09-12 19:35:04 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-09-12 19:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 19:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 19:35:04 --> AdministracionController inicio_administracion
+INFO - 2024-09-12 19:35:04 --> AdministracionController Acceso permitido
+INFO - 2024-09-12 19:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 19:35:08 --> SolicitudesController solicitudes
+INFO - 2024-09-12 19:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-12 19:35:11 --> encryptedSolicitud::: MTI=
+INFO - 2024-09-12 19:35:11 --> numero de solicitud decrypted::: 12
+INFO - 2024-09-12 19:35:12 --> Datos de la refLaboral:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-09-12 19:35:18 --> ***************************************generarContrato***************************************
+INFO - 2024-09-12 19:35:20 --> numero de contrato generado:: ::: 0001-00000038
+INFO - 2024-09-12 19:35:20 --> Reemplazando representanteLegal con JUAN PÉREZ
+INFO - 2024-09-12 19:35:20 --> Reemplazando edadRepresentanteLet con 35
+INFO - 2024-09-12 19:35:20 --> Reemplazando duiRepresentante con 01234567-8
+INFO - 2024-09-12 19:35:20 --> Reemplazando mueblesSolicitados con SOFÁ, MESA, SILLAS
+INFO - 2024-09-12 19:35:20 --> Reemplazando sucursal con SUCURSAL CENTRAL
+INFO - 2024-09-12 19:35:20 --> Reemplazando cantidadCuotas con 12
+INFO - 2024-09-12 19:35:20 --> Reemplazando precioTotal con 5000
+INFO - 2024-09-12 19:35:20 --> Reemplazando valorPrima con 1000
+INFO - 2024-09-12 19:35:20 --> Reemplazando montoCuotas con 333.33
+INFO - 2024-09-12 19:35:20 --> Reemplazando diaLetra con VEINTICINCO
+INFO - 2024-09-12 19:35:20 --> Reemplazando mesLetra con SEPTIEMBRE
+INFO - 2024-09-12 19:35:20 --> Reemplazando anioLetra con VEINTICUATRO
+INFO - 2024-09-12 19:35:20 --> Reemplazando montoTotalPagar con 6000.00
+INFO - 2024-09-12 19:35:20 --> Reemplazando inicioPeriodoPago con 12/09/2024
+INFO - 2024-09-12 19:35:20 --> Reemplazando diasPago con 12
+INFO - 2024-09-12 19:35:20 --> Reemplazando nombreFiador con CARLOS GÓMEZ
+INFO - 2024-09-12 19:35:20 --> Reemplazando domicilioFiador con AVENIDA CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 19:35:20 --> Reemplazando duiFiador con 12345678-9
+INFO - 2024-09-12 19:35:20 --> Reemplazando nitFiador con 123456789012
+INFO - 2024-09-12 19:35:20 --> Reemplazando nombreCliente con MARÍA RODRÍGUEZ
+INFO - 2024-09-12 19:35:20 --> Reemplazando ciudadContrato con SAN SALVADOR
+INFO - 2024-09-12 19:35:20 --> Reemplazando ciudadSucursal con SAN SALVADOR
+INFO - 2024-09-12 19:35:20 --> Reemplazando horaDefault con 10:00 AM
+INFO - 2024-09-12 19:35:20 --> Reemplazando diaCreacionSol con 25
+INFO - 2024-09-12 19:35:20 --> Reemplazando mesCreacionSol con SEPTIEMBRE
+INFO - 2024-09-12 19:35:20 --> Reemplazando anioCreacionSol con 2024
+INFO - 2024-09-12 19:35:20 --> Reemplazando nombreApoderado con LUIS MARTÍNEZ
+INFO - 2024-09-12 19:35:20 --> Reemplazando domicilioApoderado con CALLE CENTRAL, SAN SALVADOR
+INFO - 2024-09-12 19:35:20 --> Reemplazando duiCliente con 98765432-1
+INFO - 2024-09-12 19:35:25 --> llega la sol::: 000001
+INFO - 2024-09-12 19:35:26 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx

@@ -1,0 +1,3378 @@
+INFO - 2024-08-22 19:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 19:56:22 --> iniciando sesion
+INFO - 2024-08-22 19:56:24 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-22 19:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 19:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 19:56:24 --> SolicitudesController solicitudes
+INFO - 2024-08-22 19:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 19:56:27 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 19:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 20:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 20:39:02 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 20:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 20:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 20:57:39 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 20:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:16:56 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 21:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:20:02 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 21:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:25:17 --> llego a buscarProductos
+INFO - 2024-08-22 21:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:25:18 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+ERROR - 2024-08-22 21:30:31 --> Ocurrió un error: Undefined variable $_SESSION
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 83)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-22 21:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-22 21:31:31 --> Ocurrió un error: Undefined array key "id_producto"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 88)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-22 21:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:32:38 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => DEV SOFT, DESARROLLO 
+            [direccion_trabajo] => San salvador, colonia escalon
+            [telefono_trabajo] => 2389-9006
+            [cargo] => Programador java
+            [salario] => 2500.00
+            [tiempo_laborando_empresa] => 3 años
+            [nombre_jefe_inmediato] => Melvin Guzman
+            [empresa_anterior] => Waresoft
+            [telefono_empresa_anterior] => 2387-8777
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Marvin Perez
+                    [parentesco] => TIO/A
+                    [direccion] => Nejapa
+                    [telefono] => 7553-4413
+                    [lugar_trabajo] => Quezaltepeque, pollo campero
+                    [telefono_trabajo] => 2505-5555
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Marta Sanchez
+                    [direccion] => Quezaltepeque barrio el calvario
+                    [telefono] => 7663-5568
+                    [lugar_trabajo] => N/A
+                    [telefono_trabajo] => 7663-5568
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-7777
+                    [monto_credito] => 120.00
+                    [periodos] => 2 años
+                    [plazo] => 2 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2500.00
+            [egresoMensual] => 800.00
+            [salarioIng] => 
+            [pagoCasa] => 250.00
+            [otrosIngresos] => 
+            [gastosVida] => 120.00
+            [otrosEgresos] => 
+            [totalIngresos] => 2500.00
+            [totalEgresos] => 1170.00
+            [diferencia] => 1330.00
+            [cantidadCuotas] => 0.2847
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Sandra Guillen
+                            [parentesco] => PRIMO/A
+                            [direccion] => Nejapa
+                            [telefono] => 2386-4764
+                        )
+
+                )
+
+            [nombre] => Miguel Angel Lopez
+            [dui] => 08647674-6
+            [direccion] => Colonia las brisas quezaltepeque la libertad
+            [COtelPersonal] => 2309-0878
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => Abogados y Socios
+            [COdireccionTrabajo] => Quezaltepeque plaza centenario
+            [COtelefonoTrabajo] => 2309-9787
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 50
+            [saldoAPagar] => 750.00
+            [cantidadCuotas] => 0.2847
+            [montoCuota] => 213.53
+            [montoTotalPagar] => 904.10
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Array
+                        (
+                            [id_producto] => 2
+                            [nombre] => Refrigeradora INVERTER 
+                            [marca] => LG
+                            [modelo] => VT40WPN | 14
+                            [color] => GRIS
+                            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                            [precio] => 800.00
+                            [costo_unitario] => 530.00
+                            [id_categoria] => 7
+                            [disponible] => 1
+                            [codigo_producto] => 0000098
+                            [estado] => 1
+                            [id_usuario_creacion] => 7
+                            [fecha_creacion] => 2024-06-05
+                            [nombre_categoria] => Electrodomésticos
+                            [nombre_usuario] => Raul Antonio
+                            [cantidad] => 1
+                        )
+
+                )
+
+        )
+
+)
+
+ERROR - 2024-08-22 21:32:38 --> Ocurrió un error: Undefined array key "id_producto"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 88)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-22 21:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:37:35 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 21:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:37:43 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 21:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:38:49 --> llego a buscarProductos
+INFO - 2024-08-22 21:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:38:50 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 21:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:39:37 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => ghg
+            [empresa] => hgh
+            [direccion_trabajo] => ghg
+            [telefono_trabajo] => 9889-8989
+            [cargo] => jhjhjh
+            [salario] => 989898.98
+            [tiempo_laborando_empresa] => hjhjh
+            [nombre_jefe_inmediato] => jhjh
+            [empresa_anterior] => jhjhjhj
+            [telefono_empresa_anterior] => 9898-7766
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => hjhjh
+                    [parentesco] => PAPÁ
+                    [direccion] => vjgfghfgh
+                    [telefono] => 8778-7878
+                    [lugar_trabajo] => vjhghg
+                    [telefono_trabajo] => 8878-7870
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => fhgfgfgh
+                    [direccion] => fhgfggf
+                    [telefono] => 8656-7898
+                    [lugar_trabajo] => hvhghjhj
+                    [telefono_trabajo] => 8687-6872
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => wwwwww
+                    [telefono] => 3333-3333
+                    [monto_credito] => 333.33
+                    [periodos] => 3
+                    [plazo] => 3
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.2847
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => rerefvv
+                            [parentesco] => HERMANO/A
+                            [direccion] => vdvdvdv
+                            [telefono] => 3333-3333
+                        )
+
+                )
+
+            [nombre] => wwwww
+            [dui] => 33333333-3
+            [direccion] => wwwwwwwwwwwwww
+            [COtelPersonal] => 3333-3333
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => dsads
+            [patrono] => dadasd
+            [COdireccionTrabajo] => dadada
+            [COtelefonoTrabajo] => 3222-2222
+            [COcargoDesempeña] => 2sdsdsd
+            [COsalario] => 33333333.33
+            [COnombreJefe] => defererer
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.2847
+            [montoCuota] => 193.60
+            [montoTotalPagar] => 894.38
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+ERROR - 2024-08-22 21:39:37 --> Ocurrió un error: Undefined array key "id_producto"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 88)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-22 21:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:40:41 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => ghg
+            [empresa] => hgh
+            [direccion_trabajo] => ghg
+            [telefono_trabajo] => 9889-8989
+            [cargo] => jhjhjh
+            [salario] => 989898.98
+            [tiempo_laborando_empresa] => hjhjh
+            [nombre_jefe_inmediato] => jhjh
+            [empresa_anterior] => jhjhjhj
+            [telefono_empresa_anterior] => 9898-7766
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => hjhjh
+                    [parentesco] => PAPÁ
+                    [direccion] => vjgfghfgh
+                    [telefono] => 8778-7878
+                    [lugar_trabajo] => vjhghg
+                    [telefono_trabajo] => 8878-7870
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => fhgfgfgh
+                    [direccion] => fhgfggf
+                    [telefono] => 8656-7898
+                    [lugar_trabajo] => hvhghjhj
+                    [telefono_trabajo] => 8687-6872
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => wwwwww
+                    [telefono] => 3333-3333
+                    [monto_credito] => 333.33
+                    [periodos] => 3
+                    [plazo] => 3
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.2847
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => rerefvv
+                            [parentesco] => HERMANO/A
+                            [direccion] => vdvdvdv
+                            [telefono] => 3333-3333
+                        )
+
+                )
+
+            [nombre] => wwwww
+            [dui] => 33333333-3
+            [direccion] => wwwwwwwwwwwwww
+            [COtelPersonal] => 3333-3333
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => dsads
+            [patrono] => dadasd
+            [COdireccionTrabajo] => dadada
+            [COtelefonoTrabajo] => 3222-2222
+            [COcargoDesempeña] => 2sdsdsd
+            [COsalario] => 33333333.33
+            [COnombreJefe] => defererer
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.2847
+            [montoCuota] => 193.60
+            [montoTotalPagar] => 894.38
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:40:41 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => ghg
+            [empresa] => hgh
+            [direccion_trabajo] => ghg
+            [telefono_trabajo] => 9889-8989
+            [cargo] => jhjhjh
+            [salario] => 989898.98
+            [tiempo_laborando_empresa] => hjhjh
+            [nombre_jefe_inmediato] => jhjh
+            [empresa_anterior] => jhjhjhj
+            [telefono_empresa_anterior] => 9898-7766
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => hjhjh
+                    [parentesco] => PAPÁ
+                    [direccion] => vjgfghfgh
+                    [telefono] => 8778-7878
+                    [lugar_trabajo] => vjhghg
+                    [telefono_trabajo] => 8878-7870
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => fhgfgfgh
+                    [direccion] => fhgfggf
+                    [telefono] => 8656-7898
+                    [lugar_trabajo] => hvhghjhj
+                    [telefono_trabajo] => 8687-6872
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => wwwwww
+                    [telefono] => 3333-3333
+                    [monto_credito] => 333.33
+                    [periodos] => 3
+                    [plazo] => 3
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.2847
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => rerefvv
+                            [parentesco] => HERMANO/A
+                            [direccion] => vdvdvdv
+                            [telefono] => 3333-3333
+                        )
+
+                )
+
+            [nombre] => wwwww
+            [dui] => 33333333-3
+            [direccion] => wwwwwwwwwwwwww
+            [COtelPersonal] => 3333-3333
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => dsads
+            [patrono] => dadasd
+            [COdireccionTrabajo] => dadada
+            [COtelefonoTrabajo] => 3222-2222
+            [COcargoDesempeña] => 2sdsdsd
+            [COsalario] => 33333333.33
+            [COnombreJefe] => defererer
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.2847
+            [montoCuota] => 193.60
+            [montoTotalPagar] => 894.38
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:44:25 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => ghg
+            [empresa] => hgh
+            [direccion_trabajo] => ghg
+            [telefono_trabajo] => 9889-8989
+            [cargo] => jhjhjh
+            [salario] => 989898.98
+            [tiempo_laborando_empresa] => hjhjh
+            [nombre_jefe_inmediato] => jhjh
+            [empresa_anterior] => jhjhjhj
+            [telefono_empresa_anterior] => 9898-7766
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => hjhjh
+                    [parentesco] => PAPÁ
+                    [direccion] => vjgfghfgh
+                    [telefono] => 8778-7878
+                    [lugar_trabajo] => vjhghg
+                    [telefono_trabajo] => 8878-7870
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => fhgfgfgh
+                    [direccion] => fhgfggf
+                    [telefono] => 8656-7898
+                    [lugar_trabajo] => hvhghjhj
+                    [telefono_trabajo] => 8687-6872
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => wwwwww
+                    [telefono] => 3333-3333
+                    [monto_credito] => 333.33
+                    [periodos] => 3
+                    [plazo] => 3
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.2847
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => rerefvv
+                            [parentesco] => HERMANO/A
+                            [direccion] => vdvdvdv
+                            [telefono] => 3333-3333
+                        )
+
+                )
+
+            [nombre] => wwwww
+            [dui] => 33333333-3
+            [direccion] => wwwwwwwwwwwwww
+            [COtelPersonal] => 3333-3333
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => dsads
+            [patrono] => dadasd
+            [COdireccionTrabajo] => dadada
+            [COtelefonoTrabajo] => 3222-2222
+            [COcargoDesempeña] => 2sdsdsd
+            [COsalario] => 33333333.33
+            [COnombreJefe] => defererer
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.2847
+            [montoCuota] => 193.60
+            [montoTotalPagar] => 894.38
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:44:25 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => ghg
+            [empresa] => hgh
+            [direccion_trabajo] => ghg
+            [telefono_trabajo] => 9889-8989
+            [cargo] => jhjhjh
+            [salario] => 989898.98
+            [tiempo_laborando_empresa] => hjhjh
+            [nombre_jefe_inmediato] => jhjh
+            [empresa_anterior] => jhjhjhj
+            [telefono_empresa_anterior] => 9898-7766
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => hjhjh
+                    [parentesco] => PAPÁ
+                    [direccion] => vjgfghfgh
+                    [telefono] => 8778-7878
+                    [lugar_trabajo] => vjhghg
+                    [telefono_trabajo] => 8878-7870
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => fhgfgfgh
+                    [direccion] => fhgfggf
+                    [telefono] => 8656-7898
+                    [lugar_trabajo] => hvhghjhj
+                    [telefono_trabajo] => 8687-6872
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => wwwwww
+                    [telefono] => 3333-3333
+                    [monto_credito] => 333.33
+                    [periodos] => 3
+                    [plazo] => 3
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.2847
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => rerefvv
+                            [parentesco] => HERMANO/A
+                            [direccion] => vdvdvdv
+                            [telefono] => 3333-3333
+                        )
+
+                )
+
+            [nombre] => wwwww
+            [dui] => 33333333-3
+            [direccion] => wwwwwwwwwwwwww
+            [COtelPersonal] => 3333-3333
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => dsads
+            [patrono] => dadasd
+            [COdireccionTrabajo] => dadada
+            [COtelefonoTrabajo] => 3222-2222
+            [COcargoDesempeña] => 2sdsdsd
+            [COsalario] => 33333333.33
+            [COnombreJefe] => defererer
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.2847
+            [montoCuota] => 193.60
+            [montoTotalPagar] => 894.38
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:44:43 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 21:44:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:44:57 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 21:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:46:03 --> llego a buscarProductos
+INFO - 2024-08-22 21:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:46:04 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 21:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:46:46 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => fsd
+            [empresa] => dddfsddds
+            [direccion_trabajo] => ghgghghg
+            [telefono_trabajo] => 3453-4634
+            [cargo] =>  bnmbmbnm
+            [salario] => 666.66
+            [tiempo_laborando_empresa] => hfhfh
+            [nombre_jefe_inmediato] => gfhghg
+            [empresa_anterior] => fhfghfghghf
+            [telefono_empresa_anterior] => 5353-4534
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => dgdgd
+                    [parentesco] => PAPÁ
+                    [direccion] => fgdfgdgg
+                    [telefono] => 5555-5555
+                    [lugar_trabajo] => hgjgjgj
+                    [telefono_trabajo] => 7676-7676
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => ggdg
+                    [direccion] => dgdgdgdg
+                    [telefono] => 4444-4443
+                    [lugar_trabajo] => hghghgfh
+                    [telefono_trabajo] => 4545-4535
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => tterte
+                    [telefono] => 4444-4444
+                    [monto_credito] => 555.55
+                    [periodos] => fgfdg
+                    [plazo] => 656
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.3701
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => gdgdfgdfg
+                            [parentesco] => PAPÁ
+                            [direccion] => dfgdfgdgg
+                            [telefono] => 5555-5555
+                        )
+
+                )
+
+            [nombre] => fddffgdfg
+            [dui] => 55555555-5
+            [direccion] => dgfdggfgf
+            [COtelPersonal] => 4545-4454
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 34
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => sssdfdsf
+            [patrono] => dsfsfsdf
+            [COdireccionTrabajo] => sdfdsfdsfdsfd
+            [COtelefonoTrabajo] => 4444-4444
+            [COcargoDesempeña] => fsfsfsd
+            [COsalario] => 5555.55
+            [COnombreJefe] => vdgdgdsgdg
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.3701
+            [montoCuota] => 251.67
+            [montoTotalPagar] => 875.00
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:46:46 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => fsd
+            [empresa] => dddfsddds
+            [direccion_trabajo] => ghgghghg
+            [telefono_trabajo] => 3453-4634
+            [cargo] =>  bnmbmbnm
+            [salario] => 666.66
+            [tiempo_laborando_empresa] => hfhfh
+            [nombre_jefe_inmediato] => gfhghg
+            [empresa_anterior] => fhfghfghghf
+            [telefono_empresa_anterior] => 5353-4534
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => dgdgd
+                    [parentesco] => PAPÁ
+                    [direccion] => fgdfgdgg
+                    [telefono] => 5555-5555
+                    [lugar_trabajo] => hgjgjgj
+                    [telefono_trabajo] => 7676-7676
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => ggdg
+                    [direccion] => dgdgdgdg
+                    [telefono] => 4444-4443
+                    [lugar_trabajo] => hghghgfh
+                    [telefono_trabajo] => 4545-4535
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => tterte
+                    [telefono] => 4444-4444
+                    [monto_credito] => 555.55
+                    [periodos] => fgfdg
+                    [plazo] => 656
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.3701
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => gdgdfgdfg
+                            [parentesco] => PAPÁ
+                            [direccion] => dfgdfgdgg
+                            [telefono] => 5555-5555
+                        )
+
+                )
+
+            [nombre] => fddffgdfg
+            [dui] => 55555555-5
+            [direccion] => dgfdggfgf
+            [COtelPersonal] => 4545-4454
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 34
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => sssdfdsf
+            [patrono] => dsfsfsdf
+            [COdireccionTrabajo] => sdfdsfdsfdsfd
+            [COtelefonoTrabajo] => 4444-4444
+            [COcargoDesempeña] => fsfsfsd
+            [COsalario] => 5555.55
+            [COnombreJefe] => vdgdgdsgdg
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.3701
+            [montoCuota] => 251.67
+            [montoTotalPagar] => 875.00
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:56:10 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => fsd
+            [empresa] => dddfsddds
+            [direccion_trabajo] => ghgghghg
+            [telefono_trabajo] => 3453-4634
+            [cargo] =>  bnmbmbnm
+            [salario] => 666.66
+            [tiempo_laborando_empresa] => hfhfh
+            [nombre_jefe_inmediato] => gfhghg
+            [empresa_anterior] => fhfghfghghf
+            [telefono_empresa_anterior] => 5353-4534
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => dgdgd
+                    [parentesco] => PAPÁ
+                    [direccion] => fgdfgdgg
+                    [telefono] => 5555-5555
+                    [lugar_trabajo] => hgjgjgj
+                    [telefono_trabajo] => 7676-7676
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => ggdg
+                    [direccion] => dgdgdgdg
+                    [telefono] => 4444-4443
+                    [lugar_trabajo] => hghghgfh
+                    [telefono_trabajo] => 4545-4535
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => tterte
+                    [telefono] => 4444-4444
+                    [monto_credito] => 555.55
+                    [periodos] => fgfdg
+                    [plazo] => 656
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.3701
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => gdgdfgdfg
+                            [parentesco] => PAPÁ
+                            [direccion] => dfgdfgdgg
+                            [telefono] => 5555-5555
+                        )
+
+                )
+
+            [nombre] => fddffgdfg
+            [dui] => 55555555-5
+            [direccion] => dgfdggfgf
+            [COtelPersonal] => 4545-4454
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 34
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => sssdfdsf
+            [patrono] => dsfsfsdf
+            [COdireccionTrabajo] => sdfdsfdsfdsfd
+            [COtelefonoTrabajo] => 4444-4444
+            [COcargoDesempeña] => fsfsfsd
+            [COsalario] => 5555.55
+            [COnombreJefe] => vdgdgdsgdg
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 680.00
+            [cantidadCuotas] => 0.3701
+            [montoCuota] => 251.67
+            [montoTotalPagar] => 875.00
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [nombre_categoria] => Electrodomésticos
+                    [nombre_usuario] => Raul Antonio
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 21:56:10 --> Datos recibidos: Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+            [cantidad] => 1
+        )
+
+)
+
+INFO - 2024-08-22 21:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:19 --> iniciando sesion
+INFO - 2024-08-22 21:57:21 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-22 21:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:22 --> SolicitudesController solicitudes
+INFO - 2024-08-22 21:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:32 --> AdministracionController perfil
+INFO - 2024-08-22 21:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:56 --> iniciando sesion
+INFO - 2024-08-22 21:57:57 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"}]
+INFO - 2024-08-22 21:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:57:58 --> AdministracionController inicio_administracion
+INFO - 2024-08-22 21:57:58 --> AdministracionController Acceso permitido
+INFO - 2024-08-22 21:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:58:10 --> SalidasController salidas
+DEBUG - 2024-08-22 21:58:22 --> el valor del idTipoDoc es--->  2
+DEBUG - 2024-08-22 21:58:23 --> entro porque idTipoDoc es diferente de null
+INFO - 2024-08-22 21:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 21:58:31 --> Información del documento: Array
+(
+    [id_documento] => 30
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 2
+    [id_sucursal_origen] => 1
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-07-10 13:35:57
+    [monto_total] => 0.00
+    [estado] => Procesado
+    [noDocumento] => PE-0003
+    [correlativo] => 0003
+    [observaciones] => Ingreso: Ingreso por nota de remision: traslado 5 de casa matriz a los proceres
+    [id_tipo_movimiento] => 2
+    [usuario] => Jaime Edgardo
+    [sucursal] => Los Proceres
+    [proveedor] => Comercial Portillo
+)
+
+DEBUG - 2024-08-22 21:58:31 --> Obteniendo productos para el documento ID: 30
+DEBUG - 2024-08-22 21:58:31 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => 0000098
+            [cantidad] => 5
+            [nombre] => Refrigeradora INVERTER 
+            [modelo] => VT40WPN | 14
+            [precio] => 800.00
+        )
+
+)
+
+DEBUG - 2024-08-22 21:58:31 --> Información del documento de NR: Array
+(
+    [id_documento] => 30
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 2
+    [id_sucursal_origen] => 1
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-07-10 13:35:57
+    [monto_total] => 0.00
+    [estado] => Procesado
+    [noDocumento] => PE-0003
+    [correlativo] => 0003
+    [observaciones] => Ingreso: Ingreso por nota de remision: traslado 5 de casa matriz a los proceres
+    [id_tipo_movimiento] => 2
+    [usuario] => Jaime Edgardo
+    [sucursal_destino] => Los Proceres
+    [sucursal_origen] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+INFO - 2024-08-22 21:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:58:46 --> IngresosController ingresos
+INFO - 2024-08-22 21:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:58:49 --> IngresoPorComprasController ingresos_por_compras
+INFO - 2024-08-22 21:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 21:59:36 --> ProductosController productos
+INFO - 2024-08-22 21:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:06:41 --> ProductosController productos
+INFO - 2024-08-22 22:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:07:42 --> IngresoPorComprasController ingresos_por_compras
+INFO - 2024-08-22 22:08:06 --> llego a buscarProductos
+INFO - 2024-08-22 22:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:08:07 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:08:18 --> IngresoPorComprasController registrarMovimientoIngreso
+INFO - 2024-08-22 22:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:08:25 --> el valor del idTipoDoc es--->  1
+DEBUG - 2024-08-22 22:08:26 --> entro porque idTipoDoc es diferente de null
+INFO - 2024-08-22 22:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:08:32 --> Información del documento: Array
+(
+    [id_documento] => 0
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 1
+    [id_sucursal_origen] => 
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-08-23 04:08:18
+    [monto_total] => 4000.00
+    [estado] => Procesado
+    [noDocumento] => N09877
+    [correlativo] => 098777
+    [observaciones] => MO-0001 TELEFONOS ANDROID
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+INFO - 2024-08-22 22:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:16:50 --> iniciando sesion
+INFO - 2024-08-22 22:16:51 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"}]
+INFO - 2024-08-22 22:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:16:51 --> AdministracionController inicio_administracion
+INFO - 2024-08-22 22:16:51 --> AdministracionController Acceso permitido
+INFO - 2024-08-22 22:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:17:02 --> ProductosController productos
+INFO - 2024-08-22 22:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:17:30 --> IngresoPorComprasController ingresos_por_compras
+DEBUG - 2024-08-22 22:17:33 --> el valor del idTipoDoc es--->  1
+DEBUG - 2024-08-22 22:17:33 --> entro porque idTipoDoc es diferente de null
+INFO - 2024-08-22 22:18:06 --> llego a buscarProductos
+INFO - 2024-08-22 22:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:18:07 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:18:14 --> IngresoPorComprasController registrarMovimientoIngreso
+INFO - 2024-08-22 22:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:18:21 --> el valor del idTipoDoc es--->  1
+DEBUG - 2024-08-22 22:18:22 --> entro porque idTipoDoc es diferente de null
+INFO - 2024-08-22 22:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:18:25 --> Información del documento: Array
+(
+    [id_documento] => 36
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 1
+    [id_sucursal_origen] => 
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-08-23 04:18:14
+    [monto_total] => 2500.00
+    [estado] => Procesado
+    [noDocumento] => 000012
+    [correlativo] => M-0001
+    [observaciones] => Nuevos moviles
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+DEBUG - 2024-08-22 22:18:25 --> Obteniendo productos para el documento ID: 36
+DEBUG - 2024-08-22 22:18:25 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => MO-0001
+            [cantidad] => 5
+            [nombre] => MOVIL
+            [modelo] => Note 11 PRO
+            [precio] => 500.00
+        )
+
+)
+
+INFO - 2024-08-22 22:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:18:26 --> Información del documento: Array
+(
+    [id_documento] => 36
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 1
+    [id_sucursal_origen] => 
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-08-23 04:18:14
+    [monto_total] => 2500.00
+    [estado] => Procesado
+    [noDocumento] => 000012
+    [correlativo] => M-0001
+    [observaciones] => Nuevos moviles
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+DEBUG - 2024-08-22 22:18:26 --> Obteniendo productos para el documento ID: 36
+DEBUG - 2024-08-22 22:18:26 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => MO-0001
+            [cantidad] => 5
+            [nombre] => MOVIL
+            [modelo] => Note 11 PRO
+            [precio] => 500.00
+        )
+
+)
+
+INFO - 2024-08-22 22:18:55 --> llego a buscarProductos
+INFO - 2024-08-22 22:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:18:56 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:19:06 --> IngresoPorComprasController registrarMovimientoIngreso
+INFO - 2024-08-22 22:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:19:12 --> el valor del idTipoDoc es--->  1
+DEBUG - 2024-08-22 22:19:13 --> entro porque idTipoDoc es diferente de null
+INFO - 2024-08-22 22:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:19:17 --> Información del documento: Array
+(
+    [id_documento] => 37
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 1
+    [id_sucursal_origen] => 
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-08-23 04:19:06
+    [monto_total] => 4000.00
+    [estado] => Procesado
+    [noDocumento] => 000013
+    [correlativo] => M-0002
+    [observaciones] => REFRIGERADORAS
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+DEBUG - 2024-08-22 22:19:17 --> Obteniendo productos para el documento ID: 37
+DEBUG - 2024-08-22 22:19:17 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => 0000098
+            [cantidad] => 5
+            [nombre] => Refrigeradora INVERTER 
+            [modelo] => VT40WPN | 14
+            [precio] => 800.00
+        )
+
+)
+
+INFO - 2024-08-22 22:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:19:18 --> Información del documento: Array
+(
+    [id_documento] => 37
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 1
+    [id_sucursal_origen] => 
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-08-23 04:19:06
+    [monto_total] => 4000.00
+    [estado] => Procesado
+    [noDocumento] => 000013
+    [correlativo] => M-0002
+    [observaciones] => REFRIGERADORAS
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+DEBUG - 2024-08-22 22:19:18 --> Obteniendo productos para el documento ID: 37
+DEBUG - 2024-08-22 22:19:19 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => 0000098
+            [cantidad] => 5
+            [nombre] => Refrigeradora INVERTER 
+            [modelo] => VT40WPN | 14
+            [precio] => 800.00
+        )
+
+)
+
+INFO - 2024-08-22 22:19:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-08-22 22:19:20 --> Información del documento: Array
+(
+    [id_documento] => 37
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 1
+    [id_sucursal_origen] => 
+    [id_proveedor] => 2
+    [fecha_creacion] => 2024-08-23 04:19:06
+    [monto_total] => 4000.00
+    [estado] => Procesado
+    [noDocumento] => 000013
+    [correlativo] => M-0002
+    [observaciones] => REFRIGERADORAS
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Casa Matriz
+    [proveedor] => Comercial Portillo
+)
+
+DEBUG - 2024-08-22 22:19:20 --> Obteniendo productos para el documento ID: 37
+DEBUG - 2024-08-22 22:19:20 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => 0000098
+            [cantidad] => 5
+            [nombre] => Refrigeradora INVERTER 
+            [modelo] => VT40WPN | 14
+            [precio] => 800.00
+        )
+
+)
+
+INFO - 2024-08-22 22:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:38 --> iniciando sesion
+INFO - 2024-08-22 22:19:39 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-22 22:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:39 --> SolicitudesController solicitudes
+INFO - 2024-08-22 22:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:43 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:21:01 --> llego a buscarProductos
+INFO - 2024-08-22 22:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:21:02 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:21:31 --> llego a buscarProductos
+INFO - 2024-08-22 22:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:21:32 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:24:41 --> llego a buscarProductos
+INFO - 2024-08-22 22:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:24:42 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:26:49 --> llego a buscarProductos
+INFO - 2024-08-22 22:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:26:50 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:27:32 --> llego a buscarProductos
+INFO - 2024-08-22 22:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:27:34 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:27:58 --> llego a buscarProductos
+INFO - 2024-08-22 22:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:27:58 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:28:29 --> llego a buscarProductos
+INFO - 2024-08-22 22:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:28:30 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:31:29 --> llego a buscarProductos
+INFO - 2024-08-22 22:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:31:30 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:32:28 --> llego a buscarProductos
+INFO - 2024-08-22 22:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:32:29 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:32:34 --> llego a buscarProductos
+INFO - 2024-08-22 22:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:32:35 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Jaime Edgardo
+        )
+
+)
+
+INFO - 2024-08-22 22:32:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:32:42 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:32:53 --> llego a buscarProductos
+INFO - 2024-08-22 22:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:32:54 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:34:37 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:36:03 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:36:03 --> Abuscar es:: refr origen suc 
+INFO - 2024-08-22 22:36:04 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-22 22:37:20 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:37:20 --> Abuscar es:: mov origen suc 1
+INFO - 2024-08-22 22:37:20 --> query 
+INFO - 2024-08-22 22:37:21 --> productos Array
+(
+)
+
+INFO - 2024-08-22 22:38:17 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:38:17 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:38:17 --> query 
+INFO - 2024-08-22 22:38:18 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [codigo_producto] => MO-0001
+            [id_categoria] => 7
+            [estado] => 1
+            [id_sucursal_destino] => 1
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:39:06 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:39:28 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:39:28 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:39:28 --> query 
+INFO - 2024-08-22 22:39:30 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [codigo_producto] => MO-0001
+            [id_categoria] => 7
+            [estado] => 1
+            [id_sucursal_destino] => 1
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:41:15 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:41:15 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:41:15 --> query 
+INFO - 2024-08-22 22:41:16 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:42:10 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:42:10 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:42:10 --> query 
+INFO - 2024-08-22 22:42:11 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:42:17 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:42:26 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:42:26 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:42:26 --> query 
+INFO - 2024-08-22 22:42:27 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:43:21 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:43:21 --> Abuscar es:: refri origen suc 1
+INFO - 2024-08-22 22:43:21 --> query 
+INFO - 2024-08-22 22:43:22 --> productos Array
+(
+)
+
+INFO - 2024-08-22 22:43:32 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:43:32 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 22:43:32 --> query 
+INFO - 2024-08-22 22:43:32 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:44:26 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:44:26 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 22:44:26 --> query 
+INFO - 2024-08-22 22:44:26 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:44:51 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:44:51 --> Abuscar es:: MOV-0001 origen suc 1
+INFO - 2024-08-22 22:44:51 --> query 
+INFO - 2024-08-22 22:44:51 --> productos Array
+(
+)
+
+INFO - 2024-08-22 22:44:59 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:44:59 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:44:59 --> query 
+INFO - 2024-08-22 22:45:00 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:49:01 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:49:20 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:49:20 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:49:20 --> query 
+INFO - 2024-08-22 22:49:20 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:49:50 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:50:03 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:50:03 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:50:03 --> query 
+INFO - 2024-08-22 22:50:03 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:50:39 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:50:39 --> Abuscar es:: 00000098 origen suc 1
+INFO - 2024-08-22 22:50:39 --> query 
+INFO - 2024-08-22 22:50:40 --> productos Array
+(
+)
+
+INFO - 2024-08-22 22:50:43 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:50:43 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 22:50:43 --> query 
+INFO - 2024-08-22 22:50:44 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:52:26 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:52:26 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 22:52:26 --> query 
+INFO - 2024-08-22 22:52:26 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:54:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:54:22 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:54:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:54:37 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:54:37 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 22:54:37 --> query 
+INFO - 2024-08-22 22:54:38 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:54:54 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:54:54 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:54:54 --> query 
+INFO - 2024-08-22 22:54:55 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:56:26 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:56:40 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:56:40 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 22:56:40 --> query 
+INFO - 2024-08-22 22:56:41 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:56:50 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 22:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:56:50 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 22:56:50 --> query 
+INFO - 2024-08-22 22:56:51 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 22:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:59:46 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 22:59:51 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 22:59:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:00:02 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:00:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:00:02 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:00:02 --> query 
+INFO - 2024-08-22 23:00:03 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:00:17 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:00:17 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 23:00:17 --> query 
+INFO - 2024-08-22 23:00:18 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:00:26 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:00:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:03:24 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:04:22 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:04:38 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:04:38 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:04:38 --> query 
+INFO - 2024-08-22 23:04:39 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:04:47 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:04:47 --> Abuscar es:: MOV-0001 origen suc 1
+INFO - 2024-08-22 23:04:47 --> query 
+INFO - 2024-08-22 23:04:48 --> productos Array
+(
+)
+
+INFO - 2024-08-22 23:04:54 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:04:54 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 23:04:54 --> query 
+INFO - 2024-08-22 23:04:55 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:06:36 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:06:39 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:06:48 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:06:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:06:48 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:06:48 --> query 
+INFO - 2024-08-22 23:06:49 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:07:00 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:07:00 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 23:07:00 --> query 
+INFO - 2024-08-22 23:07:01 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:08:02 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:08:12 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:08:12 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:08:12 --> query 
+INFO - 2024-08-22 23:08:13 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:08:27 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:08:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:08:27 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-22 23:08:27 --> query 
+INFO - 2024-08-22 23:08:28 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:12:14 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:12:27 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:12:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:12:27 --> Abuscar es:: mov-0001 origen suc 1
+INFO - 2024-08-22 23:12:27 --> query 
+INFO - 2024-08-22 23:12:27 --> productos Array
+(
+)
+
+INFO - 2024-08-22 23:12:32 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:12:32 --> Abuscar es:: mo-0001 origen suc 1
+INFO - 2024-08-22 23:12:32 --> query 
+INFO - 2024-08-22 23:12:33 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:12:44 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:12:44 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:12:44 --> query 
+INFO - 2024-08-22 23:12:45 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:15:40 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:16:02 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:16:02 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:16:02 --> query 
+INFO - 2024-08-22 23:16:03 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:16:13 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:16:13 --> Abuscar es:: Mo-0001 origen suc 1
+INFO - 2024-08-22 23:16:13 --> query 
+INFO - 2024-08-22 23:16:14 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:17:39 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-22 23:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:17:55 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:17:55 --> Abuscar es:: Mov-0001 origen suc 1
+INFO - 2024-08-22 23:17:55 --> query 
+INFO - 2024-08-22 23:17:56 --> productos Array
+(
+)
+
+INFO - 2024-08-22 23:18:00 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:18:00 --> Abuscar es:: Mo-0001 origen suc 1
+INFO - 2024-08-22 23:18:00 --> query 
+INFO - 2024-08-22 23:18:01 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:18:18 --> llego a buscarProductos con consulta
+INFO - 2024-08-22 23:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:18:18 --> Abuscar es:: 0000098 origen suc 1
+INFO - 2024-08-22 23:18:19 --> query 
+INFO - 2024-08-22 23:18:19 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-22 23:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 23:20:37 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => as
+            [empresa] => ssssssssssssssssssssssssss
+            [direccion_trabajo] => ssssssssssssssssssssssss
+            [telefono_trabajo] => 2222-2222
+            [cargo] => sssssssssssssssssss
+            [salario] => 222222222.22
+            [tiempo_laborando_empresa] => 2
+            [nombre_jefe_inmediato] => 22222222222222
+            [empresa_anterior] => 2
+            [telefono_empresa_anterior] => 2222-2222
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => 2
+                    [parentesco] => PAPÁ
+                    [direccion] => 2
+                    [telefono] => 2222-2222
+                    [lugar_trabajo] => 2222222222222222222
+                    [telefono_trabajo] => 2222-2222
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => 22
+                    [direccion] => 22222222222222222222
+                    [telefono] => 2222-2222
+                    [lugar_trabajo] => 22222222222222222222222
+                    [telefono_trabajo] => 2222-2222
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => 2
+                    [telefono] => 2222-2222
+                    [monto_credito] => 22
+                    [periodos] => 222222222222222
+                    [plazo] => 2222222222222
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 500.00
+            [egresoMensual] => 120.00
+            [salarioIng] => 
+            [pagoCasa] => 95
+            [otrosIngresos] => 
+            [gastosVida] => 100.00
+            [otrosEgresos] => 50.00
+            [totalIngresos] => 500.00
+            [totalEgresos] => 365.00
+            [diferencia] => 135.00
+            [cantidadCuotas] => 0.1155
+            [estado_label] => Medio Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => 333333333
+                            [parentesco] => PAPÁ
+                            [direccion] => wwwwwwwwwwwwwwwwwww
+                            [telefono] => 2222-2222
+                        )
+
+                )
+
+            [nombre] => 222222
+            [dui] => 22222222-2
+            [direccion] => 222222222
+            [COtelPersonal] => 2222-2222
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 2
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => wwwwwwwwwww
+            [patrono] => wwwwwwwwww
+            [COdireccionTrabajo] => wwwwwwww
+            [COtelefonoTrabajo] => 2222-2222
+            [COcargoDesempeña] => wwwwwwwwwwww
+            [COsalario] => 3333333.33
+            [COnombreJefe] => 333333333333333333
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 1300.00
+            [valorPagoPrima] => 200.00
+            [saldoAPagar] => 1100.00
+            [cantidadCuotas] => 0.1155
+            [montoCuota] => 127.05
+            [montoTotalPagar] => 1724.60
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+            [1] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 2
+                    [nombre] => Refrigeradora INVERTER 
+                    [marca] => LG
+                    [modelo] => VT40WPN | 14
+                    [color] => GRIS
+                    [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                    [precio] => 800.00
+                    [costo_unitario] => 530.00
+                    [id_categoria] => 7
+                    [disponible] => 1
+                    [codigo_producto] => 0000098
+                    [estado] => 1
+                    [id_usuario_creacion] => 7
+                    [fecha_creacion] => 2024-06-05
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-22 23:20:37 --> Datos recibidos: Array
+(
+    [0] => Array
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+            [cantidad] => 1
+        )
+
+    [1] => Array
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [disponibilidad] => 5
+            [cantidad] => 1
+        )
+
+)
+

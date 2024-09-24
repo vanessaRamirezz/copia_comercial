@@ -1,0 +1,2028 @@
+INFO - 2024-08-27 09:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:11:17 --> iniciando sesion
+INFO - 2024-08-27 09:11:19 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-27 09:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:11:19 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:11:24 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-27 09:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:29:53 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:30:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:30:00 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:30:00 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:30:01 --> Datos guardados de la sol:: Array
+(
+    [cliente] => CodeIgniter\HTTP\Response Object
+        (
+            [reason:protected] => OK
+            [statusCode:protected] => 200
+            [pretend:protected] => 
+            [protocolVersion:protected] => 1.1
+            [validProtocolVersions:protected] => Array
+                (
+                    [0] => 1.0
+                    [1] => 1.1
+                    [2] => 2.0
+                    [3] => 3.0
+                )
+
+            [body:protected] => null
+            [headers:protected] => Array
+                (
+                    [Content-Type] => CodeIgniter\HTTP\Header Object
+                        (
+                            [name:protected] => Content-Type
+                            [value:protected] => application/json; charset=UTF-8
+                        )
+
+                )
+
+            [headerMap:protected] => Array
+                (
+                    [content-type] => Content-Type
+                )
+
+            [CSPEnabled:protected] => 
+            [CSP] => CodeIgniter\HTTP\ContentSecurityPolicy Object
+                (
+                    [baseURI:protected] => 
+                    [childSrc:protected] => self
+                    [connectSrc:protected] => self
+                    [defaultSrc:protected] => 
+                    [fontSrc:protected] => 
+                    [formAction:protected] => self
+                    [frameAncestors:protected] => 
+                    [frameSrc:protected] => 
+                    [imageSrc:protected] => self
+                    [mediaSrc:protected] => 
+                    [objectSrc:protected] => self
+                    [pluginTypes:protected] => 
+                    [reportURI:protected] => 
+                    [sandbox:protected] => 
+                    [scriptSrc:protected] => Array
+                        (
+                            [0] => self
+                        )
+
+                    [styleSrc:protected] => Array
+                        (
+                            [0] => self
+                        )
+
+                    [manifestSrc:protected] => 
+                    [upgradeInsecureRequests:protected] => 
+                    [reportOnly:protected] => 
+                    [validSources:protected] => Array
+                        (
+                            [0] => self
+                            [1] => none
+                            [2] => unsafe-inline
+                            [3] => unsafe-eval
+                        )
+
+                    [nonces:protected] => Array
+                        (
+                        )
+
+                    [styleNonce:protected] => 
+                    [scriptNonce:protected] => 
+                    [styleNonceTag:protected] => {csp-style-nonce}
+                    [scriptNonceTag:protected] => {csp-script-nonce}
+                    [autoNonce:protected] => 1
+                    [tempHeaders:protected] => Array
+                        (
+                        )
+
+                    [reportOnlyHeaders:protected] => Array
+                        (
+                        )
+
+                    [CSPEnabled:protected] => 
+                )
+
+            [cookieStore:protected] => CodeIgniter\Cookie\CookieStore Object
+                (
+                    [cookies:protected] => Array
+                        (
+                        )
+
+                )
+
+            [cookiePrefix:protected] => 
+            [cookieDomain:protected] => 
+            [cookiePath:protected] => /
+            [cookieSecure:protected] => 
+            [cookieHTTPOnly:protected] => 
+            [cookieSameSite:protected] => lax
+            [cookies:protected] => Array
+                (
+                )
+
+            [bodyFormat:protected] => json
+        )
+
+)
+
+INFO - 2024-08-27 09:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:30:18 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:30:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:30:22 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:30:22 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:30:23 --> Datos guardados de la sol:: Array
+(
+    [cliente] => CodeIgniter\HTTP\Response Object
+        (
+            [reason:protected] => OK
+            [statusCode:protected] => 200
+            [pretend:protected] => 
+            [protocolVersion:protected] => 1.1
+            [validProtocolVersions:protected] => Array
+                (
+                    [0] => 1.0
+                    [1] => 1.1
+                    [2] => 2.0
+                    [3] => 3.0
+                )
+
+            [body:protected] => null
+            [headers:protected] => Array
+                (
+                    [Content-Type] => CodeIgniter\HTTP\Header Object
+                        (
+                            [name:protected] => Content-Type
+                            [value:protected] => application/json; charset=UTF-8
+                        )
+
+                )
+
+            [headerMap:protected] => Array
+                (
+                    [content-type] => Content-Type
+                )
+
+            [CSPEnabled:protected] => 
+            [CSP] => CodeIgniter\HTTP\ContentSecurityPolicy Object
+                (
+                    [baseURI:protected] => 
+                    [childSrc:protected] => self
+                    [connectSrc:protected] => self
+                    [defaultSrc:protected] => 
+                    [fontSrc:protected] => 
+                    [formAction:protected] => self
+                    [frameAncestors:protected] => 
+                    [frameSrc:protected] => 
+                    [imageSrc:protected] => self
+                    [mediaSrc:protected] => 
+                    [objectSrc:protected] => self
+                    [pluginTypes:protected] => 
+                    [reportURI:protected] => 
+                    [sandbox:protected] => 
+                    [scriptSrc:protected] => Array
+                        (
+                            [0] => self
+                        )
+
+                    [styleSrc:protected] => Array
+                        (
+                            [0] => self
+                        )
+
+                    [manifestSrc:protected] => 
+                    [upgradeInsecureRequests:protected] => 
+                    [reportOnly:protected] => 
+                    [validSources:protected] => Array
+                        (
+                            [0] => self
+                            [1] => none
+                            [2] => unsafe-inline
+                            [3] => unsafe-eval
+                        )
+
+                    [nonces:protected] => Array
+                        (
+                        )
+
+                    [styleNonce:protected] => 
+                    [scriptNonce:protected] => 
+                    [styleNonceTag:protected] => {csp-style-nonce}
+                    [scriptNonceTag:protected] => {csp-script-nonce}
+                    [autoNonce:protected] => 1
+                    [tempHeaders:protected] => Array
+                        (
+                        )
+
+                    [reportOnlyHeaders:protected] => Array
+                        (
+                        )
+
+                    [CSPEnabled:protected] => 
+                )
+
+            [cookieStore:protected] => CodeIgniter\Cookie\CookieStore Object
+                (
+                    [cookies:protected] => Array
+                        (
+                        )
+
+                )
+
+            [cookiePrefix:protected] => 
+            [cookieDomain:protected] => 
+            [cookiePath:protected] => /
+            [cookieSecure:protected] => 
+            [cookieHTTPOnly:protected] => 
+            [cookieSameSite:protected] => lax
+            [cookies:protected] => Array
+                (
+                )
+
+            [bodyFormat:protected] => json
+        )
+
+)
+
+INFO - 2024-08-27 09:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:33:52 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:33:54 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:33:54 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:33:55 --> Datos guardados de la sol:: Array
+(
+    [cliente] => 
+)
+
+INFO - 2024-08-27 09:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:35:50 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:36:00 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:36:00 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:36:01 --> Datos guardados de la sol:: Array
+(
+    [cliente] => 
+)
+
+INFO - 2024-08-27 09:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:37:02 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:37:02 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:37:03 --> Datos encontrados de la sol:: Array
+(
+    [id_solicitud] => 12
+    [numero_solicitud] => 000001
+    [id_cliente] => 2
+    [id_usuario_creacion] => 7
+    [id_estado_actual] => 1
+    [id_sucursal] => 1
+    [fecha_creacion] => 2024-08-26 19:25:56
+    [monto_solicitud] => 598.19
+)
+
+INFO - 2024-08-27 09:37:03 --> Datos guardados de la sol:: Array
+(
+    [cliente] => 
+)
+
+INFO - 2024-08-27 09:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:37:44 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:37:44 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:37:45 --> Datos encontrados de la sol:: Array
+(
+    [id_solicitud] => 12
+    [numero_solicitud] => 000001
+    [id_cliente] => 2
+    [id_usuario_creacion] => 7
+    [id_estado_actual] => 1
+    [id_sucursal] => 1
+    [fecha_creacion] => 2024-08-26 19:25:56
+    [monto_solicitud] => 598.19
+)
+
+INFO - 2024-08-27 09:37:45 --> Datos encontrados del cliente:: 
+INFO - 2024-08-27 09:37:45 --> Datos guardados de la sol:: Array
+(
+    [cliente] => 
+)
+
+INFO - 2024-08-27 09:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:38:44 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:38:44 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:38:45 --> Datos encontrados de la sol:: Array
+(
+    [id_solicitud] => 12
+    [numero_solicitud] => 000001
+    [id_cliente] => 2
+    [id_usuario_creacion] => 7
+    [id_estado_actual] => 1
+    [id_sucursal] => 1
+    [fecha_creacion] => 2024-08-26 19:25:56
+    [monto_solicitud] => 598.19
+)
+
+INFO - 2024-08-27 09:38:45 --> Datos encontrados del cliente:: 
+INFO - 2024-08-27 09:38:45 --> Datos guardados de la sol:: Array
+(
+    [cliente] => 
+)
+
+INFO - 2024-08-27 09:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:39:41 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:39:41 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:39:42 --> Datos encontrados de la sol:: Array
+(
+    [id_solicitud] => 12
+    [numero_solicitud] => 000001
+    [id_cliente] => 2
+    [id_usuario_creacion] => 7
+    [id_estado_actual] => 1
+    [id_sucursal] => 1
+    [fecha_creacion] => 2024-08-26 19:25:56
+    [monto_solicitud] => 598.19
+)
+
+INFO - 2024-08-27 09:39:42 --> id_cliente enviado:: 2
+INFO - 2024-08-27 09:39:42 --> Datos encontrados del cliente:: 
+INFO - 2024-08-27 09:39:42 --> Datos guardados de la sol:: Array
+(
+    [cliente] => 
+)
+
+INFO - 2024-08-27 09:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:40:26 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:40:26 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 09:40:27 --> Datos encontrados de la sol:: Array
+(
+    [id_solicitud] => 12
+    [numero_solicitud] => 000001
+    [id_cliente] => 2
+    [id_usuario_creacion] => 7
+    [id_estado_actual] => 1
+    [id_sucursal] => 1
+    [fecha_creacion] => 2024-08-26 19:25:56
+    [monto_solicitud] => 598.19
+)
+
+INFO - 2024-08-27 09:40:27 --> id_cliente enviado:: 2
+INFO - 2024-08-27 09:40:27 --> Datos encontrados del cliente:: Array
+(
+    [id_cliente] => 2
+    [dui] => 05682717-5
+    [nombre_completo] => Jaime Edgardo Palacios Garcia
+    [estado_civil] => Casada/o
+    [fecha_nacimiento] => 1998-03-21
+    [telefono] => 7759-3143
+    [direccion] => QUEZALTEPEQUE, RES VILLA PRIMAVERA
+    [departamento] => 05
+    [municipio] => 80
+    [correo] => JAIMEPALACIOS998@GMAIL.COM
+    [nombre_conyugue] => Katherinne Marquez
+    [direccion_trabajo_conyugue] => QUEZALTEPEQUE, RES VILLA PRIMAVERA
+    [telefono_trabajo_conyugue] => 7759-3143
+    [nombre_padres] => Jaime Palacios
+    [direccion_padres] => QUEZALTEPEQUE, BO EL GUAYABAL
+    [telefono_padres] => 7777-7777
+    [CpropiaCN] => SI
+    [CpromesaVentaCN] => NO
+    [CalquiladaCN] => NO
+    [aQuienPerteneceCN] => 
+    [telPropietarioCN] => 
+    [tiempoDeVivirDomicilioCN] => 
+    [id_user_creacion] => 7
+    [id_sucursal_creacion] => 1
+    [fechaCreacion] => 2024-05-28 23:09:09
+)
+
+INFO - 2024-08-27 09:40:27 --> Datos guardados de la sol:: Array
+(
+    [cliente] => Array
+        (
+            [id_cliente] => 2
+            [dui] => 05682717-5
+            [nombre_completo] => Jaime Edgardo Palacios Garcia
+            [estado_civil] => Casada/o
+            [fecha_nacimiento] => 1998-03-21
+            [telefono] => 7759-3143
+            [direccion] => QUEZALTEPEQUE, RES VILLA PRIMAVERA
+            [departamento] => 05
+            [municipio] => 80
+            [correo] => JAIMEPALACIOS998@GMAIL.COM
+            [nombre_conyugue] => Katherinne Marquez
+            [direccion_trabajo_conyugue] => QUEZALTEPEQUE, RES VILLA PRIMAVERA
+            [telefono_trabajo_conyugue] => 7759-3143
+            [nombre_padres] => Jaime Palacios
+            [direccion_padres] => QUEZALTEPEQUE, BO EL GUAYABAL
+            [telefono_padres] => 7777-7777
+            [CpropiaCN] => SI
+            [CpromesaVentaCN] => NO
+            [CalquiladaCN] => NO
+            [aQuienPerteneceCN] => 
+            [telPropietarioCN] => 
+            [tiempoDeVivirDomicilioCN] => 
+            [id_user_creacion] => 7
+            [id_sucursal_creacion] => 1
+            [fechaCreacion] => 2024-05-28 23:09:09
+        )
+
+)
+
+INFO - 2024-08-27 09:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:44:50 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:54:41 --> SolicitudesController solicitudes
+INFO - 2024-08-27 09:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 09:54:50 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 09:54:50 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:20:52 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:20:52 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:21:41 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:21:41 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:22:02 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:22:02 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:30:56 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:30:56 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:30:57 --> ref laboral ::: 
+INFO - 2024-08-27 10:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:32:13 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:32:13 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:32:14 --> ref laboral ::: 
+INFO - 2024-08-27 10:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:32:35 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:32:35 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:32:36 --> ref laboral ::: 
+INFO - 2024-08-27 10:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:33:19 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:33:19 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:33:21 --> ref laboral ::: 
+INFO - 2024-08-27 10:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:36:30 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:36:30 --> numero de solicitud decrypted::: 12
+CRITICAL - 2024-08-27 10:36:31 --> BadMethodCallException: Call to undefined method App\Models\ReferenciaLaboralModel::obtenerReferenciasPorSolicitud
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\SolicitudesController.php(560): CodeIgniter\Model->__call('obtenerReferenciasPorSolicitud', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 10:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:37:48 --> SolicitudesController solicitudes
+INFO - 2024-08-27 10:37:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:37:56 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:37:56 --> numero de solicitud decrypted::: 12
+CRITICAL - 2024-08-27 10:37:57 --> ErrorException: Array to string conversion
+in APPPATH\Controllers\SolicitudesController.php on line 561.
+ 1 APPPATH\Controllers\SolicitudesController.php(561): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\creditos\\app\\Controllers\\SolicitudesController.php', 561)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 10:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:38:59 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:38:59 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:39:00 --> ref laboral ::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-08-27 10:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:43:27 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:43:27 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:43:28 --> ref laboral ::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-08-27 10:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 10:44:55 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 10:44:55 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 10:44:56 --> ref laboral ::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-08-27 11:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:08:40 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:08:40 --> numero de solicitud decrypted::: 12
+CRITICAL - 2024-08-27 11:08:42 --> BadMethodCallException: Call to undefined method App\Models\ReferenciaFamiliarModel::buscarPorSolicitud
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\SolicitudesController.php(563): CodeIgniter\Model->__call('buscarPorSolicitud', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 11:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:09:21 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:09:21 --> numero de solicitud decrypted::: 12
+CRITICAL - 2024-08-27 11:09:22 --> BadMethodCallException: Call to undefined method App\Models\ReferenciaFamiliarModel::obtenerReferenciasPorSolicitud
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\SolicitudesController.php(563): CodeIgniter\Model->__call('obtenerReferenciasPorSolicitud', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 11:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:10:21 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:10:21 --> numero de solicitud decrypted::: 12
+CRITICAL - 2024-08-27 11:10:23 --> BadMethodCallException: Call to undefined method App\Models\ReferenciaLaboralModel::obtenerReferenciasPorSolicitud
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\SolicitudesController.php(560): CodeIgniter\Model->__call('obtenerReferenciasPorSolicitud', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 11:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:11:53 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:11:53 --> numero de solicitud decrypted::: 12
+CRITICAL - 2024-08-27 11:11:55 --> ErrorException: Undefined variable $e
+in APPPATH\Controllers\SolicitudesController.php on line 585.
+ 1 APPPATH\Controllers\SolicitudesController.php(585): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $e', 'C:\\xampp\\htdocs\\creditos\\app\\Controllers\\SolicitudesController.php', 585)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 11:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:12:12 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:12:12 --> numero de solicitud decrypted::: 12
+ERROR - 2024-08-27 11:12:13 --> Ocurrió un error: Call to undefined method App\Models\ReferenciaLaboralModel::obtenerReferenciasPorSolicitud
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(561): CodeIgniter\Model->__call('obtenerReferenc...', Array)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-27 11:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:13:13 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:13:13 --> numero de solicitud decrypted::: 12
+ERROR - 2024-08-27 11:13:14 --> Ocurrió un error: Call to undefined method App\Models\ReferenciaLaboralModel::obtenerReferenciasPorSolicitud
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(561): CodeIgniter\Model->__call('obtenerReferenc...', Array)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-27 11:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:13:35 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:13:35 --> numero de solicitud decrypted::: 12
+ERROR - 2024-08-27 11:13:37 --> Ocurrió un error: Call to undefined method App\Models\ReferenciaLaboralModel::obtenerReferenciasPorSolicitud
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(561): CodeIgniter\Model->__call('obtenerReferenc...', Array)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-27 11:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:15:44 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:15:44 --> numero de solicitud decrypted::: 12
+ERROR - 2024-08-27 11:15:46 --> Ocurrió un error: Call to undefined method App\Models\ReferenciaFamiliarModel::obtenerRefFamiliar
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(564): CodeIgniter\Model->__call('obtenerRefFamil...', Array)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-27 11:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:17:04 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:17:04 --> numero de solicitud decrypted::: 12
+ERROR - 2024-08-27 11:17:06 --> Ocurrió un error: Call to undefined method App\Models\ReferenciaFamiliarModel::buscarPorSolicitud
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(564): CodeIgniter\Model->__call('buscarPorSolici...', Array)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-27 11:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:19:26 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:19:26 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 11:19:28 --> reffamilires::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_familiar] => 10
+            [id_solicitud] => 12
+            [nombre] => Miguel Ramirez
+            [parentesco] => TIO/A
+            [direccion] => QUEZALTEPEQUE
+            [telefono] => 7756-5399
+            [lugar_trabajo] => Pollo campero, quezaltepeque
+            [telefono_trabajo] => 2309-8888
+        )
+
+)
+
+INFO - 2024-08-27 11:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 11:50:08 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 11:50:08 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 11:50:10 --> reffamilires::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_familiar] => 10
+            [id_solicitud] => 12
+            [nombre] => Miguel Ramirez
+            [parentesco] => TIO/A
+            [direccion] => QUEZALTEPEQUE
+            [telefono] => 7756-5399
+            [lugar_trabajo] => Pollo campero, quezaltepeque
+            [telefono_trabajo] => 2309-8888
+        )
+
+)
+
+INFO - 2024-08-27 12:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 12:01:02 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 12:01:02 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 12:01:04 --> reffamilires::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_familiar] => 10
+            [id_solicitud] => 12
+            [nombre] => Miguel Ramirez
+            [parentesco] => TIO/A
+            [direccion] => QUEZALTEPEQUE
+            [telefono] => 7756-5399
+            [lugar_trabajo] => Pollo campero, quezaltepeque
+            [telefono_trabajo] => 2309-8888
+        )
+
+)
+
+INFO - 2024-08-27 12:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 12:04:08 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 12:04:08 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 12:04:09 --> reffamilires::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_familiar] => 10
+            [id_solicitud] => 12
+            [nombre] => Miguel Ramirez
+            [parentesco] => TIO/A
+            [direccion] => QUEZALTEPEQUE
+            [telefono] => 7756-5399
+            [lugar_trabajo] => Pollo campero, quezaltepeque
+            [telefono_trabajo] => 2309-8888
+        )
+
+)
+
+INFO - 2024-08-27 12:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 12:05:57 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 12:05:57 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 12:05:58 --> reffamilires::: Array
+(
+    [0] => Array
+        (
+            [id_referencia_familiar] => 10
+            [id_solicitud] => 12
+            [nombre] => Miguel Ramirez
+            [parentesco] => TIO/A
+            [direccion] => QUEZALTEPEQUE
+            [telefono] => 7756-5399
+            [lugar_trabajo] => Pollo campero, quezaltepeque
+            [telefono_trabajo] => 2309-8888
+        )
+
+)
+
+INFO - 2024-08-27 12:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 12:23:36 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 12:23:36 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 12:23:37 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_no_familiar] => 14
+            [id_solicitud] => 12
+            [nombre] => Ruben Batres
+            [direccion] => San Salvador 
+            [telefono] => 7894-8747
+            [lugar_trabajo] => Dollar City, escalon
+            [telefono_trabajo] => 2988-8888
+        )
+
+)
+
+INFO - 2024-08-27 14:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:22 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 14:14:22 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 14:14:24 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_no_familiar] => 14
+            [id_solicitud] => 12
+            [nombre] => Ruben Batres
+            [direccion] => San Salvador 
+            [telefono] => 7894-8747
+            [lugar_trabajo] => Dollar City, escalon
+            [telefono_trabajo] => 2988-8888
+        )
+
+)
+
+INFO - 2024-08-27 14:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:21:01 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 14:21:01 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 14:21:10 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_no_familiar] => 14
+            [id_solicitud] => 12
+            [nombre] => Ruben Batres
+            [direccion] => San Salvador 
+            [telefono] => 7894-8747
+            [lugar_trabajo] => Dollar City, escalon
+            [telefono_trabajo] => 2988-8888
+        )
+
+)
+
+INFO - 2024-08-27 14:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:29:47 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 14:29:47 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 14:29:48 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_crediticia] => 1
+            [id_solicitud] => 12
+            [institucion] => Siman
+            [telefono] => 2877-7773
+            [monto_credito] => 1200.00
+            [periodos] => 5 años
+            [plazo] => 5 años
+            [estado] => CANCELADA
+        )
+
+)
+
+INFO - 2024-08-27 14:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:45:54 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 14:45:54 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 14:45:56 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_crediticia] => 1
+            [id_solicitud] => 12
+            [institucion] => Siman
+            [telefono] => 2877-7773
+            [monto_credito] => 1200.00
+            [periodos] => 5 años
+            [plazo] => 5 años
+            [estado] => CANCELADA
+        )
+
+)
+
+INFO - 2024-08-27 14:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:46:30 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 14:46:30 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 14:46:32 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_crediticia] => 1
+            [id_solicitud] => 12
+            [institucion] => Siman
+            [telefono] => 2877-7773
+            [monto_credito] => 1200.00
+            [periodos] => 5 años
+            [plazo] => 5 años
+            [estado] => CANCELADA
+        )
+
+)
+
+INFO - 2024-08-27 14:49:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:49:13 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 14:49:13 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 14:49:15 --> ref no fam:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_crediticia] => 1
+            [id_solicitud] => 12
+            [institucion] => Siman
+            [telefono] => 2877-7773
+            [monto_credito] => 1200.00
+            [periodos] => 5 años
+            [plazo] => 5 años
+            [estado] => CANCELADA
+        )
+
+)
+
+INFO - 2024-08-27 15:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:01:55 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:01:55 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:01:57 --> estSocioEconomico:: Array
+(
+    [0] => Array
+        (
+            [id_analisis_socioeconomico] => 5
+            [id_solicitud] => 12
+            [ingreso_mensual] => 1200.00
+            [egreso_mensual] => 600.00
+            [salario] => 0.00
+            [pago_casa] => 0.00
+            [otros_explicacion] => 0
+            [gastos_vida] => 0.00
+            [otros] => 0.00
+            [total_ingresos] => 1200.00
+            [total_egresos] => 600.00
+            [diferencia_ingresos_egresos] => 600.00
+            [estado_financiero] => Sano
+            [id_cliente] => 2
+        )
+
+)
+
+INFO - 2024-08-27 15:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:08:02 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:08:02 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:08:03 --> estSocioEconomico:: Array
+(
+    [0] => Array
+        (
+            [id_analisis_socioeconomico] => 5
+            [id_solicitud] => 12
+            [ingreso_mensual] => 1200.00
+            [egreso_mensual] => 600.00
+            [salario] => 0.00
+            [pago_casa] => 0.00
+            [otros_explicacion] => 0
+            [gastos_vida] => 0.00
+            [otros] => 0.00
+            [total_ingresos] => 1200.00
+            [total_egresos] => 600.00
+            [diferencia_ingresos_egresos] => 600.00
+            [estado_financiero] => Sano
+            [id_cliente] => 2
+        )
+
+)
+
+INFO - 2024-08-27 15:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:38:57 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:38:57 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:38:59 --> estSocioEconomico:: Array
+(
+    [0] => Array
+        (
+            [id_analisis_socioeconomico] => 5
+            [id_solicitud] => 12
+            [ingreso_mensual] => 1200.00
+            [egreso_mensual] => 600.00
+            [salario] => 0.00
+            [pago_casa] => 0.00
+            [otros_explicacion] => 0
+            [gastos_vida] => 0.00
+            [otros] => 0.00
+            [total_ingresos] => 1200.00
+            [total_egresos] => 600.00
+            [diferencia_ingresos_egresos] => 600.00
+            [estado_financiero] => Sano
+            [id_cliente] => 2
+        )
+
+)
+
+INFO - 2024-08-27 15:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:39:21 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:39:21 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:39:23 --> estSocioEconomico:: Array
+(
+    [0] => Array
+        (
+            [id_analisis_socioeconomico] => 5
+            [id_solicitud] => 12
+            [ingreso_mensual] => 1200.00
+            [egreso_mensual] => 600.00
+            [salario] => 0.00
+            [pago_casa] => 0.00
+            [otros_explicacion] => 0
+            [gastos_vida] => 0.00
+            [otros] => 0.00
+            [total_ingresos] => 1200.00
+            [total_egresos] => 600.00
+            [diferencia_ingresos_egresos] => 600.00
+            [estado_financiero] => Sano
+            [id_cliente] => 2
+        )
+
+)
+
+INFO - 2024-08-27 15:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:39:58 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:39:58 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:40:00 --> estSocioEconomico:: Array
+(
+    [0] => Array
+        (
+            [id_producto_solicitud] => 4
+            [id_producto] => 11
+            [cantidad_producto] => 1
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 15:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:49:15 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:49:15 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:49:17 --> productosSolicitud:: Array
+(
+    [0] => Array
+        (
+            [id_producto_solicitud] => 4
+            [id_producto] => 11
+            [cantidad_producto] => 1
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 15:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:51:53 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:51:53 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:51:55 --> productosSolicitud:: Array
+(
+    [0] => Array
+        (
+            [id_producto_solicitud] => 4
+            [id_producto] => 11
+            [cantidad_producto] => 1
+            [id_solicitud] => 12
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+        )
+
+)
+
+INFO - 2024-08-27 15:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:57:27 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:57:27 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:57:28 --> productosSolicitud:: Array
+(
+    [0] => Array
+        (
+            [id_producto_solicitud] => 4
+            [id_producto] => 11
+            [cantidad_producto] => 1
+            [id_solicitud] => 12
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+        )
+
+)
+
+INFO - 2024-08-27 15:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:58:11 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:58:11 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:58:13 --> productosSolicitud:: Array
+(
+    [0] => Array
+        (
+            [id_producto_solicitud] => 4
+            [id_producto] => 11
+            [cantidad_producto] => 1
+            [id_solicitud] => 12
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+        )
+
+)
+
+INFO - 2024-08-27 15:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 15:58:31 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 15:58:31 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 15:58:33 --> productosSolicitud:: Array
+(
+    [0] => Array
+        (
+            [id_producto_solicitud] => 4
+            [id_producto] => 11
+            [cantidad_producto] => 1
+            [id_solicitud] => 12
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+        )
+
+)
+
+INFO - 2024-08-27 16:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:06:38 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:06:38 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:06:40 --> planPago:: Array
+(
+)
+
+INFO - 2024-08-27 16:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:06:58 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:06:58 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:07:00 --> planPago:: Array
+(
+    [0] => Array
+        (
+            [id_plan_pago] => 4
+            [valor_articulo] => 500.00
+            [valor_prima] => 120.00
+            [saldo_a_pagar] => 380.00
+            [cuotas] => 8
+            [monto_cuotas] => 59.77
+            [monto_total_pagar] => 598.19
+            [observaciones] => 
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 16:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:08:24 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:08:24 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:08:27 --> planPago:: Array
+(
+    [0] => Array
+        (
+            [id_plan_pago] => 4
+            [valor_articulo] => 500.00
+            [valor_prima] => 120.00
+            [saldo_a_pagar] => 380.00
+            [cuotas] => 8
+            [monto_cuotas] => 59.77
+            [monto_total_pagar] => 598.19
+            [observaciones] => 
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 16:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:21:56 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:21:56 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:21:59 --> planPago:: Array
+(
+    [0] => Array
+        (
+            [id_plan_pago] => 4
+            [valor_articulo] => 500.00
+            [valor_prima] => 120.00
+            [saldo_a_pagar] => 380.00
+            [cuotas] => 8
+            [monto_cuotas] => 59.77
+            [monto_total_pagar] => 598.19
+            [observaciones] => 
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 16:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:22:12 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:22:12 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:22:15 --> codeudor:: Array
+(
+    [0] => Array
+        (
+            [id_codeudor] => 4
+            [nombre] => Jorge Antonio Lopez
+            [dui] => 09388877-7
+            [direccion] => Quezaltepeque, La libertad
+            [telefono_personal] => 7826-3535
+            [vive_en_casa_propia] => si
+            [en_promesa_de_venta] => no
+            [alquilada] => no
+            [tiempo] => 3 años
+            [estado_civil] => 
+            [nombre_conyugue] => 
+            [profesion_oficio] => Abogado
+            [patrono_empresa] => NO APLICA
+            [direccion_trabajo] => San Ramon, San salvador
+            [telefono_trabajo] => 7873-6555
+            [cargo] => Abogado
+            [salario] => 800.00
+            [nombre_jefe_inmediato] => NO APLICA
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 16:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:26:58 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:26:58 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:27:00 --> codeudor:: Array
+(
+    [0] => Array
+        (
+            [id_codeudor] => 4
+            [nombre] => Jorge Antonio Lopez
+            [dui] => 09388877-7
+            [direccion] => Quezaltepeque, La libertad
+            [telefono_personal] => 7826-3535
+            [vive_en_casa_propia] => si
+            [en_promesa_de_venta] => no
+            [alquilada] => no
+            [tiempo] => 3 años
+            [estado_civil] => 
+            [nombre_conyugue] => 
+            [profesion_oficio] => Abogado
+            [patrono_empresa] => NO APLICA
+            [direccion_trabajo] => San Ramon, San salvador
+            [telefono_trabajo] => 7873-6555
+            [cargo] => Abogado
+            [salario] => 800.00
+            [nombre_jefe_inmediato] => NO APLICA
+            [id_solicitud] => 12
+        )
+
+)
+
+ERROR - 2024-08-27 16:27:00 --> Ocurrió un error: Undefined array key "id_codeudor"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(587): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 587)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-27 16:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:27:31 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:27:31 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:27:34 --> codeudor:: Array
+(
+    [0] => Array
+        (
+            [id_codeudor] => 4
+            [nombre] => Jorge Antonio Lopez
+            [dui] => 09388877-7
+            [direccion] => Quezaltepeque, La libertad
+            [telefono_personal] => 7826-3535
+            [vive_en_casa_propia] => si
+            [en_promesa_de_venta] => no
+            [alquilada] => no
+            [tiempo] => 3 años
+            [estado_civil] => 
+            [nombre_conyugue] => 
+            [profesion_oficio] => Abogado
+            [patrono_empresa] => NO APLICA
+            [direccion_trabajo] => San Ramon, San salvador
+            [telefono_trabajo] => 7873-6555
+            [cargo] => Abogado
+            [salario] => 800.00
+            [nombre_jefe_inmediato] => NO APLICA
+            [id_solicitud] => 12
+        )
+
+)
+
+INFO - 2024-08-27 16:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:28:21 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:28:21 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:28:24 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 16:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:33:29 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:33:29 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:33:31 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:33:31 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(789): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 789)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:39:27 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:39:27 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:39:30 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:39:30 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(790): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 790)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:40:51 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:40:51 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:40:54 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:40:54 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(790): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 790)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:41:03 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:41:03 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:41:06 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 16:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:41:42 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:41:42 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:41:44 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:41:44 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(794): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 794)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:44:01 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:44:01 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:44:03 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:44:03 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(790): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 790)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:44:36 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:44:36 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:44:38 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:44:38 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(790): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 790)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:46:07 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:46:07 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:46:10 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:46:10 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(790): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 790)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:52:15 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:52:15 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:52:18 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:52:18 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(789): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 789)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:55:04 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:55:04 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:55:06 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:55:06 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(789): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 789)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:55:36 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:55:36 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:55:38 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:55:38 --> Ocurrió un error: Undefined variable $refCodeudor
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(789): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 789)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(603): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:56:03 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:56:03 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:56:05 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:56:05 --> Ocurrió un error: Undefined array key 1
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(819): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 819)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(604): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:56:15 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:56:15 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:56:17 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+ERROR - 2024-08-27 16:56:17 --> Ocurrió un error: Undefined array key 1
+Trace: #0 C:\xampp\htdocs\creditos\app\Views\solicitudes\ver_solicitud.php(819): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 819)
+#1 C:\xampp\htdocs\creditos\system\View\View.php(228): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\creditos\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\creditos\system\Common.php(1178): CodeIgniter\View\View->render('solicitudes/ver...', Array, true)
+#4 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(604): view('solicitudes/ver...', Array)
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->ver_solicitud()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+INFO - 2024-08-27 16:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:57:03 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:57:03 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:57:05 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 16:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 16:59:18 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 16:59:18 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 16:59:20 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 17:00:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 17:00:16 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 17:00:16 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 17:00:18 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 17:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 17:02:30 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 17:02:30 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 17:02:32 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 17:31:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 17:31:15 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 17:31:15 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 17:31:17 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 17:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 17:58:51 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 17:58:51 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 17:58:53 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 17:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 17:59:02 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 17:59:02 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 17:59:04 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 18:00:45 --> templatePath:: C:\xampp\htdocs\creditos\documentos/solicitudCredito.docx
+INFO - 2024-08-27 18:01:33 --> templatePath:: C:\xampp\htdocs\creditos\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:08:07 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:12:01 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:13:27 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:14:27 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:15:48 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:19:21 --> Template path: C:\xampp\htdocs\creditos\public/documentos/solicitudCredito.docx
+INFO - 2024-08-27 18:19:43 --> Template path: C:\xampp\htdocs\creditos\public/documentos/solicitudCredito.docx
+INFO - 2024-08-27 18:20:09 --> Template path: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:20:55 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:23:50 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:24:56 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:25:37 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:26:31 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 18:26:37 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 18:26:37 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 18:26:39 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 18:27:26 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:28:29 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:29:48 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:30:31 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:32:13 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:32:36 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:32:54 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:34:28 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:42:11 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:42:52 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:45:09 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:45:22 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:45:56 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:46:12 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:46:38 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:47:26 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:47:37 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:47:47 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:48:35 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:48:40 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:52:36 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:52:44 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:52:56 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:54:26 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:54:37 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:56:47 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 18:57:03 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 18:57:03 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 18:57:06 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 18:58:26 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:58:38 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:59:35 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:59:51 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 18:59:58 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:00:14 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:00:25 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:00:34 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:00:46 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:00:51 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:01:04 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:01:15 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:01:39 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:02:41 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:03:24 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 19:04:05 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 21:52:29 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 21:52:47 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 21:53:10 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 21:55:58 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:01:00 --> iniciando sesion
+INFO - 2024-08-27 22:01:01 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-27 22:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:01:01 --> SolicitudesController solicitudes
+INFO - 2024-08-27 22:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:01:12 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 22:01:12 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 22:01:14 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 22:09:21 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:22:42 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:22:44 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 22:22:44 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 22:22:46 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 22:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:46:56 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 22:46:56 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 22:46:58 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 22:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 22:49:54 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 22:49:54 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 22:49:56 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 22:50:02 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:50:29 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:50:51 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:50:53 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 22:53:11 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+CRITICAL - 2024-08-27 22:53:11 --> Error: Class "Mpdf\Mpdf" not found
+in APPPATH\Controllers\GenerarSolicitudCreditoController.php on line 122.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\GenerarSolicitudCreditoController->generarDocumento()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GenerarSolicitudCreditoController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 23:07:46 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:12:13 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:14:16 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:21:12 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:22:25 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:22:59 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:25:59 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:26:23 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:26:35 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:29:24 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:30:06 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:30:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 23:30:12 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 23:30:12 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 23:30:14 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 23:33:33 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:36:07 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 23:36:58 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 23:36:58 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 23:37:00 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 23:37:05 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 23:38:16 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-27 23:38:16 --> numero de solicitud decrypted::: 12
+INFO - 2024-08-27 23:38:18 --> refCodeudor:: Array
+(
+    [0] => Array
+        (
+            [id_refe_codeudor] => 4
+            [nombre] => RUBEN GARZA
+            [parentesco] => PAPÁ
+            [direccion] => San marcos, san salvador
+            [telefono] => 9877-6767
+            [id_codeudor] => 4
+        )
+
+)
+
+INFO - 2024-08-27 23:38:23 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:40:11 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:40:54 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:41:09 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:41:09 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:41:22 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:43:12 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:44:08 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:44:31 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:46:18 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:48:09 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:48:57 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:49:12 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:51:45 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:52:15 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:53:54 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:57:23 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:57:48 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx
+INFO - 2024-08-27 23:59:09 --> templatePath:: C:\xampp\htdocs\creditos\public\documentos\solicitudCredito.docx

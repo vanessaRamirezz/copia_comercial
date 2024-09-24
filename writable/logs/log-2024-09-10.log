@@ -1,0 +1,118 @@
+INFO - 2024-09-10 23:26:47 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:26:48 --> numero de contrato generado:: ::: 0001-00000012
+ERROR - 2024-09-10 23:26:48 --> Ocurrió un error: Undefined array key "rutaArchivo"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(640): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 640)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->actualizarEstado()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-09-10 23:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-10 23:29:58 --> encryptedSolicitud::: MTI=
+INFO - 2024-09-10 23:29:58 --> numero de solicitud decrypted::: 12
+INFO - 2024-09-10 23:29:59 --> Datos de la refLaboral:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-09-10 23:30:03 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:30:05 --> numero de contrato generado:: ::: 0001-00000013
+INFO - 2024-09-10 23:30:10 --> llega la sol::: 000001
+CRITICAL - 2024-09-10 23:30:11 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\GenerarSolicitudCreditoController.php on line 407.
+ 1 APPPATH\Controllers\GenerarSolicitudCreditoController.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\creditos\\app\\Controllers\\GenerarSolicitudCreditoController.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\GenerarSolicitudCreditoController->descargar('000001')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GenerarSolicitudCreditoController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-10 23:31:37 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:31:38 --> numero de contrato generado:: ::: 0001-00000001
+INFO - 2024-09-10 23:31:43 --> llega la sol::: 000001
+CRITICAL - 2024-09-10 23:31:44 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\GenerarSolicitudCreditoController.php on line 407.
+ 1 APPPATH\Controllers\GenerarSolicitudCreditoController.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\creditos\\app\\Controllers\\GenerarSolicitudCreditoController.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\GenerarSolicitudCreditoController->descargar('000001')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GenerarSolicitudCreditoController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-10 23:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-10 23:32:08 --> encryptedSolicitud::: MTI=
+INFO - 2024-09-10 23:32:08 --> numero de solicitud decrypted::: 12
+INFO - 2024-09-10 23:32:09 --> Datos de la refLaboral:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 11
+            [id_solicitud] => 12
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborado_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+)
+
+INFO - 2024-09-10 23:32:24 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:32:25 --> numero de contrato generado:: ::: 0001-00000001
+INFO - 2024-09-10 23:32:30 --> llega la sol::: 000001
+CRITICAL - 2024-09-10 23:32:31 --> ErrorException: Undefined array key "di_contrato"
+in APPPATH\Controllers\GenerarSolicitudCreditoController.php on line 407.
+ 1 APPPATH\Controllers\GenerarSolicitudCreditoController.php(407): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "di_contrato"', 'C:\\xampp\\htdocs\\creditos\\app\\Controllers\\GenerarSolicitudCreditoController.php', 407)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\GenerarSolicitudCreditoController->descargar('000001')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GenerarSolicitudCreditoController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-10 23:32:58 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:32:59 --> numero de contrato generado:: ::: 0001-00000001
+INFO - 2024-09-10 23:33:05 --> llega la sol::: 000001
+CRITICAL - 2024-09-10 23:33:05 --> TypeError: Unsupported operand types: string + string
+in APPPATH\Controllers\GenerarSolicitudCreditoController.php on line 407.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\GenerarSolicitudCreditoController->descargar('000001')
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GenerarSolicitudCreditoController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-10 23:33:27 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:33:29 --> numero de contrato generado:: ::: 0001-00000001
+INFO - 2024-09-10 23:33:34 --> llega la sol::: 000001
+INFO - 2024-09-10 23:33:35 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-10 23:34:06 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:34:07 --> numero de contrato generado:: ::: 0001-00000002
+INFO - 2024-09-10 23:34:12 --> llega la sol::: 000001
+INFO - 2024-09-10 23:34:13 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-10 23:34:55 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:34:57 --> numero de contrato generado:: ::: 0001-00000001
+INFO - 2024-09-10 23:35:02 --> llega la sol::: 000001
+INFO - 2024-09-10 23:35:03 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-10 23:42:10 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:42:11 --> numero de contrato generado:: ::: 0001-00000002
+INFO - 2024-09-10 23:42:17 --> llega la sol::: 000001
+INFO - 2024-09-10 23:42:17 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-10 23:43:14 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:43:16 --> numero de contrato generado:: ::: 0001-00000003
+INFO - 2024-09-10 23:43:21 --> llega la sol::: 000001
+INFO - 2024-09-10 23:43:22 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2024-09-10 23:43:48 --> ***************************************generarContrato***************************************
+INFO - 2024-09-10 23:43:50 --> numero de contrato generado:: ::: 0001-00000004
+INFO - 2024-09-10 23:43:55 --> llega la sol::: 000001
+INFO - 2024-09-10 23:43:56 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx

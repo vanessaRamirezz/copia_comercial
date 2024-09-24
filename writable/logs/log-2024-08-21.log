@@ -1,0 +1,356 @@
+INFO - 2024-08-21 14:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 14:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 14:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:38 --> iniciando sesion
+INFO - 2024-08-21 17:04:39 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-21 17:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:39 --> SolicitudesController solicitudes
+INFO - 2024-08-21 17:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:51 --> iniciando sesion
+INFO - 2024-08-21 17:04:52 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"}]
+INFO - 2024-08-21 17:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:52 --> AdministracionController inicio_administracion
+INFO - 2024-08-21 17:04:52 --> AdministracionController Acceso permitido
+INFO - 2024-08-21 17:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:58 --> IngresosController ingresos
+INFO - 2024-08-21 17:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:04:59 --> IngresosController ingresos
+INFO - 2024-08-21 17:05:19 --> llego a buscarProductos
+INFO - 2024-08-21 17:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 17:05:20 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-21 17:05:34 --> llego a buscarProductos
+INFO - 2024-08-21 17:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-21 17:05:35 --> mysqli_sql_exception: Table 'u735812367_pruebaU.disponibilidad_productos_sucursal' doesn't exist in C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM d...', 0)
+#1 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM d...')
+#2 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM d...')
+#3 C:\xampp\htdocs\creditos\app\Controllers\ProductosController.php(274): CodeIgniter\Database\BaseConnection->query('SELECT * FROM d...', Array)
+#4 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\ProductosController->buscarProductos()
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2024-08-21 17:05:35 --> Table 'u735812367_pruebaU.disponibilidad_productos_sucursal' doesn't exist
+INFO - 2024-08-21 20:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:16:01 --> iniciando sesion
+INFO - 2024-08-21 20:16:03 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"}]
+INFO - 2024-08-21 20:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:16:03 --> AdministracionController inicio_administracion
+INFO - 2024-08-21 20:16:03 --> AdministracionController Acceso permitido
+INFO - 2024-08-21 20:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:16:09 --> IngresosController ingresos
+INFO - 2024-08-21 20:16:34 --> llego a buscarProductos
+INFO - 2024-08-21 20:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:16:35 --> productos Array
+(
+)
+
+INFO - 2024-08-21 20:16:48 --> llego a buscarProductos
+INFO - 2024-08-21 20:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:16:49 --> productos Array
+(
+)
+
+INFO - 2024-08-21 20:25:17 --> llego a buscarProductos
+INFO - 2024-08-21 20:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:25:18 --> productos Array
+(
+)
+
+INFO - 2024-08-21 20:25:22 --> llego a buscarProductos
+INFO - 2024-08-21 20:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:25:23 --> productos Array
+(
+)
+
+INFO - 2024-08-21 20:59:02 --> llego a buscarProductos
+INFO - 2024-08-21 20:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-21 20:59:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE p.codigo_producto = 'refri' AND d.id_sucursal_destino = '1'' at line 19 in C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php(306): mysqli->query('\r\n            S...', 0)
+#1 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\r\n            S...')
+#2 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n            S...')
+#3 C:\xampp\htdocs\creditos\app\Models\DisponibilidadProductosModel.php(47): CodeIgniter\Database\BaseConnection->query('\r\n            S...', Array)
+#4 C:\xampp\htdocs\creditos\app\Controllers\ProductosController.php(276): App\Models\DisponibilidadProductosModel->getDisponibilidadProductosSucursal('refri', '1')
+#5 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\ProductosController->buscarProductos()
+#6 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2024-08-21 20:59:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE p.codigo_producto = 'refri' AND d.id_sucursal_destino = '1'' at line 19
+INFO - 2024-08-21 20:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:59:21 --> IngresosController ingresos
+INFO - 2024-08-21 20:59:39 --> llego a buscarProductos
+INFO - 2024-08-21 20:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 20:59:40 --> productos Array
+(
+)
+
+INFO - 2024-08-21 21:00:25 --> llego a buscarProductos
+INFO - 2024-08-21 21:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:00:26 --> productos Array
+(
+)
+
+INFO - 2024-08-21 21:00:32 --> llego a buscarProductos
+INFO - 2024-08-21 21:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:00:33 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [codigo_producto] => 0000098
+            [id_categoria] => 7
+            [estado] => 1
+            [id_sucursal_destino] => 1
+            [disponibilidad] => 3
+        )
+
+)
+
+INFO - 2024-08-21 21:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:21:05 --> iniciando sesion
+INFO - 2024-08-21 21:21:06 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"}]
+INFO - 2024-08-21 21:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:21:07 --> AdministracionController inicio_administracion
+INFO - 2024-08-21 21:21:07 --> AdministracionController Acceso permitido
+INFO - 2024-08-21 21:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:24:47 --> iniciando sesion
+INFO - 2024-08-21 21:24:48 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-21 21:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:24:48 --> SolicitudesController solicitudes
+INFO - 2024-08-21 21:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:24:54 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-21 21:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:25:23 --> llego a buscarProductos
+INFO - 2024-08-21 21:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:25:24 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-21 21:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:32:33 --> llego a buscarProductos
+INFO - 2024-08-21 21:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-21 21:32:34 --> productos Array
+(
+    [0] => Array
+        (
+            [id_producto] => 2
+            [nombre] => Refrigeradora INVERTER 
+            [marca] => LG
+            [modelo] => VT40WPN | 14
+            [color] => GRIS
+            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+            [precio] => 800.00
+            [costo_unitario] => 530.00
+            [id_categoria] => 7
+            [disponible] => 1
+            [codigo_producto] => 0000098
+            [estado] => 1
+            [id_usuario_creacion] => 7
+            [fecha_creacion] => 2024-06-05
+            [nombre_categoria] => Electrodomésticos
+            [nombre_usuario] => Raul Antonio
+        )
+
+)
+
+INFO - 2024-08-21 21:36:51 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador Java
+            [empresa] => SIO
+            [direccion_trabajo] => Col Escalon
+            [telefono_trabajo] => 2399-9000
+            [cargo] => Programador JAVA
+            [salario] => 2350.00
+            [tiempo_laborando_empresa] => 3 años
+            [nombre_jefe_inmediato] => Marcelo Lopez
+            [empresa_anterior] => Waresoft
+            [telefono_empresa_anterior] => 2098-8888
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Miguel Antonio Lopez
+                    [parentesco] => HERMANO/A
+                    [direccion] => Santa tecla
+                    [telefono] => 7876-6555
+                    [lugar_trabajo] => Pollo Campero
+                    [telefono_trabajo] => 2550-5555
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Marta Antonia Ramirez
+                    [direccion] => Nejapa
+                    [telefono] => 7866-6463
+                    [lugar_trabajo] => Pollo Campestre
+                    [telefono_trabajo] => 2450-0000
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2500.00
+            [egresoMensual] => 500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2500.00
+            [totalEgresos] => 500.00
+            [diferencia] => 2000.00
+            [cantidadCuotas] => 0.1321
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Jose Perez
+                            [parentesco] => PRIMO/A
+                            [direccion] => Mejicanos
+                            [telefono] => 2354-4444
+                        )
+
+                )
+
+            [nombre] => Antonia Garcia
+            [dui] => 09877664-6
+            [direccion] => San salvador
+            [COtelPersonal] => 7433-3332
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 15 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Contador
+            [patrono] => Pizza hut
+            [COdireccionTrabajo] => Colonia Escalon
+            [COtelefonoTrabajo] => 7877-7777
+            [COcargoDesempeña] => Contador
+            [COsalario] => 800.00
+            [COnombreJefe] => Rafael Guzman
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 800.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 700.00
+            [cantidadCuotas] => 0.1321
+            [montoCuota] => 92.47
+            [montoTotalPagar] => 1024.70
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Array
+                        (
+                            [id_producto] => 2
+                            [nombre] => Refrigeradora INVERTER 
+                            [marca] => LG
+                            [modelo] => VT40WPN | 14
+                            [color] => GRIS
+                            [medidas] => Alto	1760mm - Ancho 700mm - Profundidad 680mm
+                            [precio] => 800.00
+                            [costo_unitario] => 530.00
+                            [id_categoria] => 7
+                            [disponible] => 1
+                            [codigo_producto] => 0000098
+                            [estado] => 1
+                            [id_usuario_creacion] => 7
+                            [fecha_creacion] => 2024-06-05
+                            [nombre_categoria] => Electrodomésticos
+                            [nombre_usuario] => Raul Antonio
+                            [cantidad] => 1
+                        )
+
+                )
+
+        )
+
+)
+

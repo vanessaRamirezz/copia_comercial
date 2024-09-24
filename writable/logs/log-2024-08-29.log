@@ -1,0 +1,85 @@
+INFO - 2024-08-29 16:44:13 --> llego a buscarProductos con consulta
+INFO - 2024-08-29 16:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:44:13 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-29 16:44:13 --> query 
+INFO - 2024-08-29 16:44:14 --> Nuevo valor:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 4
+            [nuevaDisponibilidad] => 4
+        )
+
+)
+
+INFO - 2024-08-29 16:45:01 --> llego a buscarProductos con consulta
+INFO - 2024-08-29 16:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:45:01 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-29 16:45:01 --> query 
+INFO - 2024-08-29 16:45:01 --> Nuevo valor:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 4
+        )
+
+)
+
+INFO - 2024-08-29 16:45:10 --> llego a buscarProductos con consulta
+INFO - 2024-08-29 16:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:45:10 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-29 16:45:10 --> query 
+INFO - 2024-08-29 16:45:11 --> Nuevo valor:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 4
+        )
+
+)
+

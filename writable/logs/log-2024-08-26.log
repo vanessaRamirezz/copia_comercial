@@ -1,0 +1,2564 @@
+INFO - 2024-08-26 08:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:13 --> iniciando sesion
+INFO - 2024-08-26 08:34:14 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null}]
+INFO - 2024-08-26 08:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:15 --> SolicitudesController solicitudes
+INFO - 2024-08-26 08:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:20 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 08:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:35:39 --> llego a buscarProductos con consulta
+INFO - 2024-08-26 08:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:35:39 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-26 08:35:39 --> query 
+INFO - 2024-08-26 08:35:40 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-26 08:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:40:44 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 08:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:50:09 --> llego a buscarProductos con consulta
+INFO - 2024-08-26 08:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:50:09 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-26 08:50:10 --> query 
+INFO - 2024-08-26 08:50:11 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-26 08:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 08:55:13 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => Financiero
+            [direccion_trabajo] => San Salvador, COL  Escalon
+            [telefono_trabajo] => 7768-8999
+            [cargo] => Programador Java
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 5 años
+            [nombre_jefe_inmediato] => Miguel Lopez
+            [empresa_anterior] => Waresotf
+            [telefono_empresa_anterior] => 2309-9888
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Carlos Perez
+                    [parentesco] => TIO/A
+                    [direccion] => Quezaltepeques, la libertad
+                    [telefono] => 7788-7765
+                    [lugar_trabajo] => Corinca
+                    [telefono_trabajo] => 2309-8777
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Karla Martinez
+                    [direccion] => San Juan Opico
+                    [telefono] => 7655-3454
+                    [lugar_trabajo] => Pizza hut
+                    [telefono_trabajo] => 2309-7766
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Almcenes siman
+                    [telefono] => 2398-8776
+                    [monto_credito] => 1000.00
+                    [periodos] => 2 años
+                    [plazo] => 3 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 800.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 800.00
+            [diferencia] => 400.00
+            [cantidadCuotas] => 0.1754
+            [estado_label] => Medio Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Miguel Ramirez
+                            [parentesco] => HERMANO/A
+                            [direccion] => Nejapa, San salvador
+                            [telefono] => 7676-7676
+                        )
+
+                )
+
+            [nombre] => Angel Antonio Perez
+            [dui] => 09494984-8
+            [direccion] => Quezaltepeque, la libertad
+            [COtelPersonal] => 3098-4748
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => Lacoste
+            [COdireccionTrabajo] => SAN SALVADOR
+            [COtelefonoTrabajo] => 2234-2332
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 400.00
+            [cantidadCuotas] => 7
+            [montoCuota] => 70.16
+            [montoTotalPagar] => 591.12
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+ERROR - 2024-08-26 08:55:14 --> Ocurrió un error: Undefined array key "tiempo_laborado_empresa"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 227)
+#1 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(121): App\Controllers\SolicitudesController->crearReferenciasLaborales(Array, 1)
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#4 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#6 {main}
+INFO - 2024-08-26 09:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 09:35:26 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => Financiero
+            [direccion_trabajo] => San Salvador, COL  Escalon
+            [telefono_trabajo] => 7768-8999
+            [cargo] => Programador Java
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 5 años
+            [nombre_jefe_inmediato] => Miguel Lopez
+            [empresa_anterior] => Waresotf
+            [telefono_empresa_anterior] => 2309-9888
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Carlos Perez
+                    [parentesco] => TIO/A
+                    [direccion] => Quezaltepeques, la libertad
+                    [telefono] => 7788-7765
+                    [lugar_trabajo] => Corinca
+                    [telefono_trabajo] => 2309-8777
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Karla Martinez
+                    [direccion] => San Juan Opico
+                    [telefono] => 7655-3454
+                    [lugar_trabajo] => Pizza hut
+                    [telefono_trabajo] => 2309-7766
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Almcenes siman
+                    [telefono] => 2398-8776
+                    [monto_credito] => 1000.00
+                    [periodos] => 2 años
+                    [plazo] => 3 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 800.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 800.00
+            [diferencia] => 400.00
+            [cantidadCuotas] => 0.1754
+            [estado_label] => Medio Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Miguel Ramirez
+                            [parentesco] => HERMANO/A
+                            [direccion] => Nejapa, San salvador
+                            [telefono] => 7676-7676
+                        )
+
+                )
+
+            [nombre] => Angel Antonio Perez
+            [dui] => 09494984-8
+            [direccion] => Quezaltepeque, la libertad
+            [COtelPersonal] => 3098-4748
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => Lacoste
+            [COdireccionTrabajo] => SAN SALVADOR
+            [COtelefonoTrabajo] => 2234-2332
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 400.00
+            [cantidadCuotas] => 7
+            [montoCuota] => 70.16
+            [montoTotalPagar] => 591.12
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 09:35:26 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 09:35:27 --> solicitud creada id_solicitud: 2
+INFO - 2024-08-26 09:35:27 --> numero solicitud creada: 000001
+INFO - 2024-08-26 09:35:27 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 09:35:27 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 09:35:27 --> Resultado refe laboral: 1
+INFO - 2024-08-26 09:35:27 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 09:35:27 --> *********************************** PASO 3 ***********************************
+ERROR - 2024-08-26 09:35:28 --> mysqli_sql_exception: Unknown column 'fecha_creacion' in 'field list' in C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\creditos\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\creditos\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\creditos\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\creditos\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(287): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(136): App\Controllers\SolicitudesController->crearReferenciasFamiliares(Array, 2)
+#9 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#10 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#11 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2024-08-26 09:35:28 --> Error al crear referencia familiar en índice 0: Unknown column 'fecha_creacion' in 'field list'
+ERROR - 2024-08-26 09:35:28 --> Ocurrió un error: Array to string conversion
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 137)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-26 09:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 09:41:37 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => Financiero
+            [direccion_trabajo] => San Salvador, COL  Escalon
+            [telefono_trabajo] => 7768-8999
+            [cargo] => Programador Java
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 5 años
+            [nombre_jefe_inmediato] => Miguel Lopez
+            [empresa_anterior] => Waresotf
+            [telefono_empresa_anterior] => 2309-9888
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Carlos Perez
+                    [parentesco] => TIO/A
+                    [direccion] => Quezaltepeques, la libertad
+                    [telefono] => 7788-7765
+                    [lugar_trabajo] => Corinca
+                    [telefono_trabajo] => 2309-8777
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Karla Martinez
+                    [direccion] => San Juan Opico
+                    [telefono] => 7655-3454
+                    [lugar_trabajo] => Pizza hut
+                    [telefono_trabajo] => 2309-7766
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Almcenes siman
+                    [telefono] => 2398-8776
+                    [monto_credito] => 1000.00
+                    [periodos] => 2 años
+                    [plazo] => 3 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 800.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 800.00
+            [diferencia] => 400.00
+            [cantidadCuotas] => 0.1754
+            [estado_label] => Medio Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Miguel Ramirez
+                            [parentesco] => HERMANO/A
+                            [direccion] => Nejapa, San salvador
+                            [telefono] => 7676-7676
+                        )
+
+                )
+
+            [nombre] => Angel Antonio Perez
+            [dui] => 09494984-8
+            [direccion] => Quezaltepeque, la libertad
+            [COtelPersonal] => 3098-4748
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => Lacoste
+            [COdireccionTrabajo] => SAN SALVADOR
+            [COtelefonoTrabajo] => 2234-2332
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 400.00
+            [cantidadCuotas] => 7
+            [montoCuota] => 70.16
+            [montoTotalPagar] => 591.12
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 09:41:37 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 09:41:38 --> solicitud creada id_solicitud: 3
+INFO - 2024-08-26 09:41:38 --> numero solicitud creada: 000001
+INFO - 2024-08-26 09:41:38 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 09:41:38 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 09:41:38 --> Resultado refe laboral: 1
+INFO - 2024-08-26 09:41:38 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 09:41:38 --> *********************************** PASO 3 ***********************************
+ERROR - 2024-08-26 09:41:38 --> Ocurrió un error: Array to string conversion
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 137)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-26 09:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 09:48:09 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => Financiero
+            [direccion_trabajo] => San Salvador, COL  Escalon
+            [telefono_trabajo] => 7768-8999
+            [cargo] => Programador Java
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 5 años
+            [nombre_jefe_inmediato] => Miguel Lopez
+            [empresa_anterior] => Waresotf
+            [telefono_empresa_anterior] => 2309-9888
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Carlos Perez
+                    [parentesco] => TIO/A
+                    [direccion] => Quezaltepeques, la libertad
+                    [telefono] => 7788-7765
+                    [lugar_trabajo] => Corinca
+                    [telefono_trabajo] => 2309-8777
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Karla Martinez
+                    [direccion] => San Juan Opico
+                    [telefono] => 7655-3454
+                    [lugar_trabajo] => Pizza hut
+                    [telefono_trabajo] => 2309-7766
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Almcenes siman
+                    [telefono] => 2398-8776
+                    [monto_credito] => 1000.00
+                    [periodos] => 2 años
+                    [plazo] => 3 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 800.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 800.00
+            [diferencia] => 400.00
+            [cantidadCuotas] => 0.1754
+            [estado_label] => Medio Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Miguel Ramirez
+                            [parentesco] => HERMANO/A
+                            [direccion] => Nejapa, San salvador
+                            [telefono] => 7676-7676
+                        )
+
+                )
+
+            [nombre] => Angel Antonio Perez
+            [dui] => 09494984-8
+            [direccion] => Quezaltepeque, la libertad
+            [COtelPersonal] => 3098-4748
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => Lacoste
+            [COdireccionTrabajo] => SAN SALVADOR
+            [COtelefonoTrabajo] => 2234-2332
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 400.00
+            [cantidadCuotas] => 7
+            [montoCuota] => 70.16
+            [montoTotalPagar] => 591.12
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 09:48:09 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 09:48:10 --> solicitud creada id_solicitud: 4
+INFO - 2024-08-26 09:48:10 --> numero solicitud creada: 000001
+INFO - 2024-08-26 09:48:10 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 09:48:10 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 09:48:10 --> Resultado refe laboral: 1
+INFO - 2024-08-26 09:48:10 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 09:48:10 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 09:48:10 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 09:48:10 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 09:48:10 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 09:48:10 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 09:48:10 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 09:48:10 --> *********************************** PASO 5 ***********************************
+ERROR - 2024-08-26 09:48:10 --> Ocurrió un error: Array to string conversion
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(161): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 161)
+#1 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#5 {main}
+INFO - 2024-08-26 09:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 09:50:18 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => Financiero
+            [direccion_trabajo] => San Salvador, COL  Escalon
+            [telefono_trabajo] => 7768-8999
+            [cargo] => Programador Java
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 5 años
+            [nombre_jefe_inmediato] => Miguel Lopez
+            [empresa_anterior] => Waresotf
+            [telefono_empresa_anterior] => 2309-9888
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Carlos Perez
+                    [parentesco] => TIO/A
+                    [direccion] => Quezaltepeques, la libertad
+                    [telefono] => 7788-7765
+                    [lugar_trabajo] => Corinca
+                    [telefono_trabajo] => 2309-8777
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Karla Martinez
+                    [direccion] => San Juan Opico
+                    [telefono] => 7655-3454
+                    [lugar_trabajo] => Pizza hut
+                    [telefono_trabajo] => 2309-7766
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Almcenes siman
+                    [telefono] => 2398-8776
+                    [monto_credito] => 1000.00
+                    [periodos] => 2 años
+                    [plazo] => 3 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 800.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 800.00
+            [diferencia] => 400.00
+            [cantidadCuotas] => 0.1754
+            [estado_label] => Medio Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Miguel Ramirez
+                            [parentesco] => HERMANO/A
+                            [direccion] => Nejapa, San salvador
+                            [telefono] => 7676-7676
+                        )
+
+                )
+
+            [nombre] => Angel Antonio Perez
+            [dui] => 09494984-8
+            [direccion] => Quezaltepeque, la libertad
+            [COtelPersonal] => 3098-4748
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => Lacoste
+            [COdireccionTrabajo] => SAN SALVADOR
+            [COtelefonoTrabajo] => 2234-2332
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 400.00
+            [cantidadCuotas] => 7
+            [montoCuota] => 70.16
+            [montoTotalPagar] => 591.12
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 09:50:18 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 09:50:19 --> solicitud creada id_solicitud: 5
+INFO - 2024-08-26 09:50:19 --> numero solicitud creada: 000001
+INFO - 2024-08-26 09:50:19 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 09:50:19 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 09:50:19 --> Resultado refe laboral: 1
+INFO - 2024-08-26 09:50:19 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 09:50:19 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 09:50:19 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 09:50:19 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 09:50:19 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 09:50:20 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 09:50:20 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 09:50:20 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 09:50:20 --> Resultado refe crediticas: Array
+(
+    [0] => Array
+        (
+            [index] => 0
+            [error] => Undefined array key "direccion"
+            [referencia] => Array
+                (
+                    [nombre] => Almcenes siman
+                    [telefono] => 2398-8776
+                    [monto_credito] => 1000.00
+                    [periodos] => 2 años
+                    [plazo] => 3 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:11:22 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 10:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:16:44 --> llego a buscarProductos con consulta
+INFO - 2024-08-26 10:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:16:44 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-26 10:16:44 --> query 
+INFO - 2024-08-26 10:16:45 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-26 10:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:18:38 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => FINANCIERO
+            [direccion_trabajo] => SAN SALVADOR COLONIA ESCALON
+            [telefono_trabajo] => 7636-6454
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARTA LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2387-8787
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Angel Garcia
+                    [parentesco] => TIO/A
+                    [direccion] => SAN MARCOS SAN SALVADOR
+                    [telefono] => 7636-5443
+                    [lugar_trabajo] => POLLO CAMPERO
+                    [telefono_trabajo] => 2398-7666
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis Lopez
+                    [direccion] => Quezaltepeque la libertad
+                    [telefono] => 2308-7776
+                    [lugar_trabajo] => corinca
+                    [telefono_trabajo] => 8776-6565
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2000.00
+            [egresoMensual] => 1500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2000.00
+            [totalEgresos] => 1500.00
+            [diferencia] => 500.00
+            [cantidadCuotas] => 0.2336
+            [estado_label] => Moderado
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Diego Sosa
+                            [parentesco] => HERMANO/A
+                            [direccion] => Quezaltepeque la libertad
+                            [telefono] => 2309-7676
+                        )
+
+                )
+
+            [nombre] => JULIO GUTIERREZ
+            [dui] => 09387476-7
+            [direccion] => SAN SALVADOR, MEJICANOS
+            [COtelPersonal] => 2309-8787
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 AÑOS
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => ABOGADO
+            [patrono] => ASOCIADOS
+            [COdireccionTrabajo] => SAN SALVADOR, 
+            [COtelefonoTrabajo] => 2309-9877
+            [COcargoDesempeña] => ABOGADO
+            [COsalario] => 1000.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 5
+            [montoCuota] => 88.77
+            [montoTotalPagar] => 563.84
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:18:38 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 10:18:39 --> solicitud creada id_solicitud: 6
+INFO - 2024-08-26 10:18:39 --> numero solicitud creada: 000001
+INFO - 2024-08-26 10:18:39 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 10:18:39 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 10:18:39 --> Resultado refe laboral: 1
+INFO - 2024-08-26 10:18:39 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 10:18:39 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 10:18:39 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:18:39 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 10:18:39 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 10:18:39 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:18:39 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 10:18:39 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 10:18:39 --> Resultado refe crediticas: Array
+(
+    [0] => Array
+        (
+            [index] => 0
+            [error] => Undefined array key "lugar_trabajo"
+            [referencia] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:46:32 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => FINANCIERO
+            [direccion_trabajo] => SAN SALVADOR COLONIA ESCALON
+            [telefono_trabajo] => 7636-6454
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARTA LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2387-8787
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Angel Garcia
+                    [parentesco] => TIO/A
+                    [direccion] => SAN MARCOS SAN SALVADOR
+                    [telefono] => 7636-5443
+                    [lugar_trabajo] => POLLO CAMPERO
+                    [telefono_trabajo] => 2398-7666
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis Lopez
+                    [direccion] => Quezaltepeque la libertad
+                    [telefono] => 2308-7776
+                    [lugar_trabajo] => corinca
+                    [telefono_trabajo] => 8776-6565
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2000.00
+            [egresoMensual] => 1500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2000.00
+            [totalEgresos] => 1500.00
+            [diferencia] => 500.00
+            [cantidadCuotas] => 0.2336
+            [estado_label] => Moderado
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Diego Sosa
+                            [parentesco] => HERMANO/A
+                            [direccion] => Quezaltepeque la libertad
+                            [telefono] => 2309-7676
+                        )
+
+                )
+
+            [nombre] => JULIO GUTIERREZ
+            [dui] => 09387476-7
+            [direccion] => SAN SALVADOR, MEJICANOS
+            [COtelPersonal] => 2309-8787
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 AÑOS
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => ABOGADO
+            [patrono] => ASOCIADOS
+            [COdireccionTrabajo] => SAN SALVADOR, 
+            [COtelefonoTrabajo] => 2309-9877
+            [COcargoDesempeña] => ABOGADO
+            [COsalario] => 1000.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 5
+            [montoCuota] => 88.77
+            [montoTotalPagar] => 563.84
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:46:32 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 10:46:33 --> solicitud creada id_solicitud: 7
+INFO - 2024-08-26 10:46:33 --> numero solicitud creada: 000002
+INFO - 2024-08-26 10:46:33 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 10:46:33 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 10:46:34 --> Resultado refe laboral: 1
+INFO - 2024-08-26 10:46:34 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 10:46:34 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 10:46:34 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:46:34 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 10:46:34 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 10:46:34 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:46:34 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 10:46:34 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 10:46:34 --> Resultado refe crediticas: Array
+(
+)
+
+INFO - 2024-08-26 10:46:34 --> ********************************* FIN PASO 5 *********************************
+INFO - 2024-08-26 10:46:34 --> *********************************** PASO 6 ***********************************
+ERROR - 2024-08-26 10:46:34 --> mysqli_sql_exception: Table 'u735812367_pruebaU.estudio_socio_economico' doesn't exist in C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `es...', 0)
+#1 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `es...')
+#2 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `es...')
+#3 C:\xampp\htdocs\creditos\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `es...', Array, false)
+#4 C:\xampp\htdocs\creditos\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\creditos\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\creditos\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(389): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(172): App\Controllers\SolicitudesController->crearEstudioSocioEconomico(Array, 7, '2')
+#9 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#10 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#11 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2024-08-26 10:46:34 --> Error al crear el estudio socioeconómico: Table 'u735812367_pruebaU.estudio_socio_economico' doesn't exist
+INFO - 2024-08-26 10:46:34 --> Resultado analisis socioeconomico: 
+INFO - 2024-08-26 10:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:48:10 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => FINANCIERO
+            [direccion_trabajo] => SAN SALVADOR COLONIA ESCALON
+            [telefono_trabajo] => 7636-6454
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARTA LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2387-8787
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Angel Garcia
+                    [parentesco] => TIO/A
+                    [direccion] => SAN MARCOS SAN SALVADOR
+                    [telefono] => 7636-5443
+                    [lugar_trabajo] => POLLO CAMPERO
+                    [telefono_trabajo] => 2398-7666
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis Lopez
+                    [direccion] => Quezaltepeque la libertad
+                    [telefono] => 2308-7776
+                    [lugar_trabajo] => corinca
+                    [telefono_trabajo] => 8776-6565
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2000.00
+            [egresoMensual] => 1500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2000.00
+            [totalEgresos] => 1500.00
+            [diferencia] => 500.00
+            [cantidadCuotas] => 0.2336
+            [estado_label] => Moderado
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Diego Sosa
+                            [parentesco] => HERMANO/A
+                            [direccion] => Quezaltepeque la libertad
+                            [telefono] => 2309-7676
+                        )
+
+                )
+
+            [nombre] => JULIO GUTIERREZ
+            [dui] => 09387476-7
+            [direccion] => SAN SALVADOR, MEJICANOS
+            [COtelPersonal] => 2309-8787
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 AÑOS
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => ABOGADO
+            [patrono] => ASOCIADOS
+            [COdireccionTrabajo] => SAN SALVADOR, 
+            [COtelefonoTrabajo] => 2309-9877
+            [COcargoDesempeña] => ABOGADO
+            [COsalario] => 1000.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 5
+            [montoCuota] => 88.77
+            [montoTotalPagar] => 563.84
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:48:10 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 10:48:11 --> solicitud creada id_solicitud: 8
+INFO - 2024-08-26 10:48:11 --> numero solicitud creada: 000003
+INFO - 2024-08-26 10:48:11 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 10:48:11 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 10:48:11 --> Resultado refe laboral: 1
+INFO - 2024-08-26 10:48:11 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 10:48:11 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 10:48:11 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:48:11 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 10:48:11 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 10:48:11 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:48:11 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 10:48:11 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 10:48:11 --> Resultado refe crediticas: Array
+(
+)
+
+INFO - 2024-08-26 10:48:11 --> ********************************* FIN PASO 5 *********************************
+INFO - 2024-08-26 10:48:11 --> *********************************** PASO 6 ***********************************
+INFO - 2024-08-26 10:48:11 --> Resultado analisis socioeconomico: 1
+INFO - 2024-08-26 10:48:11 --> ********************************* FIN PASO 6 *********************************
+INFO - 2024-08-26 10:48:11 --> *********************************** PASO 7 ***********************************
+ERROR - 2024-08-26 10:48:12 --> mysqli_sql_exception: Table 'u735812367_pruebaU.producto_solicitud' doesn't exist in C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\creditos\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\creditos\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\creditos\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\creditos\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(410): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(184): App\Controllers\SolicitudesController->crearProductosSolicitud(Array, 8)
+#9 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#10 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#11 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+INFO - 2024-08-26 10:48:12 --> Resultado crear productos: Array
+(
+    [0] => Array
+        (
+            [index] => 0
+            [error] => Table 'u735812367_pruebaU.producto_solicitud' doesn't exist
+            [producto] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:49:34 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => FINANCIERO
+            [direccion_trabajo] => SAN SALVADOR COLONIA ESCALON
+            [telefono_trabajo] => 7636-6454
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARTA LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2387-8787
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Angel Garcia
+                    [parentesco] => TIO/A
+                    [direccion] => SAN MARCOS SAN SALVADOR
+                    [telefono] => 7636-5443
+                    [lugar_trabajo] => POLLO CAMPERO
+                    [telefono_trabajo] => 2398-7666
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis Lopez
+                    [direccion] => Quezaltepeque la libertad
+                    [telefono] => 2308-7776
+                    [lugar_trabajo] => corinca
+                    [telefono_trabajo] => 8776-6565
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2000.00
+            [egresoMensual] => 1500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2000.00
+            [totalEgresos] => 1500.00
+            [diferencia] => 500.00
+            [cantidadCuotas] => 0.2336
+            [estado_label] => Moderado
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Diego Sosa
+                            [parentesco] => HERMANO/A
+                            [direccion] => Quezaltepeque la libertad
+                            [telefono] => 2309-7676
+                        )
+
+                )
+
+            [nombre] => JULIO GUTIERREZ
+            [dui] => 09387476-7
+            [direccion] => SAN SALVADOR, MEJICANOS
+            [COtelPersonal] => 2309-8787
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 AÑOS
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => ABOGADO
+            [patrono] => ASOCIADOS
+            [COdireccionTrabajo] => SAN SALVADOR, 
+            [COtelefonoTrabajo] => 2309-9877
+            [COcargoDesempeña] => ABOGADO
+            [COsalario] => 1000.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 5
+            [montoCuota] => 88.77
+            [montoTotalPagar] => 563.84
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:49:34 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 10:49:35 --> solicitud creada id_solicitud: 9
+INFO - 2024-08-26 10:49:35 --> numero solicitud creada: 000004
+INFO - 2024-08-26 10:49:35 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 10:49:35 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 10:49:35 --> Resultado refe laboral: 1
+INFO - 2024-08-26 10:49:35 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 10:49:35 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 10:49:35 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:49:35 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 10:49:35 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 10:49:35 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:49:35 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 10:49:35 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 10:49:35 --> Resultado refe crediticas: Array
+(
+)
+
+INFO - 2024-08-26 10:49:35 --> ********************************* FIN PASO 5 *********************************
+INFO - 2024-08-26 10:49:35 --> *********************************** PASO 6 ***********************************
+INFO - 2024-08-26 10:49:35 --> Resultado analisis socioeconomico: 1
+INFO - 2024-08-26 10:49:35 --> ********************************* FIN PASO 6 *********************************
+INFO - 2024-08-26 10:49:35 --> *********************************** PASO 7 ***********************************
+INFO - 2024-08-26 10:49:36 --> Resultado crear productos: Array
+(
+)
+
+INFO - 2024-08-26 10:49:36 --> ********************************* FIN PASO 7 *********************************
+INFO - 2024-08-26 10:49:36 --> *********************************** PASO 8 ***********************************
+INFO - 2024-08-26 10:49:36 --> Resultado crear plan pago: 1
+INFO - 2024-08-26 10:49:36 --> ********************************* FIN PASO 8 *********************************
+INFO - 2024-08-26 10:49:36 --> *********************************** PASO 9 ***********************************
+INFO - 2024-08-26 10:49:36 --> Resultado codeudor: 1
+INFO - 2024-08-26 10:49:36 --> ********************************* FIN PASO 9 *********************************
+INFO - 2024-08-26 10:49:36 --> *********************************** PASO 10 ***********************************
+INFO - 2024-08-26 10:49:36 --> SolicitudesController registrarMovimientoSalidaVenta
+ERROR - 2024-08-26 10:49:36 --> Ocurrió un error: Undefined array key "productosSolicitud"
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(502): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 502)
+#1 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(220): App\Controllers\SolicitudesController->registrarMovimientoSalidaVenta(Array, 9, '000004')
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#4 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#6 {main}
+INFO - 2024-08-26 10:49:36 --> Resultado del movimiento: 
+INFO - 2024-08-26 10:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:50:58 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => FINANCIERO
+            [direccion_trabajo] => SAN SALVADOR COLONIA ESCALON
+            [telefono_trabajo] => 7636-6454
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARTA LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2387-8787
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Angel Garcia
+                    [parentesco] => TIO/A
+                    [direccion] => SAN MARCOS SAN SALVADOR
+                    [telefono] => 7636-5443
+                    [lugar_trabajo] => POLLO CAMPERO
+                    [telefono_trabajo] => 2398-7666
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis Lopez
+                    [direccion] => Quezaltepeque la libertad
+                    [telefono] => 2308-7776
+                    [lugar_trabajo] => corinca
+                    [telefono_trabajo] => 8776-6565
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2000.00
+            [egresoMensual] => 1500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2000.00
+            [totalEgresos] => 1500.00
+            [diferencia] => 500.00
+            [cantidadCuotas] => 0.2336
+            [estado_label] => Moderado
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Diego Sosa
+                            [parentesco] => HERMANO/A
+                            [direccion] => Quezaltepeque la libertad
+                            [telefono] => 2309-7676
+                        )
+
+                )
+
+            [nombre] => JULIO GUTIERREZ
+            [dui] => 09387476-7
+            [direccion] => SAN SALVADOR, MEJICANOS
+            [COtelPersonal] => 2309-8787
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 AÑOS
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => ABOGADO
+            [patrono] => ASOCIADOS
+            [COdireccionTrabajo] => SAN SALVADOR, 
+            [COtelefonoTrabajo] => 2309-9877
+            [COcargoDesempeña] => ABOGADO
+            [COsalario] => 1000.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 5
+            [montoCuota] => 88.77
+            [montoTotalPagar] => 563.84
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:50:58 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 10:50:59 --> solicitud creada id_solicitud: 10
+INFO - 2024-08-26 10:50:59 --> numero solicitud creada: 000005
+INFO - 2024-08-26 10:50:59 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 10:50:59 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 10:50:59 --> Resultado refe laboral: 1
+INFO - 2024-08-26 10:50:59 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 10:50:59 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 10:50:59 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:50:59 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 10:50:59 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 10:50:59 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:50:59 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 10:50:59 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 10:50:59 --> Resultado refe crediticas: Array
+(
+)
+
+INFO - 2024-08-26 10:50:59 --> ********************************* FIN PASO 5 *********************************
+INFO - 2024-08-26 10:50:59 --> *********************************** PASO 6 ***********************************
+INFO - 2024-08-26 10:50:59 --> Resultado analisis socioeconomico: 1
+INFO - 2024-08-26 10:50:59 --> ********************************* FIN PASO 6 *********************************
+INFO - 2024-08-26 10:50:59 --> *********************************** PASO 7 ***********************************
+INFO - 2024-08-26 10:51:00 --> Resultado crear productos: Array
+(
+)
+
+INFO - 2024-08-26 10:51:00 --> ********************************* FIN PASO 7 *********************************
+INFO - 2024-08-26 10:51:00 --> *********************************** PASO 8 ***********************************
+INFO - 2024-08-26 10:51:00 --> Resultado crear plan pago: 1
+INFO - 2024-08-26 10:51:00 --> ********************************* FIN PASO 8 *********************************
+INFO - 2024-08-26 10:51:00 --> *********************************** PASO 9 ***********************************
+INFO - 2024-08-26 10:51:00 --> Resultado codeudor: 1
+INFO - 2024-08-26 10:51:00 --> ********************************* FIN PASO 9 *********************************
+INFO - 2024-08-26 10:51:00 --> *********************************** PASO 10 ***********************************
+INFO - 2024-08-26 10:51:00 --> SolicitudesController registrarMovimientoSalidaVenta
+ERROR - 2024-08-26 10:51:00 --> mysqli_sql_exception: Column 'id_documento' cannot be null in C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\creditos\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `mo...', 0)
+#1 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `mo...')
+#2 C:\xampp\htdocs\creditos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `mo...')
+#3 C:\xampp\htdocs\creditos\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mo...', Array, false)
+#4 C:\xampp\htdocs\creditos\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\creditos\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\creditos\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\creditos\app\Models\MovimientosModel.php(20): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(512): App\Models\MovimientosModel->insertMovimiento(Array)
+#9 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(220): App\Controllers\SolicitudesController->registrarMovimientoSalidaVenta(Array, 10, '000005')
+#10 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#11 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#12 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2024-08-26 10:51:00 --> Ocurrió un error: Column 'id_documento' cannot be null
+Trace: #0 C:\xampp\htdocs\creditos\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mo...', Array, false)
+#1 C:\xampp\htdocs\creditos\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#2 C:\xampp\htdocs\creditos\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#3 C:\xampp\htdocs\creditos\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#4 C:\xampp\htdocs\creditos\app\Models\MovimientosModel.php(20): CodeIgniter\Model->insert(Array)
+#5 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(512): App\Models\MovimientosModel->insertMovimiento(Array)
+#6 C:\xampp\htdocs\creditos\app\Controllers\SolicitudesController.php(220): App\Controllers\SolicitudesController->registrarMovimientoSalidaVenta(Array, 10, '000005')
+#7 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\SolicitudesController->procesarSolicitud()
+#8 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SolicitudesController))
+#9 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+INFO - 2024-08-26 10:51:00 --> Resultado del movimiento: 
+INFO - 2024-08-26 10:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 10:54:03 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => FINANCIERO
+            [direccion_trabajo] => SAN SALVADOR COLONIA ESCALON
+            [telefono_trabajo] => 7636-6454
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARTA LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2387-8787
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Angel Garcia
+                    [parentesco] => TIO/A
+                    [direccion] => SAN MARCOS SAN SALVADOR
+                    [telefono] => 7636-5443
+                    [lugar_trabajo] => POLLO CAMPERO
+                    [telefono_trabajo] => 2398-7666
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis Lopez
+                    [direccion] => Quezaltepeque la libertad
+                    [telefono] => 2308-7776
+                    [lugar_trabajo] => corinca
+                    [telefono_trabajo] => 8776-6565
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => SIMAN
+                    [telefono] => 2309-9888
+                    [monto_credito] => 1200.00
+                    [periodos] => 3 AÑOS 
+                    [plazo] => 3 AÑOS
+                    [estado] => ACTIVA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 2000.00
+            [egresoMensual] => 1500.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 2000.00
+            [totalEgresos] => 1500.00
+            [diferencia] => 500.00
+            [cantidadCuotas] => 0.2336
+            [estado_label] => Moderado
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => Diego Sosa
+                            [parentesco] => HERMANO/A
+                            [direccion] => Quezaltepeque la libertad
+                            [telefono] => 2309-7676
+                        )
+
+                )
+
+            [nombre] => JULIO GUTIERREZ
+            [dui] => 09387476-7
+            [direccion] => SAN SALVADOR, MEJICANOS
+            [COtelPersonal] => 2309-8787
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 AÑOS
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => ABOGADO
+            [patrono] => ASOCIADOS
+            [COdireccionTrabajo] => SAN SALVADOR, 
+            [COtelefonoTrabajo] => 2309-9877
+            [COcargoDesempeña] => ABOGADO
+            [COsalario] => 1000.00
+            [COnombreJefe] => N/A
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 5
+            [montoCuota] => 88.77
+            [montoTotalPagar] => 563.84
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 10:54:03 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 10:54:04 --> solicitud creada id_solicitud: 11
+INFO - 2024-08-26 10:54:04 --> numero solicitud creada: 000001
+INFO - 2024-08-26 10:54:04 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 10:54:04 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 10:54:04 --> Resultado refe laboral: 1
+INFO - 2024-08-26 10:54:04 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 10:54:04 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 10:54:04 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:54:04 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 10:54:04 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 10:54:04 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 10:54:04 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 10:54:04 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 10:54:04 --> Resultado ref crediticias: Array
+(
+    [0] => Array
+        (
+            [nombre] => SIMAN
+            [telefono] => 2309-9888
+            [monto_credito] => 1200.00
+            [periodos] => 3 AÑOS 
+            [plazo] => 3 AÑOS
+            [estado] => ACTIVA
+        )
+
+)
+
+INFO - 2024-08-26 10:54:05 --> Resultado refe crediticas: Array
+(
+)
+
+INFO - 2024-08-26 10:54:05 --> ********************************* FIN PASO 5 *********************************
+INFO - 2024-08-26 10:54:05 --> *********************************** PASO 6 ***********************************
+INFO - 2024-08-26 10:54:05 --> Resultado analisis socioeconomico: 1
+INFO - 2024-08-26 10:54:05 --> ********************************* FIN PASO 6 *********************************
+INFO - 2024-08-26 10:54:05 --> *********************************** PASO 7 ***********************************
+INFO - 2024-08-26 10:54:05 --> Resultado crear productos: Array
+(
+)
+
+INFO - 2024-08-26 10:54:05 --> ********************************* FIN PASO 7 *********************************
+INFO - 2024-08-26 10:54:05 --> *********************************** PASO 8 ***********************************
+INFO - 2024-08-26 10:54:05 --> Resultado crear plan pago: 1
+INFO - 2024-08-26 10:54:05 --> ********************************* FIN PASO 8 *********************************
+INFO - 2024-08-26 10:54:05 --> *********************************** PASO 9 ***********************************
+INFO - 2024-08-26 10:54:05 --> Resultado codeudor: 1
+INFO - 2024-08-26 10:54:05 --> ********************************* FIN PASO 9 *********************************
+INFO - 2024-08-26 10:54:05 --> *********************************** PASO 10 ***********************************
+INFO - 2024-08-26 10:54:05 --> SolicitudesController registrarMovimientoSalidaVenta
+INFO - 2024-08-26 10:54:05 --> Resultado del movimiento: 1
+INFO - 2024-08-26 10:54:05 --> ********************************* FIN PASO 10 *********************************
+INFO - 2024-08-26 11:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 11:49:20 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 11:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 11:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 11:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 12:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 12:01:09 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 12:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 12:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 12:02:55 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 12:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:19:28 --> llego a buscarProductos con consulta
+INFO - 2024-08-26 13:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:19:28 --> Abuscar es:: MO-0001 origen suc 1
+INFO - 2024-08-26 13:19:28 --> query 
+INFO - 2024-08-26 13:19:29 --> productos Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 11
+            [nombre] => MOVIL
+            [marca] => Redmi
+            [modelo] => Note 11 PRO
+            [color] => Negro
+            [medidas] => Estandar
+            [precio] => 500.00
+            [costo_unitario] => 200.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => MO-0001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-08-23
+            [disponibilidad] => 5
+        )
+
+)
+
+INFO - 2024-08-26 13:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:25:55 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 2
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => Programador
+            [empresa] => Sis. financiero
+            [direccion_trabajo] => San salvador colonia medica
+            [telefono_trabajo] => 2309-8655
+            [cargo] => DEV JAVA
+            [salario] => 2000.00
+            [tiempo_laborando_empresa] => 3 AÑOS
+            [nombre_jefe_inmediato] => MARIO LOPEZ
+            [empresa_anterior] => WARESOFT
+            [telefono_empresa_anterior] => 2333-3333
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Miguel Ramirez
+                    [parentesco] => TIO/A
+                    [direccion] => QUEZALTEPEQUE
+                    [telefono] => 7756-5399
+                    [lugar_trabajo] => Pollo campero, quezaltepeque
+                    [telefono_trabajo] => 2309-8888
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Ruben Batres
+                    [direccion] => San Salvador 
+                    [telefono] => 7894-8747
+                    [lugar_trabajo] => Dollar City, escalon
+                    [telefono_trabajo] => 2988-8888
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Siman
+                    [telefono] => 2877-7773
+                    [monto_credito] => 1200.00
+                    [periodos] => 5 años
+                    [plazo] => 5 años
+                    [estado] => CANCELADA
+                )
+
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 600.00
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 600.00
+            [diferencia] => 600.00
+            [cantidadCuotas] => 0.1573
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                    [0] => Array
+                        (
+                            [nombre] => RUBEN GARZA
+                            [parentesco] => PAPÁ
+                            [direccion] => San marcos, san salvador
+                            [telefono] => 9877-6767
+                        )
+
+                )
+
+            [nombre] => Jorge Antonio Lopez
+            [dui] => 09388877-7
+            [direccion] => Quezaltepeque, La libertad
+            [COtelPersonal] => 7826-3535
+            [COpropiaCN] => SI
+            [COpromesaVenta] => NO
+            [COalquilada] => NO
+            [COtiempoVivienda] => 3 años
+            [COestadoCivil] => Soltera/o
+            [nombreConyugueCN] => 
+            [profesion] => Abogado
+            [patrono] => NO APLICA
+            [COdireccionTrabajo] => San Ramon, San salvador
+            [COtelefonoTrabajo] => 7873-6555
+            [COcargoDesempeña] => Abogado
+            [COsalario] => 800.00
+            [COnombreJefe] => NO APLICA
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 500.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 380.00
+            [cantidadCuotas] => 8
+            [montoCuota] => 59.77
+            [montoTotalPagar] => 598.19
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 1
+                    [id_producto] => 11
+                    [nombre] => MOVIL
+                    [marca] => Redmi
+                    [modelo] => Note 11 PRO
+                    [color] => Negro
+                    [medidas] => Estandar
+                    [precio] => 500.00
+                    [costo_unitario] => 200.00
+                    [id_categoria] => 7
+                    [disponible] => 0
+                    [codigo_producto] => MO-0001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2024-08-23
+                    [disponibilidad] => 5
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2024-08-26 13:25:55 --> *********************************** PASO 1 ***********************************
+INFO - 2024-08-26 13:25:56 --> solicitud creada id_solicitud: 12
+INFO - 2024-08-26 13:25:56 --> numero solicitud creada: 000001
+INFO - 2024-08-26 13:25:56 --> ********************************* FIN PASO 1 *********************************
+INFO - 2024-08-26 13:25:56 --> *********************************** PASO 2 ***********************************
+INFO - 2024-08-26 13:25:56 --> Resultado refe laboral: 1
+INFO - 2024-08-26 13:25:56 --> ********************************* FIN PASO 2 *********************************
+INFO - 2024-08-26 13:25:56 --> *********************************** PASO 3 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado refe familiares: Array
+(
+)
+
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 3 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 4 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado refe no familiares: Array
+(
+)
+
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 4 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 5 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado ref crediticias: Array
+(
+    [0] => Array
+        (
+            [nombre] => Siman
+            [telefono] => 2877-7773
+            [monto_credito] => 1200.00
+            [periodos] => 5 años
+            [plazo] => 5 años
+            [estado] => CANCELADA
+        )
+
+)
+
+INFO - 2024-08-26 13:25:57 --> Resultado refe crediticas: Array
+(
+)
+
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 5 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 6 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado analisis socioeconomico: 1
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 6 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 7 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado crear productos: Array
+(
+)
+
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 7 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 8 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado crear plan pago: 1
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 8 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 9 ***********************************
+INFO - 2024-08-26 13:25:57 --> Resultado codeudor: 1
+INFO - 2024-08-26 13:25:57 --> ********************************* FIN PASO 9 *********************************
+INFO - 2024-08-26 13:25:57 --> *********************************** PASO 10 ***********************************
+INFO - 2024-08-26 13:25:57 --> SolicitudesController registrarMovimientoSalidaVenta
+INFO - 2024-08-26 13:25:58 --> Resultado del movimiento: 1
+INFO - 2024-08-26 13:25:58 --> ********************************* FIN PASO 10 *********************************
+INFO - 2024-08-26 13:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:27:00 --> SolicitudesController solicitudes
+INFO - 2024-08-26 13:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:39:21 --> SolicitudesController solicitudes
+INFO - 2024-08-26 13:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 13:40:31 --> SolicitudesController solicitudes
+INFO - 2024-08-26 14:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 14:01:35 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:00:58 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:08:36 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:13:01 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:13:21 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:24:19 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:24:31 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:25:12 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:26:25 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:27:07 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:27:42 --> SolicitudesController solicitudes
+INFO - 2024-08-26 15:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 15:37:11 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:27:04 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:27:05 --> SolicitudesController nueva_solicitud
+INFO - 2024-08-26 16:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:27:09 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:33:32 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:33:39 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:33:47 --> AdministracionController perfil
+INFO - 2024-08-26 16:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:33:56 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:34:33 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:35:32 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:35:37 --> AdministracionController perfil
+INFO - 2024-08-26 16:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:35:39 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:37:32 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:37:44 --> AdministracionController perfil
+INFO - 2024-08-26 16:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:38:44 --> SolicitudesController solicitudes
+CRITICAL - 2024-08-26 16:39:09 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "solicitud=MTI="
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('ver_solicitud/solicitud=MTI=')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('ver_solicitud/solicitud=MTI=')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-26 16:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:41:32 --> SolicitudesController solicitudes
+CRITICAL - 2024-08-26 16:41:39 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "solicitud=MTI="
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('ver_solicitud/solicitud=MTI=')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('ver_solicitud/solicitud=MTI=')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-26 16:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:42:38 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:43:21 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:46:40 --> SolicitudesController solicitudes
+CRITICAL - 2024-08-26 16:46:54 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "solicitud=MTI="
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('ver_solicitud/solicitud=MTI=')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('ver_solicitud/solicitud=MTI=')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-26 16:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:50:30 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:50:55 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:51:34 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:51:46 --> encryptedSolicitud::: 
+INFO - 2024-08-26 16:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:54:31 --> SolicitudesController solicitudes
+INFO - 2024-08-26 16:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-26 16:54:33 --> encryptedSolicitud::: MTI=
+INFO - 2024-08-26 16:54:33 --> numero de solicitud decrypted::: 12

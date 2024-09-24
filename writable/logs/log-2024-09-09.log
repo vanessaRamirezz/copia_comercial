@@ -1,0 +1,43 @@
+INFO - 2024-09-09 15:47:02 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 15:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 15:48:22 --> SolicitudesController solicitudes
+INFO - 2024-09-09 15:48:40 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 15:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 15:49:02 --> SolicitudesController solicitudes
+INFO - 2024-09-09 15:49:06 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 15:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 15:49:41 --> SolicitudesController solicitudes
+INFO - 2024-09-09 15:49:44 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 15:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 15:51:19 --> SolicitudesController solicitudes
+INFO - 2024-09-09 15:51:24 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 15:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 15:52:09 --> SolicitudesController solicitudes
+INFO - 2024-09-09 15:52:12 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 16:18:13 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 16:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 16:20:43 --> SolicitudesController solicitudes
+INFO - 2024-09-09 16:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 16:20:46 --> SolicitudesController solicitudes
+INFO - 2024-09-09 16:20:50 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 16:28:26 --> generarDocumento encryptedSolicitud::: MTI=
+INFO - 2024-09-09 16:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 16:34:25 --> ApoderadosController apoderados
+INFO - 2024-09-09 16:34:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-09 16:34:28 --> Datos a mostrar: Array
+(
+    [0] => Array
+        (
+            [idapoderado] => 5
+            [nombre_apoderado] => Jose Alfonso Redondo
+            [dui_apoderado] => 09871122-2
+            [representante_legal] => Martha lopez Perez
+            [dui_representante] => 98875666-3
+            [estado] => 1
+            [created_at] => 2024-08-16 04:06:47
+            [updated_at] => 2024-08-16 04:21:53
+        )
+
+)
+
+INFO - 2024-09-09 16:34:28 --> retorno
