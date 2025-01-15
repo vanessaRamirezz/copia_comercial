@@ -302,6 +302,7 @@ class GenerarSolicitudCreditoController extends BaseController
     {
         log_message("info", "***************************************generarContrato***************************************");
         $session = session();
+        log_message("info", "Valor que entra: ".$id_solicitud);
         try {
             if ($id_solicitud) {
                 $templatePath = FCPATH . 'public/documentos/contrato/contratoV1.docx';
@@ -314,7 +315,8 @@ class GenerarSolicitudCreditoController extends BaseController
 
                 // Obtener los datos de la solicitud y cliente
                 $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
-                $clienteEncontrado = $this->clientesModel->buscarCliente(null, $solicitudEncontrada['id_cliente']);
+                log_message("info", "Valor que entra: ".print_r($solicitudEncontrada));
+                $clienteEncontrado = $this->clientesModel->buscarCliente(null, (int) $solicitudEncontrada['id_cliente']);
 
                 //obtener apoderado y reprelegal
                 $datosLegales = $this->apoderadoModel->getApoderados();
@@ -410,6 +412,28 @@ class GenerarSolicitudCreditoController extends BaseController
                 'success' => false,
                 'message' => 'Error al generar el contrato'
             ];
+        }
+    }
+
+    public function validarContrato($solicitud){
+        try {
+            $existeContrato = $this->contratoSolicitud->existeContratoPorSolicitud($solicitud);
+            if ($existeContrato) {
+                return [
+                    'success' => true,
+                    'message' => 'existe',
+                    'solicitud' => $solicitud
+                ];
+            }else {
+                return [
+                    'success' => false,
+                    'message' => 'no_existe',
+                    'solicitud' => $solicitud
+                ];
+            }
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
         }
     }
 

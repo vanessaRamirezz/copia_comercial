@@ -1,0 +1,3061 @@
+INFO - 2024-12-09 12:31:21 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 10
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 1
+        )
+
+)
+
+INFO - 2024-12-09 12:31:21 --> Cobro actualizado: {"id":"10","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":1}
+INFO - 2024-12-09 12:31:21 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 12:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:31:21 --> generarDocPagos ------> generarContrato::: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 12:31:22 --> Reemplazando descripcion con PAGO DE LA CUOTA 1 CON VALOR DE CUOTA DE $27.72
+INFO - 2024-12-09 12:31:22 --> Reemplazando cant con 1
+INFO - 2024-12-09 12:31:22 --> Reemplazando pUni con $27.72
+INFO - 2024-12-09 12:31:22 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 12:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:32:06 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"304.92"}]
+INFO - 2024-12-09 12:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:32:08 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 12:32:08 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 12:32:14 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 2
+        )
+
+)
+
+INFO - 2024-12-09 12:32:15 --> Cobro actualizado: {"id":"11","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":2}
+INFO - 2024-12-09 12:32:15 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 12:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:32:15 --> generarDocPagos ------> generarContrato::: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 12:32:15 --> Reemplazando descripcion con PAGO DE LA CUOTA 2 CON VALOR DE CUOTA DE $27.72
+INFO - 2024-12-09 12:32:15 --> Reemplazando cant con 1
+INFO - 2024-12-09 12:32:15 --> Reemplazando pUni con $27.72
+INFO - 2024-12-09 12:32:15 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 12:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:38:33 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"277.2"}]
+INFO - 2024-12-09 12:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:38:35 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 12:38:35 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 12:38:41 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 3
+        )
+
+)
+
+INFO - 2024-12-09 12:38:41 --> Cobro actualizado: {"id":"12","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":3}
+INFO - 2024-12-09 12:38:42 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 12:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:38:42 --> generarDocPagos ------> cobrosCancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 12:38:42 --> Documento generado: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_3.docx
+INFO - 2024-12-09 12:38:42 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 12:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:39:01 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"249.48"}]
+INFO - 2024-12-09 12:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:39:03 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 12:39:03 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 12:39:09 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 13
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 4
+        )
+
+)
+
+INFO - 2024-12-09 12:39:09 --> Cobro actualizado: {"id":"13","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":4}
+INFO - 2024-12-09 12:39:10 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 12:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:39:10 --> generarDocPagos ------> cobrosCancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 12:39:10 --> Documento generado: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_4.docx
+INFO - 2024-12-09 12:39:10 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 12:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:42:08 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"221.76"}]
+INFO - 2024-12-09 12:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:42:09 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 12:42:10 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 12:42:15 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 14
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 5
+        )
+
+)
+
+INFO - 2024-12-09 12:42:15 --> Cobro actualizado: {"id":"14","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":5}
+INFO - 2024-12-09 12:42:16 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 12:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:42:16 --> generarDocPagos ------> cobrosCancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 12:42:16 --> Documento generado: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_5.docx
+INFO - 2024-12-09 12:42:16 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 12:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:56:40 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"194.04"}]
+INFO - 2024-12-09 12:56:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:56:43 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 12:56:47 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 12:56:55 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 15
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 6
+        )
+
+)
+
+INFO - 2024-12-09 12:56:55 --> Cobro actualizado: {"id":"15","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":6}
+INFO - 2024-12-09 12:56:56 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 12:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 12:56:56 --> generarDocPagos ------> cobrosCancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 12:56:56 --> Documento generado: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_6.docx
+INFO - 2024-12-09 12:56:56 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 13:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:03:42 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"166.32"}]
+INFO - 2024-12-09 13:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:03:44 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 13:03:45 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 13:03:55 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 16
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 7
+        )
+
+)
+
+INFO - 2024-12-09 13:03:55 --> Cobro actualizado: {"id":"16","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":7}
+INFO - 2024-12-09 13:03:56 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 13:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:03:56 --> generarDocPagos ------> cobrosCancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 13:03:56 --> Documento generado: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_7.docx
+INFO - 2024-12-09 13:03:56 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 13:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:04:57 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"138.6"}]
+INFO - 2024-12-09 13:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:05:00 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 13:05:01 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 13:05:06 --> arrayPagos ------> arrayPagos::: Array
+(
+    [0] => Array
+        (
+            [id] => 17
+            [diasMora] => 0
+            [mora] => 0.00
+            [montoTotalCuotaInteres] => 27.72
+            [montoCuota] => 27.72
+            [numero_cuota] => 8
+        )
+
+)
+
+INFO - 2024-12-09 13:05:07 --> Cobro actualizado: {"id":"17","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":8}
+INFO - 2024-12-09 13:05:07 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 13:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:05:07 --> generarDocPagos ------> cobrosCancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 13:05:07 --> Documento generado: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_8.docx
+INFO - 2024-12-09 13:05:07 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 13:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:07:08 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"110.88"}]
+INFO - 2024-12-09 13:07:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:07:08 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 13:07:09 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 13:07:18 --> Cobro actualizado: {"id":"18","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":9}
+INFO - 2024-12-09 13:07:18 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 13:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:07:19 --> generarDocPagos ------> generarContrato::: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 13:07:19 --> Reemplazando descripcion con PAGO DE LA CUOTA 9 CON VALOR DE CUOTA DE $27.72
+INFO - 2024-12-09 13:07:19 --> Reemplazando cant con 1
+INFO - 2024-12-09 13:07:19 --> Reemplazando pUni con $27.72
+INFO - 2024-12-09 13:07:19 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 13:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:08:23 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"83.16"}]
+INFO - 2024-12-09 13:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:08:24 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 13:08:24 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 13:08:55 --> Cobro actualizado: {"id":"19","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":10}
+INFO - 2024-12-09 13:08:56 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 13:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:08:56 --> generarDocPagos ------> generarContrato::: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 13:08:56 --> Reemplazando descripcion con PAGO DE LA CUOTA 10 CON VALOR DE CUOTA DE $27.72
+INFO - 2024-12-09 13:08:56 --> Reemplazando cant con 1
+INFO - 2024-12-09 13:08:56 --> Reemplazando pUni con $27.72
+INFO - 2024-12-09 13:08:56 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 13:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:09:20 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"55.44"}]
+INFO - 2024-12-09 13:09:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:09:22 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 13:09:22 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 13:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:09:39 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 13:09:40 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2024-12-09 13:09:48 --> Cobro actualizado: {"id":"20","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":11}
+INFO - 2024-12-09 13:09:48 --> Cobro actualizado: {"id":"21","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":12}
+INFO - 2024-12-09 13:09:48 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 13:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 13:09:49 --> generarDocPagos ------> generarContrato::: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 13:09:49 --> Reemplazando descripcion con PAGO DE LA CUOTA 11 CON VALOR DE CUOTA DE $27.72
+INFO - 2024-12-09 13:09:49 --> Reemplazando cant con 1
+INFO - 2024-12-09 13:09:49 --> Reemplazando pUni con $27.72
+INFO - 2024-12-09 13:09:49 --> Reemplazando descripcion con PAGO DE LA CUOTA 12 CON VALOR DE CUOTA DE $27.72
+INFO - 2024-12-09 13:09:49 --> Reemplazando cant con 1
+INFO - 2024-12-09 13:09:49 --> Reemplazando pUni con $27.72
+INFO - 2024-12-09 13:09:49 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 14:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:04:38 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"332.64"}]
+INFO - 2024-12-09 14:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:04:40 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 14:04:41 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:04:54 --> Cobro actualizado: {"id":"10","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":1}
+INFO - 2024-12-09 14:04:55 --> Cobro actualizado: {"id":"11","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":2}
+INFO - 2024-12-09 14:04:55 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 14:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:04:55 --> generarDocPagos ------> generarContrato::: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:04:56 --> ***************************************FIN generarDocPagos***************************************
+INFO - 2024-12-09 14:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:07:59 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"277.2"}]
+INFO - 2024-12-09 14:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:08:01 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 14:08:02 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:08:09 --> Cobro actualizado: {"id":"12","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":3}
+INFO - 2024-12-09 14:08:09 --> Cobro actualizado: {"id":"13","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":4}
+INFO - 2024-12-09 14:08:10 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 14:08:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:08:10 --> generarDocPagos ------> Cobros cancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+ERROR - 2024-12-09 14:08:10 --> Error en generarDocPagos: Ocurrió un error: Can not clone row, template variable not found or variable contains markup.
+Trace: #0 C:\xampp\htdocs\creditos\app\Controllers\CobrosController.php(207): PhpOffice\PhpWord\TemplateProcessor->cloneRow('${descripcion}', 2)
+#1 C:\xampp\htdocs\creditos\app\Controllers\CobrosController.php(134): App\Controllers\CobrosController->generarDocPagos(Array)
+#2 C:\xampp\htdocs\creditos\system\CodeIgniter.php(943): App\Controllers\CobrosController->procesarPagos()
+#3 C:\xampp\htdocs\creditos\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CobrosController))
+#4 C:\xampp\htdocs\creditos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\creditos\index.php(79): CodeIgniter\CodeIgniter->run()
+#6 {main}
+INFO - 2024-12-09 14:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:11:29 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"221.76"}]
+INFO - 2024-12-09 14:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:11:30 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 14:11:31 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:11:38 --> Cobro actualizado: {"id":"14","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":5}
+INFO - 2024-12-09 14:11:38 --> Cobro actualizado: {"id":"15","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":6}
+INFO - 2024-12-09 14:11:39 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 14:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:11:39 --> generarDocPagos ------> Cobros cancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:11:39 --> Documento generado exitosamente: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_5_6.docx
+INFO - 2024-12-09 14:11:39 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 14:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:29:20 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"166.32"}]
+INFO - 2024-12-09 14:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:29:22 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-09 14:29:22 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:29:36 --> Cobro actualizado: {"id":"16","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":7}
+INFO - 2024-12-09 14:29:36 --> Cobro actualizado: {"id":"17","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":8}
+INFO - 2024-12-09 14:29:36 --> Cobro actualizado: {"id":"18","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":9}
+INFO - 2024-12-09 14:29:36 --> Cobro actualizado: {"id":"19","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":10}
+INFO - 2024-12-09 14:29:36 --> Cobro actualizado: {"id":"20","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":11}
+INFO - 2024-12-09 14:29:36 --> Cobro actualizado: {"id":"21","diasMora":0,"mora":"0.00","montoTotalCuotaInteres":27.72,"montoCuota":27.72,"numero_cuota":12}
+INFO - 2024-12-09 14:29:37 --> ***************************************generarDocPagos***************************************
+INFO - 2024-12-09 14:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:29:38 --> generarDocPagos ------> Cobros cancelados: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-09 14:29:38 --> Documento generado exitosamente: C:\xampp\htdocs\creditos\public/documentos/pagos/000001/pagoCuota000001_7_8_9_10_11_12.docx
+INFO - 2024-12-09 14:29:38 --> ***************************************FIN generarContrato***************************************
+INFO - 2024-12-09 14:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-09 14:35:25 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"0"}]

@@ -11,7 +11,7 @@ class ReferenciaLaboralModel extends Model
 
     protected $allowedFields = [
         'id_solicitud',
-        'profesion_oficio',
+        'id_profesion',
         'empresa',
         'direccion_trabajo',
         'telefono_trabajo',
@@ -34,7 +34,10 @@ class ReferenciaLaboralModel extends Model
     public function obtenerReferenciasPorSolicitud(int $id_solicitud)
     {
         // Realizar la consulta para obtener las referencias laborales por id_solicitud
-        $referencias = $this->where('id_solicitud', $id_solicitud)->findAll();
+        $referencias = $this->select('referencias_laborales.*, profesiones.descripcion')
+                            ->join('profesiones', 'referencias_laborales.id_profesion = profesiones.id_profesion', 'left')
+                            ->where('id_solicitud', $id_solicitud)
+                            ->findAll();
 
         // Devolver las referencias encontradas, o null si no se encontró ninguna
         return $referencias;

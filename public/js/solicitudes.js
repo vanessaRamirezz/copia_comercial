@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Ver solicitudes");
-    $('#dataTableSol').DataTable({
+    $('#dataTableSolCreadas').DataTable({
+        "language": {
+            "url": baseURL + "public/js/es-ES.json"
+        },
+    });
+
+    $('#dataTableSolVarias').DataTable({
         "language": {
             "url": baseURL + "public/js/es-ES.json"
         },
@@ -9,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function encryptData(data) {
     return btoa(data);
+}
+
+function recargarSoli () {
+    location.reload(true);
 }
 
 function redirectToSolicitud(id_solicitud) {
@@ -48,6 +58,48 @@ function descargarContrato(numero_solicitud) {
     }, 1000); // Intervalo de 1 segundo
 
 }
+
+function generarContrato(numeroSolicitud) {
+    Swal.fire({
+        title: '¿Deseas generar un contrato?',
+        text: "Se creará un nuevo contrato para esta solicitud.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, generar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Iniciar la solicitud AJAX
+            $.ajax({
+                url: baseURL + 'generar_contrato/' + numeroSolicitud,
+                method: 'GET',
+                success: function (response) {
+                    // Mostrar mensaje de éxito
+                    Swal.fire({
+                        title: 'Contrato generado',
+                        text: 'El contrato ha sido generado con éxito.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        // Recargar la página para reflejar los cambios
+                        location.reload();
+                    });
+                },
+                error: function (xhr, status, error) {
+                    // Manejar errores
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Ocurrió un error al generar el contrato. Por favor, intenta nuevamente.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        }
+    });
+}
+
 
 
 function verObservacion(observacion) {

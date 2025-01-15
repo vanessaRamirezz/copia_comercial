@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cargarDepartamentos();
     cargarComisiones();
+    cargarProfesiones();
     var today = new Date().toISOString().split('T')[0];
     document.getElementById('creacionDocumento').value = today;
 
@@ -151,18 +152,18 @@ document.addEventListener('DOMContentLoaded', function () {
                             fullReferencesCount++;
                         }
                     }
-                    if (fullReferencesCount >= 1) {
+                    if (fullReferencesCount == 2) {
                         data[cardClass] = references;
                     } else {
-                        toastr.error("Campos requeridos", "Al menos una referencia familiar debe estar completamente llena.");
-                        errorFound = true; // Set the flag to true to indicate an error was found
+                        toastr.error("Campos requeridos", "Las dos referencias familiares debe estar completamente llena.");
+                        errorFound = true;
                         return;
                     }
                 } else if (cardClass === 'referencias_personas_no_familiar') {
                     var references = [];
                     var referenceInputs = card.querySelectorAll('input[name]');
                     var referenceCount = referenceInputs.length / 5;
-                    var atLeastOneComplete = false; // Flag to check if at least one reference is complete
+                    var completeReferencesCount = 0;
 
                     for (var i = 0; i < referenceCount; i++) {
                         var reference = {};
@@ -175,22 +176,22 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                         }
 
-                        if (filledFields >= 5) {
+                        if (filledFields === 5) {
                             reference.nombre = referenceInputs[startIndex].value;
                             reference.direccion = referenceInputs[startIndex + 1].value;
                             reference.telefono = referenceInputs[startIndex + 2].value;
                             reference.lugar_trabajo = referenceInputs[startIndex + 3].value;
                             reference.telefono_trabajo = referenceInputs[startIndex + 4].value;
                             references.push(reference);
-                            atLeastOneComplete = true; // Set flag to true if a complete reference is found
+                            completeReferencesCount++;
                         }
                     }
 
-                    if (atLeastOneComplete) {
+                    if (completeReferencesCount === 2) {
                         data[cardClass] = references;
                     } else {
-                        toastr.error("Campos requeridos", "Al menos una referencia no familiar debe estar completamente llena.");
-                        errorFound = true; // Set the flag to true to indicate an error was found
+                        toastr.error("Campos requeridos", "Debe haber exactamente dos referencia no familiar debe estar completamente llena.");
+                        errorFound = true;
                         return;
                     }
                 } else if (cardClass === 'referencias_crediticias') {
@@ -225,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var analisisSocioeconomicoData = {};
 
                     // Obtiene todos los inputs y selects dentro del card, excepto los del div con name="plan_de_pago"
-                    var elements = card.querySelectorAll('input[name], select[name]');
+                    var elements = card.querySelectorAll('input[name], select[name], textarea[name]');
                     elements.forEach(function (element) {
                         var name = element.getAttribute('name');
                         var value = element.value;
@@ -311,6 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                     data.referencias_laborales = referenciasLaboralesData;
+                    console.log("la ref laboral es", data.referencias_laborales);
                 }
             }
         });
@@ -345,11 +347,28 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())  // Convertir la respuesta a JSON
             .then(responseData => {
                 if (responseData.success) {
-                    console.log('Datos enviados con éxito:', responseData);
-                    toastr.success("Solicitud guardada", responseData.message);
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Solicitud creada con éxito!',
+                        text: 'Estás siendo redireccionado.',
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        allowEnterKey: false,
+                        showConfirmButton: false
+                    });
+            
+                    // Esperar 3 segundos y luego redirigir
+                    setTimeout(() => {
+                        window.history.back();
+                    }, 2000);
                 } else {
-                    console.error('Error en la respuesta:', responseData.message);
-                    toastr.error("Error", responseData.message);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: responseData.message,
+                        confirmButtonText: 'Cerrar'
+                    });
+                    //toastr.error("Error", responseData.message);
                 }
             })
             .catch(error => {
@@ -419,7 +438,39 @@ function cargarDepartamentos() {
     });
 }
 
-function cargarMunicipios(deptoId, municipioId) {
+function cargarProfesiones() {
+    $.ajax({
+        type: 'GET',
+        url: baseURL + 'obtenerProfesiones',
+        dataType: 'json',
+        success: function (response) {
+            var select = $('#profesionOficio');
+            select.empty();
+
+
+            select.append($('<option>', {
+                value: -1,
+                text: 'Seleccione...'
+            }));
+
+
+            response.forEach(function (profesion) {
+                var option = $('<option></option>')
+                    .attr('value', profesion.id_profesion)
+                    .text(profesion.descripcion);
+                select.append(option);
+            });
+
+
+            select.trigger('change');
+        },
+        error: function (xhr, status, error) {
+            console.error("Error al cargar los departamentos:", status, error);
+        }
+    });
+}
+
+function cargarMunicipios(deptoId, municipioId, idColonia) {
     $.ajax({
         type: 'POST',
         url: baseURL + 'municipios',
@@ -445,6 +496,8 @@ function cargarMunicipios(deptoId, municipioId) {
 
                 if (municipio.id == municipioId) {
                     option.prop('selected', true);
+
+                    cargarColonias(idColonia);
                 }
             });
         },
@@ -453,6 +506,37 @@ function cargarMunicipios(deptoId, municipioId) {
         }
     });
 }
+
+function cargarColonias(idColonia) {
+    $.ajax({
+        type: 'POST',
+        url: baseURL + 'coloniascliente',
+        data: { idColonia: idColonia },
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+            var selectColonias = $('#coloniasCliente');
+            selectColonias.empty();
+
+            // Agregar la opción por defecto
+            selectColonias.append($('<option>', {
+                value: -1,
+                text: 'Seleccione...'
+            }));
+
+            var option = $('<option></option>')
+                .attr('value', idColonia)
+                .text(data);
+            selectColonias.append(option);
+            option.prop('selected', true);
+
+        },
+        error: function (xhr, status, error) {
+            console.error("Error al cargar las colonias:", status, error);
+        }
+    });
+}
+
 
 function calculateSums() {
     var totalIngresos = 0;
@@ -544,7 +628,7 @@ function buscarCliente() {
             }
 
 
-            cargarMunicipios(cliente.departamento, cliente.municipio);
+            cargarMunicipios(cliente.departamento, cliente.municipio, cliente.colonia);
             Swal.close();
         })
         .catch(error => {
@@ -627,7 +711,8 @@ function pintarResultados(data) {
         var btnEliminar = productoAgregado ? '' : 'style="display:none;"';
 
         var cantidad = productoAgregado ? productoAgregado.cantidad : '';
-        var disabled = cantidad > 0 ? 'disabled' : '';
+        //var disabled = cantidad > 0 ? 'disabled' : '';
+        var disabled = (producto.disponibilidad === 0 || cantidad > 0) ? 'disabled' : '';
 
         var row = `<tr>
             <td>${producto.codigo_producto}</td>
@@ -643,7 +728,7 @@ function pintarResultados(data) {
                 </div>
             </td>
             <td>
-                <button id="agregarBtn${index}" class="btn btn-primary" ${btnAgregar} onclick='agregarProducto(${JSON.stringify(producto).replace(/"/g, '&quot;')},"cantidad${index}", "agregarBtn${index}" ,"eliminarBtn${index}")'>Agregar</button>
+                <button id="agregarBtn${index}" class="btn btn-primary" ${btnAgregar} ${disabled} onclick='agregarProducto(${JSON.stringify(producto).replace(/"/g, '&quot;')},"cantidad${index}", "agregarBtn${index}" ,"eliminarBtn${index}")'>Agregar</button>
                 <button id="eliminarBtn${index}" class="btn btn-danger" ${btnEliminar} onclick='eliminarProducto(${JSON.stringify(producto).replace(/"/g, '&quot;')}, "agregarBtn${index}", "eliminarBtn${index}")'>
                     <i class="fa fa-trash"></i>
                 </button>

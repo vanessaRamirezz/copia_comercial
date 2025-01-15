@@ -9,7 +9,34 @@ class ClientesModel extends Model
 
     protected $table = 'clientes';
     protected $primaryKey = 'id_cliente';
-    protected $allowedFields = ['id_cliente','dui', 'nombre_completo', 'estado_civil', 'fecha_nacimiento', 'telefono', 'direccion', 'departamento', 'municipio', 'correo', 'nombre_conyugue', 'direccion_trabajo_conyugue', 'telefono_trabajo_conyugue', 'nombre_padres', 'direccion_padres', 'telefono_padres', 'CpropiaCN', 'CpromesaVentaCN', 'CalquiladaCN', 'aQuienPerteneceCN', 'telPropietarioCN', 'tiempoDeVivirDomicilioCN', 'id_user_creacion', 'id_sucursal_creacion'];
+    protected $allowedFields = [
+        'id_cliente',
+        'dui',
+        'nombre_completo',
+        'estado_civil',
+        'fecha_nacimiento',
+        'telefono',
+        'direccion',
+        'departamento',
+        'municipio',
+        'distrito',
+        'colonia',
+        'correo',
+        'nombre_conyugue',
+        'direccion_trabajo_conyugue',
+        'telefono_trabajo_conyugue',
+        'nombre_padres',
+        'direccion_padres',
+        'telefono_padres',
+        'CpropiaCN',
+        'CpromesaVentaCN',
+        'CalquiladaCN',
+        'aQuienPerteneceCN',
+        'telPropietarioCN',
+        'tiempoDeVivirDomicilioCN',
+        'id_user_creacion',
+        'id_sucursal_creacion'
+    ];
 
     public function getClientes()
     {
@@ -68,5 +95,10 @@ class ClientesModel extends Model
 
         // Devolver el registro del cliente si existe, null si no
         return $cliente;
+    }
+
+    public function actualizarCliente($id, $data)
+    {
+        return $this->update($id, $data);
     }
 }

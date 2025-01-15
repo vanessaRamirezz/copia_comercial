@@ -265,28 +265,37 @@ class ProductosController extends BaseController
     public function buscarProductos()
     {
         try {
-            log_message("info", "llego a buscarProductos con consulta");
+            log_message("info", "Llego a buscarProductos con consulta");
             $session = session();
+
+            // Verificamos si la sesión está activa
             if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
                 $search = $this->request->getPost('search');
                 $sucursal_origen = $_SESSION['sucursal'];
 
                 log_message("info", "Abuscar es:: " . $search . ' origen suc ' . $sucursal_origen);
-                if (!empty($sucursal_origen)) {
-                    $disponibilidadProductos = new DisponibilidadProductosModel();
-                    # se saca el disponible
-                    $resultDisponible = $disponibilidadProductos->getDisponibilidadProductosSucursal($search, $sucursal_origen);
-                    
-                    # se saca el total de las salidas por solicitud
-                    $resultTotalSalidas = $disponibilidadProductos->getTotalSalidasPorSolicitud($search, $sucursal_origen);
 
-                    $ajusteDisponibilidad = $this->nuevaDisponibilidad($resultDisponible, $resultTotalSalidas);
+                $disponibilidadProductos = new DisponibilidadProductosModel();
 
+                // Se obtiene la disponibilidad del producto
+                $resultDisponible = $disponibilidadProductos->getDisponibilidadProductosSucursal($search, $sucursal_origen);
+                log_message("info", "resultDisponible 1::: " . json_encode($resultDisponible));
+                // Se obtiene el total de salidas del producto
+                $resultTotalSalidas = $disponibilidadProductos->getTotalSalidasPorSolicitud($search, $sucursal_origen);
+                log_message("info", "resultTotalSalidas 2::: " . json_encode($resultTotalSalidas));
+
+                // Se ajusta la disponibilidad
+                $ajusteDisponibilidad = $this->nuevaDisponibilidad($resultDisponible, $resultTotalSalidas);
+
+                // Si el ajuste de disponibilidad es vacío, se realiza la búsqueda alternativa
+                if (!empty($ajusteDisponibilidad)) {
                     $productos = $ajusteDisponibilidad;
                 } else {
+                    log_message("info", "No hay disponibilidad ajustada; se realiza la búsqueda alternativa");
                     $productosModel = new ProductosModel();
                     $productos = $productosModel->getProductosPorCodigoONombre($search);
                 }
+
                 echo json_encode(['success' => $productos]);
             } else {
                 return redirect()->to(base_url());
@@ -297,7 +306,8 @@ class ProductosController extends BaseController
         }
     }
 
-    public function nuevaDisponibilidad($resultDisponible, $resultTotalSalidas)
+
+    /* public function nuevaDisponibilidad($resultDisponible, $resultTotalSalidas)
     {
         $salidasPorProducto = [];
         foreach ($resultTotalSalidas as $salida) {
@@ -309,7 +319,32 @@ class ProductosController extends BaseController
                 $disponible->disponibilidad -= $salidasPorProducto[$disponible->id_producto];
             }
         }
-        log_message("info","Nuevo valor:: ".print_r($resultDisponible, true));
+        log_message("info", "Nuevo valor:: " . print_r($resultDisponible, true));
+        return $resultDisponible;
+    } */
+    public function nuevaDisponibilidad($resultDisponible, $resultTotalSalidas)
+    {
+        // Paso 1: Log para ver las entradas originales
+        log_message("info", "Datos iniciales - resultDisponible: " . print_r($resultDisponible, true));
+        log_message("info", "Datos iniciales - resultTotalSalidas: " . print_r($resultTotalSalidas, true));
+
+        // Paso 2: Sumar todas las salidas por producto
+        $totalSalidas = 0;
+        foreach ($resultTotalSalidas as $salida) {
+            $totalSalidas += $salida->totalSalida;
+            log_message("info", "Sumando salida: {$salida->totalSalida} - Total acumulado: {$totalSalidas}");
+        }
+
+        // Paso 3: Restar el total de las salidas a la disponibilidad de cada producto
+        foreach ($resultDisponible as &$disponible) {
+            log_message("info", "Disponibilidad inicial: {$disponible->disponibilidad}");
+            $disponible->disponibilidad -= $totalSalidas;
+        }
+
+        // Paso 4: Log para verificar los resultados finales
+        log_message("info", "Nuevo valor final:: " . print_r($resultDisponible, true));
+
+        // Paso 5: Retornar el resultado modificado
         return $resultDisponible;
     }
 }

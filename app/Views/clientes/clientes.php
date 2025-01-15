@@ -13,6 +13,7 @@
                             <th>DUI</th>
                             <th>Nombre completo</th>
                             <th>Telefono</th>
+                            <th>Opcion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,6 +22,11 @@
                                 <td><?= $cliente['dui'] ?></td>
                                 <td><?= $cliente['nombre_completo'] ?></td>
                                 <td><?= $cliente['telefono'] ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" onclick="window.location.href='<?= base_url('editar_cliente/' . base64_encode($cliente['id_cliente'])) ?>'">
+                                        <i class="fa-regular fa-pen-to-square"></i> Editar
+                                    </button>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

@@ -1,0 +1,237 @@
+INFO - 2024-12-30 21:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:30 --> iniciando sesion
+INFO - 2024-12-30 21:33:32 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null}]
+INFO - 2024-12-30 21:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:33 --> SolicitudesController solicitudes
+INFO - 2024-12-30 21:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:46 --> iniciando sesion
+INFO - 2024-12-30 21:33:47 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2024-12-30 21:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:47 --> AdministracionController inicio_administracion
+INFO - 2024-12-30 21:33:47 --> AdministracionController Acceso permitido
+INFO - 2024-12-30 21:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:33:55 --> Resultado JSON: []
+INFO - 2024-12-30 21:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:34:03 --> Resultado JSON: [{"id_solicitud":"19","numero_solicitud":"000001","fecha_creacion":"2024-12-09 16:03:16","dui":"01234567-8","nombre_completo":"Ana Mar\u00eda P\u00e9rez L\u00f3pez","user_creador":"Jaime Edgardo Palacios Garcia","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0001-00000001","montoApagar":"0"}]
+INFO - 2024-12-30 21:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:34:12 --> Resultado JSON id_solicitud: 19
+INFO - 2024-12-30 21:34:12 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 10
+            [id_solicitud] => 19
+            [numero_cuota] => 1
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 1 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 11
+            [id_solicitud] => 19
+            [numero_cuota] => 2
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 2 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 12
+            [id_solicitud] => 19
+            [numero_cuota] => 3
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 3 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 13
+            [id_solicitud] => 19
+            [numero_cuota] => 4
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 4 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [4] => Array
+        (
+            [id_cobro] => 14
+            [id_solicitud] => 19
+            [numero_cuota] => 5
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 5 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-05-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [5] => Array
+        (
+            [id_cobro] => 15
+            [id_solicitud] => 19
+            [numero_cuota] => 6
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 6 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-06-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [6] => Array
+        (
+            [id_cobro] => 16
+            [id_solicitud] => 19
+            [numero_cuota] => 7
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 7 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-07-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [7] => Array
+        (
+            [id_cobro] => 17
+            [id_solicitud] => 19
+            [numero_cuota] => 8
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 8 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-08-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [8] => Array
+        (
+            [id_cobro] => 18
+            [id_solicitud] => 19
+            [numero_cuota] => 9
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 9 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-09-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [9] => Array
+        (
+            [id_cobro] => 19
+            [id_solicitud] => 19
+            [numero_cuota] => 10
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 10 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-10-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [10] => Array
+        (
+            [id_cobro] => 20
+            [id_solicitud] => 19
+            [numero_cuota] => 11
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 11 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-11-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+    [11] => Array
+        (
+            [id_cobro] => 21
+            [id_solicitud] => 19
+            [numero_cuota] => 12
+            [monto_cuota] => 27.72
+            [descripcion] => Pago de la cuota 12 con valor de cuota de $27.72
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-12-09
+            [fecha_pago] => 2024-12-09
+            [interesGenerado] => 0.00
+        )
+
+)
+
+INFO - 2024-12-30 21:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:36:42 --> SolicitudesController solicitudes
+INFO - 2024-12-30 21:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:36:45 --> SolicitudesController nueva_solicitud
+INFO - 2024-12-30 21:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:36:59 --> iniciando sesion
+INFO - 2024-12-30 21:37:00 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null}]
+INFO - 2024-12-30 21:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:37:00 --> SolicitudesController solicitudes
+INFO - 2024-12-30 21:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:37:03 --> SolicitudesController nueva_solicitud
+INFO - 2024-12-30 21:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:24 --> iniciando sesion
+INFO - 2024-12-30 21:38:25 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2024-12-30 21:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:25 --> AdministracionController inicio_administracion
+INFO - 2024-12-30 21:38:25 --> AdministracionController Acceso permitido
+INFO - 2024-12-30 21:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:28 --> ClientesController clientes
+INFO - 2024-12-30 21:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:52 --> iniciando sesion
+INFO - 2024-12-30 21:38:53 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null}]
+INFO - 2024-12-30 21:38:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:53 --> SolicitudesController solicitudes
+INFO - 2024-12-30 21:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:38:56 --> SolicitudesController nueva_solicitud
+INFO - 2024-12-30 21:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:39:02 --> 1
+INFO - 2024-12-30 21:55:09 --> Llego a buscarProductos con consulta
+INFO - 2024-12-30 21:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-30 21:55:09 --> Abuscar es:: 0000 origen suc 1
+INFO - 2024-12-30 21:55:10 --> query 
+INFO - 2024-12-30 21:55:11 --> resultDisponible 1::: Array
+(
+)
+
+INFO - 2024-12-30 21:55:12 --> resultTotalSalidas 2::: Array
+(
+)
+
+INFO - 2024-12-30 21:55:12 --> Nuevo valor:: Array
+(
+)
+
+INFO - 2024-12-30 21:55:12 --> No hay disponibilidad ajustada; se realiza la búsqueda alternativa

@@ -48,7 +48,26 @@
             </div>
         <?php endif; ?>
     <?php endif; ?>
-    <div class="card shadow mb-4">
+    <div class="card shadow">
+        <?php if (in_array($perfil, ['SUPERVISOR', 'ADMINISTRADOR', 'PROPIETARIO']) && $id_estado_actual == 1): ?>
+            <div class="container mt-3">
+                <div class="row text-center">
+
+                    <div class="col-sm">
+                        <button class="btn btn-success w-100" onclick="handleAction('Aprobar')">Aprobar</button>
+                    </div>
+                    <!-- <div class="col-sm">
+                        <button class="btn btn-warning w-100" onclick="handleAction('AprobadoConObs')">Aprobado con Observaciones</button>
+                    </div> -->
+                    <div class="col-sm">
+                        <button class="btn btn-danger w-100" onclick="handleAction('Denegada')">Denegada</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="btn btn-secondary w-100" onclick="handleAction('Anulada')">Anulada</button>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
         <div class="accordion" id="accordionSolicitud">
             <div class="card datos_personales">
                 <div class="card-header" id="headingOne">
@@ -89,7 +108,7 @@
                                 <label for="direccionActual">Dirección actual</label>
                                 <input type="text" class="form-control" id="direccionActual" value="<?= $cliente['direccion']; ?>" disabled>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="deptoCliente">Departamento</label>
                                 <select id="deptoCliente" class="form-control" disabled>
                                     <option selected>Seleccione...</option>
@@ -98,13 +117,21 @@
                                     <!-- Agregar más opciones según tu lista de departamentos -->
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="muniCliente">Municipio</label>
                                 <select id="muniCliente" class="form-control" disabled>
                                     <option selected>Seleccione...</option>
                                     <!-- Selección dinámica -->
                                     <option value="<?= $cliente['municipio']; ?>" selected><?= $muniClienteN; ?></option>
                                     <!-- Agregar más opciones según tu lista de municipios -->
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="coloniaCliente">Colonia</label>
+                                <select id="coloniaCliente" class="form-control" disabled>
+                                    <option selected>Seleccione...</option>
+                                    <option value="<?= $cliente['colonia']; ?>" selected><?= $coloniaCliente; ?></option>
                                 </select>
                             </div>
                         </div>
@@ -203,7 +230,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="profesionOficio">Profesion u Oficio</label>
-                                <input type="text" class="form-control" id="profesionOficio" name="profesion_oficio" value="<?php echo htmlspecialchars($refLaboral[0]['profesion_oficio']); ?>">
+                                <input type="text" class="form-control" id="profesionOficio" name="profesion_oficio" value="<?php echo htmlspecialchars($refLaboral[0]['descripcion']); ?>">
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="lugarTrabajo">Patron/Empresa/Lugar de trabajo</label>
@@ -802,28 +829,28 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COnombreRef1">a) Nombre:</label>
-                                        <input type="text" class="form-control coref1" id="COnombreRef1" name="COnombreRef1" value="<?php echo $refCodeudor[0]['nombre']; ?>">
+                                        <input type="text" class="form-control coref1" id="COnombreRef1" name="COnombreRef1" value="<?php echo isset($refCodeudor[0]['nombre']) ? $refCodeudor[0]['nombre'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COparentescoRef1">Parentesco</label>
-                                        <select id="COparentescoRef1" class="form-control coref1">
-                                            <option value="PAPÁ" <?php echo ($refCodeudor[0]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
-                                            <option value="MAMÁ" <?php echo ($refCodeudor[0]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
-                                            <option value="HERMANO/A" <?php echo ($refCodeudor[0]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
-                                            <option value="TIO/A" <?php echo ($refCodeudor[0]['parentesco'] == 'TIO/A') ? 'selected' : ''; ?>>TIO/A</option>
-                                            <option value="PRIMO/A" <?php echo ($refCodeudor[0]['parentesco'] == 'PRIMO/A') ? 'selected' : ''; ?>>PRIMO/A</option>
-                                            <option value="ABUELO/A" <?php echo ($refCodeudor[0]['parentesco'] == 'ABUELO/A') ? 'selected' : ''; ?>>ABUELO/A</option>
+                                        <select id="COparentescoRef1" class="form-control coref1" required>
+                                            <option value="PAPÁ" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
+                                            <option value="MAMÁ" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
+                                            <option value="HERMANO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
+                                            <option value="TIO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'TIO/A') ? 'selected' : ''; ?>>TIO/A</option>
+                                            <option value="PRIMO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'PRIMO/A') ? 'selected' : ''; ?>>PRIMO/A</option>
+                                            <option value="ABUELO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'ABUELO/A') ? 'selected' : ''; ?>>ABUELO/A</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COdireccionRef1">Dirección:</label>
-                                        <input type="text" class="form-control coref1" id="COdireccionRef1" name="COdireccionRef1" value="<?php echo $refCodeudor[0]['direccion']; ?>">
+                                        <input type="text" class="form-control coref1" id="COdireccionRef1" name="COdireccionRef1" value="<?php echo isset($refCodeudor[0]['direccion']) ? $refCodeudor[0]['direccion'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COtelRef1">Teléfono:</label>
-                                        <input type="text" class="form-control coref1 telG" id="COtelRef1" name="COtelRef1" value="<?php echo $refCodeudor[0]['telefono']; ?>">
+                                        <input type="text" class="form-control coref1 telG" id="COtelRef1" name="COtelRef1" value="<?php echo isset($refCodeudor[0]['telefono']) ? $refCodeudor[0]['telefono'] : ''; ?>" pattern="^\d{8}$" title="El teléfono debe tener 8 dígitos" required>
                                     </div>
                                 </div>
                             </div>
@@ -832,11 +859,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COnombreRef2">b) Nombre:</label>
-                                        <input type="text" class="form-control coref2" id="COnombreRef2" name="COnombreRef2" value="<?php echo isset($refCodeudor[1]['nombre']) ? $refCodeudor[1]['nombre'] : ''; ?>">
+                                        <input type="text" class="form-control coref2" id="COnombreRef2" name="COnombreRef2" value="<?php echo isset($refCodeudor[1]['nombre']) ? $refCodeudor[1]['nombre'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COparentescoRef2">Parentesco</label>
-                                        <select id="COparentescoRef2" class="form-control coref2">
+                                        <select id="COparentescoRef2" class="form-control coref2" required>
                                             <option value="PAPÁ" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
                                             <option value="MAMÁ" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
                                             <option value="HERMANO/A" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
@@ -849,11 +876,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COdireccionRef2">Dirección:</label>
-                                        <input type="text" class="form-control coref2" id="COdireccionRef2" name="COdireccionRef2" value="<?php echo isset($refCodeudor[1]['direccion']) ? $refCodeudor[1]['direccion'] : ''; ?>">
+                                        <input type="text" class="form-control coref2" id="COdireccionRef2" name="COdireccionRef2" value="<?php echo isset($refCodeudor[1]['direccion']) ? $refCodeudor[1]['direccion'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COtelRef2">Teléfono:</label>
-                                        <input type="text" class="form-control coref2 telG" id="COtelRef2" name="COtelRef2" value="<?php echo isset($refCodeudor[1]['telefono']) ? $refCodeudor[1]['telefono'] : ''; ?>">
+                                        <input type="text" class="form-control coref2 telG" id="COtelRef2" name="COtelRef2" value="<?php echo isset($refCodeudor[1]['telefono']) ? $refCodeudor[1]['telefono'] : ''; ?>" pattern="^\d{8}$" title="El teléfono debe tener 8 dígitos" required>
                                     </div>
                                 </div>
                             </div>
@@ -862,11 +889,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COnombreRef3">c) Nombre:</label>
-                                        <input type="text" class="form-control coref3" id="COnombreRef3" name="COnombreRef3" value="<?php echo isset($refCodeudor[2]['nombre']) ? $refCodeudor[2]['nombre'] : ''; ?>">
+                                        <input type="text" class="form-control coref3" id="COnombreRef3" name="COnombreRef3" value="<?php echo isset($refCodeudor[2]['nombre']) ? $refCodeudor[2]['nombre'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COparentescoRef3">Parentesco</label>
-                                        <select id="COparentescoRef3" class="form-control coref3">
+                                        <select id="COparentescoRef3" class="form-control coref3" required>
                                             <option value="PAPÁ" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
                                             <option value="MAMÁ" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
                                             <option value="HERMANO/A" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
@@ -879,23 +906,23 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COdireccionRef3">Dirección:</label>
-                                        <input type="text" class="form-control coref3" id="COdireccionRef3" name="COdireccionRef3" value="<?php echo isset($refCodeudor[2]['direccion']) ? $refCodeudor[2]['direccion'] : ''; ?>">
+                                        <input type="text" class="form-control coref3" id="COdireccionRef3" name="COdireccionRef3" value="<?php echo isset($refCodeudor[2]['direccion']) ? $refCodeudor[2]['direccion'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COtelRef3">Teléfono:</label>
-                                        <input type="text" class="form-control coref3 telG" id="COtelRef3" name="COtelRef3" value="<?php echo isset($refCodeudor[2]['telefono']) ? $refCodeudor[2]['telefono'] : ''; ?>">
+                                        <input type="text" class="form-control coref3 telG" id="COtelRef3" name="COtelRef3" value="<?php echo isset($refCodeudor[2]['telefono']) ? $refCodeudor[2]['telefono'] : ''; ?>" pattern="^\d{8}$" title="El teléfono debe tener 8 dígitos" required>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
 
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row text-center">
-                    <?php if (in_array($perfil, ['SUPERVISOR', 'ADMINISTRADOR', 'PROPIETARIO']) && $id_estado_actual ==1): ?>
+                    <?php if (in_array($perfil, ['SUPERVISOR', 'ADMINISTRADOR', 'PROPIETARIO']) && $id_estado_actual == 1): ?>
                         <div class="col-12 col-md-6 col-lg-3 mb-3">
                             <button class="btn btn-success w-100" onclick="handleAction('Aprobar')">Aprobar</button>
                         </div>
@@ -937,20 +964,20 @@
 </div>
 <!-- Modal de descarga con conteo regresivo -->
 <div class="modal fade" id="modalDescarga" tabindex="-1" aria-labelledby="modalDescargaLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalDescargaLabel">Descarga en progreso</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        La descarga comenzará en <span id="countdown">5</span> segundos.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDescargaLabel">Descarga en progreso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                La descarga comenzará en <span id="countdown">5</span> segundos.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script src="<?= base_url('public/js/verSolicitud.js') ?>"></script>

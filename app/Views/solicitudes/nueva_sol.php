@@ -84,15 +84,21 @@
                                 <label for="direccionActual">Dirección actual</label>
                                 <input type="text" class="form-control" id="direccionActual" disabled>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="deptoCliente">Departamento</label>
                                 <select id="deptoCliente" class="form-control" disabled>
                                     <option selected>Seleccione...</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="muniCliente">Municipio</label>
                                 <select id="muniCliente" class="form-control" disabled>
+                                    <option selected>Seleccione...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="coloniasCliente">Colonia</label>
+                                <select id="coloniasCliente" class="form-control" disabled>
                                     <option selected>Seleccione...</option>
                                 </select>
                             </div>
@@ -208,9 +214,11 @@
                     <div class="card-body">
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label for="profesionOficio">Profesion u Oficio</label>
-                                <input type="text" class="form-control" id="profesionOficio" name="profesion_oficio">
+                                <label for="profesionOficio">Profesión u Oficio</label>
+                                <select class="form-control" id="profesionOficio" name="profesion_oficio">
+                                </select>
                             </div>
+
                             <div class="form-group col-md-8">
                                 <label for="lugarTrabajo">Patron/Empresa/Lugar de trabajo</label>
                                 <input type="text" class="form-control" id="lugarTrabajo" name="empresa">

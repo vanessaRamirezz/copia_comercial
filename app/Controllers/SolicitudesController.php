@@ -16,6 +16,9 @@ use App\Models\ReferenciasCrediticiasModel;
 use App\Models\ClientesModel;
 use App\Models\MunicipiosModel;
 use App\Models\DepartamentosModel;
+use App\Models\ColoniasModel;
+use App\Models\CobrosModel;
+use DateTime;
 
 use App\Controllers\GenerarSolicitudCreditoController;
 
@@ -38,7 +41,9 @@ class SolicitudesController extends BaseController
     private $clientesModel;
     private $deptoModel;
     private $muniModel;
+    private $coloniaModel;
     private $generarDocController;
+    private $cobrosModel;
 
     public function __construct()
     {
@@ -56,7 +61,9 @@ class SolicitudesController extends BaseController
         $this->clientesModel = new ClientesModel();
         $this->deptoModel = new DepartamentosModel();
         $this->muniModel = new MunicipiosModel();
+        $this->coloniaModel = new ColoniasModel();
         $this->generarDocController = new GenerarSolicitudCreditoController();
+        $this->cobrosModel = new CobrosModel();
     }
 
     public function index()
@@ -68,10 +75,12 @@ class SolicitudesController extends BaseController
             $accesos = json_decode($_SESSION['accesos'], true);
             $allowedUrls = array_column($accesos, 'url_acceso');
             if (in_array($url, $allowedUrls)) {
-                $solicitudes = $this->solicitudesModel->solicitudPorSucursal($_SESSION['sucursal']);
+                $solicitudesCreadas = $this->solicitudesModel->solicitudPorSucursalEstadoCreadas($_SESSION['sucursal']);
+                $solicitudesEstVarios = $this->solicitudesModel->solicitudPorSucursalEstadoVarias($_SESSION['sucursal']);
                 $data = [
                     'perfil' => $_SESSION['perfilN'],
-                    'solicitudes' => $solicitudes
+                    'solicitudesCreadas' => $solicitudesCreadas,
+                    'solicitudesVarias' => $solicitudesEstVarios
                 ];
                 $content4 = view('solicitudes/solicitudes', $data);
                 $fullPage = $this->renderPage($content4);
@@ -116,12 +125,14 @@ class SolicitudesController extends BaseController
             log_message('info', 'Datos recibidos: ' . print_r($data, true));
             # Paso 1: Crear la solicitud
             log_message('info', '*********************************** PASO 1 ***********************************');
+            $saldoRestante = (float)$data['plan_de_pago']['montoTotalPagar'] - (float)$data['plan_de_pago']['valorPagoPrima'];
             $dataSoli = [
                 'id_cliente' => $data['datos_personales']['id_cliente'],
                 'id_usuario_creacion' => $_SESSION['id_usuario'],
                 'id_estado_actual' => 1,
                 'id_sucursal' => $_SESSION['sucursal'],
-                'monto_solicitud' => $data['plan_de_pago']['montoTotalPagar']
+                'monto_solicitud' => $data['plan_de_pago']['montoTotalPagar'],
+                'montoApagar' => $saldoRestante
             ];
 
             $this->solicitudesModel->insert($dataSoli);
@@ -254,8 +265,9 @@ class SolicitudesController extends BaseController
     private function crearReferenciasLaborales(array $referenciasLaborales, int $idSolicitud): bool
     {
         try {
+            log_message('info', "el valor de los datos de referencia es:: " . print_r($referenciasLaborales, true));
             $dataRefeLaboral = [
-                'profesion_oficio'         => $referenciasLaborales['profesion_oficio'],
+                'id_profesion'             => $referenciasLaborales['profesion_oficio'],
                 'empresa'                  => $referenciasLaborales['empresa'],
                 'direccion_trabajo'        => $referenciasLaborales['direccion_trabajo'],
                 'telefono_trabajo'         => $referenciasLaborales['telefono_trabajo'],
@@ -556,12 +568,14 @@ class SolicitudesController extends BaseController
                     # paso 1: recupero la información de la solicitud
                     $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
                     # paso 2: recupero el cliente asociado a la solicitud desde el modelo de clientes
-                    $clienteEncontrado = $this->clientesModel->buscarCliente(null, $solicitudEncontrada['id_cliente']);
+                    $clienteEncontrado = $this->clientesModel->buscarCliente(null, (int) $solicitudEncontrada['id_cliente']);
 
                     // Buscar los nombres del departamento y municipio utilizando sus códigos
                     $departamentoCliente = $this->deptoModel->getDepartamentoPorCodigo($clienteEncontrado['departamento']);
                     $municipioCliente = $this->muniModel->getMunicipioPorCodigo($clienteEncontrado['municipio']);
+                    $coloniaCliente = $this->coloniaModel->getColoniasByCliente($clienteEncontrado['colonia']);
 
+                    log_message("info", "Nombre de la colonia cliente: " . $coloniaCliente);
                     # paso 3: se recuperan las referencias laborales del cliente
                     $refLaboralEncontrado = $this->refLaboralModel->obtenerReferenciasPorSolicitud($id_solicitud);
                     log_message("info", "Datos de la refLaboral:: " . print_r($refLaboralEncontrado, true));
@@ -596,6 +610,7 @@ class SolicitudesController extends BaseController
                         'cliente' => $clienteEncontrado,
                         'deptClienteN' => $departamentoCliente,
                         'muniClienteN' => $municipioCliente,
+                        'coloniaCliente' => $coloniaCliente,
                         'refLaboral' => $refLaboralEncontrado,
                         'refFamiliares' => $refFamiliares,
                         'refNoFamiliares' => $refNoFamiliares,
@@ -635,29 +650,62 @@ class SolicitudesController extends BaseController
             $id_solicitud = $this->request->getPost('id_solicitud');
 
             if ($id_solicitud && !$id_estado && !$observacion) {
-                $rspContrato = $this->generarDocController->generarContrato($id_solicitud);
-                if ($rspContrato['success']) {
+                // Obtienes la solicitud
+                $numeroSoli = $this->solicitudesModel->find($id_solicitud);
+                
+                // Primero, validamos si el contrato ya existe
+                $rspContratoValidado = $this->generarDocController->validarContrato($numeroSoli['numero_solicitud']);
+                log_message("info", "Validando si el estado existe:: ". print_r($rspContratoValidado,true));
+                
+                if ($rspContratoValidado['success'] && $rspContratoValidado['message'] == 'existe') {
+                    log_message("info", "Entra en el if del contrato generado");
+                    // Si el contrato ya existe, seguimos con el flujo, pero no generamos el contrato nuevamente
+                    $rspContrato = [
+                        'success' => true,
+                        'message' => 'El contrato ya existe para esta solicitud.',
+                        'solicitud' => $numeroSoli['numero_solicitud']
+                    ];
+                } else {
+                    // Si el contrato no existe, generamos el contrato
+                    log_message("info", "Entra en el else de generar contrato");
+                    $rspContrato = $this->generarDocController->generarContrato($id_solicitud);
+                }
 
+                log_message("info", "valor de rspContrato:: ".print_r($rspContrato,true));
+                
+                // Aquí continuamos con el flujo después de validar o generar el contrato
+                if ($rspContrato['success']) {
+                    log_message("info", "Entro al if2 actualizarEstado");
+            
+                    // Actualizamos el estado de la solicitud
                     $dataUpdate = [
                         'id_estado_actual' => 2
                     ];
-                    
-                    $this->solicitudesModel->update($id_solicitud, $dataUpdate);
-
-                    $solicitud = $rspContrato['solicitud'];
-
+            
+                    // Si se actualiza el estado correctamente
+                    if ($this->solicitudesModel->update($id_solicitud, $dataUpdate)) {
+                        log_message('info', '*********************************** COBROS ***********************************');
+                        $planPago = $this->planDePagoModel->buscarPorSolicitud($id_solicitud);
+                        $this->crearCobros($planPago, $id_solicitud);
+                        log_message('info', '********************************* FIN COBROS *********************************');
+                    } else {
+                        log_message("info", "no se actualizo");
+                    }
+            
+                    // Retornamos la respuesta con el mensaje de éxito
                     return $this->response->setJSON([
                         'success' => true,
                         'message' => $rspContrato['message'],
-                        'solicitud' => $solicitud
+                        'solicitud' => $rspContrato['solicitud']
                     ]);
                 } else {
+                    // Si ocurrió un error al generar el contrato
                     return $this->response->setJSON([
                         'success' => false,
                         'message' => $rspContrato['message']
                     ]);
                 }
-            } else if ($id_solicitud && $id_estado && $observacion) {
+            }else if ($id_solicitud && $id_estado && $observacion) {
                 log_message("info", "Entro al else actualizarEstado");
                 log_message('info', 'Datos recibidos: id_estado: {id_estado}, observacion: {observacion}, id_solicitud: {id_solicitud}', [
                     'id_estado' => $id_estado,
@@ -691,6 +739,95 @@ class SolicitudesController extends BaseController
             log_message('error', $errorMessage);
 
             return $this->response->setJSON(['error' => 'Error en al procesar la documentacion']);
+        }
+    }
+
+    /* private function crearCobros($planPago, $id_solicitud)
+    {
+        try {
+            $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
+            $fechaCompleta = $solicitudEncontrada["fecha_creacion"];
+            $fechaSol = explode(" ", $fechaCompleta)[0];
+            $fecha = new \DateTime($fechaSol);
+
+            $cantMeses = $planPago[0]["cuotas"];
+            for ($i = 0; $i <= $cantMeses; $i++) {
+                $fechaPago = clone $fecha;
+
+                if ($i != 0) {
+                    $fechaPago->modify("+{$i} month");
+                }
+                $fechaVencimiento = clone $fechaPago;
+                //$fechaVencimiento->modify("+1 day");
+
+                $data = [
+                    'id_solicitud'      => $id_solicitud,
+                    'numero_cuota'      => $i,
+                    'monto_cuota'       => $i == 0 ? $planPago[0]["valor_prima"] : $planPago[0]["monto_cuotas"],
+                    'descripcion'       => $i == 0 ? "Pago de prima o cuota numero " . $i . " de " . $planPago[0]["cuotas"] : "",
+                    'estado'            => $i == 0 ? "CANCELADO" : "PENDIENTE",
+                    'fecha_pago'        => "",
+                    'fecha_vencimiento' => $fechaVencimiento->format("Y-m-d")
+                ];
+
+                if($this->cobrosModel->insert($data)){
+                    log_message('info', "Guardado");
+                }else {
+                    log_message('info', "no guardado");
+                }
+            }
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+            log_message('error', $errorMessage);
+            return $this->response->setJSON(['error' => 'Error al procesar la generación de cobros']);
+        }
+    } */
+    private function crearCobros($planPago, $id_solicitud)
+    {
+        try {
+            $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
+            $fechaCompleta = $solicitudEncontrada["fecha_creacion"];
+            $fechaSol = explode(" ", $fechaCompleta)[0];
+            $fecha = new \DateTime($fechaSol);
+
+            $cantMeses = $planPago[0]["cuotas"];
+            for ($i = 0; $i <= $cantMeses; $i++) {
+                $fechaPago = clone $fecha;
+                // Validar si el valor de la prima es 0
+                $esPagoPrima = $i == 0 && $planPago[0]["valor_prima"] != 0;
+                /* if ($i != 0) { */
+                if (!$esPagoPrima) {
+                    $fechaPago->modify("+{$i} month");
+                }
+                $fechaVencimiento = clone $fechaPago;
+
+                // Construir los datos del cobro
+                $data = [
+                    'id_solicitud'      => $id_solicitud,
+                    'numero_cuota'      => $i,
+                    'monto_cuota'       => $esPagoPrima ? $planPago[0]["valor_prima"] : $planPago[0]["monto_cuotas"],
+                    'descripcion'       => $esPagoPrima ? "Pago de prima o cuota numero " . $i . " de " . $planPago[0]["cuotas"] : "",
+                    'estado'            => $esPagoPrima ? "CANCELADO" : "PENDIENTE",
+                    'fecha_pago'        => "",
+                    'fecha_vencimiento' => $fechaVencimiento->format("Y-m-d"),
+                    'esPrima'           => $esPagoPrima ? 1 : 0
+                ];
+
+                // Evitar registrar una cuota de prima si su valor es 0
+                if ($i != 0 || $planPago[0]["valor_prima"] != 0) {
+                    if ($this->cobrosModel->insert($data)) {
+                        log_message('info', "Guardado");
+                    } else {
+                        log_message('info', "No guardado");
+                    }
+                }
+            }
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+            log_message('error', $errorMessage);
+            return $this->response->setJSON(['error' => 'Error al procesar la generación de cobros']);
         }
     }
 }

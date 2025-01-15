@@ -33,13 +33,19 @@ $routes->post('procesar_nueva_sol', 'SolicitudesController::procesarSolicitud');
 $routes->get('ver_solicitud', 'SolicitudesController::ver_solicitud');
 $routes->get('clientes', 'ClientesController::index');
 $routes->get('nuevo_cliente', 'ClientesController::nuevoCliente');
+$routes->get('editar_cliente/(:any)', 'ClientesController::editar_cliente/$1');
 $routes->post('guardar_cliente', 'ClientesController::guardarClientes');
+$routes->post('editar_cliente', 'ClientesController::guardarClientes');
 $routes->post('searchClient', 'ClientesController::buscarClientes');
 
 
 //rutas de carga de departamento, es general
 $routes->get('departamentos', 'DepartamentosController::getAllDepartamentos');
 $routes->post('municipios', 'MunicipiosController::index');
+$routes->post('distritos', 'DistritosController::index');
+$routes->post('coloniasXDistrito', 'ColoniaController::getColoniaXDistrito');
+//$routes->post('coloniasXmunicipio', 'ColoniaController::getColoniaXDistrito');
+$routes->post('coloniascliente', 'ColoniaController::getColoniaCliente');
 
 //rutas para productos
 $routes->get('productos', 'ProductosController::index');
@@ -88,6 +94,7 @@ $routes->post('apoderadosNew','ApoderadosController::apoderadosNew');
 $routes->get('getApoderado','ApoderadosController::getApoderados');
 
 $routes->get('documentos','GenerarSolicitudCreditoController::generarDocumento');
+$routes->get('generar_contrato/(:num)', 'GenerarSolicitudCreditoController::generarContrato/$1');
 
 $routes->get('permisos','PermisosPerfilesController::index');
 $routes->get('getPerfiles','PermisosPerfilesController::getperfiles');
@@ -97,3 +104,17 @@ $routes->post('editPermisos','PermisosPerfilesController::asignarPermisos');
 
 $routes->post('actualizarEstado','SolicitudesController::actualizarEstado');
 $routes->get('archivo/descargar/(:any)', 'GenerarSolicitudCreditoController::descargar/$1');
+
+$routes->get('profesiones','ProfesionController::index');
+$routes->post('guardarProfesion','ProfesionController::save');
+$routes->get('obtenerProfesiones','ProfesionController::obtenerProfesiones');
+
+$routes->get('colonias','ColoniaController::index');
+$routes->post('getColonias','ColoniaController::getColonias');
+$routes->post('colonias','ColoniaController::saveColonia');
+
+$routes->get('cobros','CobrosController::index');
+$routes->post('getCobrosCliente','CobrosController::getCobrosClientes');
+$routes->post('getDeudasPorSolicitud','CobrosController::getDeudasPorSolicitud');
+$routes->post('procesarPagosCuotas','CobrosController::procesarPagos');
+$routes->post('downloadDocPago','CobrosController::descargarDocumentoCobros');

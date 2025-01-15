@@ -88,7 +88,7 @@
                             <input type="text" class="form-control soloNumeros" id="productoDisponible" name="disponible">
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label for="categoriaProducto">Caregoria:</label>
+                            <label for="categoriaProducto">Categoria:</label>
                             <select class="form-control form-control-user" id="categoriaProducto" name="id_categoria">
                                 <option value="-1">Seleccione...</option>
                                 <?php if (!empty($categoriasActivas)) : ?>

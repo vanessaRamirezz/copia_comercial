@@ -45,12 +45,6 @@ class DisponibilidadProductosModel extends Model
 
         $builder = $this->db->table('productos p');
         $builder->select('
-            m.id_solicitud AS id_solicitud,
-            p.id_producto,
-            p.nombre,
-            p.codigo_producto,
-            p.id_categoria,
-            p.estado,
             SUM(CASE
                 WHEN tm.id_tipo_movimiento = 11 THEN m.cantidad
                 ELSE 0

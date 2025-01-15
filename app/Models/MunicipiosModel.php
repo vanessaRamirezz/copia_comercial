@@ -17,7 +17,6 @@ class MunicipiosModel extends Model
 
     public function getMunicipioPorCodigo($codigo)
     {
-        // Ajusta la consulta según la estructura de tu tabla
         return $this->where('id', $codigo)->first()['nombre'];
     }
 }

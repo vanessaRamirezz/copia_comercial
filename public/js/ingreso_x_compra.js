@@ -208,7 +208,9 @@ function guardarDatosIXC() {
             success: function (rsp) {
                 if (rsp.success) {
                     toastr.success(rsp.message, "Success");
-                    //cargarTablaProductos();
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1500);
                 } else if (rsp.error) {
                     Swal.close();
                     toastr.error(rsp.error, "ERROR");

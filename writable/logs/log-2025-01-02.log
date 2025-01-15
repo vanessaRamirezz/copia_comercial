@@ -1,0 +1,173 @@
+INFO - 2025-01-02 21:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:42:15 --> iniciando sesion
+INFO - 2025-01-02 21:42:17 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null}]
+INFO - 2025-01-02 21:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:42:19 --> SolicitudesController solicitudes
+INFO - 2025-01-02 21:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:42:48 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-02 21:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:43:01 --> Llego a buscarProductos con consulta
+INFO - 2025-01-02 21:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:43:01 --> Abuscar es:: 000 origen suc 1
+INFO - 2025-01-02 21:43:01 --> query 
+INFO - 2025-01-02 21:43:02 --> resultDisponible 1::: Array
+(
+)
+
+INFO - 2025-01-02 21:43:02 --> resultTotalSalidas 2::: Array
+(
+)
+
+INFO - 2025-01-02 21:43:02 --> Nuevo valor:: Array
+(
+)
+
+INFO - 2025-01-02 21:43:02 --> No hay disponibilidad ajustada; se realiza la búsqueda alternativa
+INFO - 2025-01-02 21:51:07 --> Llego a buscarProductos con consulta
+INFO - 2025-01-02 21:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:51:07 --> Abuscar es:: 00001 origen suc 1
+INFO - 2025-01-02 21:51:07 --> query 
+INFO - 2025-01-02 21:51:07 --> resultDisponible 1::: [{"id_sucursal_destino":"1","id_producto":"12","nombre":"Auriculares Inal\u00e1mbricos Bluetooth","marca":"SoundWave","modelo":"SW-X100","color":"Negro Mate","medidas":"5 x 4 x 2 cm","precio":"120.00","costo_unitario":"55.00","id_categoria":"7","disponible":"0","codigo_producto":"00001","estado":"1","id_usuario_creacion":"1","fecha_creacion":"2024-11-09","disponibilidad":"6"}]
+INFO - 2025-01-02 21:51:08 --> resultTotalSalidas 2::: [{"totalSalida":"2"}]
+INFO - 2025-01-02 21:51:08 --> Datos iniciales - resultDisponible: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 12
+            [nombre] => Auriculares Inalámbricos Bluetooth
+            [marca] => SoundWave
+            [modelo] => SW-X100
+            [color] => Negro Mate
+            [medidas] => 5 x 4 x 2 cm
+            [precio] => 120.00
+            [costo_unitario] => 55.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => 00001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-11-09
+            [disponibilidad] => 6
+        )
+
+)
+
+INFO - 2025-01-02 21:51:08 --> Datos iniciales - resultTotalSalidas: Array
+(
+    [0] => stdClass Object
+        (
+            [totalSalida] => 2
+        )
+
+)
+
+INFO - 2025-01-02 21:51:08 --> Sumando salida: 2 - Total acumulado: 2
+ERROR - 2025-01-02 21:51:08 --> Undefined property: stdClass::$producto_id
+INFO - 2025-01-02 21:51:50 --> Llego a buscarProductos con consulta
+INFO - 2025-01-02 21:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:51:50 --> Abuscar es:: 00001 origen suc 1
+INFO - 2025-01-02 21:51:50 --> query 
+INFO - 2025-01-02 21:51:50 --> resultDisponible 1::: [{"id_sucursal_destino":"1","id_producto":"12","nombre":"Auriculares Inal\u00e1mbricos Bluetooth","marca":"SoundWave","modelo":"SW-X100","color":"Negro Mate","medidas":"5 x 4 x 2 cm","precio":"120.00","costo_unitario":"55.00","id_categoria":"7","disponible":"0","codigo_producto":"00001","estado":"1","id_usuario_creacion":"1","fecha_creacion":"2024-11-09","disponibilidad":"6"}]
+INFO - 2025-01-02 21:51:51 --> resultTotalSalidas 2::: [{"totalSalida":"2"}]
+INFO - 2025-01-02 21:51:51 --> Datos iniciales - resultDisponible: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 12
+            [nombre] => Auriculares Inalámbricos Bluetooth
+            [marca] => SoundWave
+            [modelo] => SW-X100
+            [color] => Negro Mate
+            [medidas] => 5 x 4 x 2 cm
+            [precio] => 120.00
+            [costo_unitario] => 55.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => 00001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-11-09
+            [disponibilidad] => 6
+        )
+
+)
+
+INFO - 2025-01-02 21:51:51 --> Datos iniciales - resultTotalSalidas: Array
+(
+    [0] => stdClass Object
+        (
+            [totalSalida] => 2
+        )
+
+)
+
+INFO - 2025-01-02 21:51:51 --> Sumando salida: 2 - Total acumulado: 2
+ERROR - 2025-01-02 21:51:51 --> Undefined property: stdClass::$producto_id
+INFO - 2025-01-02 21:52:21 --> Llego a buscarProductos con consulta
+INFO - 2025-01-02 21:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-02 21:52:21 --> Abuscar es:: 00001 origen suc 1
+INFO - 2025-01-02 21:52:21 --> query 
+INFO - 2025-01-02 21:52:21 --> resultDisponible 1::: [{"id_sucursal_destino":"1","id_producto":"12","nombre":"Auriculares Inal\u00e1mbricos Bluetooth","marca":"SoundWave","modelo":"SW-X100","color":"Negro Mate","medidas":"5 x 4 x 2 cm","precio":"120.00","costo_unitario":"55.00","id_categoria":"7","disponible":"0","codigo_producto":"00001","estado":"1","id_usuario_creacion":"1","fecha_creacion":"2024-11-09","disponibilidad":"6"}]
+INFO - 2025-01-02 21:52:22 --> resultTotalSalidas 2::: [{"totalSalida":"2"}]
+INFO - 2025-01-02 21:52:22 --> Datos iniciales - resultDisponible: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 12
+            [nombre] => Auriculares Inalámbricos Bluetooth
+            [marca] => SoundWave
+            [modelo] => SW-X100
+            [color] => Negro Mate
+            [medidas] => 5 x 4 x 2 cm
+            [precio] => 120.00
+            [costo_unitario] => 55.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => 00001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-11-09
+            [disponibilidad] => 6
+        )
+
+)
+
+INFO - 2025-01-02 21:52:22 --> Datos iniciales - resultTotalSalidas: Array
+(
+    [0] => stdClass Object
+        (
+            [totalSalida] => 2
+        )
+
+)
+
+INFO - 2025-01-02 21:52:22 --> Sumando salida: 2 - Total acumulado: 2
+INFO - 2025-01-02 21:52:22 --> Disponibilidad inicial: 6
+INFO - 2025-01-02 21:52:22 --> Nuevo valor final:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 1
+            [id_producto] => 12
+            [nombre] => Auriculares Inalámbricos Bluetooth
+            [marca] => SoundWave
+            [modelo] => SW-X100
+            [color] => Negro Mate
+            [medidas] => 5 x 4 x 2 cm
+            [precio] => 120.00
+            [costo_unitario] => 55.00
+            [id_categoria] => 7
+            [disponible] => 0
+            [codigo_producto] => 00001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2024-11-09
+            [disponibilidad] => 4
+        )
+
+)
+

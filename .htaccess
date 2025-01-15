@@ -52,9 +52,10 @@ ServerSignature Off
 <FilesMatch "\.(json)$">
     Header set Access-Control-Allow-Origin "*"
     Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
-    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+# Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
 </FilesMatch>
 # Permitir acceso a archivos PDF en la carpeta writable/pdf/
-<FilesMatch "\.(pdf)$">
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|woff|woff2|ttf|eot)$">
     Require all granted
 </FilesMatch>

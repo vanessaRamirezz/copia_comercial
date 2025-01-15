@@ -1,0 +1,287 @@
+INFO - 2025-01-14 15:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:24:52 --> ClientesController editar_cliente
+INFO - 2025-01-14 15:24:52 --> Valor de datos a guarda::: Array
+(
+    [dui] => 01234567-8
+    [nombre_completo] => Ana María Pérez López
+    [estado_civil] => Casada/o
+    [fecha_nacimiento] => 1980-03-02
+    [telefono] => 7890-1234
+    [direccion] => Calle Los Almendros, N° 56
+    [departamento] => 10
+    [municipio] => 177
+    [colonia] => 1
+    [correo] => ana.perez@example.com
+    [nombre_conyugue] => José Luis Martínez
+    [direccion_trabajo_conyugue] => Av. Las Magnolias, Edificio A, San Salvador
+    [telefono_trabajo_conyugue] => 7890-5678
+    [nombre_padres] => Pedro Pérez
+    [direccion_padres] => Colonia El Paraíso, San Salvador
+    [telefono_padres] => 2345-6789
+    [CpropiaCN] => NO
+    [CpromesaVentaCN] => SI
+    [CalquiladaCN] => NO
+    [aQuienPerteneceCN] => María González
+    [telPropietarioCN] => 7654-4321
+    [tiempoDeVivirDomicilioCN] => 3 AÑOS
+    [id_user_creacion] => 7
+    [id_sucursal_creacion] => 3
+)
+
+INFO - 2025-01-14 15:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:24:55 --> ClientesController clientes
+INFO - 2025-01-14 15:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:16 --> ClientesController editar_cliente
+INFO - 2025-01-14 15:25:16 --> Valor de datos a guarda::: Array
+(
+    [dui] => 01234567-8
+    [nombre_completo] => Ana María Pérez López
+    [estado_civil] => Casada/o
+    [fecha_nacimiento] => 1980-03-02
+    [telefono] => 7890-1234
+    [direccion] => Calle Los Almendros, N° 56
+    [departamento] => 10
+    [municipio] => 177
+    [colonia] => 1
+    [correo] => ana.perez@example.com
+    [nombre_conyugue] => José Luis Martínez
+    [direccion_trabajo_conyugue] => Av. Las Magnolias, Edificio A, San Salvador
+    [telefono_trabajo_conyugue] => 7890-5678
+    [nombre_padres] => Pedro Pérez
+    [direccion_padres] => Colonia El Paraíso, San Salvador
+    [telefono_padres] => 2345-6789
+    [CpropiaCN] => NO
+    [CpromesaVentaCN] => SI
+    [CalquiladaCN] => NO
+    [aQuienPerteneceCN] => María González
+    [telPropietarioCN] => 7654-4321
+    [tiempoDeVivirDomicilioCN] => 3 AÑOS
+    [id_user_creacion] => 7
+    [id_sucursal_creacion] => 3
+)
+
+INFO - 2025-01-14 15:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:18 --> ClientesController clientes
+INFO - 2025-01-14 15:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:50 --> ClientesController editar_cliente
+INFO - 2025-01-14 15:25:50 --> Valor de datos a guarda::: Array
+(
+    [dui] => 01234567-8
+    [nombre_completo] => Ana María Pérez López
+    [estado_civil] => Casada/o
+    [fecha_nacimiento] => 1980-03-02
+    [telefono] => 7890-1234
+    [direccion] => Calle Los Almendros, N° 56
+    [departamento] => 10
+    [municipio] => 177
+    [colonia] => 1
+    [correo] => ana.perez@example.com
+    [nombre_conyugue] => José Luis Martínez
+    [direccion_trabajo_conyugue] => Av. Las Magnolias, Edificio A, San Salvador
+    [telefono_trabajo_conyugue] => 7890-5678
+    [nombre_padres] => Pedro Pérez
+    [direccion_padres] => Colonia El Paraíso, San Salvador
+    [telefono_padres] => 2345-6789
+    [CpropiaCN] => NO
+    [CpromesaVentaCN] => SI
+    [CalquiladaCN] => NO
+    [aQuienPerteneceCN] => María González
+    [telPropietarioCN] => 7654-4321
+    [tiempoDeVivirDomicilioCN] => 3 AÑOS
+    [id_user_creacion] => 7
+    [id_sucursal_creacion] => 3
+)
+
+INFO - 2025-01-14 15:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:25:52 --> ClientesController clientes
+INFO - 2025-01-14 15:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 15:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:26:34 --> iniciando sesion
+INFO - 2025-01-14 18:26:35 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-14 18:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:26:35 --> SolicitudesController solicitudes
+INFO - 2025-01-14 18:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:26:39 --> ClientesController clientes
+INFO - 2025-01-14 18:28:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 18:28:18 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 18:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 19:31:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 19:31:32 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 19:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:28:48 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 21:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:32:07 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 21:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:46:46 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 21:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:46:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:47:41 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 21:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:48:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:48:28 --> iniciando sesion
+INFO - 2025-01-14 21:48:34 --> iniciando sesion
+INFO - 2025-01-14 21:49:04 --> iniciando sesion
+INFO - 2025-01-14 21:49:26 --> iniciando sesion
+INFO - 2025-01-14 21:49:49 --> iniciando recuperar contraseña
+INFO - 2025-01-14 21:49:50 --> El token generado es: 79066709-- y la respuesta es: 1
+INFO - 2025-01-14 21:49:54 --> Correo enviado con éxito
+INFO - 2025-01-14 21:51:56 --> Actualizar password por recuperacion
+DEBUG - 2025-01-14 21:51:57 --> data usuario:: Array
+(
+    [id_usuario] => 1
+    [nombres] => Maria 
+    [apellidos] => Chacon
+    [dui] => 05662517-0
+    [correo] => jaimepalacios998@gmail.com
+    [telefono] => 77593143
+    [contrasena] => l4S9oZ9tWu/7Mn26OBQb2ePdazmQd2j1HUQM7p9HSfOekHJ0sj4vCXNmOcuGrawWJyHvKDHXAgVnxjEnUD573dltcyyfUlP47Pu06jKyVTZOwgh6wBkDAA==
+    [id_sucursal] => 1
+    [id_perfil] => 2
+    [token] => 79066709
+)
+
+INFO - 2025-01-14 21:51:57 --> token usuario: 79066709 token post: 79066709
+INFO - 2025-01-14 21:51:57 --> el token es igual: 79066709
+INFO - 2025-01-14 21:51:57 --> la respuesta de actualizar es:: 1
+INFO - 2025-01-14 21:52:06 --> iniciando sesion
+INFO - 2025-01-14 21:52:35 --> iniciando sesion
+INFO - 2025-01-14 21:52:35 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-14 21:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:52:36 --> AdministracionController inicio_administracion
+INFO - 2025-01-14 21:52:36 --> AdministracionController Acceso permitido
+INFO - 2025-01-14 21:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 21:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:16:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:17:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-14 22:17:17 --> BadMethodCallException: Call to undefined method App\Models\ColoniasModel::getColoniasByDistrito
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\ColoniaController.php(31): CodeIgniter\Model->__call('getColoniasByDistrito', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ColoniaController->getColonias()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ColoniaController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-14 22:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 22:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:38:47 --> ClientesController clientes
+INFO - 2025-01-14 23:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:40:31 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 23:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:48:39 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 23:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:36 --> ClientesController clientes
+INFO - 2025-01-14 23:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:49:39 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 23:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:51:28 --> ClientesController nuevo_cliente
+INFO - 2025-01-14 23:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:52:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:53:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:53:03 --> ClientesController guardar_cliente
+INFO - 2025-01-14 23:53:03 --> Valor de datos a guarda::: Array
+(
+    [dui] => 87877868-7
+    [nombre_completo] => Jose Antonio Perez
+    [estado_civil] => Soltera/o
+    [fecha_nacimiento] => 2007-01-02
+    [telefono] => 7565-6456
+    [direccion] => Apopa cas 43
+    [departamento] => 10
+    [municipio] => 28
+    [distrito] => 182
+    [colonia] => 8
+    [correo] => joanpe@gmail.com
+    [nombre_conyugue] => 
+    [direccion_trabajo_conyugue] => 
+    [telefono_trabajo_conyugue] => 
+    [nombre_padres] => Miguel Antonio Perez
+    [direccion_padres] => Valle dulce Apopa
+    [telefono_padres] => 7657-6576
+    [CpropiaCN] => SI
+    [CpromesaVentaCN] => NO
+    [CalquiladaCN] => NO
+    [aQuienPerteneceCN] => N/A
+    [telPropietarioCN] => 0000-0000
+    [tiempoDeVivirDomicilioCN] => 5 años
+    [id_user_creacion] => 1
+    [id_sucursal_creacion] => 1
+)
+
+INFO - 2025-01-14 23:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:53:06 --> ClientesController clientes
+INFO - 2025-01-14 23:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-14 23:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

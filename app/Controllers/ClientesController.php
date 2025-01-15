@@ -61,6 +61,7 @@ class ClientesController extends BaseController
                 $url = $this->request->uri->getSegment(1);
                 log_message("info", $this->nameClass . " " . $url);
 
+                $idPersonaEditar = $this->request->getPost('idPersonaEditar');
 
                 $data = [
                     'dui' => $this->request->getPost('duiPersonal'),
@@ -71,6 +72,8 @@ class ClientesController extends BaseController
                     'direccion' => $this->request->getPost('direccionActualCN'),
                     'departamento' => $this->request->getPost('deptoClienteCN'),
                     'municipio' => $this->request->getPost('muniClienteCN'),
+                    'distrito' => $this->request->getPost('distritoClienteCN'),
+                    'colonia' => $this->request->getPost('coloniaClienteCN'),
                     'correo' => $this->request->getPost('correoCN'),
                     'nombre_conyugue' => $this->request->getPost('nombreConyugueCN'),
                     'direccion_trabajo_conyugue' => $this->request->getPost('dirTrabajoConyugueCN'),
@@ -88,15 +91,25 @@ class ClientesController extends BaseController
                     'id_sucursal_creacion' => $_SESSION['sucursal']
                 ];
                 $clientesModel = new ClientesModel();
+                log_message("info", "Valor de datos a guarda::: " . print_r($data, true));
 
-                $dui = (string) $this->request->getPost('duiPersonal');
-                if ($clientesModel->existeDui($dui)) {
-                    echo json_encode(['error' => 'El DUI ingresado ya existe']);
-                } else {
-                    if ($clientesModel->guardarCliente($data)) {
-                        echo json_encode(['success' => 'Datos registrados correctamente']);
+                if ($idPersonaEditar) {
+                    // 🔄 Editar cliente
+                    if ($clientesModel->actualizarCliente($idPersonaEditar, $data)) {
+                        echo json_encode(['success' => 'Datos actualizados correctamente']);
                     } else {
-                        echo json_encode(['error' => 'ocurrio un error al intentar insertar los datos']);
+                        echo json_encode(['error' => 'Ocurrió un error al intentar actualizar los datos']);
+                    }
+                } else {
+                    $dui = (string) $this->request->getPost('duiPersonal');
+                    if ($clientesModel->existeDui($dui)) {
+                        echo json_encode(['error' => 'El DUI ingresado ya existe']);
+                    } else {
+                        if ($clientesModel->guardarCliente($data)) {
+                            echo json_encode(['success' => 'Datos registrados correctamente']);
+                        } else {
+                            echo json_encode(['error' => 'ocurrio un error al intentar insertar los datos']);
+                        }
                     }
                 }
             } else {
@@ -128,6 +141,29 @@ class ClientesController extends BaseController
         } catch (\Throwable $th) {
             log_message('ERROR', 'Error al intentar guardar ' . $th);
             return $this->response->setJSON(['error' => 'Se produjo un error inesperado']);
+        }
+    }
+
+
+
+    public function editar_cliente($param)
+    {
+        $session = session();
+        if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
+            $clientesModel = new ClientesModel();
+            $decodedParam = base64_decode($param);
+
+            $id_cliente = (int) $decodedParam;
+            $datosClientes = $clientesModel->buscarCliente(null, $id_cliente);
+            $data = [
+                'datosClientes' => $datosClientes
+            ];
+
+            $content4 = view('clientes/nuevo_cliente', $data);
+            $fullPage = $this->renderPage($content4);
+            return $fullPage;
+        } else {
+            return redirect()->to(base_url());
         }
     }
 }

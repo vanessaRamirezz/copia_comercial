@@ -76,6 +76,18 @@ function handleAction(tipoMov) {
                                     window.open(fileUrl, '_blank');
                                     
                                     // Redirigir a solicitudes después de la descarga
+                                    /* Swal.fire({
+                                        icon: 'success',
+                                        title: '¡Solicitud aprobada con éxito!',
+                                        text: 'Estás siendo redireccionado.',
+                                        allowOutsideClick: false,
+                                        allowEscapeKey: false,
+                                        allowEnterKey: false,
+                                        showConfirmButton: false
+                                    });
+                                    setTimeout(() => {
+                                        window.history.back();
+                                    }, 3000); */
                                     setTimeout(function () {
                                         window.location.href = baseURL + 'solicitudes';
                                     }, 2000); // 2 segundos de espera para que comience la descarga antes de redirigir

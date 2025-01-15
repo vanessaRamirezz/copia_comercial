@@ -1,0 +1,1196 @@
+INFO - 2025-01-09 09:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:48:52 --> iniciando sesion
+INFO - 2025-01-09 09:48:54 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 09:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:48:54 --> AdministracionController inicio_administracion
+INFO - 2025-01-09 09:48:54 --> AdministracionController Acceso permitido
+INFO - 2025-01-09 09:49:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:49:13 --> ProductosController productos
+INFO - 2025-01-09 09:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:59:01 --> IngresosController ingresos
+INFO - 2025-01-09 09:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:59:08 --> IngresoPorComprasController ingresos_por_compras
+INFO - 2025-01-09 09:59:40 --> Llego a buscarProductos con consulta
+INFO - 2025-01-09 09:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 09:59:40 --> Abuscar es:: PRD001 origen suc 1
+INFO - 2025-01-09 09:59:40 --> query 
+INFO - 2025-01-09 09:59:41 --> resultDisponible 1::: []
+INFO - 2025-01-09 09:59:41 --> resultTotalSalidas 2::: []
+INFO - 2025-01-09 09:59:41 --> Datos iniciales - resultDisponible: Array
+(
+)
+
+INFO - 2025-01-09 09:59:41 --> Datos iniciales - resultTotalSalidas: Array
+(
+)
+
+INFO - 2025-01-09 09:59:41 --> Nuevo valor final:: Array
+(
+)
+
+INFO - 2025-01-09 09:59:41 --> No hay disponibilidad ajustada; se realiza la búsqueda alternativa
+INFO - 2025-01-09 10:01:28 --> IngresoPorComprasController registrarMovimientoIngreso
+INFO - 2025-01-09 10:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:01:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:01:30 --> IngresoPorComprasController ingresos_por_compras
+DEBUG - 2025-01-09 10:01:35 --> el valor del idTipoDoc es--->  1
+DEBUG - 2025-01-09 10:01:36 --> entro porque idTipoDoc es diferente de null
+INFO - 2025-01-09 10:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-09 10:01:44 --> Información del documento: Array
+(
+    [id_documento] => 41
+    [id_usuario_creacion] => 1
+    [id_sucursal_destino] => 3
+    [id_sucursal_origen] => 
+    [id_proveedor] => 1
+    [fecha_creacion] => 2025-01-09 16:01:29
+    [monto_total] => 6750.00
+    [estado] => Procesado
+    [noDocumento] => INV-1001
+    [correlativo] => 001-2025
+    [observaciones] => Producto nuevo en inventario, listo para venta.
+    [id_tipo_movimiento] => 1
+    [usuario] => Jaime Edgardo
+    [sucursal] => Boulevard Constitución
+    [proveedor] => ELECTROGLOBAL
+)
+
+DEBUG - 2025-01-09 10:01:44 --> Obteniendo productos para el documento ID: 41
+DEBUG - 2025-01-09 10:01:44 --> Resultado de productos obtenidos: Array
+(
+    [0] => Array
+        (
+            [codigo_producto] => PRD001
+            [cantidad] => 15
+            [nombre] => Refrigerador LG
+            [modelo] => GL-B201APZY
+            [precio] => 450.00
+        )
+
+)
+
+INFO - 2025-01-09 10:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:02:09 --> ProductosController productos
+INFO - 2025-01-09 10:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:13:18 --> {"sucursales":[{"id_sucursal":"1","sucursal":"Casa Matriz","codigo_sucursal":"0001"}],"perfiles":[{"id_perfil":"3","tipo_perfil":"SUPERVISOR"},{"id_perfil":"4","tipo_perfil":"VENDEDOR"},{"id_perfil":"5","tipo_perfil":"CAJERO"}]}
+INFO - 2025-01-09 10:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:17:54 --> AdministracionController perfil
+INFO - 2025-01-09 10:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:23:59 --> {"sucursales":[{"id_sucursal":"1","sucursal":"Casa Matriz","codigo_sucursal":"0001"}],"perfiles":[{"id_perfil":"3","tipo_perfil":"SUPERVISOR"},{"id_perfil":"4","tipo_perfil":"VENDEDOR"},{"id_perfil":"5","tipo_perfil":"CAJERO"}]}
+INFO - 2025-01-09 10:23:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:26:49 --> iniciando sesion
+INFO - 2025-01-09 10:26:50 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 10:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:26:51 --> SolicitudesController solicitudes
+INFO - 2025-01-09 10:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:26:57 --> SolicitudesController solicitudes
+INFO - 2025-01-09 10:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:27:01 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-09 10:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:42:24 --> 1
+INFO - 2025-01-09 10:55:59 --> Llego a buscarProductos con consulta
+INFO - 2025-01-09 10:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:55:59 --> Abuscar es:: PRD001 origen suc 3
+INFO - 2025-01-09 10:55:59 --> query 
+INFO - 2025-01-09 10:56:00 --> resultDisponible 1::: [{"id_sucursal_destino":"3","id_producto":"13","nombre":"Refrigerador LG","marca":"LG","modelo":"GL-B201APZY","color":"Plata","medidas":"60x170 cm","precio":"450.00","costo_unitario":"350.00","id_categoria":"8","disponible":"0","codigo_producto":"PRD001","estado":"1","id_usuario_creacion":"1","fecha_creacion":"2025-01-09","disponibilidad":"15"}]
+INFO - 2025-01-09 10:56:00 --> resultTotalSalidas 2::: []
+INFO - 2025-01-09 10:56:00 --> Datos iniciales - resultDisponible: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 15
+        )
+
+)
+
+INFO - 2025-01-09 10:56:00 --> Datos iniciales - resultTotalSalidas: Array
+(
+)
+
+INFO - 2025-01-09 10:56:00 --> Disponibilidad inicial: 15
+INFO - 2025-01-09 10:56:00 --> Nuevo valor final:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 15
+        )
+
+)
+
+INFO - 2025-01-09 10:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:58:31 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 7
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => 7
+            [empresa] => Empresa Tech Solutions
+            [direccion_trabajo] => Boulevard de los Héroes, San Salvador
+            [telefono_trabajo] => 25241234
+            [cargo] => Analista de Sistemas
+            [salario] => 1200.00
+            [tiempo_laborando_empresa] => 3 años
+            [nombre_jefe_inmediato] => Lic. José Hernández
+            [empresa_anterior] => Innovatech S.A. de C.V.
+            [telefono_empresa_anterior] => 22334455
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Luis García
+                    [parentesco] => PAPÁ
+                    [direccion] => Calle El Sol, Usulután
+                    [telefono] => 8341-9084
+                    [lugar_trabajo] => Corporación X
+                    [telefono_trabajo] => 9648-8206
+                )
+
+            [1] => Array
+                (
+                    [nombre] => Carlos López
+                    [parentesco] => HERMANO/A
+                    [direccion] => Av. Libertad 234, San Salvador
+                    [telefono] => 8341-9084
+                    [lugar_trabajo] => Consultora ABC
+                    [telefono_trabajo] => 9167-9990
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Marta Rodríguez
+                    [direccion] => Boulevard de la Reforma
+                    [telefono] => 503-3910-1732
+                    [lugar_trabajo] => Servicios Financieros S.A.
+                    [telefono_trabajo] => 5409-7455
+                )
+
+            [1] => Array
+                (
+                    [nombre] => Carlos García
+                    [direccion] => Boulevard de la Reforma
+                    [telefono] => 503-3659-8114
+                    [lugar_trabajo] => Consultora ABC
+                    [telefono_trabajo] => 5409-7455
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.3701
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                )
+
+            [nombre] => 
+            [dui] => 
+            [direccion] => 
+            [COtelPersonal] => 
+            [COpropiaCN] => -1
+            [COpromesaVenta] => -1
+            [COalquilada] => -1
+            [COtiempoVivienda] => 
+            [COestadoCivil] => -1
+            [nombreConyugueCN] => 
+            [profesion] => 
+            [patrono] => 
+            [COdireccionTrabajo] => 
+            [COtelefonoTrabajo] => 
+            [COcargoDesempeña] => 
+            [COsalario] => 
+            [COnombreJefe] => 
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 450.00
+            [valorPagoPrima] => 120.00
+            [saldoAPagar] => 330.00
+            [cantidadCuotas] => 3
+            [montoCuota] => 122.13
+            [montoTotalPagar] => 486.40
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 3
+                    [id_producto] => 13
+                    [nombre] => Refrigerador LG
+                    [marca] => LG
+                    [modelo] => GL-B201APZY
+                    [color] => Plata
+                    [medidas] => 60x170 cm
+                    [precio] => 450.00
+                    [costo_unitario] => 350.00
+                    [id_categoria] => 8
+                    [disponible] => 0
+                    [codigo_producto] => PRD001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2025-01-09
+                    [disponibilidad] => 15
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2025-01-09 10:58:31 --> *********************************** PASO 1 ***********************************
+INFO - 2025-01-09 10:58:32 --> solicitud creada id_solicitud: 21
+INFO - 2025-01-09 10:58:32 --> numero solicitud creada: 000001
+INFO - 2025-01-09 10:58:32 --> ********************************* FIN PASO 1 *********************************
+INFO - 2025-01-09 10:58:32 --> *********************************** PASO 2 ***********************************
+INFO - 2025-01-09 10:58:32 --> el valor de los datos de referencia es:: Array
+(
+    [profesion_oficio] => 7
+    [empresa] => Empresa Tech Solutions
+    [direccion_trabajo] => Boulevard de los Héroes, San Salvador
+    [telefono_trabajo] => 25241234
+    [cargo] => Analista de Sistemas
+    [salario] => 1200.00
+    [tiempo_laborando_empresa] => 3 años
+    [nombre_jefe_inmediato] => Lic. José Hernández
+    [empresa_anterior] => Innovatech S.A. de C.V.
+    [telefono_empresa_anterior] => 22334455
+)
+
+INFO - 2025-01-09 10:58:32 --> ********************************* FIN PASO 2 *********************************
+INFO - 2025-01-09 10:58:32 --> *********************************** PASO 3 ***********************************
+INFO - 2025-01-09 10:58:32 --> ********************************* FIN PASO 3 *********************************
+INFO - 2025-01-09 10:58:32 --> *********************************** PASO 4 ***********************************
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 4 *********************************
+INFO - 2025-01-09 10:58:33 --> *********************************** PASO 5 ***********************************
+INFO - 2025-01-09 10:58:33 --> Resultado ref crediticias: Array
+(
+)
+
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 5 *********************************
+INFO - 2025-01-09 10:58:33 --> *********************************** PASO 6 ***********************************
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 6 *********************************
+INFO - 2025-01-09 10:58:33 --> *********************************** PASO 7 ***********************************
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 7 *********************************
+INFO - 2025-01-09 10:58:33 --> *********************************** PASO 8 ***********************************
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 8 *********************************
+INFO - 2025-01-09 10:58:33 --> *********************************** PASO 9 ***********************************
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 9 *********************************
+INFO - 2025-01-09 10:58:33 --> *********************************** PASO 10 ***********************************
+INFO - 2025-01-09 10:58:33 --> SolicitudesController registrarMovimientoSalidaVenta
+INFO - 2025-01-09 10:58:33 --> ********************************* FIN PASO 10 *********************************
+INFO - 2025-01-09 10:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 10:58:39 --> SolicitudesController solicitudes
+INFO - 2025-01-09 11:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:00:36 --> iniciando sesion
+INFO - 2025-01-09 11:00:36 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 11:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:00:36 --> AdministracionController inicio_administracion
+INFO - 2025-01-09 11:00:36 --> AdministracionController Acceso permitido
+INFO - 2025-01-09 11:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:00:40 --> SolicitudesController solicitudes
+INFO - 2025-01-09 11:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:00:59 --> {"sucursales":[{"id_sucursal":"1","sucursal":"Casa Matriz","codigo_sucursal":"0001"}],"perfiles":[{"id_perfil":"3","tipo_perfil":"SUPERVISOR"},{"id_perfil":"4","tipo_perfil":"VENDEDOR"},{"id_perfil":"5","tipo_perfil":"CAJERO"}]}
+INFO - 2025-01-09 11:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:03:53 --> iniciando sesion
+INFO - 2025-01-09 11:03:54 --> Valor retornado del acceso es:: []
+INFO - 2025-01-09 11:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:04:10 --> iniciando sesion
+INFO - 2025-01-09 11:04:10 --> Valor retornado del acceso es:: []
+INFO - 2025-01-09 11:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:04:48 --> iniciando sesion
+INFO - 2025-01-09 11:04:49 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 11:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:04:49 --> AdministracionController inicio_administracion
+INFO - 2025-01-09 11:04:49 --> AdministracionController Acceso permitido
+INFO - 2025-01-09 11:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 11:04:53 --> SolicitudesController solicitudes
+INFO - 2025-01-09 13:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:24:24 --> iniciando sesion
+INFO - 2025-01-09 13:24:38 --> iniciando sesion
+INFO - 2025-01-09 13:24:39 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 13:24:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:24:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:24:39 --> AdministracionController inicio_administracion
+INFO - 2025-01-09 13:24:39 --> AdministracionController Acceso permitido
+INFO - 2025-01-09 13:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:24:43 --> SolicitudesController solicitudes
+INFO - 2025-01-09 13:24:52 --> generarDocumento encryptedSolicitud::: MjE=
+INFO - 2025-01-09 13:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:26:21 --> encryptedSolicitud::: MjE=
+INFO - 2025-01-09 13:26:21 --> numero de solicitud decrypted::: 21
+INFO - 2025-01-09 13:26:22 --> Nombre de la colonia cliente: Nueva Apopa
+INFO - 2025-01-09 13:26:23 --> Datos de la refLaboral:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 18
+            [id_solicitud] => 21
+            [id_profesion] => 7
+            [empresa] => Empresa Tech Solutions
+            [direccion_trabajo] => Boulevard de los Héroes, San Salvador
+            [telefono_trabajo] => 25241234
+            [cargo] => Analista de Sistemas
+            [salario] => 1200.00
+            [tiempo_laborado_empresa] => 3 años
+            [nombre_jefe_inmediato] => Lic. José Hernández
+            [empresa_anterior] => Innovatech S.A. de C.V.
+            [telefono_empresa_anterior] => 22334455
+            [descripcion] => INGENIERO(A)
+        )
+
+)
+
+INFO - 2025-01-09 13:26:28 --> Entro al if1 actualizarEstado
+INFO - 2025-01-09 13:26:28 --> ***************************************generarContrato***************************************
+INFO - 2025-01-09 13:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:26:30 --> numero de contrato generado:: ::: 0003-00000001
+INFO - 2025-01-09 13:26:30 --> Reemplazando representanteLegal con MARTHA LOPEZ PEREZ
+INFO - 2025-01-09 13:26:30 --> Reemplazando edadRepresentanteLet con CUARENTA Y CUATRO
+INFO - 2025-01-09 13:26:30 --> Reemplazando duiRepresentante con 98875666-3
+INFO - 2025-01-09 13:26:30 --> Reemplazando mueblesSolicitados con REFRIGERADOR LG
+INFO - 2025-01-09 13:26:30 --> Reemplazando sucursal con BOULEVARD CONSTITUCIÓN
+INFO - 2025-01-09 13:26:30 --> Reemplazando cantidadCuotas con 3
+INFO - 2025-01-09 13:26:30 --> Reemplazando precioTotal con $486.40
+INFO - 2025-01-09 13:26:30 --> Reemplazando valorPrima con $120.00
+INFO - 2025-01-09 13:26:30 --> Reemplazando montoCuotas con $122.13
+INFO - 2025-01-09 13:26:30 --> Reemplazando diaLetra con VEINTICINCO
+INFO - 2025-01-09 13:26:30 --> Reemplazando mesLetra con SEPTIEMBRE
+INFO - 2025-01-09 13:26:30 --> Reemplazando anioLetra con VEINTICUATRO
+INFO - 2025-01-09 13:26:30 --> Reemplazando montoTotalPagar con $486.40
+INFO - 2025-01-09 13:26:30 --> Reemplazando inicioPeriodoPago con 9 DE ENERO DE 2025
+INFO - 2025-01-09 13:26:30 --> Reemplazando diasPago con 9
+INFO - 2025-01-09 13:26:30 --> Reemplazando nombreFiador con 
+INFO - 2025-01-09 13:26:30 --> Reemplazando domicilioFiador con 
+INFO - 2025-01-09 13:26:30 --> Reemplazando duiFiador con 
+INFO - 2025-01-09 13:26:30 --> Reemplazando nitFiador con 
+INFO - 2025-01-09 13:26:30 --> Reemplazando nombreCliente con CARLA VANESSA GARCÍA HERNÁNDEZ
+INFO - 2025-01-09 13:26:30 --> Reemplazando ciudadContrato con SAN SALVADOR
+INFO - 2025-01-09 13:26:30 --> Reemplazando ciudadSucursal con SAN SALVADOR
+INFO - 2025-01-09 13:26:30 --> Reemplazando horaDefault con 10:00 AM
+INFO - 2025-01-09 13:26:30 --> Reemplazando diaCreacionSol con 9
+INFO - 2025-01-09 13:26:30 --> Reemplazando mesCreacionSol con ENERO
+INFO - 2025-01-09 13:26:30 --> Reemplazando anioCreacionSol con 2025
+INFO - 2025-01-09 13:26:30 --> Reemplazando nombreApoderado con JOSE ALFONSO REDONDO
+INFO - 2025-01-09 13:26:30 --> Reemplazando domicilioApoderado con CALLE CENTRAL, SAN SALVADOR
+INFO - 2025-01-09 13:26:30 --> Reemplazando duiCliente con 04578956-3
+INFO - 2025-01-09 13:26:30 --> Entro al if2 actualizarEstado
+INFO - 2025-01-09 13:26:30 --> *********************************** COBROS ***********************************
+INFO - 2025-01-09 13:26:30 --> Guardado
+INFO - 2025-01-09 13:26:30 --> Guardado
+INFO - 2025-01-09 13:26:31 --> Guardado
+INFO - 2025-01-09 13:26:31 --> Guardado
+INFO - 2025-01-09 13:26:31 --> ********************************* FIN COBROS *********************************
+INFO - 2025-01-09 13:26:36 --> llega la sol::: 000001
+INFO - 2025-01-09 13:26:36 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2025-01-09 13:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:26:38 --> SolicitudesController solicitudes
+INFO - 2025-01-09 13:27:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:10 --> iniciando sesion
+INFO - 2025-01-09 13:27:11 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 13:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:11 --> SolicitudesController solicitudes
+INFO - 2025-01-09 13:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:29 --> Resultado JSON: [{"id_solicitud":"21","numero_solicitud":"000001","fecha_creacion":"2025-01-09 16:58:32","dui":"04578956-3","nombre_completo":"Carla Vanessa Garc\u00eda Hern\u00e1ndez","user_creador":"Raul Antonio Lopez Ramirez","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0003-00000001","montoApagar":"486.40"}]
+INFO - 2025-01-09 13:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 13:27:42 --> Resultado JSON id_solicitud: 21
+INFO - 2025-01-09 13:27:43 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 25
+            [id_solicitud] => 21
+            [numero_cuota] => 0
+            [monto_cuota] => 120.00
+            [descripcion] => Pago de prima o cuota numero 0 de 3
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 26
+            [id_solicitud] => 21
+            [numero_cuota] => 1
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 27
+            [id_solicitud] => 21
+            [numero_cuota] => 2
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 28
+            [id_solicitud] => 21
+            [numero_cuota] => 3
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+        )
+
+)
+
+INFO - 2025-01-09 14:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:24:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:24:08 --> Resultado JSON: [{"id_solicitud":"21","numero_solicitud":"000001","fecha_creacion":"2025-01-09 16:58:32","dui":"04578956-3","nombre_completo":"Carla Vanessa Garc\u00eda Hern\u00e1ndez","user_creador":"Raul Antonio Lopez Ramirez","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0003-00000001","montoApagar":"486.40"}]
+INFO - 2025-01-09 14:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:24:09 --> Resultado JSON id_solicitud: 21
+INFO - 2025-01-09 14:24:10 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 25
+            [id_solicitud] => 21
+            [numero_cuota] => 0
+            [monto_cuota] => 120.00
+            [descripcion] => Pago de prima o cuota numero 0 de 3
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 26
+            [id_solicitud] => 21
+            [numero_cuota] => 1
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 27
+            [id_solicitud] => 21
+            [numero_cuota] => 2
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 28
+            [id_solicitud] => 21
+            [numero_cuota] => 3
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+)
+
+INFO - 2025-01-09 14:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:25:47 --> Resultado JSON: [{"id_solicitud":"21","numero_solicitud":"000001","fecha_creacion":"2025-01-09 16:58:32","dui":"04578956-3","nombre_completo":"Carla Vanessa Garc\u00eda Hern\u00e1ndez","user_creador":"Raul Antonio Lopez Ramirez","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0003-00000001","montoApagar":"486.40"}]
+INFO - 2025-01-09 14:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:25:50 --> Resultado JSON id_solicitud: 21
+INFO - 2025-01-09 14:25:51 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 25
+            [id_solicitud] => 21
+            [numero_cuota] => 0
+            [monto_cuota] => 120.00
+            [descripcion] => Pago de prima o cuota numero 0 de 3
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 26
+            [id_solicitud] => 21
+            [numero_cuota] => 1
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 27
+            [id_solicitud] => 21
+            [numero_cuota] => 2
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 28
+            [id_solicitud] => 21
+            [numero_cuota] => 3
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+)
+
+INFO - 2025-01-09 14:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:30:52 --> Resultado JSON: [{"id_solicitud":"21","numero_solicitud":"000001","fecha_creacion":"2025-01-09 16:58:32","dui":"04578956-3","nombre_completo":"Carla Vanessa Garc\u00eda Hern\u00e1ndez","user_creador":"Raul Antonio Lopez Ramirez","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0003-00000001","montoApagar":"486.40"}]
+INFO - 2025-01-09 14:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:30:54 --> Resultado JSON id_solicitud: 21
+INFO - 2025-01-09 14:30:54 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 25
+            [id_solicitud] => 21
+            [numero_cuota] => 0
+            [monto_cuota] => 120.00
+            [descripcion] => Pago de prima o cuota numero 0 de 3
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 26
+            [id_solicitud] => 21
+            [numero_cuota] => 1
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 27
+            [id_solicitud] => 21
+            [numero_cuota] => 2
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 28
+            [id_solicitud] => 21
+            [numero_cuota] => 3
+            [monto_cuota] => 122.13
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+)
+
+INFO - 2025-01-09 14:43:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:43:59 --> SolicitudesController solicitudes
+INFO - 2025-01-09 14:44:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:44:03 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-09 14:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:44:20 --> 4
+INFO - 2025-01-09 14:47:31 --> Llego a buscarProductos con consulta
+INFO - 2025-01-09 14:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:47:31 --> Abuscar es:: PRD001 origen suc 3
+INFO - 2025-01-09 14:47:31 --> query 
+INFO - 2025-01-09 14:47:31 --> resultDisponible 1::: [{"id_sucursal_destino":"3","id_producto":"13","nombre":"Refrigerador LG","marca":"LG","modelo":"GL-B201APZY","color":"Plata","medidas":"60x170 cm","precio":"450.00","costo_unitario":"350.00","id_categoria":"8","disponible":"0","codigo_producto":"PRD001","estado":"1","id_usuario_creacion":"1","fecha_creacion":"2025-01-09","disponibilidad":"15"}]
+INFO - 2025-01-09 14:47:31 --> resultTotalSalidas 2::: []
+INFO - 2025-01-09 14:47:31 --> Datos iniciales - resultDisponible: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 15
+        )
+
+)
+
+INFO - 2025-01-09 14:47:31 --> Datos iniciales - resultTotalSalidas: Array
+(
+)
+
+INFO - 2025-01-09 14:47:31 --> Disponibilidad inicial: 15
+INFO - 2025-01-09 14:47:31 --> Nuevo valor final:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 1
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 15
+        )
+
+)
+
+INFO - 2025-01-09 14:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:48:03 --> Datos recibidos: Array
+(
+    [datos_personales] => Array
+        (
+            [id_cliente] => 8
+        )
+
+    [referencias_laborales] => Array
+        (
+            [profesion_oficio] => 7
+            [empresa] => Empresa Tech Solutions
+            [direccion_trabajo] => Boulevard de los Héroes, San Salvador
+            [telefono_trabajo] => 25241234
+            [cargo] => Analista de Sistemas
+            [salario] => 1200.00
+            [tiempo_laborando_empresa] => 3 años
+            [nombre_jefe_inmediato] => Lic. José Hernández
+            [empresa_anterior] => Innovatech S.A. de C.V.
+            [telefono_empresa_anterior] => 22334455
+        )
+
+    [referencias_familiares] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => María Rodríguez
+                    [parentesco] => PAPÁ
+                    [direccion] => Av. Libertad 234, San Salvador
+                    [telefono] => 8217-7842
+                    [lugar_trabajo] => Comercial de Servicios S.A.
+                    [telefono_trabajo] => 9921-3910
+                )
+
+            [1] => Array
+                (
+                    [nombre] => Juan Pérez
+                    [parentesco] => HERMANO/A
+                    [direccion] => Calle El Sol, Usulután
+                    [telefono] => 8217-7842
+                    [lugar_trabajo] => Comercial de Servicios S.A.
+                    [telefono_trabajo] => 1934-2339
+                )
+
+        )
+
+    [referencias_personas_no_familiar] => Array
+        (
+            [0] => Array
+                (
+                    [nombre] => Ana López
+                    [direccion] => Boulevard de la Reforma
+                    [telefono] => 9046-3565
+                    [lugar_trabajo] => Consultora ABC
+                    [telefono_trabajo] => 7665-7420
+                )
+
+            [1] => Array
+                (
+                    [nombre] => Marta Rodríguez
+                    [direccion] => Calle 15, Santa Ana
+                    [telefono] => 2231-1994
+                    [lugar_trabajo] => Servicios Financieros S.A.
+                    [telefono_trabajo] => 7241-4283
+                )
+
+        )
+
+    [referencias_crediticias] => Array
+        (
+        )
+
+    [analisis_socioeconomico] => Array
+        (
+            [ingresoMensual] => 1200.00
+            [egresoMensual] => 
+            [salarioIng] => 
+            [pagoCasa] => 
+            [otrosIngresos] => 
+            [gastosVida] => 
+            [otrosEgresos] => 
+            [totalIngresos] => 1200.00
+            [totalEgresos] => 0.00
+            [diferencia] => 1200.00
+            [cantidadCuotas] => 0.3701
+            [estado_label] => Sano
+        )
+
+    [co_deudor] => Array
+        (
+            [referencias] => Array
+                (
+                )
+
+            [nombre] => 
+            [dui] => 
+            [direccion] => 
+            [COtelPersonal] => 
+            [COpropiaCN] => -1
+            [COpromesaVenta] => -1
+            [COalquilada] => -1
+            [COtiempoVivienda] => 
+            [COestadoCivil] => -1
+            [nombreConyugueCN] => 
+            [profesion] => 
+            [patrono] => 
+            [COdireccionTrabajo] => 
+            [COtelefonoTrabajo] => 
+            [COcargoDesempeña] => 
+            [COsalario] => 
+            [COnombreJefe] => 
+        )
+
+    [plan_de_pago] => Array
+        (
+            [valorArticulo] => 450.00
+            [valorPagoPrima] => 100.00
+            [saldoAPagar] => 350.00
+            [cantidadCuotas] => 3
+            [montoCuota] => 129.53
+            [montoTotalPagar] => 488.61
+        )
+
+    [productosSolicitud] => Array
+        (
+            [0] => Array
+                (
+                    [id_sucursal_destino] => 3
+                    [id_producto] => 13
+                    [nombre] => Refrigerador LG
+                    [marca] => LG
+                    [modelo] => GL-B201APZY
+                    [color] => Plata
+                    [medidas] => 60x170 cm
+                    [precio] => 450.00
+                    [costo_unitario] => 350.00
+                    [id_categoria] => 8
+                    [disponible] => 0
+                    [codigo_producto] => PRD001
+                    [estado] => 1
+                    [id_usuario_creacion] => 1
+                    [fecha_creacion] => 2025-01-09
+                    [disponibilidad] => 15
+                    [cantidad] => 1
+                )
+
+        )
+
+)
+
+INFO - 2025-01-09 14:48:03 --> *********************************** PASO 1 ***********************************
+INFO - 2025-01-09 14:48:03 --> solicitud creada id_solicitud: 22
+INFO - 2025-01-09 14:48:04 --> numero solicitud creada: 000001
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 1 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 2 ***********************************
+INFO - 2025-01-09 14:48:04 --> el valor de los datos de referencia es:: Array
+(
+    [profesion_oficio] => 7
+    [empresa] => Empresa Tech Solutions
+    [direccion_trabajo] => Boulevard de los Héroes, San Salvador
+    [telefono_trabajo] => 25241234
+    [cargo] => Analista de Sistemas
+    [salario] => 1200.00
+    [tiempo_laborando_empresa] => 3 años
+    [nombre_jefe_inmediato] => Lic. José Hernández
+    [empresa_anterior] => Innovatech S.A. de C.V.
+    [telefono_empresa_anterior] => 22334455
+)
+
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 2 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 3 ***********************************
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 3 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 4 ***********************************
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 4 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 5 ***********************************
+INFO - 2025-01-09 14:48:04 --> Resultado ref crediticias: Array
+(
+)
+
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 5 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 6 ***********************************
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 6 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 7 ***********************************
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 7 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 8 ***********************************
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 8 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 9 ***********************************
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 9 *********************************
+INFO - 2025-01-09 14:48:04 --> *********************************** PASO 10 ***********************************
+INFO - 2025-01-09 14:48:04 --> SolicitudesController registrarMovimientoSalidaVenta
+INFO - 2025-01-09 14:48:04 --> ********************************* FIN PASO 10 *********************************
+INFO - 2025-01-09 14:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:48:12 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-09 14:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:48:15 --> SolicitudesController solicitudes
+INFO - 2025-01-09 14:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:48:23 --> SolicitudesController solicitudes
+INFO - 2025-01-09 14:48:43 --> generarDocumento encryptedSolicitud::: MjI=
+INFO - 2025-01-09 14:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:49:45 --> iniciando sesion
+INFO - 2025-01-09 14:49:46 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 14:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:49:46 --> AdministracionController inicio_administracion
+INFO - 2025-01-09 14:49:46 --> AdministracionController Acceso permitido
+INFO - 2025-01-09 14:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:49:53 --> SolicitudesController solicitudes
+INFO - 2025-01-09 14:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:00 --> encryptedSolicitud::: MjI=
+INFO - 2025-01-09 14:50:00 --> numero de solicitud decrypted::: 22
+INFO - 2025-01-09 14:50:01 --> Nombre de la colonia cliente: Colonia Santa Lucia
+INFO - 2025-01-09 14:50:01 --> Datos de la refLaboral:: Array
+(
+    [0] => Array
+        (
+            [id_referencia_laboral] => 19
+            [id_solicitud] => 22
+            [id_profesion] => 7
+            [empresa] => Empresa Tech Solutions
+            [direccion_trabajo] => Boulevard de los Héroes, San Salvador
+            [telefono_trabajo] => 25241234
+            [cargo] => Analista de Sistemas
+            [salario] => 1200.00
+            [tiempo_laborado_empresa] => 3 años
+            [nombre_jefe_inmediato] => Lic. José Hernández
+            [empresa_anterior] => Innovatech S.A. de C.V.
+            [telefono_empresa_anterior] => 22334455
+            [descripcion] => INGENIERO(A)
+        )
+
+)
+
+INFO - 2025-01-09 14:50:04 --> Entro al if1 actualizarEstado
+INFO - 2025-01-09 14:50:04 --> ***************************************generarContrato***************************************
+INFO - 2025-01-09 14:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:06 --> numero de contrato generado:: ::: 0003-00000001
+INFO - 2025-01-09 14:50:06 --> Reemplazando representanteLegal con MARTHA LOPEZ PEREZ
+INFO - 2025-01-09 14:50:06 --> Reemplazando edadRepresentanteLet con CUARENTA Y CUATRO
+INFO - 2025-01-09 14:50:06 --> Reemplazando duiRepresentante con 98875666-3
+INFO - 2025-01-09 14:50:06 --> Reemplazando mueblesSolicitados con REFRIGERADOR LG
+INFO - 2025-01-09 14:50:06 --> Reemplazando sucursal con BOULEVARD CONSTITUCIÓN
+INFO - 2025-01-09 14:50:06 --> Reemplazando cantidadCuotas con 3
+INFO - 2025-01-09 14:50:06 --> Reemplazando precioTotal con $488.61
+INFO - 2025-01-09 14:50:06 --> Reemplazando valorPrima con $100.00
+INFO - 2025-01-09 14:50:06 --> Reemplazando montoCuotas con $129.53
+INFO - 2025-01-09 14:50:06 --> Reemplazando diaLetra con VEINTICINCO
+INFO - 2025-01-09 14:50:06 --> Reemplazando mesLetra con SEPTIEMBRE
+INFO - 2025-01-09 14:50:06 --> Reemplazando anioLetra con VEINTICUATRO
+INFO - 2025-01-09 14:50:06 --> Reemplazando montoTotalPagar con $488.61
+INFO - 2025-01-09 14:50:06 --> Reemplazando inicioPeriodoPago con 9 DE ENERO DE 2025
+INFO - 2025-01-09 14:50:06 --> Reemplazando diasPago con 9
+INFO - 2025-01-09 14:50:06 --> Reemplazando nombreFiador con 
+INFO - 2025-01-09 14:50:06 --> Reemplazando domicilioFiador con 
+INFO - 2025-01-09 14:50:06 --> Reemplazando duiFiador con 
+INFO - 2025-01-09 14:50:06 --> Reemplazando nitFiador con 
+INFO - 2025-01-09 14:50:06 --> Reemplazando nombreCliente con JUAN CARLOS HERRERA GÓMEZ
+INFO - 2025-01-09 14:50:06 --> Reemplazando ciudadContrato con SAN SALVADOR
+INFO - 2025-01-09 14:50:06 --> Reemplazando ciudadSucursal con SAN SALVADOR
+INFO - 2025-01-09 14:50:06 --> Reemplazando horaDefault con 10:00 AM
+INFO - 2025-01-09 14:50:06 --> Reemplazando diaCreacionSol con 9
+INFO - 2025-01-09 14:50:06 --> Reemplazando mesCreacionSol con ENERO
+INFO - 2025-01-09 14:50:06 --> Reemplazando anioCreacionSol con 2025
+INFO - 2025-01-09 14:50:06 --> Reemplazando nombreApoderado con JOSE ALFONSO REDONDO
+INFO - 2025-01-09 14:50:06 --> Reemplazando domicilioApoderado con CALLE CENTRAL, SAN SALVADOR
+INFO - 2025-01-09 14:50:06 --> Reemplazando duiCliente con 55323455-6
+INFO - 2025-01-09 14:50:06 --> Entro al if2 actualizarEstado
+INFO - 2025-01-09 14:50:06 --> *********************************** COBROS ***********************************
+INFO - 2025-01-09 14:50:06 --> Guardado
+INFO - 2025-01-09 14:50:07 --> Guardado
+INFO - 2025-01-09 14:50:07 --> Guardado
+INFO - 2025-01-09 14:50:07 --> Guardado
+INFO - 2025-01-09 14:50:07 --> ********************************* FIN COBROS *********************************
+INFO - 2025-01-09 14:50:12 --> llega la sol::: 000001
+INFO - 2025-01-09 14:50:12 --> respuesta del select::: C:\xampp\htdocs\creditos\public/documentos/000001/contrato_000001.docx
+INFO - 2025-01-09 14:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:14 --> SolicitudesController solicitudes
+INFO - 2025-01-09 14:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:40 --> iniciando sesion
+INFO - 2025-01-09 14:50:41 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 14:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:41 --> SolicitudesController solicitudes
+INFO - 2025-01-09 14:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:50:59 --> Resultado JSON: [{"id_solicitud":"22","numero_solicitud":"000001","fecha_creacion":"2025-01-09 20:48:04","dui":"55323455-6","nombre_completo":"Juan Carlos Herrera G\u00f3mez","user_creador":"Raul Antonio Lopez Ramirez","estado":"Aprobada","id_estado_actual":"2","observacion":null,"num_contrato":"0003-00000001","montoApagar":"388.61"}]
+INFO - 2025-01-09 14:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 14:51:22 --> Resultado JSON id_solicitud: 22
+INFO - 2025-01-09 14:51:22 --> Resultado JSON deudasSolicitud: Array
+(
+    [0] => Array
+        (
+            [id_cobro] => 29
+            [id_solicitud] => 22
+            [numero_cuota] => 0
+            [monto_cuota] => 100.00
+            [descripcion] => Pago de prima o cuota numero 0 de 3
+            [estado] => CANCELADO
+            [fecha_vencimiento] => 2025-01-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 1
+        )
+
+    [1] => Array
+        (
+            [id_cobro] => 30
+            [id_solicitud] => 22
+            [numero_cuota] => 1
+            [monto_cuota] => 129.53
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-02-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [2] => Array
+        (
+            [id_cobro] => 31
+            [id_solicitud] => 22
+            [numero_cuota] => 2
+            [monto_cuota] => 129.53
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-03-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+    [3] => Array
+        (
+            [id_cobro] => 32
+            [id_solicitud] => 22
+            [numero_cuota] => 3
+            [monto_cuota] => 129.53
+            [descripcion] => 
+            [estado] => PENDIENTE
+            [fecha_vencimiento] => 2025-04-09
+            [fecha_pago] => 
+            [interesGenerado] => 0
+            [esPrima] => 0
+        )
+
+)
+
+INFO - 2025-01-09 20:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-09 20:53:48 --> ErrorException: unlink(C:\xampp\htdocs\creditos\writable\debugbar/debugbar_1736455685.020543.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 80.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\creditos\\writable\\debugbar/debugbar_1736455685.020543.json): No such file or directory', 'C:\\xampp\\htdocs\\creditos\\system\\Debug\\Toolbar\\Collectors\\History.php', 80)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(80): unlink('C:\\xampp\\htdocs\\creditos\\writable\\debugbar/debugbar_1736455685.020543.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(498): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1736477624.006099', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(475): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(154): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-09 20:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 20:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:07:09 --> iniciando sesion
+INFO - 2025-01-09 21:07:12 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 21:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:11:12 --> iniciando sesion
+INFO - 2025-01-09 21:11:12 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-09 21:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:11:13 --> SolicitudesController solicitudes
+INFO - 2025-01-09 21:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-09 21:29:28 --> SolicitudesController solicitudes

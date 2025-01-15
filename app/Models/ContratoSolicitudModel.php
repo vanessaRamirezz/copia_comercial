@@ -10,4 +10,10 @@ class ContratoSolicitudModel extends Model
     protected $primaryKey = 'id_contrato_solicitud';        // Clave primaria
 
     protected $allowedFields    = ['num_contrato', 'dir_contrato', 'fecha_creacion','id_sucursal','numero_solicitud'];
+
+
+    public function existeContratoPorSolicitud($numeroSolicitud)
+    {
+        return $this->where('numero_solicitud', $numeroSolicitud)->first() !== null;
+    }
 }
