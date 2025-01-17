@@ -457,7 +457,7 @@ class SolicitudesController extends BaseController
                 'cuotas'             => $dataPlanPago['cantidadCuotas'],
                 'monto_cuotas'       => $dataPlanPago['montoCuota'],
                 'monto_total_pagar'  => $dataPlanPago['montoTotalPagar'],
-                'observaciones'      => null, // Puedes ajustar esto según sea necesario
+                'observaciones'      => $dataPlanPago['observaciones'], // Puedes ajustar esto según sea necesario
                 'id_solicitud'       => $idSolicitud
             ];
 

@@ -1,0 +1,299 @@
+INFO - 2025-01-17 09:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 09:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 09:14:47 --> iniciando sesion
+INFO - 2025-01-17 09:15:00 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-17 09:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 09:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 09:15:00 --> SolicitudesController solicitudes
+INFO - 2025-01-17 09:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 09:15:06 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-17 09:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 10:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 10:57:08 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-17 10:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:40:14 --> iniciando sesion
+INFO - 2025-01-17 13:40:16 --> Valor retornado del acceso es:: [{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-17 13:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:40:16 --> SolicitudesController solicitudes
+INFO - 2025-01-17 13:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:40:19 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-17 13:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:43:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:43:09 --> 9
+INFO - 2025-01-17 13:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:44:12 --> 9
+INFO - 2025-01-17 13:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:47:28 --> A buscar es:: PRD001 origen suc 3
+INFO - 2025-01-17 13:47:28 --> query 
+INFO - 2025-01-17 13:47:28 --> resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:47:28 --> resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:47:28 --> Datos resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:47:28 --> Datos resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:50:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:50:32 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-17 13:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:50:56 --> A buscar es:: PRD001 origen suc 3
+INFO - 2025-01-17 13:50:56 --> query 
+INFO - 2025-01-17 13:50:57 --> resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:50:57 --> resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:50:57 --> Datos resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:50:57 --> Datos resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:51:20 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-17 13:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:51:50 --> A buscar es:: PRD001 origen suc 3
+INFO - 2025-01-17 13:51:50 --> query 
+INFO - 2025-01-17 13:51:50 --> resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:51:50 --> resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:51:50 --> Datos resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:51:50 --> Datos resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:55:09 --> SolicitudesController nueva_solicitud
+INFO - 2025-01-17 13:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 13:55:41 --> A buscar es:: PRD001 origen suc 3
+INFO - 2025-01-17 13:55:41 --> query 
+INFO - 2025-01-17 13:55:42 --> resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:55:42 --> resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 13:55:42 --> Datos resultDisponible:: Array
+(
+    [0] => stdClass Object
+        (
+            [id_sucursal_destino] => 3
+            [id_producto] => 13
+            [nombre] => Refrigerador LG
+            [marca] => LG
+            [modelo] => GL-B201APZY
+            [color] => Plata
+            [medidas] => 60x170 cm
+            [precio] => 450.00
+            [costo_unitario] => 350.00
+            [id_categoria] => 8
+            [disponible] => 0
+            [codigo_producto] => PRD001
+            [estado] => 1
+            [id_usuario_creacion] => 8
+            [fecha_creacion] => 2025-01-09
+            [disponibilidad] => 10
+        )
+
+)
+
+INFO - 2025-01-17 13:55:42 --> Datos resultTotalSalidas:: Array
+(
+)
+
+INFO - 2025-01-17 14:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:15:03 --> iniciando sesion
+INFO - 2025-01-17 14:15:04 --> Valor retornado del acceso es:: [{"url_acceso":"inicio_administracion","orden_acceso":"1"},{"url_acceso":"usuarios","orden_acceso":"2"},{"url_acceso":"solicitudes","orden_acceso":"1"},{"url_acceso":"clientes","orden_acceso":"2"},{"url_acceso":"productos","orden_acceso":"3"},{"url_acceso":"categorias","orden_acceso":"4"},{"url_acceso":"proveedores","orden_acceso":"5"},{"url_acceso":"ingresos_por_compras","orden_acceso":"6"},{"url_acceso":"ingresos","orden_acceso":"7"},{"url_acceso":"salidas","orden_acceso":"8"},{"url_acceso":"nueva_solicitud","orden_acceso":null},{"url_acceso":"apoderados","orden_acceso":"9"},{"url_acceso":"permisos","orden_acceso":"10"},{"url_acceso":"perfil","orden_acceso":null},{"url_acceso":"nuevo_cliente","orden_acceso":null},{"url_acceso":"profesiones","orden_acceso":"11"},{"url_acceso":"colonias","orden_acceso":"12"},{"url_acceso":"cobros","orden_acceso":"13"}]
+INFO - 2025-01-17 14:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:15:04 --> AdministracionController inicio_administracion
+INFO - 2025-01-17 14:15:04 --> AdministracionController Acceso permitido
+INFO - 2025-01-17 14:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:15:09 --> ProductosController productos
+INFO - 2025-01-17 14:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:22:02 --> ProductosController productos
+INFO - 2025-01-17 14:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:23:49 --> ProductosController productos
+INFO - 2025-01-17 14:24:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:24:34 --> ProductosController productos
+INFO - 2025-01-17 14:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:24:59 --> ProductosController productos
+INFO - 2025-01-17 14:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-17 14:28:25 --> ProductosController productos
+INFO - 2025-01-17 14:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,6 +1,6 @@
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">Productos</h1>
-    <p class="mb-4">Se visualizarán todos los productos agregados.</p>
+    <h1 class="h3 mb-2 text-gray-800">Proveedores</h1>
+    <p class="mb-4">Se visualizarán todos los proveedores agregados.</p>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <button type="button" class="btn btn-primary" id="nuevoProveedorBtn" data-toggle="modal" data-target="#nuevoProveedorModal">

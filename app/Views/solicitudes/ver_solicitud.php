@@ -552,7 +552,7 @@
                                         <table class="table custom-table mb-3">
                                             <tbody>
                                                 <tr>
-                                                    <td>Ingreso - Mensual</td>
+                                                    <td>Remesas mensuales</td>
                                                     <td><input type="text" class="form-control montosG ingresos" id="ingresoMensual" name="ingresoMensual" value="<?= isset($analisisSocioeconomico[0]['ingreso_mensual']) ? htmlspecialchars($analisisSocioeconomico[0]['ingreso_mensual']) : '' ?>"></td>
                                                     <td>Egreso Mensual</td>
                                                     <td><input type="text" class="form-control montosG egresos" id="egresoMensual" name="egresoMensual" value="<?= isset($analisisSocioeconomico[0]['egreso_mensual']) ? htmlspecialchars($analisisSocioeconomico[0]['egreso_mensual']) : '' ?>"></td>

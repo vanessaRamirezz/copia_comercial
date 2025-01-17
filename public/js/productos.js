@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#nombre').val('').prop('disabled', false);
         $('#marca').val('').prop('disabled', false);
         $('#codigo').val('').prop('disabled', false);
+        $('#UPC').val('').prop('disabled', false);
         $('#modeloProducto').val('').prop('disabled', false);
         $('#colorProducto').val('').prop('disabled', false);
         $('#medidasProducto').val('').prop('disabled', false);
@@ -142,8 +143,9 @@ function cargarTablaProductos() {
             },
             columns: [
                 { data: 'codigo_producto' },
+                { data: 'upc' },
                 { data: 'nombre' },
-                { data: 'disponible' },
+                /* { data: 'disponible' }, */
                 { data: 'precio' },
                 { data: 'costo_unitario' },
                 { data: 'nombre_categoria' },
@@ -186,6 +188,7 @@ function cargarTablaProductos() {
             $('#nombre').val(rowData.nombre).prop('disabled', false);
             $('#marca').val(rowData.marca).prop('disabled', false);
             $('#codigo').val(rowData.codigo_producto).prop('disabled', false);
+            $('#UPC').val(rowData.upc).prop('disabled', false);
             $('#modeloProducto').val(rowData.modelo).prop('disabled', false);
             $('#colorProducto').val(rowData.color).prop('disabled', false);
             $('#medidasProducto').val(rowData.medidas).prop('disabled', false);

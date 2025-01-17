@@ -26,8 +26,8 @@
                 </div>
                 <div class="form-group col-md-2">
                     <label for="estado" class="form-label">Estado:</label>
-                    <select class="form-control form-control-sm" id="estado" name="estado">
-                        <option value="Procesado">Procesado</option>
+                    <select class="form-control form-control-sm" id="estado" name="estado" readonly disabled>
+                        <option value="Procesado" selected>Procesado</option>
                         <option value="Anulado">Anulado</option>
                         <option value="Cerrado">Cerrado</option>
                     </select>

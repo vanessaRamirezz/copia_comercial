@@ -81,15 +81,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function actualizarMontoCuota() {
         const saldoAPagar = parseFloat(saldoAPagarInput.value) || 0;
+        console.log("Saldo a Pagar:", saldoAPagar);
+    
         const valor_porcentual = parseFloat(cantidadCuotasSelect.value) || 0;
+        console.log("Valor Porcentual:", valor_porcentual);
+    
         const opcionSeleccionada = cantidadCuotasSelect.options[cantidadCuotasSelect.selectedIndex];
+        console.log("Opción Seleccionada:", opcionSeleccionada);
+    
         const cant_meses = parseInt(opcionSeleccionada.text) || 0;
-
-        const valorCuota = cant_meses > 0 ? saldoAPagar * valor_porcentual : 0;
+        console.log("Cantidad de Meses:", cant_meses);
+    
+        //const valorCuota = cant_meses > 0 ? saldoAPagar * valor_porcentual : 0;
+        const valorCuota = cant_meses > 0 ? Math.round((saldoAPagar * valor_porcentual) * 100) / 100 : 0;
+        console.log("Valor Cuota:", valorCuota);
+    
         montoCuotaInput.value = valorCuota.toFixed(2);
-        const valorTotalAPagar = (parseFloat(valorCuota) * cant_meses) + parseFloat(valorPrimaInput.value);
+    
+        const valorPrima = parseFloat(valorPrimaInput.value);
+        console.log("Valor Prima:", valorPrima);
+    
+        const valorTotalAPagar = (parseFloat(valorCuota) * cant_meses) + valorPrima;
+        console.log("Valor Total a Pagar:", valorTotalAPagar);
+    
         montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
+        console.log("Valor monto Total a Pagar final:", montoTotalPagarInput);
     }
+    
 
     cargarDepartamentos();
     cargarComisiones();
@@ -664,11 +682,11 @@ function buscarProducto() {
 
     $.ajax({
         type: "POST",
-        url: baseURL + 'getProducts',
+        url: baseURL + 'getProductoExistencia',
         data: { search: search },
         dataType: "json",
         success: function (rsp) {
-            console.log(rsp);
+            console.log(rsp.success);
             if (rsp.success && Array.isArray(rsp.success)) {
                 limpiarTabla();
                 pintarResultados(rsp.success);

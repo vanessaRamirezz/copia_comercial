@@ -54,7 +54,8 @@ $routes->get('getProductosActivos', 'ProductosController::getProductActive');
 $routes->post('saveProduct', 'ProductosController::nuevoProducto');
 $routes->post('updateProduct', 'ProductosController::actualizarProducto');
 $routes->post('ajusteProducto', 'ProductosController::ajustarProducto');
-$routes->post('getProducts', 'ProductosController::buscarProductos');
+$routes->post('getProducts', 'ProductosController::buscarProductoIngCompra');
+$routes->post('getProductoExistencia', 'ProductosController::buscarProductos');
 
 //rutas para crear categorias
 $routes->get('categorias', 'CategoriasController::index');

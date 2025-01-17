@@ -526,7 +526,7 @@
                                         <table class="table custom-table mb-3">
                                             <tbody>
                                                 <tr>
-                                                    <td>Ingreso - Mensual</td>
+                                                    <td>Remesas mensuales</td>
                                                     <td><input type="text" class="form-control montosG ingresos" id="ingresoMensual" name="ingresoMensual"></td>
                                                     <td>Egreso Mensual</td>
                                                     <td><input type="text" class="form-control montosG egresos" id="egresoMensual" name="egresoMensual"></td>
@@ -659,7 +659,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-12 col-sm">
                                                 <label for="observaciones">Observación</label>
-                                                <textarea class="form-control" id="observaciones" rows="4" placeholder="Ingrese su observación aquí..."></textarea>
+                                                <textarea class="form-control" id="observaciones" name="observaciones" rows="4" placeholder="Ingrese su observación aquí..."></textarea>
                                             </div>
                                         </div>
 

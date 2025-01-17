@@ -13,8 +13,9 @@
                     <thead>
                         <tr>
                             <th>Codigo</th>
+                            <th>UPC</th>
                             <th>Nombre producto</th>
-                            <th>Disponible</th>
+                            <!-- <th>Disponible</th> -->
                             <th>Precio Uni</th>
                             <th>Costo Uni</th>
                             <th>Categoria</th>
@@ -48,6 +49,10 @@
                         <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="codigo">Codigo:</label>
                             <input type="text" class="form-control" id="codigo" name="codigo">
+                        </div>
+                        <div class="col-sm-4 mb-3 mb-sm-0">
+                            <label for="UPC">UPC:</label>
+                            <input type="text" class="form-control" id="UPC" name="UPC">
                         </div>
                     </div>
                     <div class="form-group row">
