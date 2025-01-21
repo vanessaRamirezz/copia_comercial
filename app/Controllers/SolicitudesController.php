@@ -117,7 +117,7 @@ class SolicitudesController extends BaseController
         }
     }
 
-    public function procesarSolicitud()
+    /* public function procesarSolicitud()
     {
         try {
             $session = session();
@@ -260,7 +260,127 @@ class SolicitudesController extends BaseController
             log_message('error', $errorMessage);
             return $this->response->setJSON(['error' => 'Error al procesar la solicitud.']);
         }
+    } */
+
+    public function procesarSolicitud()
+    {
+        $db = \Config\Database::connect(); // Obtén la conexión a la base de datos
+        $db->transBegin(); // Inicia la transacción
+
+        try {
+            $session = session();
+            $data = $this->request->getJSON(true);
+            log_message('info', 'Datos recibidos: ' . print_r($data, true));
+
+            # Paso 1: Crear la solicitud
+            log_message('info', '*********************************** PASO 1 ***********************************');
+            $saldoRestante = (float)$data['plan_de_pago']['montoTotalPagar'] - (float)$data['plan_de_pago']['valorPagoPrima'];
+            $dataSoli = [
+                'id_cliente' => $data['datos_personales']['id_cliente'],
+                'id_usuario_creacion' => $_SESSION['id_usuario'],
+                'id_estado_actual' => 1,
+                'id_sucursal' => $_SESSION['sucursal'],
+                'monto_solicitud' => $data['plan_de_pago']['montoTotalPagar'],
+                'montoApagar' => $saldoRestante
+            ];
+
+            $this->solicitudesModel->insert($dataSoli);
+            $id_solicitud_creada = $this->solicitudesModel->insertID();
+            log_message('info', 'solicitud creada id_solicitud: ' . $id_solicitud_creada);
+
+            $solicitud = $this->solicitudesModel->find($id_solicitud_creada);
+            $numero_solicitud = $solicitud['numero_solicitud'];
+            log_message('info', 'numero solicitud creada: ' . $numero_solicitud);
+
+            if (!$id_solicitud_creada) {
+                throw new \Exception('Error al crear la solicitud.');
+            }
+            log_message('info', '********************************* FIN PASO 1 *********************************');
+
+            # Paso 2: Crear las referencias laborales del cliente
+            log_message('info', '*********************************** PASO 2 ***********************************');
+            if (!$this->crearReferenciasLaborales($data['referencias_laborales'], $id_solicitud_creada)) {
+                throw new \Exception('Error al crear las referencias laborales.');
+            }
+            log_message('info', '********************************* FIN PASO 2 *********************************');
+
+            # Paso 3: Crear las referencias familiares
+            log_message('info', '*********************************** PASO 3 ***********************************');
+            if (!empty($this->crearReferenciasFamiliares($data['referencias_familiares'], $id_solicitud_creada))) {
+                throw new \Exception('Error al crear las referencias familiares.');
+            }
+            log_message('info', '********************************* FIN PASO 3 *********************************');
+
+            # Paso 4: Crear las referencias no familiares
+            log_message('info', '*********************************** PASO 4 ***********************************');
+            if (!empty($this->crearReferenciasNoFamiliares($data['referencias_personas_no_familiar'], $id_solicitud_creada))) {
+                throw new \Exception('Error al crear las referencias no familiares.');
+            }
+            log_message('info', '********************************* FIN PASO 4 *********************************');
+
+            # Paso 5: Crear las referencias crediticias
+            log_message('info', '*********************************** PASO 5 ***********************************');
+            if (!empty($this->crearReferenciasCrediticias($data['referencias_crediticias'], $id_solicitud_creada))) {
+                throw new \Exception('Error al crear las referencias crediticias.');
+            }
+            log_message('info', '********************************* FIN PASO 5 *********************************');
+
+            # Paso 6: Crear el análisis socioeconómico
+            log_message('info', '*********************************** PASO 6 ***********************************');
+            if (!$this->crearEstudioSocioEconomico($data['analisis_socioeconomico'], $id_solicitud_creada, $data['datos_personales']['id_cliente'])) {
+                throw new \Exception('Error al crear el estudio socioeconómico.');
+            }
+            log_message('info', '********************************* FIN PASO 6 *********************************');
+
+            # Paso 7: Crear los productos de la solicitud
+            log_message('info', '*********************************** PASO 7 ***********************************');
+            if (!empty($this->crearProductosSolicitud($data['productosSolicitud'], $id_solicitud_creada))) {
+                throw new \Exception('Error al crear los productos por solicitud.');
+            }
+            log_message('info', '********************************* FIN PASO 7 *********************************');
+
+            # Paso 8: Crear el plan de pago
+            log_message('info', '*********************************** PASO 8 ***********************************');
+            if (!$this->crearPlanPago($data['plan_de_pago'], $id_solicitud_creada)) {
+                throw new \Exception('Error al crear el plan de pago.');
+            }
+            log_message('info', '********************************* FIN PASO 8 *********************************');
+
+            # Paso 9: Crear el codeudor
+            log_message('info', '*********************************** PASO 9 ***********************************');
+            if (!$this->crearCodeudor($data['co_deudor'], $id_solicitud_creada)) {
+                throw new \Exception('Error al crear el codeudor.');
+            }
+            log_message('info', '********************************* FIN PASO 9 *********************************');
+
+            # Paso 10: Registrar el movimiento de salida
+            log_message('info', '*********************************** PASO 10 ***********************************');
+            if (!$this->registrarMovimientoSalidaVenta($data['productosSolicitud'], $id_solicitud_creada, $numero_solicitud)) {
+                throw new \Exception('Error al generar los movimientos.');
+            }
+            log_message('info', '********************************* FIN PASO 10 *********************************');
+
+            # Commit de la transacción
+            $db->transCommit();
+
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'La solicitud se generó exitosamente.'
+            ]);
+        } catch (\Throwable $e) {
+            $db->transRollback(); // Revertir cambios si ocurre un error
+
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+            log_message('error', $errorMessage);
+
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Error al procesar la solicitud.'
+            ]);
+        }
     }
+
 
     private function crearReferenciasLaborales(array $referenciasLaborales, int $idSolicitud): bool
     {
@@ -652,11 +772,11 @@ class SolicitudesController extends BaseController
             if ($id_solicitud && !$id_estado && !$observacion) {
                 // Obtienes la solicitud
                 $numeroSoli = $this->solicitudesModel->find($id_solicitud);
-                
+
                 // Primero, validamos si el contrato ya existe
                 $rspContratoValidado = $this->generarDocController->validarContrato($numeroSoli['numero_solicitud']);
-                log_message("info", "Validando si el estado existe:: ". print_r($rspContratoValidado,true));
-                
+                log_message("info", "Validando si el estado existe:: " . print_r($rspContratoValidado, true));
+
                 if ($rspContratoValidado['success'] && $rspContratoValidado['message'] == 'existe') {
                     log_message("info", "Entra en el if del contrato generado");
                     // Si el contrato ya existe, seguimos con el flujo, pero no generamos el contrato nuevamente
@@ -671,17 +791,17 @@ class SolicitudesController extends BaseController
                     $rspContrato = $this->generarDocController->generarContrato($id_solicitud);
                 }
 
-                log_message("info", "valor de rspContrato:: ".print_r($rspContrato,true));
-                
+                log_message("info", "valor de rspContrato:: " . print_r($rspContrato, true));
+
                 // Aquí continuamos con el flujo después de validar o generar el contrato
                 if ($rspContrato['success']) {
                     log_message("info", "Entro al if2 actualizarEstado");
-            
+
                     // Actualizamos el estado de la solicitud
                     $dataUpdate = [
                         'id_estado_actual' => 2
                     ];
-            
+
                     // Si se actualiza el estado correctamente
                     if ($this->solicitudesModel->update($id_solicitud, $dataUpdate)) {
                         log_message('info', '*********************************** COBROS ***********************************');
@@ -691,7 +811,7 @@ class SolicitudesController extends BaseController
                     } else {
                         log_message("info", "no se actualizo");
                     }
-            
+
                     // Retornamos la respuesta con el mensaje de éxito
                     return $this->response->setJSON([
                         'success' => true,
@@ -705,7 +825,7 @@ class SolicitudesController extends BaseController
                         'message' => $rspContrato['message']
                     ]);
                 }
-            }else if ($id_solicitud && $id_estado && $observacion) {
+            } else if ($id_solicitud && $id_estado && $observacion) {
                 log_message("info", "Entro al else actualizarEstado");
                 log_message('info', 'Datos recibidos: id_estado: {id_estado}, observacion: {observacion}, id_solicitud: {id_solicitud}', [
                     'id_estado' => $id_estado,
@@ -828,6 +948,71 @@ class SolicitudesController extends BaseController
             $errorMessage .= 'Trace: ' . $e->getTraceAsString();
             log_message('error', $errorMessage);
             return $this->response->setJSON(['error' => 'Error al procesar la generación de cobros']);
+        }
+    }
+
+    public function buscarReferencias()
+    {
+        try {
+            log_message('info', 'Iniciando búsqueda de referencias.');
+
+            // Obtén el ID del cliente desde el POST
+            $idCliente = $this->request->getPost('idCliente');
+            log_message('info', 'ID del cliente recibido: {idCliente}', ['idCliente' => $idCliente]);
+
+            // Obtén la última solicitud del cliente
+            $solicitudEncontrada = $this->solicitudesModel->getUltimaSolicitudCliente($idCliente);
+            log_message('info', 'Solicitud encontrada: {solicitud}', ['solicitud' => json_encode($solicitudEncontrada)]);
+
+            if (empty($solicitudEncontrada)) {
+                log_message('warning', 'No se encontró ninguna solicitud para el cliente: {idCliente}', ['idCliente' => $idCliente]);
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'No se encontraron datos para cargar referencias.',
+                ]);
+            }
+
+            // Extrae el ID de la solicitud
+            $id_solicitud = $solicitudEncontrada['id_solicitud'];
+            log_message('info', 'ID de solicitud extraído: {id_solicitud}', ['id_solicitud' => $id_solicitud]);
+
+            // Obtén las referencias laborales, familiares y no familiares
+            $refLaboralEncontrado = $this->refLaboralModel->obtenerReferenciasPorSolicitud($id_solicitud);
+            log_message('info', 'Referencias laborales encontradas: {refLaboral}', ['refLaboral' => json_encode($refLaboralEncontrado)]);
+
+            $refFamiliares = $this->refFamiliresModel->buscarPorSolicitud($id_solicitud);
+            log_message('info', 'Referencias familiares encontradas: {refFamiliares}', ['refFamiliares' => json_encode($refFamiliares)]);
+
+            $refNoFamiliares = $this->refNoFamiliresModel->buscarPorSolicitud($id_solicitud);
+            log_message('info', 'Referencias no familiares encontradas: {refNoFamiliares}', ['refNoFamiliares' => json_encode($refNoFamiliares)]);
+
+            // Estructura la respuesta JSON
+            return $this->response->setJSON([
+                'success' => true,
+                'referenciaLaboral' => [
+                    'data' => $refLaboralEncontrado,
+                    'success' => !empty($refLaboralEncontrado),
+                ],
+                'referenciaFamiliar' => [
+                    'data' => $refFamiliares,
+                    'success' => !empty($refFamiliares),
+                ],
+                'referenciaNoFamiliar' => [
+                    'data' => $refNoFamiliares,
+                    'success' => !empty($refNoFamiliares),
+                ],
+            ]);
+        } catch (\Throwable $e) {
+            // Manejo de errores
+            log_message('error', 'Ocurrió un error en la búsqueda de referencias: {error}', ['error' => $e->getMessage()]);
+            log_message('error', 'Trace del error: {trace}', ['trace' => $e->getTraceAsString()]);
+
+            // Respuesta de error en JSON
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Error al procesar la búsqueda de referencias.',
+                'error' => $e->getMessage(),
+            ]);
         }
     }
 }

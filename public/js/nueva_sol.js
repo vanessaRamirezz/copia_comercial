@@ -81,31 +81,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function actualizarMontoCuota() {
         const saldoAPagar = parseFloat(saldoAPagarInput.value) || 0;
-        console.log("Saldo a Pagar:", saldoAPagar);
-    
         const valor_porcentual = parseFloat(cantidadCuotasSelect.value) || 0;
-        console.log("Valor Porcentual:", valor_porcentual);
-    
         const opcionSeleccionada = cantidadCuotasSelect.options[cantidadCuotasSelect.selectedIndex];
-        console.log("Opción Seleccionada:", opcionSeleccionada);
-    
         const cant_meses = parseInt(opcionSeleccionada.text) || 0;
-        console.log("Cantidad de Meses:", cant_meses);
-    
-        //const valorCuota = cant_meses > 0 ? saldoAPagar * valor_porcentual : 0;
         const valorCuota = cant_meses > 0 ? Math.round((saldoAPagar * valor_porcentual) * 100) / 100 : 0;
-        console.log("Valor Cuota:", valorCuota);
-    
         montoCuotaInput.value = valorCuota.toFixed(2);
     
         const valorPrima = parseFloat(valorPrimaInput.value);
-        console.log("Valor Prima:", valorPrima);
-    
         const valorTotalAPagar = (parseFloat(valorCuota) * cant_meses) + valorPrima;
-        console.log("Valor Total a Pagar:", valorTotalAPagar);
-    
         montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
-        console.log("Valor monto Total a Pagar final:", montoTotalPagarInput);
     }
     
 
@@ -213,13 +197,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         return;
                     }
                 } else if (cardClass === 'referencias_crediticias') {
-                    console.log('Entrando en referencias_crediticias');
                     var references = [];
                     var referenceRows = card.querySelectorAll('tbody tr');
                     referenceRows.forEach(function (row) {
                         var reference = {};
                         var cells = row.querySelectorAll('td input[name], td select[name]');
-                        console.log('Celdas encontradas:', cells.length);
                         if (cells.length > 0) {
                             var filledFields = 0;
                             for (var i = 0; i < cells.length; i++) {
@@ -227,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                     filledFields++;
                                 }
                             }
-                            console.log('Campos llenos en esta fila:', filledFields);
                             if (filledFields >= 3) {
                                 reference.nombre = cells[0].value;
                                 reference.telefono = cells[1].value;
@@ -263,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const planDePagoDiv = document.querySelector('#plan_de_pago');
                     const planDePagoData = {};
 
-                    planDePagoDiv.querySelectorAll('input, select').forEach(element => {
+                    planDePagoDiv.querySelectorAll('input, select, textarea').forEach(element => {
                         const id = element.id;
                         let value = element.value.trim();
 
@@ -298,7 +279,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         const campos = ['COnombreRef', 'COparentescoRef', 'COdireccionRef', 'COtelRef'];
                         return campos.every(campo => {
                             const input = document.querySelector(`#${prefix}`);
-                            console.log(`Verificando campo: #${prefix} - Valor: ${input ? input.value.trim() : 'No encontrado'}`);
                             return input && input.value.trim() !== '';
                         });
                     }
@@ -312,7 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                 direccion: document.querySelector(`#COdireccionRef${i}`).value,
                                 telefono: document.querySelector(`#COtelRef${i}`).value
                             };
-                            console.log(`Añadiendo referencia:`, referencia);
                             coDeudorData.referencias.push(referencia);
                         }
                     });
@@ -330,7 +309,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                     data.referencias_laborales = referenciasLaboralesData;
-                    console.log("la ref laboral es", data.referencias_laborales);
                 }
             }
         });
@@ -614,7 +592,7 @@ function buscarCliente() {
                 throw new Error(data.error);
             }
             var cliente = data;
-            console.log(cliente);
+
             document.getElementById('id_cliente').value = cliente.id_cliente;
             document.getElementById('nombrePersonal').value = cliente.nombre_completo;
             document.getElementById('duiPersonal').value = cliente.dui;
@@ -648,6 +626,10 @@ function buscarCliente() {
 
             cargarMunicipios(cliente.departamento, cliente.municipio, cliente.colonia);
             Swal.close();
+
+            if (cliente.id_cliente) {
+                buscarUltimaReferenciasAgregadas(cliente.id_cliente);
+            }
         })
         .catch(error => {
             console.log(error.message);
@@ -665,6 +647,162 @@ function isClienteCompleto(cliente) {
 }
 
 var productosAgregados = [];
+
+// Este metodo buscara las ultimas referencias agregadas al cliente
+function buscarUltimaReferenciasAgregadas(idCliente) {
+    Swal.fire({
+        title: 'Espere...',
+        html: 'Buscando últimas referencias agregadas...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: baseURL + 'buscarUltimasReferencias',
+        data: { idCliente: idCliente },
+        dataType: "json",
+        success: function (rsp) {
+            if (rsp.success) {
+                Swal.fire({
+                    title: rsp.referenciaLaboral.success ? "Referencias laborales encontradas" : "No se encontraron referencias laborales",
+                    text: rsp.referenciaLaboral.success ? `Se encontraron ${rsp.referenciaLaboral.data.length} referencias laborales.` : "Intente agregar nuevas referencias laborales.",
+                    icon: rsp.referenciaLaboral.success ? "success" : "warning",
+                }).then(() => {
+                    if (rsp.referenciaLaboral.success && rsp.referenciaLaboral.data.length > 0) {
+                        llenarFormularioReferenciasLaborales(rsp.referenciaLaboral.data);
+                    }
+                    return Swal.fire({
+                        title: rsp.referenciaFamiliar.success ? "Referencias familiares encontradas" : "No se encontraron referencias familiares",
+                        text: rsp.referenciaFamiliar.success ? `Se encontraron ${rsp.referenciaFamiliar.data.length} referencias familiares.` : "Intente agregar nuevas referencias familiares.",
+                        icon: rsp.referenciaFamiliar.success ? "success" : "warning",
+                    });
+                }).then(() => {
+                    if (rsp.referenciaFamiliar.success && rsp.referenciaFamiliar.data.length > 0) {
+                        llenarReferenciasFamiliares(rsp.referenciaFamiliar.data);
+                    }
+                    return Swal.fire({
+                        title: rsp.referenciaNoFamiliar.success ? "Referencias no familiares encontradas" : "No se encontraron referencias no familiares",
+                        text: rsp.referenciaNoFamiliar.success ? `Se encontraron ${rsp.referenciaNoFamiliar.data.length} referencias no familiares.` : "Intente agregar nuevas referencias no familiares.",
+                        icon: rsp.referenciaNoFamiliar.success ? "success" : "warning",
+                    });
+                }).then(() => {
+                    if (rsp.referenciaNoFamiliar.success && rsp.referenciaNoFamiliar.data.length > 0) {
+                        llenarFormularioReferenciasNoFamiliares(rsp.referenciaNoFamiliar.data);
+                    }
+                }).catch((error) => {
+                    console.error("Error en la secuencia de alertas: ", error);
+                });
+            } else {
+                Swal.fire({
+                    title: "Atención",
+                    text: rsp.message || "No se pudo procesar la solicitud.",
+                    icon: "warning"
+                });
+            }
+        },
+        error: function () {
+            Swal.fire({
+                title: "Error",
+                text: "Ocurrió un error al cargar los datos.",
+                icon: "error"
+            });
+        }
+    });
+}
+
+
+function llenarFormularioReferenciasLaborales(datos) {
+    if (!datos || !Array.isArray(datos) || datos.length === 0) {
+        console.error("Datos no válidos o vacíos.");
+        return;
+    }
+
+    const referencia = datos[0];
+
+    const profesionOficioSelect = document.getElementById("profesionOficio");
+    if (profesionOficioSelect) {
+        const opciones = profesionOficioSelect.options;
+        for (let i = 0; i < opciones.length; i++) {
+            if (opciones[i].text.trim() === referencia.descripcion.trim()) {
+                profesionOficioSelect.selectedIndex = i;
+                break;
+            }
+        }
+    }
+    document.getElementById("lugarTrabajo").value = referencia.empresa || "";
+    document.getElementById("direccionDeTrabajo").value = referencia.direccion_trabajo || "";
+    document.getElementById("telTrabajo").value = referencia.telefono_trabajo || "";
+    document.getElementById("cargoDesempeña").value = referencia.cargo || "";
+    document.getElementById("salario").value = referencia.salario || "";
+    document.getElementById("tiempoDeLaborar").value = referencia.tiempo_laborado_empresa || "";
+    document.getElementById("nombreJefe").value = referencia.nombre_jefe_inmediato || "";
+    document.getElementById("empresaAnterior").value = referencia.empresa_anterior || "";
+    document.getElementById("telEmpresaAnterior").value = referencia.telefono_empresa_anterior || "";
+}
+
+function llenarReferenciasFamiliares(datos) {
+    if (datos.length > 0) {
+        // Llenar datos de la primera referencia
+        const refUno = datos[0];
+        document.getElementById("nombreRefFamiliarUno").value = refUno.nombre || "";
+        document.getElementById("parentescoRefFamiliarUno").value = refUno.parentesco || "";
+        document.getElementById("dirRefFamiliarUno").value = refUno.direccion || "";
+        document.getElementById("telProRefFamiliarUno").value = refUno.telefono || "";
+        document.getElementById("lugarTrabajoRefFamiliarUno").value = refUno.lugar_trabajo || "";
+        document.getElementById("telTrabaRefFamiliarUno").value = refUno.telefono_trabajo || "";
+
+        // Verificar si el parentesco está en las opciones del select
+        const selectParentescoUno = document.getElementById("parentescoRefFamiliarUno");
+        if (![...selectParentescoUno.options].some(option => option.value === refUno.parentesco)) {
+            selectParentescoUno.value = ""; // Vaciar el select si el valor no existe
+        }
+    }
+
+    if (datos.length > 1) {
+        // Llenar datos de la segunda referencia
+        const refDos = datos[1];
+        document.getElementById("nombreRefFamiliarDos").value = refDos.nombre || "";
+        document.getElementById("parentescoRefFamiliarDos").value = refDos.parentesco || "";
+        document.getElementById("dirRefFamiliarDos").value = refDos.direccion || "";
+        document.getElementById("telProRefFamiliarDos").value = refDos.telefono || "";
+        document.getElementById("lugarTrabajoRefFamiliarDos").value = refDos.lugar_trabajo || "";
+        document.getElementById("telTrabaRefFamiliarDos").value = refDos.telefono_trabajo || "";
+
+        // Verificar si el parentesco está en las opciones del select
+        const selectParentescoDos = document.getElementById("parentescoRefFamiliarDos");
+        if (![...selectParentescoDos.options].some(option => option.value === refDos.parentesco)) {
+            selectParentescoDos.value = ""; // Vaciar el select si el valor no existe
+        }
+    }
+}
+
+function llenarFormularioReferenciasNoFamiliares(datos) {
+    // Verifica que haya al menos un dato para llenar el formulario
+    if (datos && datos.length > 0) {
+        // Primer referencia (uno)
+        if (datos[0]) {
+            document.getElementById('nombreRefNoFamiliarUno').value = datos[0].nombre;
+            document.getElementById('dirRefNoFamiliarUno').value = datos[0].direccion;
+            document.getElementById('telProRefNoFamiliarUno').value = datos[0].telefono;
+            document.getElementById('lugarTrabajoRefNoFamiliarUno').value = datos[0].lugar_trabajo;
+            document.getElementById('telTrabaRefNoFamiliarUno').value = datos[0].telefono_trabajo;
+        }
+
+        // Segunda referencia (dos)
+        if (datos[1]) {
+            document.getElementById('nombreRefNoFamiliarDos').value = datos[1].nombre;
+            document.getElementById('dirRefNoFamiliarDos').value = datos[1].direccion;
+            document.getElementById('telProRefNoFamiliarDos').value = datos[1].telefono;
+            document.getElementById('lugarTrabajoRefNoFamiliarDos').value = datos[1].lugar_trabajo;
+            document.getElementById('telTrabaRefNoFamiliarDos').value = datos[1].telefono_trabajo;
+        }
+    }
+}
+
 
 
 function buscarProducto() {
@@ -886,6 +1024,8 @@ function cargarProductosSeleccionado(productosAgregados) {
     });
 
     document.getElementById("valorArticulo").value = sumaTotalProductos.toFixed(2);
+    document.getElementById("valorPagoPrima").value = 0;
+    document.getElementById("saldoAPagar").value = sumaTotalProductos.toFixed(2);
 }
 
 function limpiarTablaProdSeleccionados() {
@@ -897,6 +1037,10 @@ function eliminarProductosSeleccionados(producto) {
     productosAgregados = productosAgregados.filter(p => p.codigo_producto !== producto.codigo_producto);
     console.log('Producto eliminado:', producto);
     console.log('Productos agregados:', productosAgregados);
+    document.getElementById("valorArticulo").value = "";
+    document.getElementById("valorPagoPrima").value = 0;
+    document.getElementById("saldoAPagar").value = "";
+    document.getElementById('prodAgregadosCant').textContent = 0;
 
     limpiarTablaProdSeleccionados();
 }

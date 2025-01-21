@@ -54,7 +54,7 @@
                         <div class="row  mb-4">
                             <div class="col-sm-6 d-flex justify-content-start">
                                 <div class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2 duiG" type="text" id="duiBuscarCliente" placeholder="Ingrese el DUI buscar" aria-label="Search">
+                                    <input class="form-control mr-sm-2 duiG" type="text" value="" id="duiBuscarCliente">
                                     <button class="btn btn-outline-primary my-2 my-sm-0" onclick="buscarCliente()">Buscar cliente</button>
                                 </div>
                             </div>

@@ -72,6 +72,15 @@ class SolicitudModel extends Model
             ->first(); // Devuelve un solo registro
     }
 
+    public function getUltimaSolicitudCliente($id_cliente)
+{
+    return $this->select('*') // Selecciona todos los campos
+        ->where('id_cliente', $id_cliente) // Filtra por el cliente
+        ->orderBy('fecha_creacion', 'DESC') // Ordena por fecha_creacion en orden descendente
+        ->first(); // Devuelve el primer registro de los resultados
+}
+
+
     /* public function getDatosCobrosC($numeroSolicitud)
     {
         return $this->select('cs.numero_solicitud, c.nombre_completo, co.fecha_vencimiento')

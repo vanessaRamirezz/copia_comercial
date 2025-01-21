@@ -31,6 +31,8 @@ $routes->get('solicitudes', 'SolicitudesController::index');
 $routes->get('nueva_solicitud', 'SolicitudesController::nuevaSolicitud');
 $routes->post('procesar_nueva_sol', 'SolicitudesController::procesarSolicitud');
 $routes->get('ver_solicitud', 'SolicitudesController::ver_solicitud');
+$routes->post('buscarUltimasReferencias', 'SolicitudesController::buscarReferencias');
+
 $routes->get('clientes', 'ClientesController::index');
 $routes->get('nuevo_cliente', 'ClientesController::nuevoCliente');
 $routes->get('editar_cliente/(:any)', 'ClientesController::editar_cliente/$1');

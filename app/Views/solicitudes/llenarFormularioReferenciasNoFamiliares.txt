@@ -2,7 +2,7 @@
 function llenarFormularioReferenciasNoFamiliares() {
     const nombres = ["Carlos García", "Ana López", "Juan Pérez", "Marta Rodríguez"];
     const direcciones = ["Av. Libertad 234, San Salvador", "Calle 15, Santa Ana", "Calle El Sol, Usulután", "Boulevard de la Reforma"];
-    const telefonos = () => `503-${Math.floor(Math.random() * 9000 + 1000)}-${Math.floor(Math.random() * 9000 + 1000)}`;
+    const telefonos = () => `${Math.floor(Math.random() * 9000 + 1000)}-${Math.floor(Math.random() * 9000 + 1000)}`;
     const lugaresTrabajo = ["Comercial de Servicios S.A.", "Servicios Financieros S.A.", "Corporación X", "Consultora ABC"];
 
     // Generación aleatoria de datos

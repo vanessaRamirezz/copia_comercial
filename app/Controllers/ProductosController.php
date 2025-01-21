@@ -307,8 +307,14 @@ class ProductosController extends BaseController
 
     public function nuevaDisponibilidad($resultDisponible, $resultTotalSalidas)
     {
-        log_message("info","Datos resultDisponible:: ". print_r($resultDisponible, true));
-        log_message("info","Datos resultTotalSalidas:: ". print_r($resultTotalSalidas, true));
+        // Log del array resultDisponible
+        log_message("info", "Datos resultDisponible:: " . print_r($resultDisponible, true));
+        log_message("info", "Cantidad de elementos en resultDisponible:: " . count($resultDisponible));
+
+        // Log del array resultTotalSalidas
+        log_message("info", "Datos resultTotalSalidas:: " . print_r($resultTotalSalidas, true));
+        log_message("info", "Cantidad de elementos en resultTotalSalidas:: " . count($resultTotalSalidas));
+
         $totalSalidas = 0;
         foreach ($resultTotalSalidas as $salida) {
             $totalSalidas += $salida->totalSalida;
