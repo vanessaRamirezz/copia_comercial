@@ -19,7 +19,8 @@ class CobrosModel extends Model
         'fecha_vencimiento',
         'fecha_pago',
         'interesGenerado',
-        'esPrima'
+        'esPrima',
+        'cantAbono'
     ];
 
     public function getCobrosBySolicitud($id_solicitud)
@@ -32,5 +33,16 @@ class CobrosModel extends Model
     public function getCobroById($id_cobro)
     {
         return $this->where('id_cobro', $id_cobro)->first();  // Devuelve el primer registro que coincide con el id_cobro
+    }
+
+    public function getCobrosPendientesByNumeroSolicitud($numeroSolicitud)
+    {
+        $builder = $this->db->table('cobros c');
+        $builder->select('c.*');
+        $builder->join('solicitud s', 'c.id_solicitud = s.id_solicitud');
+        $builder->where('s.numero_solicitud', $numeroSolicitud);
+        $builder->where('c.estado', 'PENDIENTE');
+
+        return $builder->get()->getResult(); // Devuelve todos los registros que cumplen con las condiciones
     }
 }

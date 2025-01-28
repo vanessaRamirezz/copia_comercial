@@ -46,7 +46,7 @@ class DisponibilidadProductosModel extends Model
         $builder = $this->db->table('productos p');
         $builder->select('
             SUM(CASE
-                WHEN tm.tipo_mov = 11 THEN m.cantidad
+                WHEN tm.tipo_mov IS NULL THEN m.cantidad
                 ELSE 0
             END) AS totalSalida
         ');

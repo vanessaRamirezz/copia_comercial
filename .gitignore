@@ -1,2 +1,8 @@
 
 .codegpt
+# Ignorar sesiones
+writable/session/
+# Ignorar logs
+writable/logs/
+# Ignorar archivos de debugbar
+writable/debugbar/

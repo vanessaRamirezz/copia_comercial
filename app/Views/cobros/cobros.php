@@ -10,7 +10,8 @@
                 <div class="container">
                     <div class="col-sm-6 d-flex justify-content-start">
                         <div class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2 duiG" type="text" id="duiBuscarCliente" placeholder="Ingrese el DUI buscar" aria-label="Search" autocomplete="off">
+                        <input class="form-control mr-sm-2 duiG" type="text" id="duiBuscarCliente" placeholder="Ingrese el DUI a buscar" aria-label="Search" autocomplete="off" value="">
+
                             <button class="btn btn-outline-primary my-2 my-sm-0" onclick="buscarClienteDeudas()">Buscar cliente</button>
                         </div>
                     </div>
@@ -49,6 +50,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <form id="paymentSelectionForm">
+                                            <input type="hidden" disabled id="cuotasCubiertas">
+                                            <input type="hidden" disabled id="saldoRestanteAFavor">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered table-striped">
                                                     <thead class="thead-dark">
@@ -67,6 +70,10 @@
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            <div class="row"><div class="col-sm">
+                                            <div class="alert alert-general" role="alert" style="display: none;"></div>
+
+                                            </div></div>
                                             <button type="button" class="btn btn-primary mt-3" onclick="submitSelectedPayments()">Procesar Pagos Seleccionados</button>
                                         </form>
                                     </div>

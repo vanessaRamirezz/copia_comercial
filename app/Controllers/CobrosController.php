@@ -83,14 +83,68 @@ class CobrosController extends BaseController
             $db = \Config\Database::connect();
             $db->transStart();
 
-            if (!empty($inputData['pagos']) && !empty($inputData['solicitud'])) {
-                $arrayPagos = $inputData['pagos'];
+            if (!empty($inputData['montoTotalaCancelar']) && !empty($inputData['solicitud'])) {
+                //$arrayPagos = $inputData['pagos'];
                 $solicitudNu = $inputData['solicitud'];
-
+                $cuotasCubiertas = $inputData['cuotasCubiertas'];
+                $moraTotalAPagar = $inputData['moraTotalAPagar'];
+                $saldoRestante = $inputData['saldoRestante'];
+                $cuotasActualizadas = 0; // Contador para cuotas cubiertas
                 $sumaCuotas = 0.0;
                 $var = 1;
+                $cobrosCancelados = [];
+                $recalculoMontoPagar = 0;
 
-                foreach ($arrayPagos as $pago) {
+                $datosCobros = $modelCobros->getCobrosPendientesByNumeroSolicitud($solicitudNu);
+                foreach ($datosCobros as $index => $cobro) {
+                    // Verificar si quedan cuotas por cubrir
+                    if ($cuotasActualizadas < $cuotasCubiertas) {
+                        // Actualizar mora para el primer registro
+                        if ($index === 0 && $moraTotalAPagar > 0) {
+                            $descripcion = "Pago de la cuota " . $var . " con valor de cuota de $" . $cobro->monto_cuota;
+                            if (isset($moraTotalAPagar) && $moraTotalAPagar > 0) {
+                                $descripcion .= ", más un interés generado de $" . $moraTotalAPagar;
+                            }
+                            $modelCobros->update($cobro->id_cobro, [
+                                'estado' => 'CANCELADO',
+                                'interesGenerado' => $moraTotalAPagar, // Se actualiza la mora solo para el primer registro
+                                'fecha_pago' => date('Y-m-d H:i:s'),
+                                'descripcion' => $descripcion,
+                                'cantAbono' => $cobro->monto_cuota
+                            ]);
+                            $recalculoMontoPagar += $cobro->monto_cuota;
+                            $cobrosCancelados[] = $cobro;
+                            log_message('info', "Cobro ID {$cobro->id_cobro} actualizado con mora de {$moraTotalAPagar} y estado CANCELADO.");
+                        } else {
+                            // Actualizar solo el estado para los demás registros
+                            $descripcion = "Pago de la cuota " . $var . " con valor de cuota de $" . $cobro->monto_cuota;
+                            $modelCobros->update($cobro->id_cobro, [
+                                'estado' => 'CANCELADO',
+                                'fecha_pago' => date('Y-m-d H:i:s'),
+                                'descripcion' => $descripcion,
+                                'cantAbono' => $cobro->monto_cuota
+                            ]);
+                            $recalculoMontoPagar += $cobro->monto_cuota;
+                            $cobrosCancelados[] = $cobro;
+                            log_message('info', "Cobro ID {$cobro->id_cobro} actualizado a CANCELADO.");
+                        }
+
+                        $cuotasActualizadas++; // Incrementar el contador de cuotas actualizadas
+                        $var++;
+                    } else if (isset($saldoRestante) && $saldoRestante > 0) {
+                        $descripcion = "Abono de la cuota con valor de abono de $" . $saldoRestante;
+                        $modelCobros->update($cobro->id_cobro, [
+                            'estado' => 'PENDIENTE',
+                            'fecha_pago' => date('Y-m-d H:i:s'),
+                            'descripcion' => $descripcion,
+                            'cantAbono' => $saldoRestante
+                        ]);
+                        $cobrosCancelados[] = $cobro;
+                        $recalculoMontoPagar += $saldoRestante;
+                        $saldoRestante = $saldoRestante - $saldoRestante;
+                    }
+                }
+                /* foreach ($arrayPagos as $pago) {
                     // Generar descripción del pago
                     $descripcion = "Pago de la cuota " . $pago['numero_cuota'] . " con valor de cuota de $" . $pago['montoCuota'];
                     if (isset($pago['mora']) && $pago['mora'] > 0) {
@@ -108,7 +162,7 @@ class CobrosController extends BaseController
                     log_message('info', 'Cobro actualizado: ' . json_encode($pago));
                     $var++;
                     $sumaCuotas = bcadd($sumaCuotas, $pago['montoCuota'], 2);
-                }
+                } */
 
                 $solicitud = $solicitudModel->getSolicitud($solicitudNu);
                 if (!$solicitud) {
@@ -118,7 +172,7 @@ class CobrosController extends BaseController
                 $montoApagar = (float) $solicitud['montoApagar'];
                 $idSolicitud = $solicitud['id_solicitud'];
 
-                $nuevoMontoApagar = $montoApagar - $sumaCuotas;
+                $nuevoMontoApagar = $montoApagar - $recalculoMontoPagar;
                 if ($nuevoMontoApagar < 0) {
                     throw new \Exception('El monto a pagar no puede ser negativo.');
                 }
@@ -131,7 +185,7 @@ class CobrosController extends BaseController
                     throw new \Exception('Ocurrió un error al confirmar la transacción.');
                 }
 
-                $rutaGenerada = $this->generarDocPagos($arrayPagos);
+                $rutaGenerada = $this->generarDocPagos($cobrosCancelados);
                 $esValidaRuta = !empty($rutaGenerada) ? true : false;
 
                 return $this->response->setJSON([
@@ -179,16 +233,18 @@ class CobrosController extends BaseController
                 $numCuot = '';
                 foreach ($arrayPagos as $pago) {
                     // Buscar el cobro por id
-                    $cobro = $modelCobros->getCobroById($pago['id']);
+                    $cobro = $modelCobros->getCobroById($pago->id_cobro);
 
                     // Verificar si el cobro está cancelado
-                    if ($cobro && $cobro['estado'] == 'CANCELADO') {
+                    log_message('info', 'generarDocPagos ------> Cobros: ' . print_r($cobro, true));
+                    if (($cobro && $cobro['estado'] == 'CANCELADO') || ($cobro['cantAbono'] < $cobro['monto_cuota'] && $cobro['cantAbono'] > 0)) {
                         $cobrosCancelados[] = $cobro;
                         if ($numCuot !== '') {
                             $numCuot .= '_';
                         }
                         $numCuot .= $cobro['numero_cuota'];
                     }
+                    
                 }
 
                 if (count($cobrosCancelados) > 0) {
@@ -219,16 +275,18 @@ class CobrosController extends BaseController
                 foreach ($cobrosCancelados as $index => $pago) {
                     $fila = $index + 1; // Las filas en la plantilla inician desde 1
                     /* $templateProcessor->setValue("descripcion#{$fila}", mb_strtoupper($pago['descripcion'], 'UTF-8')); */
-                    $templateProcessor->setValue("descripcion#{$fila}", ucfirst(mb_strtolower($pago['descripcion'], 'UTF-8')) . ', segun contrato de arrendamiento: '.$datosCobros[0]['num_contrato'].' - Vencimiento: ' . $pago['fecha_vencimiento']);
+                    $templateProcessor->setValue("descripcion#{$fila}", ucfirst(mb_strtolower($pago['descripcion'], 'UTF-8')) . ', segun contrato de arrendamiento: ' . $datosCobros[0]['num_contrato'] . ' - Vencimiento: ' . $pago['fecha_vencimiento']);
                     $templateProcessor->setValue("cant#{$fila}", '1');
                     $templateProcessor->setValue("pUni#{$fila}", '$' . number_format($pago['monto_cuota'], 2));
-                    $templateProcessor->setValue("totalU#{$fila}", '$' . number_format($pago['monto_cuota'], 2));
+                    $templateProcessor->setValue("totalU#{$fila}", '$' . (($pago['monto_cuota'] == $pago['cantAbono']) ? number_format($pago['monto_cuota'], 2) : number_format($pago['cantAbono'], 2)));
 
-                    $totalMonto += $pago['monto_cuota'];
+
+                    //$totalMonto += $pago['monto_cuota'];
+                    $totalMonto += ($pago['monto_cuota'] == $pago['cantAbono']) ? $pago['monto_cuota'] : $pago['cantAbono'];
                 }
                 $templateProcessor->setValue("sumaTotal", '$' . number_format($totalMonto, 2));
 
-                log_message("info", "valor del datosCobros::: ".print_r($datosCobros, true));
+                log_message("info", "valor del datosCobros::: " . print_r($datosCobros, true));
 
                 $totalEnLetras = $this->convertirNumeroALetras($totalMonto);
                 $templateProcessor->setValue("totalApagarLetras", $totalEnLetras);
