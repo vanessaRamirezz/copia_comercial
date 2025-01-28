@@ -220,84 +220,116 @@ class CobrosController extends BaseController
         try {
             $modelCobros = new CobrosModel();
             $solicitudesModel = new SolicitudModel();
-            if ($arrayPagos) {
-                $templatePath = FCPATH . 'public/documentos/pagos/Formato_Factura.docx';
 
-                if (!file_exists($templatePath)) {
-                    throw new \Exception('El archivo de plantilla no se encuentra en la ruta especificada.');
-                }
-
-                $templateProcessor = new TemplateProcessor($templatePath);
-
-                $cobrosCancelados = [];
-                $numCuot = '';
-                foreach ($arrayPagos as $pago) {
-                    // Buscar el cobro por id
-                    $cobro = $modelCobros->getCobroById($pago->id_cobro);
-
-                    // Verificar si el cobro está cancelado
-                    log_message('info', 'generarDocPagos ------> Cobros: ' . print_r($cobro, true));
-                    if (($cobro && $cobro['estado'] == 'CANCELADO') || ($cobro['cantAbono'] < $cobro['monto_cuota'] && $cobro['cantAbono'] > 0)) {
-                        $cobrosCancelados[] = $cobro;
-                        if ($numCuot !== '') {
-                            $numCuot .= '_';
-                        }
-                        $numCuot .= $cobro['numero_cuota'];
-                    }
-                    
-                }
-
-                if (count($cobrosCancelados) > 0) {
-                    log_message('info', 'generarDocPagos ------> Cobros cancelados: ' . print_r($cobrosCancelados, true));
-                }
-
-                // Buscar la solicitud
-                $solicitudEncontrada = $solicitudesModel->find($cobrosCancelados[0]['id_solicitud']);
-                $numeroSolicitud = $solicitudEncontrada['numero_solicitud'];
-
-                // Crear carpeta de destino si no existe
-                $rutaCarpeta = FCPATH . 'public/documentos/pagos/' . $numeroSolicitud . '/';
-                if (!is_dir($rutaCarpeta)) {
-                    mkdir($rutaCarpeta, 0755, true);
-                }
-
-                $rutaArchivo = $rutaCarpeta . 'pagoCuota' . $numeroSolicitud . '_' . $numCuot . '.docx';
-                $rutaArchivoRetorno = 'public/documentos/pagos/' . $numeroSolicitud . '/pagoCuota' . $numeroSolicitud . '_' . $numCuot . '.docx';
-
-                $modelSolicitud = new SolicitudModel();
-                $datosCobros = $modelSolicitud->getDatosCobrosC($numeroSolicitud);
-                $templateProcessor->setValue("nombreCliente", $datosCobros[0]['nombre_completo']);
-                $templateProcessor->setValue("noContrato", $datosCobros[0]['num_contrato']);
-
-                $totalMonto = 0;
-                // Clonar filas en la tabla y reemplazar datos
-                $templateProcessor->cloneRow('descripcion', count($cobrosCancelados));
-                foreach ($cobrosCancelados as $index => $pago) {
-                    $fila = $index + 1; // Las filas en la plantilla inician desde 1
-                    /* $templateProcessor->setValue("descripcion#{$fila}", mb_strtoupper($pago['descripcion'], 'UTF-8')); */
-                    $templateProcessor->setValue("descripcion#{$fila}", ucfirst(mb_strtolower($pago['descripcion'], 'UTF-8')) . ', segun contrato de arrendamiento: ' . $datosCobros[0]['num_contrato'] . ' - Vencimiento: ' . $pago['fecha_vencimiento']);
-                    $templateProcessor->setValue("cant#{$fila}", '1');
-                    $templateProcessor->setValue("pUni#{$fila}", '$' . number_format($pago['monto_cuota'], 2));
-                    $templateProcessor->setValue("totalU#{$fila}", '$' . (($pago['monto_cuota'] == $pago['cantAbono']) ? number_format($pago['monto_cuota'], 2) : number_format($pago['cantAbono'], 2)));
-
-
-                    //$totalMonto += $pago['monto_cuota'];
-                    $totalMonto += ($pago['monto_cuota'] == $pago['cantAbono']) ? $pago['monto_cuota'] : $pago['cantAbono'];
-                }
-                $templateProcessor->setValue("sumaTotal", '$' . number_format($totalMonto, 2));
-
-                log_message("info", "valor del datosCobros::: " . print_r($datosCobros, true));
-
-                $totalEnLetras = $this->convertirNumeroALetras($totalMonto);
-                $templateProcessor->setValue("totalApagarLetras", $totalEnLetras);
-
-                // Guardar el archivo generado
-                $templateProcessor->saveAs($rutaArchivo);
-
-                log_message("info", "Documento generado exitosamente: {$rutaArchivoRetorno}");
+            if (!$arrayPagos) {
+                throw new \Exception("El array de pagos está vacío.");
             }
 
-            log_message("info", "***************************************FIN generarContrato***************************************");
+            $templatePath = FCPATH . 'public/documentos/pagos/Formato_Factura.docx';
+
+            if (!file_exists($templatePath)) {
+                throw new \Exception('El archivo de plantilla no se encuentra en la ruta especificada.');
+            }
+
+            $templateProcessor = new TemplateProcessor($templatePath);
+
+            $cobrosCancelados = [];
+            $numCuot = '';
+            foreach ($arrayPagos as $pago) {
+                // Buscar el cobro por id
+                $cobro = $modelCobros->getCobroById($pago->id_cobro);
+
+                // Verificar si el cobro está cancelado o parcialmente pagado
+                log_message('info', 'generarDocPagos ------> Cobros: ' . print_r($cobro, true));
+                if (($cobro && $cobro['estado'] == 'CANCELADO') || ($cobro['cantAbono'] < $cobro['monto_cuota'] && $cobro['cantAbono'] > 0)) {
+                    $cobrosCancelados[] = $cobro;
+                    $numCuot .= ($numCuot !== '' ? '_' : '') . $cobro['numero_cuota'];
+                }
+            }
+
+            if (count($cobrosCancelados) === 0) {
+                throw new \Exception('No se encontraron cobros cancelados o con abonos.');
+            }
+
+            log_message('info', 'generarDocPagos ------> Cobros cancelados: ' . print_r($cobrosCancelados, true));
+
+            // Buscar la solicitud asociada
+            $solicitudEncontrada = $solicitudesModel->find($cobrosCancelados[0]['id_solicitud']);
+            $numeroSolicitud = $solicitudEncontrada['numero_solicitud'];
+
+            // Crear carpeta de destino si no existe
+            $rutaCarpeta = FCPATH . 'public/documentos/pagos/' . $numeroSolicitud . '/';
+            if (!is_dir($rutaCarpeta)) {
+                mkdir($rutaCarpeta, 0755, true);
+            }
+
+            $rutaArchivo = $rutaCarpeta . 'pagoCuota' . $numeroSolicitud . '_' . $numCuot . '.docx';
+            $rutaArchivoRetorno = 'public/documentos/pagos/' . $numeroSolicitud . '/pagoCuota' . $numeroSolicitud . '_' . $numCuot . '.docx';
+
+            $modelSolicitud = new SolicitudModel();
+            $datosCobros = $modelSolicitud->getDatosCobrosC($numeroSolicitud);
+            $templateProcessor->setValue("nombreCliente", $datosCobros[0]['nombre_completo']);
+            $templateProcessor->setValue("noContrato", $datosCobros[0]['num_contrato']);
+
+            $totalMonto = 0;
+            $nCuotasAlmacen = "";
+            $descripcionAbono = "";
+            $descripcionMora = "";
+            $sumaCuotasPagadaYabono = 0.0;
+            $valorInteres = 0.00;
+
+            // Procesar los cobros cancelados o con abonos
+            //Clonar filas en la tabla y reemplazar datos
+            $templateProcessor->cloneRow('descripcion', 2);
+            foreach ($cobrosCancelados as $pago) {
+                if ($pago['estado'] === 'CANCELADO') {
+                    $nCuotasAlmacen .= ($nCuotasAlmacen !== '' ? ', ' : '') . $pago['numero_cuota'];
+                    $sumaCuotasPagadaYabono += $pago['cantAbono'];
+                } elseif ($pago['estado'] === 'PENDIENTE' && $pago['cantAbono'] < $pago['monto_cuota']) {
+                    $descripcionAbono .= " Abono a cuota número " . $pago['numero_cuota'].', la cantidad de '.$pago['cantAbono'];
+                    $sumaCuotasPagadaYabono += $pago['cantAbono'];
+                }
+
+                if ($pago['estado'] === 'CANCELADO' && $pago['interesGenerado'] > 0) {
+                    $descripcionMora = "Cobro de interés por mora de $" . number_format($pago['interesGenerado'], 2);
+                    $totalMonto += $pago['interesGenerado'];
+                    $valorInteres = $pago['interesGenerado'];
+                }
+            }
+
+            // Construir descripción de las cuotas
+            $descripcionNew = "";
+            if (!empty($nCuotasAlmacen)) {
+                $descripcionNew = "Pago de cuota(s) número(s) " . $nCuotasAlmacen;
+            }
+            if (!empty($descripcionAbono)) {
+                $descripcionNew .=!empty($nCuotasAlmacen) ? ", Y ".$descripcionAbono : $descripcionAbono;
+            }
+
+            // Configurar valores en el documento
+            $templateProcessor->setValue("descripcion#1", ucfirst(mb_strtolower($descripcionNew, 'UTF-8')));
+            $templateProcessor->setValue("cant#1", '1');
+            $templateProcessor->setValue("pUni#1", '$' . number_format($sumaCuotasPagadaYabono, 2));
+            $templateProcessor->setValue("totalU#1", '$' . number_format($sumaCuotasPagadaYabono, 2));
+            $totalMonto += $sumaCuotasPagadaYabono;
+
+            if (!empty($descripcionMora)) {
+                $templateProcessor->setValue("descripcion#2", ucfirst(mb_strtolower($descripcionMora, 'UTF-8')));
+                $templateProcessor->setValue("cant#2", '1');
+                $templateProcessor->setValue("pUni#2", '$' . number_format($valorInteres, 2));
+                $templateProcessor->setValue("totalU#2", '$' . number_format($valorInteres, 2));
+            }
+
+            log_message("info", "valor del datosCobros::: " . print_r($datosCobros, true));
+
+            $templateProcessor->setValue("sumaTotal", '$' . number_format($totalMonto, 2));
+            $totalEnLetras = $this->convertirNumeroALetras($totalMonto);
+            $templateProcessor->setValue("totalApagarLetras", $totalEnLetras);
+
+            // Guardar el archivo generado
+            $templateProcessor->saveAs($rutaArchivo);
+
+            log_message("info", "Documento generado exitosamente: {$rutaArchivoRetorno}");
 
             return $rutaArchivoRetorno;
         } catch (\Throwable $e) {
@@ -312,6 +344,7 @@ class CobrosController extends BaseController
             ];
         }
     }
+
 
     function convertirNumeroALetras($numero)
     {

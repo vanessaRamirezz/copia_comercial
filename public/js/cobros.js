@@ -408,7 +408,7 @@ $(document).on('click', '.realizarCobro', function () {
                         <td class="text-center"><input disabled class="form-check-input cobroCheck" type="checkbox" name="selectedPayments[]" value="${cobro.id_cobro}" data-monto="${cobro.monto_cuota}"></td>
                         <td>${cobro.numero_cuota}</td>
                         <td>${cobro.fecha_vencimiento}</td>
-                        <td>${cobro.fecha_pago}</td>
+                        <td>${cobro.fecha_pago != null ? cobro.fecha_pago : ''}</td>
                         <td>$${cobro.monto_cuota}</td>
                         <td>${cobro.estado}</td>
                         <td><input type="text" readonly class="form-control moraGenerada" name="moraGenerada" value="$${mora.toFixed(2)}"></td>
