@@ -1,16 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Ver solicitudes");
-    $('#dataTableSolCreadas').DataTable({
+    let table = $('#dataTableSolCreadas').DataTable({
         "language": {
             "url": baseURL + "public/js/es-ES.json"
         },
+        "stateSave": false, // Asegura que no guarda el estado previo
+        "initComplete": function () {
+            let searchInput = $('.dataTables_filter input');
+            searchInput.val('').trigger('input'); // Limpia el buscador y actualiza la tabla
+        }
     });
 
-    $('#dataTableSolVarias').DataTable({
+    // Forzar que el input de búsqueda se limpie cada vez que se recarga la tabla
+    setTimeout(function () {
+        let searchInput = $('.dataTables_filter input');
+        searchInput.val('').trigger('input');
+    }, 500);
+
+    let table2 = $('#dataTableSolVarias').DataTable({
         "language": {
             "url": baseURL + "public/js/es-ES.json"
         },
+        "stateSave": false, // Asegura que no guarda el estado previo
+        "initComplete": function () {
+            let searchInput = $('.dataTables_filter input');
+            searchInput.val('').trigger('input'); // Limpia el buscador y actualiza la tabla
+        }
     });
+
+    // Forzar que el input de búsqueda se limpie cada vez que se recarga la tabla
+    setTimeout(function () {
+        let searchInput = $('.dataTables_filter input');
+        searchInput.val('').trigger('input');
+    }, 500);
 });
 
 function encryptData(data) {
@@ -25,6 +46,14 @@ function redirectToSolicitud(id_solicitud) {
     const encryptedSolicitud = encryptData(id_solicitud);
     const encodedSolicitud = encodeURIComponent(encryptedSolicitud); // Codifica el valor para usar en la URL
     const redirect = `${baseURL}ver_solicitud?solicitud=${encodedSolicitud}`;
+    console.log("Redireccionando a:", redirect); // Verifica la URL en la consola
+    window.location.href = redirect; // Redirige a la URL construida
+}
+
+function redirectToCopySolicitud(id_solicitud) {
+    const encryptedSolicitud = encryptData(id_solicitud);
+    const encodedSolicitud = encodeURIComponent(encryptedSolicitud); // Codifica el valor para usar en la URL
+    const redirect = `${baseURL}copiar_solicitud?solicitud=${encodedSolicitud}`;
     console.log("Redireccionando a:", redirect); // Verifica la URL en la consola
     window.location.href = redirect; // Redirige a la URL construida
 }

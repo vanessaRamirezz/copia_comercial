@@ -14,4 +14,8 @@ class DistritosModel extends Model
     {
         return $this->where('id_municipio', $id_municipio)->findAll();
     }
+    public function getDistritosBId($id_distrito)
+    {
+        return $this->where('id_distrito', $id_distrito)->first()['nombre'];
+    }
 }

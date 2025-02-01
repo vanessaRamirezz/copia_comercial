@@ -28,6 +28,21 @@
     <!-- DataTables -->
     <script src="<?= base_url('public/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
     <script src="<?= base_url('public/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script>
+        function formatearFecha(fecha) {
+            let momentFecha = moment(fecha); // Convierte la fecha al formato moment
+
+            // Compara la fecha con 'hoy', 'ayer' o 'mañana'
+            let fechaFormateada = momentFecha.isSame(moment(), 'day') ?
+                'Hoy ' + momentFecha.fromNow() : // Si es hoy, muestra algo como "Hace 10 minutos"
+                momentFecha.isSame(moment().subtract(1, 'days'), 'day') ? 'Ayer' :
+                momentFecha.isSame(moment().add(1, 'days'), 'day') ? 'Mañana' :
+                momentFecha.format('DD-MM-YYYY'); // Si no es hoy, ayer o mañana, mostramos la fecha en formato
+
+            return fechaFormateada; // Retorna la fecha formateada
+        }
+    </script>
     <style>
         .icono-solicitud {
             cursor: pointer;

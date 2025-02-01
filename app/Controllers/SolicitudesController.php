@@ -21,7 +21,7 @@ use App\Models\CobrosModel;
 use DateTime;
 
 use App\Controllers\GenerarSolicitudCreditoController;
-
+use App\Models\DistritosModel;
 
 class SolicitudesController extends BaseController
 {
@@ -41,6 +41,7 @@ class SolicitudesController extends BaseController
     private $clientesModel;
     private $deptoModel;
     private $muniModel;
+    private $distritoModel;
     private $coloniaModel;
     private $generarDocController;
     private $cobrosModel;
@@ -60,6 +61,7 @@ class SolicitudesController extends BaseController
         $this->refCrediticias = new ReferenciasCrediticiasModel();
         $this->clientesModel = new ClientesModel();
         $this->deptoModel = new DepartamentosModel();
+        $this->distritoModel = new DistritosModel();
         $this->muniModel = new MunicipiosModel();
         $this->coloniaModel = new ColoniasModel();
         $this->generarDocController = new GenerarSolicitudCreditoController();
@@ -577,7 +579,7 @@ class SolicitudesController extends BaseController
                 'cuotas'             => $dataPlanPago['cantidadCuotas'],
                 'monto_cuotas'       => $dataPlanPago['montoCuota'],
                 'monto_total_pagar'  => $dataPlanPago['montoTotalPagar'],
-                'observaciones'      => $dataPlanPago['observaciones'], // Puedes ajustar esto según sea necesario
+                'observaciones'      => isset($dataPlanPago['observaciones']) ? $dataPlanPago['observaciones'] : "", // Puedes ajustar esto según sea necesario
                 'id_solicitud'       => $idSolicitud
             ];
 
@@ -744,6 +746,95 @@ class SolicitudesController extends BaseController
                         'id_estado_actual' => $solicitudEncontrada['id_estado_actual']
                     ];
                     $content4 = view('solicitudes/ver_solicitud', $datosSolicitud);
+                    $fullPage = $this->renderPage($content4);
+                    return $fullPage;
+                } else {
+                    // Manejar el error cuando el parámetro no está presente o es inválido
+                    return $this->response->setStatusCode(400)->setBody("Solicitud no válida.");
+                }
+            } else {
+                return redirect()->to(base_url());
+            }
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+
+            log_message('error', $errorMessage);
+            return false;
+        }
+    }
+
+    public function copy_solicitud()
+    {
+        try {
+            $session = session();
+            if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
+                $request = service('request');
+                $encryptedSolicitud = $request->getGet('solicitud');
+                log_message("info", "encryptedSolicitud::: " . $encryptedSolicitud);
+
+                if ($encryptedSolicitud) {
+                    $id_solicitud = base64_decode($encryptedSolicitud);
+                    log_message("info", "numero de solicitud decrypted::: " . $id_solicitud);
+
+                    # paso 1: recupero la información de la solicitud
+                    $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
+                    # paso 2: recupero el cliente asociado a la solicitud desde el modelo de clientes
+                    $clienteEncontrado = $this->clientesModel->buscarCliente(null, (int) $solicitudEncontrada['id_cliente']);
+
+                    // Buscar los nombres del departamento y municipio utilizando sus códigos
+                    $departamentoCliente = $this->deptoModel->getDepartamentoPorCodigo($clienteEncontrado['departamento']);
+                    $municipioCliente = $this->muniModel->getMunicipioPorCodigo($clienteEncontrado['municipio']);
+                    $distritoCliente = $this->distritoModel->getDistritosBId($clienteEncontrado['distrito']);
+                    $coloniaCliente = $this->coloniaModel->getColoniasByCliente($clienteEncontrado['colonia']);
+                    
+                    # paso 3: se recuperan las referencias laborales del cliente
+                    $refLaboralEncontrado = $this->refLaboralModel->obtenerReferenciasPorSolicitud($id_solicitud);
+
+                    # paso 4: se recuperan las ref familires
+                    $refFamiliares = $this->refFamiliresModel->buscarPorSolicitud($id_solicitud);
+
+                    # paso 5: se recuperan las referencias no familiares
+                    $refNoFamiliares = $this->refNoFamiliresModel->buscarPorSolicitud($id_solicitud);
+
+                    # paso 6: se recuperan las ref crediticias
+                    $refCrediticias = $this->refCrediticias->buscarPorSolicitud($id_solicitud);
+
+                    # paso 7: se recupera el estudio socieconomico
+                    $estSocioEconomico = $this->estudioSocioEconomicoModel->buscarPorSolicitud($id_solicitud);
+
+                    # paso 8: recupera articulo x solicitud
+                    $productosSolicitud = $this->prodSolicitudModel->buscarPorSolicitud($id_solicitud);
+
+                    # paso 9: plan de pago
+                    // falta la observacion
+                    //$planPago = $this->planDePagoModel->buscarPorSolicitud($id_solicitud);
+
+                    # paso 10: se traen los datos del codeudor
+                    $codeudor = $this->codeudorModel->buscarPorSolicitud($id_solicitud);
+
+                    $refCodeudor = $this->refcodeudorModel->buscarPorCodeudor($codeudor[0]['id_codeudor']);
+
+                    # Ultimo paso: se guardaran todos los resultado
+                    $datosSolicitud = [
+                        'perfil' => $_SESSION['perfilN'],
+                        'cliente' => $clienteEncontrado,
+                        'deptClienteN' => $departamentoCliente,
+                        'muniClienteN' => $municipioCliente,
+                        'distritoN' => $distritoCliente,
+                        'coloniaCliente' => $coloniaCliente,
+                        'refLaboral' => $refLaboralEncontrado,
+                        'refFamiliares' => $refFamiliares,
+                        'refNoFamiliares' => $refNoFamiliares,
+                        'refCrediticia' => $refCrediticias,
+                        'analisisSocioeconomico' => $estSocioEconomico,
+                        'productosSol' => $productosSolicitud,
+                        'codeudor' => $codeudor,
+                        'refCodeudor' => $refCodeudor,
+                        'observacionSol' => !empty($solicitudEncontrada['observacion']) ? $solicitudEncontrada['observacion'] : "",
+                        'id_estado_actual' => $solicitudEncontrada['id_estado_actual']
+                    ];
+                    $content4 = view('solicitudes/copiar_solicitud', $datosSolicitud);
                     $fullPage = $this->renderPage($content4);
                     return $fullPage;
                 } else {

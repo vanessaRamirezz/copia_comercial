@@ -86,12 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const cant_meses = parseInt(opcionSeleccionada.text) || 0;
         const valorCuota = cant_meses > 0 ? Math.round((saldoAPagar * valor_porcentual) * 100) / 100 : 0;
         montoCuotaInput.value = valorCuota.toFixed(2);
-    
+
         const valorPrima = parseFloat(valorPrimaInput.value);
         const valorTotalAPagar = (parseFloat(valorCuota) * cant_meses) + valorPrima;
         montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
     }
-    
+
 
     cargarDepartamentos();
     cargarComisiones();
@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
             plan_de_pago: {},
             productosSolicitud: []
         };
-        var errorFound = false; // Flag to track if an error was found
+        var errorFound = false;
+        let planDePagoError = false;
 
         cards.forEach(function (card) {
             if (errorFound) return; // Exit the loop if an error has been found
@@ -244,22 +245,37 @@ document.addEventListener('DOMContentLoaded', function () {
                     const planDePagoDiv = document.querySelector('#plan_de_pago');
                     const planDePagoData = {};
 
-                    planDePagoDiv.querySelectorAll('input, select, textarea').forEach(element => {
-                        const id = element.id;
+                    planDePagoDiv.querySelectorAll('input, select').forEach(element => {
+                        const name = element.getAttribute('name');
                         let value = element.value.trim();
 
                         // Verificar si el elemento es el select "cantidadCuotas"
-                        if (id === 'cantidadCuotas') {
-                            // Recuperar el atributo "cant_meses" del option seleccionado en lugar del value
+                        if (element.id === 'cantidadCuotas') {
                             const selectedOption = element.options[element.selectedIndex];
                             value = selectedOption.getAttribute('cant_meses') || '';
                         }
 
-                        if (value !== '') {
-                            planDePagoData[id] = value;
+                        // Si el campo está vacío, mostrar un mensaje de error y marcar que hay un error
+                        if (value === '') {
+                            toastr.error(`El campo "${name}" es obligatorio.`, "Error en Plan de Pago");
+                            element.style.border = '2px solid red';
+                            planDePagoError = true;
+                        } else {
+                            planDePagoData[name] = value;
+                            element.style.border = '';
                         }
                     });
+                    const observacionesElement = planDePagoDiv.querySelector('textarea[name="observaciones"]');
+                    if (observacionesElement) {
+                        planDePagoData['observaciones'] = observacionesElement.value.trim();
+                    }
 
+                    // Si hay errores, detener el proceso
+                    if (planDePagoError) {
+                        errorFound = true;
+                        return;
+                    }
+                    console.log("Flag de errorFound:: ",errorFound);
                     data['plan_de_pago'] = planDePagoData;
                     console.log('Datos del plan de pago:', data['plan_de_pago']);
                 } else if (cardClass === 'co_deudor') {
@@ -312,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-
+        console.log("Flag de errorFound:::: ",errorFound);
         if (errorFound) return;
 
         if (productosAgregados.length <= 0) {
@@ -352,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         allowEnterKey: false,
                         showConfirmButton: false
                     });
-            
+
                     // Esperar 3 segundos y luego redirigir
                     setTimeout(() => {
                         window.history.back();
@@ -441,30 +457,45 @@ function cargarProfesiones() {
         dataType: 'json',
         success: function (response) {
             var select = $('#profesionOficio');
-            select.empty();
+            var descripcionGuardada = select.data('descripcion')?.trim().toLowerCase(); // Obtener y limpiar el valor
 
+            select.empty();
 
             select.append($('<option>', {
                 value: -1,
                 text: 'Seleccione...'
             }));
 
+            var encontrado = false;
 
             response.forEach(function (profesion) {
+                var descripcionActual = profesion.descripcion.trim().toLowerCase();
                 var option = $('<option></option>')
                     .attr('value', profesion.id_profesion)
                     .text(profesion.descripcion);
+
+                // Si la descripción coincide, marcar como seleccionada
+                if (descripcionActual === descripcionGuardada) {
+                    option.prop('selected', true);
+                    encontrado = true;
+                }
+
                 select.append(option);
             });
 
+            // Si no se encontró coincidencia, dejar la opción "Seleccione..."
+            if (!encontrado) {
+                select.val(-1);
+            }
 
             select.trigger('change');
         },
         error: function (xhr, status, error) {
-            console.error("Error al cargar los departamentos:", status, error);
+            console.error("Error al cargar las profesiones:", status, error);
         }
     });
 }
+
 
 function cargarMunicipios(deptoId, municipioId, idColonia) {
     $.ajax({

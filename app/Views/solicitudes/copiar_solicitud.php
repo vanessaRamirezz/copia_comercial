@@ -48,152 +48,127 @@
                     </h2>
                 </div>
 
-                <input type="text" class="form-control" id="id_cliente" name="id_cliente" disabled hidden>
+                <input type="text" class="form-control" id="id_cliente" name="id_cliente" value="<?= $cliente['id_cliente']; ?>" disabled hidden>
                 <div id="datosPersonales" class="collapse show" aria-labelledby="headingOne" data-parent="#datosPersonales">
                     <div class="card-body">
-                        <div class="row  mb-4">
-                            <div class="col-sm-6 d-flex justify-content-start">
-                                <div class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2 duiG" type="text" value="" id="duiBuscarCliente">
-                                    <button class="btn btn-outline-primary my-2 my-sm-0" onclick="buscarCliente()">Buscar cliente</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 d-flex justify-content-end">
+                        <div class="row mb-4">
+                            <div class="col-sm d-flex">
                                 <div class="form-group">
                                     <label for="creacionDocumento">Fecha creación</label>
-                                    <input type="date" class="form-control" id="creacionDocumento" disabled>
+                                    <input type="date" class="form-control" id="creacionDocumento" value="<?= date('Y-m-d', strtotime($cliente['fechaCreacion'])); ?>" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="nombrePersonal">Nombre</label>
-                                <input type="text" class="form-control" id="nombrePersonal" disabled>
+                                <input type="text" class="form-control" id="nombrePersonal" value="<?= $cliente['nombre_completo']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="duiPersonal">DUI</label>
-                                <input type="text" class="form-control duiG" id="duiPersonal" disabled>
+                                <input type="text" class="form-control duiG" id="duiPersonal" value="<?= $cliente['dui']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-3">
-                                <label for="fechaNacimiento">Fecha nacimientos</label>
-                                <input type="date" class="form-control" id="fechaNacimiento" disabled>
+                                <label for="fechaNacimiento">Fecha nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacimiento" value="<?= date('Y-m-d', strtotime($cliente['fecha_nacimiento'])); ?>" disabled>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="direccionActual">Dirección actual</label>
-                                <input type="text" class="form-control" id="direccionActual" disabled>
+                                <input type="text" class="form-control" id="direccionActual" value="<?= $cliente['direccion']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="deptoCliente">Departamento</label>
-                                <select id="deptoCliente" class="form-control" disabled>
-                                    <option selected>Seleccione...</option>
-                                </select>
+                                <input type="text" class="form-control" value="<?= $deptClienteN; ?>" disabled>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="muniCliente">Municipio</label>
-                                <select id="muniCliente" class="form-control" disabled>
-                                    <option selected>Seleccione...</option>
-                                </select>
+                                <input type="text" class="form-control" value="<?= $muniClienteN; ?>" disabled>
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="coloniasCliente">Colonia</label>
-                                <select id="coloniasCliente" class="form-control" disabled>
-                                    <option selected>Seleccione...</option>
-                                </select>
+                                <label for="muniCliente">Distrito</label>
+                                <input type="text" class="form-control" value="<?= $distritoN; ?>" disabled>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="coloniaCliente">Colonia</label>
+                                <input type="text" class="form-control" value="<?= $coloniaCliente; ?>" disabled>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label for="telefono">Telefono</label>
-                                <input type="text" class="form-control telG" id="telefono" disabled>
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" class="form-control telG" id="telefono" value="<?= $cliente['telefono']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="Cpropia">Vive en casa propia</label>
                                 <select id="Cpropia" class="form-control" disabled>
-                                    <option values="-1" selected>Seleccione...</option>
-                                    <option value="SI">SI</option>
-                                    <option value="NO">NO</option>
+                                    <option value="-1" <?= $cliente['CpropiaCN'] == '' ? 'selected' : ''; ?>>Seleccione...</option>
+                                    <option value="SI" <?= $cliente['CpropiaCN'] == 'SI' ? 'selected' : ''; ?>>SI</option>
+                                    <option value="NO" <?= $cliente['CpropiaCN'] == 'NO' ? 'selected' : ''; ?>>NO</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="CpromesaVenta">o en promesa de venta</label>
                                 <select id="CpromesaVenta" class="form-control" disabled>
-                                    <option values="-1" selected>Seleccione...</option>
-                                    <option value="SI">SI</option>
-                                    <option value="NO">NO</option>
+                                    <option value="-1" <?= $cliente['CpromesaVentaCN'] == '' ? 'selected' : ''; ?>>Seleccione...</option>
+                                    <option value="SI" <?= $cliente['CpromesaVentaCN'] == 'SI' ? 'selected' : ''; ?>>SI</option>
+                                    <option value="NO" <?= $cliente['CpromesaVentaCN'] == 'NO' ? 'selected' : ''; ?>>NO</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="Calquilada">Alquilada</label>
                                 <select id="Calquilada" class="form-control" disabled>
-                                    <option values="-1" selected>Seleccione...</option>
-                                    <option value="SI">SI</option>
-                                    <option value="NO">NO</option>
+                                    <option value="-1" <?= $cliente['CalquiladaCN'] == '' ? 'selected' : ''; ?>>Seleccione...</option>
+                                    <option value="SI" <?= $cliente['CalquiladaCN'] == 'SI' ? 'selected' : ''; ?>>SI</option>
+                                    <option value="NO" <?= $cliente['CalquiladaCN'] == 'NO' ? 'selected' : ''; ?>>NO</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="aQuienPertenece">A quien</label>
-                                <input type="text" class="form-control" id="aQuienPertenece" disabled>
+                                <input type="text" class="form-control" id="aQuienPertenece" value="<?= $cliente['aQuienPerteneceCN']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telPropietario">Tel. del propietario</label>
-                                <input type="text" class="form-control telG" id="telPropietario" disabled>
+                                <input type="text" class="form-control telG" id="telPropietario" value="<?= $cliente['telPropietarioCN']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="tiempoDeVivirDomicilio">Tiempo de vivir en el domicilio</label>
-                                <input type="text" class="form-control" id="tiempoDeVivirDomicilio" disabled>
+                                <input type="text" class="form-control" id="tiempoDeVivirDomicilio" value="<?= $cliente['tiempoDeVivirDomicilioCN']; ?>" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="direccionAnterior">Dirección anterior (Si la actual es menor a dos años)</label>
-                            <input type="text" class="form-control" id="direccionAnterior" disabled>
+                            <input type="text" class="form-control" id="direccionAnterior" value="<?= $cliente['direccion_anterior'] ?? ''; ?>" disabled>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="estadoCivil">Estado Civil</label>
                                 <select id="estadoCivil" class="form-control" disabled>
-                                    <option selected>Seleccione...</option>
-                                    <option value="Soltera/o">Soltera/o</option>
-                                    <option value="Casada/o">Casada/o</option>
-                                    <option value="Acompañada/o">Acompañada/o</option>
-                                    <option value="Viuda/o">Viuda/o</option>
+                                    <option value="Soltera/o" <?= $cliente['estado_civil'] == 'Soltera/o' ? 'selected' : ''; ?>>Soltera/o</option>
+                                    <option value="Casada/o" <?= $cliente['estado_civil'] == 'Casada/o' ? 'selected' : ''; ?>>Casada/o</option>
+                                    <option value="Acompañada/o" <?= $cliente['estado_civil'] == 'Acompañada/o' ? 'selected' : ''; ?>>Acompañada/o</option>
+                                    <option value="Viuda/o" <?= $cliente['estado_civil'] == 'Viuda/o' ? 'selected' : ''; ?>>Viuda/o</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-8">
-                                <label for="nombreConyugue">Nombre del cónyugue</label>
-                                <input type="text" class="form-control" id="nombreConyugue" disabled>
+                                <label for="nombreConyugue">Nombre del cónyuge</label>
+                                <input type="text" class="form-control" id="nombreConyugue" value="<?= $cliente['nombre_conyugue']; ?>" disabled>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-9">
-                                <label for="dirTrabajoConyugue">Lugar y direccion de trabajo del conyugue</label>
-                                <input type="text" class="form-control" id="dirTrabajoConyugue" disabled>
+                                <label for="dirTrabajoConyugue">Lugar y direccion de trabajo del cónyuge</label>
+                                <input type="text" class="form-control" id="dirTrabajoConyugue" value="<?= $cliente['direccion_trabajo_conyugue']; ?>" disabled>
                             </div>
                             <div class="form-group col-md-3">
-                                <label for="telTrabajoConyugue">Tel. trabajo del conyugue</label>
-                                <input type="text" class="form-control telG" id="telTrabajoConyugue" disabled>
+                                <label for="telTrabajoConyugue">Tel. trabajo del cónyuge</label>
+                                <input type="text" class="form-control telG" id="telTrabajoConyugue" value="<?= $cliente['telefono_trabajo_conyugue']; ?>" disabled>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="nombresPadres">Nombre del Padre o Madre</label>
-                                <input type="text" class="form-control" id="nombresPadres" disabled>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-9">
-                                <label for="direccionDeLosPadres">Direccion de los padres</label>
-                                <input type="text" class="form-control" id="direccionDeLosPadres" disabled>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="telPadres">Tel. de los padres</label>
-                                <input type="text" class="form-control telG" id="telPadres" disabled>
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="col-sm">
                                 <button class="btn btn-primary float-right next-btn" type="button">Siguiente</button>
@@ -215,53 +190,54 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="profesionOficio">Profesión u Oficio</label>
-                                <select class="form-control" id="profesionOficio" name="profesion_oficio">
+                                <select class="form-control" id="profesionOficio" name="profesion_oficio"
+                                    data-descripcion="<?php echo htmlspecialchars($refLaboral[0]['descripcion']); ?>">
                                 </select>
                             </div>
 
                             <div class="form-group col-md-8">
                                 <label for="lugarTrabajo">Patron/Empresa/Lugar de trabajo</label>
-                                <input type="text" class="form-control" id="lugarTrabajo" name="empresa">
+                                <input type="text" class="form-control" id="lugarTrabajo" name="empresa" value="<?php echo htmlspecialchars($refLaboral[0]['empresa']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="direccionDeTrabajo">Direccion del trabajo</label>
-                                <input type="text" class="form-control" id="direccionDeTrabajo" name="direccion_trabajo">
+                                <input type="text" class="form-control" id="direccionDeTrabajo" name="direccion_trabajo" value="<?php echo htmlspecialchars($refLaboral[0]['direccion_trabajo']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="telTrabajo">Telefono del trabajo</label>
-                                <input type="text" class="form-control telG" id="telTrabajo" name="telefono_trabajo">
+                                <input type="text" class="form-control telG" id="telTrabajo" name="telefono_trabajo" value="<?php echo htmlspecialchars($refLaboral[0]['telefono_trabajo']); ?>">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="cargoDesempeña">Cargo que desempeña</label>
-                                <input type="text" class="form-control" id="cargoDesempeña" name="cargo">
+                                <input type="text" class="form-control" id="cargoDesempeña" name="cargo" value="<?php echo htmlspecialchars($refLaboral[0]['cargo']); ?>">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="salario">Salario</label>
-                                <input type="text" class="form-control montosG" id="salario" name="salario">
+                                <input type="text" class="form-control montosG" id="salario" name="salario" value="<?php echo htmlspecialchars($refLaboral[0]['salario']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="tiempoDeLaborar">Tiempo de laborar en la empresa</label>
-                                <input type="text" class="form-control" id="tiempoDeLaborar" name="tiempo_laborando_empresa">
+                                <input type="text" class="form-control" id="tiempoDeLaborar" name="tiempo_laborando_empresa" value="<?php echo htmlspecialchars($refLaboral[0]['tiempo_laborado_empresa']); ?>">
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="nombreJefe">Nombre del jefe inmediato</label>
-                                <input type="text" class="form-control" id="nombreJefe" name="nombre_jefe_inmediato">
+                                <input type="text" class="form-control" id="nombreJefe" name="nombre_jefe_inmediato" value="<?php echo htmlspecialchars($refLaboral[0]['nombre_jefe_inmediato']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-9">
                                 <label for="empresaAnterior">Empresa en que laboro anteriormente</label>
-                                <input type="text" class="form-control" id="empresaAnterior" name="empresa_anterior">
+                                <input type="text" class="form-control" id="empresaAnterior" name="empresa_anterior" value="<?php echo htmlspecialchars($refLaboral[0]['empresa_anterior']); ?>">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telEmpresaAnterior">Tel. de la empresa anterior</label>
-                                <input type="text" class="form-control telG" id="telEmpresaAnterior" name="telefono_empresa_anterior">
+                                <input type="text" class="form-control telG" id="telEmpresaAnterior" name="telefono_empresa_anterior" value="<?php echo htmlspecialchars($refLaboral[0]['telefono_empresa_anterior']); ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -285,72 +261,72 @@
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="nombreRefFamiliarUno">1. Nombre</label>
-                                <input type="text" class="form-control" id="nombreRefFamiliarUno" name="nombre">
+                                <input type="text" class="form-control" id="nombreRefFamiliarUno" name="nombre" value="<?= isset($refFamiliares[0]) ? esc($refFamiliares[0]['nombre']) : '' ?>">
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="parentescoRefFamiliarUno">Prentesco</label>
+                                <label for="parentescoRefFamiliarUno">Parentesco</label>
                                 <select id="parentescoRefFamiliarUno" class="form-control" name="parentesco">
-                                    <option value="PAPÁ">PAPÁ</option>
-                                    <option value="MAMÁ">MAMÁ</option>
-                                    <option value="HERMANO/A">HERMANO/A</option>
-                                    <option value="TIO/A">TIO/A</option>
-                                    <option value="PRIMO/A">PRIMO/A</option>
-                                    <option value="ABUELO/A">ABUELO/A</option>
+                                    <option value="PAPÁ" <?= isset($refFamiliares[0]) && $refFamiliares[0]['parentesco'] === 'PAPÁ' ? 'selected' : '' ?>>PAPÁ</option>
+                                    <option value="MAMÁ" <?= isset($refFamiliares[0]) && $refFamiliares[0]['parentesco'] === 'MAMÁ' ? 'selected' : '' ?>>MAMÁ</option>
+                                    <option value="HERMANO/A" <?= isset($refFamiliares[0]) && $refFamiliares[0]['parentesco'] === 'HERMANO/A' ? 'selected' : '' ?>>HERMANO/A</option>
+                                    <option value="TIO/A" <?= isset($refFamiliares[0]) && $refFamiliares[0]['parentesco'] === 'TIO/A' ? 'selected' : '' ?>>TIO/A</option>
+                                    <option value="PRIMO/A" <?= isset($refFamiliares[0]) && $refFamiliares[0]['parentesco'] === 'PRIMO/A' ? 'selected' : '' ?>>PRIMO/A</option>
+                                    <option value="ABUELO/A" <?= isset($refFamiliares[0]) && $refFamiliares[0]['parentesco'] === 'ABUELO/A' ? 'selected' : '' ?>>ABUELO/A</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-5">
-                                <label for="dirRefFamiliarUno">Direccion</label>
-                                <input type="text" class="form-control" id="dirRefFamiliarUno" name="direccion">
+                                <label for="dirRefFamiliarUno">Dirección</label>
+                                <input type="text" class="form-control" id="dirRefFamiliarUno" name="direccion" value="<?= isset($refFamiliares[0]) ? esc($refFamiliares[0]['direccion']) : '' ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label for="telProRefFamiliarUno">Telefono</label>
-                                <input type="text" class="form-control telG" id="telProRefFamiliarUno" name="telefono">
+                                <label for="telProRefFamiliarUno">Teléfono</label>
+                                <input type="text" class="form-control telG" id="telProRefFamiliarUno" name="telefono" value="<?= isset($refFamiliares[0]) ? esc($refFamiliares[0]['telefono']) : '' ?>">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="lugarTrabajoRefFamiliarUno">Lugar de trabajo</label>
-                                <input type="text" class="form-control" id="lugarTrabajoRefFamiliarUno" name="lugar_trabajo">
+                                <input type="text" class="form-control" id="lugarTrabajoRefFamiliarUno" name="lugar_trabajo" value="<?= isset($refFamiliares[0]) ? esc($refFamiliares[0]['lugar_trabajo']) : '' ?>">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="telTrabaRefFamiliarUno">Telefono trabajo</label>
-                                <input type="text" class="form-control telG" id="telTrabaRefFamiliarUno" name="telefono_trabajo">
+                                <label for="telTrabaRefFamiliarUno">Teléfono trabajo</label>
+                                <input type="text" class="form-control telG" id="telTrabaRefFamiliarUno" name="telefono_trabajo" value="<?= isset($refFamiliares[0]) ? esc($refFamiliares[0]['telefono_trabajo']) : '' ?>">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="nombreRefFamiliarDos">2. Nombre</label>
-                                <input type="text" class="form-control" id="nombreRefFamiliarDos" name="nombre">
+                                <input type="text" class="form-control" id="nombreRefFamiliarDos" name="nombre" value="<?= isset($refFamiliares[1]) ? esc($refFamiliares[1]['nombre']) : '' ?>">
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="parentescoRefFamiliarDos">Prentesco</label>
+                                <label for="parentescoRefFamiliarDos">Parentesco</label>
                                 <select id="parentescoRefFamiliarDos" class="form-control" name="parentesco">
-                                    <option value="PAPÁ">PAPÁ</option>
-                                    <option value="MAMÁ">MAMÁ</option>
-                                    <option value="HERMANO/A">HERMANO/A</option>
-                                    <option value="TIO/A">TIO/A</option>
-                                    <option value="PRIMO/A">PRIMO/A</option>
-                                    <option value="ABUELO/A">ABUELO/A</option>
+                                    <option value="PAPÁ" <?= isset($refFamiliares[1]) && $refFamiliares[1]['parentesco'] === 'PAPÁ' ? 'selected' : '' ?>>PAPÁ</option>
+                                    <option value="MAMÁ" <?= isset($refFamiliares[1]) && $refFamiliares[1]['parentesco'] === 'MAMÁ' ? 'selected' : '' ?>>MAMÁ</option>
+                                    <option value="HERMANO/A" <?= isset($refFamiliares[1]) && $refFamiliares[1]['parentesco'] === 'HERMANO/A' ? 'selected' : '' ?>>HERMANO/A</option>
+                                    <option value="TIO/A" <?= isset($refFamiliares[1]) && $refFamiliares[1]['parentesco'] === 'TIO/A' ? 'selected' : '' ?>>TIO/A</option>
+                                    <option value="PRIMO/A" <?= isset($refFamiliares[1]) && $refFamiliares[1]['parentesco'] === 'PRIMO/A' ? 'selected' : '' ?>>PRIMO/A</option>
+                                    <option value="ABUELO/A" <?= isset($refFamiliares[1]) && $refFamiliares[1]['parentesco'] === 'ABUELO/A' ? 'selected' : '' ?>>ABUELO/A</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-5">
-                                <label for="dirRefFamiliarDos">Direccion</label>
-                                <input type="text" class="form-control" id="dirRefFamiliarDos" name="direccion">
+                                <label for="dirRefFamiliarDos">Dirección</label>
+                                <input type="text" class="form-control" id="dirRefFamiliarDos" name="direccion" value="<?= isset($refFamiliares[1]) ? esc($refFamiliares[1]['direccion']) : '' ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label for="telProRefFamiliarDos">Telefono</label>
-                                <input type="text" class="form-control telG" id="telProRefFamiliarDos" name="telefono">
+                                <label for="telProRefFamiliarDos">Teléfono</label>
+                                <input type="text" class="form-control telG" id="telProRefFamiliarDos" name="telefono" value="<?= isset($refFamiliares[1]) ? esc($refFamiliares[1]['telefono']) : '' ?>">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="lugarTrabajoRefFamiliarDos">Lugar de trabajo</label>
-                                <input type="text" class="form-control" id="lugarTrabajoRefFamiliarDos" name="lugar_trabajo">
+                                <input type="text" class="form-control" id="lugarTrabajoRefFamiliarDos" name="lugar_trabajo" value="<?= isset($refFamiliares[1]) ? esc($refFamiliares[1]['lugar_trabajo']) : '' ?>">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="telTrabaRefFamiliarDos">Telefono trabajo</label>
-                                <input type="text" class="form-control telG" id="telTrabaRefFamiliarDos" name="telefono_trabajo">
+                                <label for="telTrabaRefFamiliarDos">Teléfono trabajo</label>
+                                <input type="text" class="form-control telG" id="telTrabaRefFamiliarDos" name="telefono_trabajo" value="<?= isset($refFamiliares[1]) ? esc($refFamiliares[1]['telefono_trabajo']) : '' ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -371,55 +347,68 @@
                 </div>
                 <div id="refNoFamiliares" class="collapse" aria-labelledby="headingThree" data-parent="#refNoFamiliares">
                     <div class="card-body">
+                        <!-- Referencia No Familiar 1 -->
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="nombreRefNoFamiliarUno">1. Nombre</label>
-                                <input type="text" class="form-control" id="nombreRefNoFamiliarUno" name="nombre">
+                                <input type="text" class="form-control" id="nombreRefNoFamiliarUno" name="nombre"
+                                    value="<?php echo isset($refNoFamiliares[0]['nombre']) ? htmlspecialchars($refNoFamiliares[0]['nombre']) : ''; ?>">
                             </div>
                             <div class="form-group col-md-7">
                                 <label for="dirRefNoFamiliarUno">Direccion</label>
-                                <input type="text" class="form-control" id="dirRefNoFamiliarUno" name="direccion">
+                                <input type="text" class="form-control" id="dirRefNoFamiliarUno" name="direccion"
+                                    value="<?php echo isset($refNoFamiliares[0]['direccion']) ? htmlspecialchars($refNoFamiliares[0]['direccion']) : ''; ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-2">
                                 <label for="telProRefNoFamiliarUno">Telefono</label>
-                                <input type="text" class="form-control telG" id="telProRefNoFamiliarUno" name="telefono">
+                                <input type="text" class="form-control telG" id="telProRefNoFamiliarUno" name="telefono"
+                                    value="<?php echo isset($refNoFamiliares[0]['telefono']) ? htmlspecialchars($refNoFamiliares[0]['telefono']) : ''; ?>">
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="lugarTrabajoRefNoFamiliarUno">Lugar de trabajo</label>
-                                <input type="text" class="form-control" id="lugarTrabajoRefNoFamiliarUno" name="lugar_trabajo">
+                                <input type="text" class="form-control" id="lugarTrabajoRefNoFamiliarUno" name="lugar_trabajo"
+                                    value="<?php echo isset($refNoFamiliares[0]['lugar_trabajo']) ? htmlspecialchars($refNoFamiliares[0]['lugar_trabajo']) : ''; ?>">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="telTrabaRefNoFamiliarUno">Telefono trabajo</label>
-                                <input type="text" class="form-control telG" id="telTrabaRefNoFamiliarUno" name="telefono_trabajo">
+                                <input type="text" class="form-control telG" id="telTrabaRefNoFamiliarUno" name="telefono_trabajo"
+                                    value="<?php echo isset($refNoFamiliares[0]['telefono_trabajo']) ? htmlspecialchars($refNoFamiliares[0]['telefono_trabajo']) : ''; ?>">
                             </div>
                         </div>
 
+                        <!-- Referencia No Familiar 2 -->
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="nombreRefNoFamiliarDos">2. Nombre</label>
-                                <input type="text" class="form-control" id="nombreRefNoFamiliarDos" name="nombre">
+                                <input type="text" class="form-control" id="nombreRefNoFamiliarDos" name="nombre"
+                                    value="<?php echo isset($refNoFamiliares[1]['nombre']) ? htmlspecialchars($refNoFamiliares[1]['nombre']) : ''; ?>">
                             </div>
                             <div class="form-group col-md-7">
                                 <label for="dirRefNoFamiliarDos">Direccion</label>
-                                <input type="text" class="form-control" id="dirRefNoFamiliarDos" name="direccion">
+                                <input type="text" class="form-control" id="dirRefNoFamiliarDos" name="direccion"
+                                    value="<?php echo isset($refNoFamiliares[1]['direccion']) ? htmlspecialchars($refNoFamiliares[1]['direccion']) : ''; ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-2">
                                 <label for="telProRefNoFamiliarDos">Telefono</label>
-                                <input type="text" class="form-control telG" id="telProRefNoFamiliarDos" name="telefono">
+                                <input type="text" class="form-control telG" id="telProRefNoFamiliarDos" name="telefono"
+                                    value="<?php echo isset($refNoFamiliares[1]['telefono']) ? htmlspecialchars($refNoFamiliares[1]['telefono']) : ''; ?>">
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="lugarTrabajoRefNoFamiliarDos">Lugar de trabajo</label>
-                                <input type="text" class="form-control" id="lugarTrabajoRefNoFamiliarDos" name="lugar_trabajo">
+                                <input type="text" class="form-control" id="lugarTrabajoRefNoFamiliarDos" name="lugar_trabajo"
+                                    value="<?php echo isset($refNoFamiliares[1]['lugar_trabajo']) ? htmlspecialchars($refNoFamiliares[1]['lugar_trabajo']) : ''; ?>">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="telTrabaRefNoFamiliarDos">Telefono trabajo</label>
-                                <input type="text" class="form-control telG" id="telTrabaRefNoFamiliarDos" name="telefono_trabajo">
+                                <input type="text" class="form-control telG" id="telTrabaRefNoFamiliarDos" name="telefono_trabajo"
+                                    value="<?php echo isset($refNoFamiliares[1]['telefono_trabajo']) ? htmlspecialchars($refNoFamiliares[1]['telefono_trabajo']) : ''; ?>">
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-sm">
                                 <button class="btn btn-primary float-right next-btn" type="button">Siguiente</button>
@@ -453,46 +442,46 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="text" class="form-control" id="refCrediticiaNombre1" name="institucion"></td>
-                                            <td><input type="text" class="form-control telG" id="refCrediticiaTel1" name="telefono"></td>
-                                            <td><input type="text" class="form-control montosG" id="refCrediticiaMonto1" name="monto_credito"></td>
-                                            <td><input type="text" class="form-control" id="refCrediticiaPeriodo1" name="periodos"></td>
-                                            <td><input type="text" class="form-control" id="refCrediticiaPlazo1" name="plazo"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaNombre1" name="institucion" value="<?= isset($refCrediticia[0]['institucion']) ? htmlspecialchars($refCrediticia[0]['institucion']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control telG" id="refCrediticiaTel1" name="telefono" value="<?= isset($refCrediticia[0]['telefono']) ? htmlspecialchars($refCrediticia[0]['telefono']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control montosG" id="refCrediticiaMonto1" name="monto_credito" value="<?= isset($refCrediticia[0]['monto_credito']) ? htmlspecialchars($refCrediticia[0]['monto_credito']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaPeriodo1" name="periodos" value="<?= isset($refCrediticia[0]['periodos']) ? htmlspecialchars($refCrediticia[0]['periodos']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaPlazo1" name="plazo" value="<?= isset($refCrediticia[0]['plazo']) ? htmlspecialchars($refCrediticia[0]['plazo']) : '' ?>"></td>
                                             <td>
                                                 <div class="form-group col-md">
                                                     <select id="refCrediticiaEstado1" class="form-control" name="estado">
-                                                        <option value="ACTIVA">ACTIVA</option>
-                                                        <option value="CANCELADA">CANCELADA</option>
+                                                        <option value="ACTIVA" <?= (isset($refCrediticia[0]['estado']) && $refCrediticia[0]['estado'] == 'ACTIVA') ? 'selected' : '' ?>>ACTIVA</option>
+                                                        <option value="CANCELADA" <?= (isset($refCrediticia[0]['estado']) && $refCrediticia[0]['estado'] == 'CANCELADA') ? 'selected' : '' ?>>CANCELADA</option>
                                                     </select>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><input type="text" class="form-control" id="refCrediticiaNombre2" name="institucion"></td>
-                                            <td><input type="text" class="form-control telG" id="refCrediticiaTel2" name="telefono"></td>
-                                            <td><input type="text" class="form-control montosG" id="refCrediticiaMonto2" name="monto_credito"></td>
-                                            <td><input type="text" class="form-control" id="refCrediticiaPeriodo2" name="periodos"></td>
-                                            <td><input type="text" class="form-control" id="refCrediticiaPlazo2" name="plazo"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaNombre2" name="institucion" value="<?= isset($refCrediticia[1]['institucion']) ? htmlspecialchars($refCrediticia[1]['institucion']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control telG" id="refCrediticiaTel2" name="telefono" value="<?= isset($refCrediticia[1]['telefono']) ? htmlspecialchars($refCrediticia[1]['telefono']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control montosG" id="refCrediticiaMonto2" name="monto_credito" value="<?= isset($refCrediticia[1]['monto_credito']) ? htmlspecialchars($refCrediticia[1]['monto_credito']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaPeriodo2" name="periodos" value="<?= isset($refCrediticia[1]['periodos']) ? htmlspecialchars($refCrediticia[1]['periodos']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaPlazo2" name="plazo" value="<?= isset($refCrediticia[1]['plazo']) ? htmlspecialchars($refCrediticia[1]['plazo']) : '' ?>"></td>
                                             <td>
                                                 <div class="form-group col-md">
                                                     <select id="refCrediticiaEstado2" class="form-control" name="estado">
-                                                        <option value="ACTIVA">ACTIVA</option>
-                                                        <option value="CANCELADA">CANCELADA</option>
+                                                        <option value="ACTIVA" <?= (isset($refCrediticia[1]['estado']) && $refCrediticia[1]['estado'] == 'ACTIVA') ? 'selected' : '' ?>>ACTIVA</option>
+                                                        <option value="CANCELADA" <?= (isset($refCrediticia[1]['estado']) && $refCrediticia[1]['estado'] == 'CANCELADA') ? 'selected' : '' ?>>CANCELADA</option>
                                                     </select>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><input type="text" class="form-control" id="refCrediticiaNombre3" name="institucion"></td>
-                                            <td><input type="text" class="form-control telG" id="refCrediticiaTel3" name="telefono"></td>
-                                            <td><input type="text" class="form-control montosG" id="refCrediticiaMonto3" name="monto_credito"></td>
-                                            <td><input type="text" class="form-control" id="refCrediticiaPeriodo3" name="periodos"></td>
-                                            <td><input type="text" class="form-control" id="refCrediticiaPlazo3" name="plazo"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaNombre3" name="institucion" value="<?= isset($refCrediticia[2]['institucion']) ? htmlspecialchars($refCrediticia[2]['institucion']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control telG" id="refCrediticiaTel3" name="telefono" value="<?= isset($refCrediticia[2]['telefono']) ? htmlspecialchars($refCrediticia[2]['telefono']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control montosG" id="refCrediticiaMonto3" name="monto_credito" value="<?= isset($refCrediticia[2]['monto_credito']) ? htmlspecialchars($refCrediticia[2]['monto_credito']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaPeriodo3" name="periodos" value="<?= isset($refCrediticia[2]['periodos']) ? htmlspecialchars($refCrediticia[2]['periodos']) : '' ?>"></td>
+                                            <td><input type="text" class="form-control" id="refCrediticiaPlazo3" name="plazo" value="<?= isset($refCrediticia[2]['plazo']) ? htmlspecialchars($refCrediticia[2]['plazo']) : '' ?>"></td>
                                             <td>
                                                 <div class="form-group col-md">
                                                     <select id="refCrediticiaEstado3" class="form-control" name="estado">
-                                                        <option value="ACTIVA">ACTIVA</option>
-                                                        <option value="CANCELADA">CANCELADA</option>
+                                                        <option value="ACTIVA" <?= (isset($refCrediticia[2]['estado']) && $refCrediticia[2]['estado'] == 'ACTIVA') ? 'selected' : '' ?>>ACTIVA</option>
+                                                        <option value="CANCELADA" <?= (isset($refCrediticia[2]['estado']) && $refCrediticia[2]['estado'] == 'CANCELADA') ? 'selected' : '' ?>>CANCELADA</option>
                                                     </select>
                                                 </div>
                                             </td>
@@ -523,41 +512,41 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-12" name="socioeconomico">
-                                        <table class="table custom-table mb-3">
+                                    <table class="table custom-table mb-3">
                                             <tbody>
                                                 <tr>
                                                     <td>Remesas mensuales</td>
-                                                    <td><input type="text" class="form-control montosG ingresos" id="ingresoMensual" name="ingresoMensual"></td>
+                                                    <td><input type="text" class="form-control montosG ingresos" id="ingresoMensual" name="ingresoMensual" value="<?= isset($analisisSocioeconomico[0]['ingreso_mensual']) ? htmlspecialchars($analisisSocioeconomico[0]['ingreso_mensual']) : '' ?>"></td>
                                                     <td>Egreso Mensual</td>
-                                                    <td><input type="text" class="form-control montosG egresos" id="egresoMensual" name="egresoMensual"></td>
+                                                    <td><input type="text" class="form-control montosG egresos" id="egresoMensual" name="egresoMensual" value="<?= isset($analisisSocioeconomico[0]['egreso_mensual']) ? htmlspecialchars($analisisSocioeconomico[0]['egreso_mensual']) : '' ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Salario</td>
-                                                    <td><input type="text" class="form-control montosG ingresos" id="salarioIng" name="salarioIng"></td>
+                                                    <td><input type="text" class="form-control montosG ingresos" id="salarioIng" name="salarioIng" value="<?= isset($analisisSocioeconomico[0]['salario']) ? htmlspecialchars($analisisSocioeconomico[0]['salario']) : '' ?>"></td>
                                                     <td>Pago de Casa</td>
-                                                    <td><input type="text" class="form-control montosG egresos" id="pagoCasa" name="pagoCasa"></td>
+                                                    <td><input type="text" class="form-control montosG egresos" id="pagoCasa" name="pagoCasa" value="<?= isset($analisisSocioeconomico[0]['pago_casa']) ? htmlspecialchars($analisisSocioeconomico[0]['pago_casa']) : '' ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Otros (Explique)</td>
-                                                    <td><input type="text" class="form-control" id="otrosIngresos" name="otrosIngresos"></td>
+                                                    <td><input type="text" class="form-control" id="otrosIngresos" name="otrosIngresos" value="<?= isset($analisisSocioeconomico[0]['otros_explicacion']) ? htmlspecialchars($analisisSocioeconomico[0]['otros_explicacion']) : '' ?>"></td>
                                                     <td>Gastos de Vida</td>
-                                                    <td><input type="text" class="form-control montosG egresos" id="gastosVida" name="gastosVida"></td>
+                                                    <td><input type="text" class="form-control montosG egresos" id="gastosVida" name="gastosVida" value="<?= isset($analisisSocioeconomico[0]['gastos_vida']) ? htmlspecialchars($analisisSocioeconomico[0]['gastos_vida']) : '' ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td></td>
                                                     <td></td>
                                                     <td>Otros:</td>
-                                                    <td><input type="text" class="form-control montosG egresos" id="otrosEgresos" name="otrosEgresos"></td>
+                                                    <td><input type="text" class="form-control montosG egresos" id="otrosEgresos" name="otrosEgresos" value="<?= isset($analisisSocioeconomico[0]['otros']) ? htmlspecialchars($analisisSocioeconomico[0]['otros']) : '' ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Total de Ingresos</td>
-                                                    <td><input type="text" disabled class="form-control montosG" id="totalIngresos" name="totalIngresos"></td>
+                                                    <td><input type="text" disabled class="form-control montosG" id="totalIngresos" name="totalIngresos" value="<?= isset($analisisSocioeconomico[0]['total_ingresos']) ? htmlspecialchars($analisisSocioeconomico[0]['total_ingresos']) : '' ?>"></td>
                                                     <td>Total de Egresos</td>
-                                                    <td><input type="text" disabled class="form-control montosG" id="totalEgresos" name="totalEgresos"></td>
+                                                    <td><input type="text" disabled class="form-control montosG" id="totalEgresos" name="totalEgresos" value="<?= isset($analisisSocioeconomico[0]['total_egresos']) ? htmlspecialchars($analisisSocioeconomico[0]['total_egresos']) : '' ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3">Diferencia Ingresos - Egresos:</td>
-                                                    <td><input disabled type="text" class="form-control montosG" id="diferencia" name="diferencia"></td>
+                                                    <td><input disabled type="text" class="form-control montosG" id="diferencia" name="diferencia" value="<?= isset($analisisSocioeconomico[0]['diferencia_ingresos_egresos']) ? htmlspecialchars($analisisSocioeconomico[0]['diferencia_ingresos_egresos']) : '' ?>"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -689,101 +678,102 @@
                         <div class="form-row">
                             <div class="form-group col-md-10">
                                 <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo htmlspecialchars($codeudor[0]['nombre']); ?>">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="dui">DUI:</label>
-                                <input type="text" class="form-control duiG" id="dui" name="dui">
+                                <input type="text" class="form-control duiG" id="dui" name="dui" value="<?php echo htmlspecialchars($codeudor[0]['dui']); ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="direccion">Dirección:</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion">
+                            <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo htmlspecialchars($codeudor[0]['direccion']); ?>">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-2">
                                 <label for="COtelPersonal">Tel. personal</label>
-                                <input type="text" class="form-control telG" id="COtelPersonal">
+                                <input type="text" class="form-control telG" id="COtelPersonal" value="<?php echo htmlspecialchars($codeudor[0]['telefono_personal']); ?>">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="COpropiaCN">Vive en casa propia</label>
                                 <select id="COpropiaCN" class="form-control">
-                                    <option value="-1" selected>Seleccione...</option>
-                                    <option value="SI">SI</option>
-                                    <option value="NO">NO</option>
+                                    <option value="-1" <?php echo ($codeudor[0]['vive_en_casa_propia'] == '' ? 'selected' : ''); ?>>Seleccione...</option>
+                                    <option value="SI" <?php echo ($codeudor[0]['vive_en_casa_propia'] == 'si' ? 'selected' : ''); ?>>SI</option>
+                                    <option value="NO" <?php echo ($codeudor[0]['vive_en_casa_propia'] == 'no' ? 'selected' : ''); ?>>NO</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="COpromesaVenta">o en promesa de venta</label>
                                 <select id="COpromesaVenta" class="form-control">
-                                    <option value="-1" selected>Seleccione...</option>
-                                    <option value="SI">SI</option>
-                                    <option value="NO">NO</option>
+                                    <option value="-1" <?php echo ($codeudor[0]['en_promesa_de_venta'] == '' ? 'selected' : ''); ?>>Seleccione...</option>
+                                    <option value="SI" <?php echo ($codeudor[0]['en_promesa_de_venta'] == 'si' ? 'selected' : ''); ?>>SI</option>
+                                    <option value="NO" <?php echo ($codeudor[0]['en_promesa_de_venta'] == 'no' ? 'selected' : ''); ?>>NO</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="COalquilada">Alquilada</label>
                                 <select id="COalquilada" class="form-control">
-                                    <option value="-1" selected>Seleccione...</option>
-                                    <option value="SI">SI</option>
-                                    <option value="NO">NO</option>
+                                    <option value="-1" <?php echo ($codeudor[0]['alquilada'] == '' ? 'selected' : ''); ?>>Seleccione...</option>
+                                    <option value="SI" <?php echo ($codeudor[0]['alquilada'] == 'si' ? 'selected' : ''); ?>>SI</option>
+                                    <option value="NO" <?php echo ($codeudor[0]['alquilada'] == 'no' ? 'selected' : ''); ?>>NO</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="COtiempoVivienda">Tiempo</label>
-                                <input type="text" class="form-control" id="COtiempoVivienda">
+                                <input type="text" class="form-control" id="COtiempoVivienda" value="<?php echo htmlspecialchars($codeudor[0]['tiempo']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="COestadoCivil">Estado Civil</label>
                                 <select id="COestadoCivil" class="form-control">
-                                    <option value="-1" selected>Seleccione...</option>
-                                    <option value="Soltera/o">Soltera/o</option>
-                                    <option value="Casada/o">Casada/o</option>
-                                    <option value="Acompañada/o">Acompañada/o</option>
-                                    <option value="Viuda/o">Viuda/o</option>
+                                    <option value="-1" <?php echo ($codeudor[0]['estado_civil'] == '' ? 'selected' : ''); ?>>Seleccione...</option>
+                                    <option value="Soltera/o" <?php echo ($codeudor[0]['estado_civil'] == 'Soltera/o' ? 'selected' : ''); ?>>Soltera/o</option>
+                                    <option value="Casada/o" <?php echo ($codeudor[0]['estado_civil'] == 'Casada/o' ? 'selected' : ''); ?>>Casada/o</option>
+                                    <option value="Acompañada/o" <?php echo ($codeudor[0]['estado_civil'] == 'Acompañada/o' ? 'selected' : ''); ?>>Acompañada/o</option>
+                                    <option value="Viuda/o" <?php echo ($codeudor[0]['estado_civil'] == 'Viuda/o' ? 'selected' : ''); ?>>Viuda/o</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-9">
                                 <label for="nombreConyugueCN">Nombre del cónyugue</label>
-                                <input type="text" class="form-control" id="nombreConyugueCN">
+                                <input type="text" class="form-control" id="nombreConyugueCN" value="<?php echo htmlspecialchars($codeudor[0]['nombre_conyugue']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="profesion">Profesión u oficio:</label>
-                                <input type="text" class="form-control" id="profesion" name="profesion">
+                                <input type="text" class="form-control" id="profesion" name="profesion" value="<?php echo htmlspecialchars($codeudor[0]['profesion_oficio']); ?>">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="patrono">Patrono/Empresa/Lugar de Trabajo:</label>
-                                <input type="text" class="form-control" id="patrono" name="patrono">
+                                <input type="text" class="form-control" id="patrono" name="patrono" value="<?php echo htmlspecialchars($codeudor[0]['patrono_empresa']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-9">
                                 <label for="COdireccionTrabajo">Dirección del trabajo:</label>
-                                <input type="text" class="form-control" id="COdireccionTrabajo" name="COdireccionTrabajo">
+                                <input type="text" class="form-control" id="COdireccionTrabajo" name="COdireccionTrabajo" value="<?php echo htmlspecialchars($codeudor[0]['direccion_trabajo']); ?>">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="COtelefonoTrabajo">Telefono Trabajo:</label>
-                                <input type="text" class="form-control telG" id="COtelefonoTrabajo" name="COtelefonoTrabajo">
+                                <input type="text" class="form-control telG" id="COtelefonoTrabajo" name="COtelefonoTrabajo" value="<?php echo htmlspecialchars($codeudor[0]['telefono_trabajo']); ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="COcargoDesempeña">Cargo que desempeña:</label>
-                                <input type="text" class="form-control" id="COcargoDesempeña" name="COcargoDesempeña">
+                                <input type="text" class="form-control" id="COcargoDesempeña" name="COcargoDesempeña" value="<?php echo htmlspecialchars($codeudor[0]['cargo']); ?>">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="COsalario">Salario:</label>
-                                <input type="text" class="form-control montosG" id="COsalario" name="COsalario">
+                                <input type="text" class="form-control montosG" id="COsalario" name="COsalario" value="<?php echo htmlspecialchars($codeudor[0]['salario']); ?>">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="COnombreJefe">Nombre Jefe inmediato:</label>
-                                <input type="text" class="form-control" id="COnombreJefe" name="COnombreJefe">
+                                <input type="text" class="form-control" id="COnombreJefe" name="COnombreJefe" value="<?php echo htmlspecialchars($codeudor[0]['nombre_jefe_inmediato']); ?>">
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-sm">
                                 <h6>Referencias</h6>
@@ -794,28 +784,28 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COnombreRef1">a) Nombre:</label>
-                                        <input type="text" class="form-control coref1" id="COnombreRef1" name="COnombreRef1">
+                                        <input type="text" class="form-control coref1" id="COnombreRef1" name="COnombreRef1" value="<?php echo isset($refCodeudor[0]['nombre']) ? $refCodeudor[0]['nombre'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COparentescoRef1">Parentesco</label>
-                                        <select id="COparentescoRef1" class="form-control coref1">
-                                            <option value="PAPÁ">PAPÁ</option>
-                                            <option value="MAMÁ">MAMÁ</option>
-                                            <option value="HERMANO/A">HERMANO/A</option>
-                                            <option value="TIO/A">TIO/A</option>
-                                            <option value="PRIMO/A">PRIMO/A</option>
-                                            <option value="ABUELO/A">ABUELO/A</option>
+                                        <select id="COparentescoRef1" class="form-control coref1" required>
+                                            <option value="PAPÁ" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
+                                            <option value="MAMÁ" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
+                                            <option value="HERMANO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
+                                            <option value="TIO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'TIO/A') ? 'selected' : ''; ?>>TIO/A</option>
+                                            <option value="PRIMO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'PRIMO/A') ? 'selected' : ''; ?>>PRIMO/A</option>
+                                            <option value="ABUELO/A" <?php echo (isset($refCodeudor[0]['parentesco']) && $refCodeudor[0]['parentesco'] == 'ABUELO/A') ? 'selected' : ''; ?>>ABUELO/A</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
-                                        <label for="COdireccionRef1">Direccion:</label>
-                                        <input type="text" class="form-control coref1" id="COdireccionRef1" name="COdireccionRef1">
+                                        <label for="COdireccionRef1">Dirección:</label>
+                                        <input type="text" class="form-control coref1" id="COdireccionRef1" name="COdireccionRef1" value="<?php echo isset($refCodeudor[0]['direccion']) ? $refCodeudor[0]['direccion'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="COtelRef1">Telefono:</label>
-                                        <input type="text" class="form-control coref1 telG" id="COtelRef1" name="COtelRef1">
+                                        <label for="COtelRef1">Teléfono:</label>
+                                        <input type="text" class="form-control coref1 telG" id="COtelRef1" name="COtelRef1" value="<?php echo isset($refCodeudor[0]['telefono']) ? $refCodeudor[0]['telefono'] : ''; ?>" pattern="^\d{8}$" title="El teléfono debe tener 8 dígitos" required>
                                     </div>
                                 </div>
                             </div>
@@ -824,28 +814,28 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COnombreRef2">b) Nombre:</label>
-                                        <input type="text" class="form-control coref2" id="COnombreRef2" name="COnombreRef2">
+                                        <input type="text" class="form-control coref2" id="COnombreRef2" name="COnombreRef2" value="<?php echo isset($refCodeudor[1]['nombre']) ? $refCodeudor[1]['nombre'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COparentescoRef2">Parentesco</label>
-                                        <select id="COparentescoRef2" class="form-control coref2">
-                                            <option value="PAPÁ">PAPÁ</option>
-                                            <option value="MAMÁ">MAMÁ</option>
-                                            <option value="HERMANO/A">HERMANO/A</option>
-                                            <option value="TIO/A">TIO/A</option>
-                                            <option value="PRIMO/A">PRIMO/A</option>
-                                            <option value="ABUELO/A">ABUELO/A</option>
+                                        <select id="COparentescoRef2" class="form-control coref2" required>
+                                            <option value="PAPÁ" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
+                                            <option value="MAMÁ" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
+                                            <option value="HERMANO/A" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
+                                            <option value="TIO/A" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'TIO/A') ? 'selected' : ''; ?>>TIO/A</option>
+                                            <option value="PRIMO/A" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'PRIMO/A') ? 'selected' : ''; ?>>PRIMO/A</option>
+                                            <option value="ABUELO/A" <?php echo (isset($refCodeudor[1]['parentesco']) && $refCodeudor[1]['parentesco'] == 'ABUELO/A') ? 'selected' : ''; ?>>ABUELO/A</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
-                                        <label for="COdireccionRef2">Direccion:</label>
-                                        <input type="text" class="form-control coref2" id="COdireccionRef2" name="COdireccionRef2">
+                                        <label for="COdireccionRef2">Dirección:</label>
+                                        <input type="text" class="form-control coref2" id="COdireccionRef2" name="COdireccionRef2" value="<?php echo isset($refCodeudor[1]['direccion']) ? $refCodeudor[1]['direccion'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="COtelRef2">Telefono:</label>
-                                        <input type="text" class="form-control coref2 telG" id="COtelRef2" name="COtelRef2">
+                                        <label for="COtelRef2">Teléfono:</label>
+                                        <input type="text" class="form-control coref2 telG" id="COtelRef2" name="COtelRef2" value="<?php echo isset($refCodeudor[1]['telefono']) ? $refCodeudor[1]['telefono'] : ''; ?>" pattern="^\d{8}$" title="El teléfono debe tener 8 dígitos" required>
                                     </div>
                                 </div>
                             </div>
@@ -854,32 +844,34 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
                                         <label for="COnombreRef3">c) Nombre:</label>
-                                        <input type="text" class="form-control coref3" id="COnombreRef3" name="COnombreRef3">
+                                        <input type="text" class="form-control coref3" id="COnombreRef3" name="COnombreRef3" value="<?php echo isset($refCodeudor[2]['nombre']) ? $refCodeudor[2]['nombre'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="COparentescoRef3">Parentesco</label>
-                                        <select id="COparentescoRef3" class="form-control coref3">
-                                            <option value="PAPÁ">PAPÁ</option>
-                                            <option value="MAMÁ">MAMÁ</option>
-                                            <option value="HERMANO/A">HERMANO/A</option>
-                                            <option value="TIO/A">TIO/A</option>
-                                            <option value="PRIMO/A">PRIMO/A</option>
-                                            <option value="ABUELO/A">ABUELO/A</option>
+                                        <select id="COparentescoRef3" class="form-control coref3" required>
+                                            <option value="PAPÁ" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'PAPÁ') ? 'selected' : ''; ?>>PAPÁ</option>
+                                            <option value="MAMÁ" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'MAMÁ') ? 'selected' : ''; ?>>MAMÁ</option>
+                                            <option value="HERMANO/A" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'HERMANO/A') ? 'selected' : ''; ?>>HERMANO/A</option>
+                                            <option value="TIO/A" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'TIO/A') ? 'selected' : ''; ?>>TIO/A</option>
+                                            <option value="PRIMO/A" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'PRIMO/A') ? 'selected' : ''; ?>>PRIMO/A</option>
+                                            <option value="ABUELO/A" <?php echo (isset($refCodeudor[2]['parentesco']) && $refCodeudor[2]['parentesco'] == 'ABUELO/A') ? 'selected' : ''; ?>>ABUELO/A</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-10">
-                                        <label for="COdireccionRef3">Direccion:</label>
-                                        <input type="text" class="form-control coref3" id="COdireccionRef3" name="COdireccionRef3">
+                                        <label for="COdireccionRef3">Dirección:</label>
+                                        <input type="text" class="form-control coref3" id="COdireccionRef3" name="COdireccionRef3" value="<?php echo isset($refCodeudor[2]['direccion']) ? $refCodeudor[2]['direccion'] : ''; ?>" required>
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="COtelRef3">Telefono:</label>
-                                        <input type="text" class="form-control telG coref3" id="COtelRef3" name="COtelRef3">
+                                        <label for="COtelRef3">Teléfono:</label>
+                                        <input type="text" class="form-control coref3 telG" id="COtelRef3" name="COtelRef3" value="<?php echo isset($refCodeudor[2]['telefono']) ? $refCodeudor[2]['telefono'] : ''; ?>" pattern="^\d{8}$" title="El teléfono debe tener 8 dígitos" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

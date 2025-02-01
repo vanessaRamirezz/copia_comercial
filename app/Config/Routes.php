@@ -31,6 +31,7 @@ $routes->get('solicitudes', 'SolicitudesController::index');
 $routes->get('nueva_solicitud', 'SolicitudesController::nuevaSolicitud');
 $routes->post('procesar_nueva_sol', 'SolicitudesController::procesarSolicitud');
 $routes->get('ver_solicitud', 'SolicitudesController::ver_solicitud');
+$routes->get('copiar_solicitud', 'SolicitudesController::copy_solicitud');
 $routes->post('buscarUltimasReferencias', 'SolicitudesController::buscarReferencias');
 
 $routes->get('clientes', 'ClientesController::index');
@@ -121,3 +122,12 @@ $routes->post('getCobrosCliente','CobrosController::getCobrosClientes');
 $routes->post('getDeudasPorSolicitud','CobrosController::getDeudasPorSolicitud');
 $routes->post('procesarPagosCuotas','CobrosController::procesarPagos');
 $routes->post('downloadDocPago','CobrosController::descargarDocumentoCobros');
+
+/* Rangos */
+$routes->get('rango_facturas','RangoFacturaController::index');
+$routes->post('rango_facturas','RangoFacturaController::save');
+$routes->get('getRangoFacturas','RangoFacturaController::getRangos');
+
+
+/* Sucursales */
+$routes->get('getSucursales','SucursalController::getSucursales');

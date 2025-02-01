@@ -48,7 +48,7 @@ class LoginController extends BaseController
                     'nombres' => $datosUsuario[0]['nombres'],
                     'apellidos' => $datosUsuario[0]['apellidos'],
                     'id_perfil' => $datosUsuario[0]['id_perfil'],
-                    'dui' => $datosUsuario[0]['dui'],
+                    'duiUsuario' => $datosUsuario[0]['dui'],
                     'sucursal' => $datosUsuario[0]['id_sucursal'],
                     'sesion_activa' => true,
                     'correo' => $datosUsuario[0]['correo'],

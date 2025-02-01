@@ -92,7 +92,7 @@ class AdministracionController extends BaseController
                 if ($pwdActual === $this->encrypter->decrypt(base64_decode($_SESSION['contrasena']))) {
                     $adminModel = new AdministracionModel();
 
-                    if ($adminModel->updatePassword($_SESSION['dui'], $pwdNuevaConfirma)) {
+                    if ($adminModel->updatePassword($_SESSION['duiUsuario'], $pwdNuevaConfirma)) {
                         $_SESSION['contrasena'] = $pwdNuevaConfirma;
                         echo json_encode(['success' => 'Contraseña actualizada con exito']);
                     } else {
@@ -134,7 +134,7 @@ class AdministracionController extends BaseController
                     'correo' => $correo,
                     'telefono' => $telefono
                 ];
-                if ($adminModel->updateInfoUsurio($data, $_SESSION['dui'])) {
+                if ($adminModel->updateInfoUsurio($data, $_SESSION['duiUsuario'])) {
                     $_SESSION['nombres'] = $nombres;
                     $_SESSION['apellidos'] = $apellidos;
                     $_SESSION['correo'] = $correo;

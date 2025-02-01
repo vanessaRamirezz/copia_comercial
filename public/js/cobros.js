@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("duiBuscarCliente").value = "";
+    $('#procesarCuotas').hide();
 });
 $('#selectAll').click(function () {
     $('input[name="selectedPayments[]"]').prop('checked', this.checked);
@@ -123,11 +124,18 @@ function submitSelectedPayments() {
     }
 
     // Construir el mensaje con los valores fijos
-    let alertMessage = `
-            <p><strong>El monto ingresado cubre ${cuotasCubiertas} cuota(s)</strong></p>
-            <p><strong>El saldo restante es de $${parseFloat(saldoRestante).toFixed(2)}, se usará para abonar la siguiente cuota</strong></p>
-            <p><strong>Del saldo ingresado, $${parseFloat(moraTotalAPagar).toFixed(2)} se usará para cubrir la mora</strong></p>
-        `;
+    let alertMessage = '';
+        if (cuotasCubiertas > 0) {
+            alertMessage += `<p><strong>El monto ingresado cubre ${cuotasCubiertas} cuota(s)</strong></p>`;
+        }
+
+        if (saldoRestante !== null && saldoRestante !== 0 && saldoRestante !== '') {
+            alertMessage += `<p><strong>El saldo restante es de $${parseFloat(saldoRestante).toFixed(2)}, se usará para abonar la siguiente cuota</strong></p>`;
+        }
+
+        if (moraTotalAPagar !== null && moraTotalAPagar !== 0 && moraTotalAPagar !== '') {
+            alertMessage += `<p><strong>Del saldo ingresado, $${parseFloat(moraTotalAPagar).toFixed(2)} se usará para cubrir la mora</strong></p>`;
+        }
 
     // Aquí no se valida si hay pagos seleccionados, se asume que siempre hay un monto a pagar
     // Mostrar el mensaje de confirmación
@@ -382,6 +390,8 @@ $(document).on('click', '.realizarCobro', function () {
                         <td>${cobro.fecha_vencimiento}</td>
                         <td>${cobro.fecha_pago}</td>
                         <td>$${cobro.monto_cuota}</td>
+                        <td>$${cobro.cantAbono}</td>
+                        <td>$0.00</td>
                         <td>CANCELADO</td>
                         <td><input type="text" disabled class="form-control" name="moraGenerada" value="$0"></td>
                     </tr>`;
@@ -410,6 +420,8 @@ $(document).on('click', '.realizarCobro', function () {
                         <td>${cobro.fecha_vencimiento}</td>
                         <td>${cobro.fecha_pago != null ? cobro.fecha_pago : ''}</td>
                         <td>$${cobro.monto_cuota}</td>
+                        <td>$${cobro.cantAbono}</td>
+                        <td>$${(cobro.monto_cuota-cobro.cantAbono).toFixed(2)}</td>
                         <td>${cobro.estado}</td>
                         <td><input type="text" readonly class="form-control moraGenerada" name="moraGenerada" value="$${mora.toFixed(2)}"></td>
                     </tr>`;
@@ -420,7 +432,7 @@ $(document).on('click', '.realizarCobro', function () {
             cobrosHtml += `<tr id="totalRow">
                 <td colspan="3" class="text-right"><strong>Ingrese monto a cancelar:</strong></td>
                 <td colspan="1"><input type="text" class="form-control montosG" id="montoTotalaCancelar" name="montoTotalaCancelar"></td>
-                <td colspan="2" class="text-right"><strong>Mora total a cancelar:</strong></td>
+                <td colspan="3" class="text-right"><strong>Mora total a cancelar:</strong></td>
                 <td colspan="1"><input type="text" disabled class="form-control montosG" id="moraTotalAPagar" value="${moraTotal.toFixed(2)}" name="moraTotalAPagar" data-original-value="${moraTotal.toFixed(2)}"></td>
 
             </tr>
@@ -471,6 +483,16 @@ $(document).on('change', '#deseaCobrarMora', function () {
 
     // Disparar el evento para recalcular los saldos después del cambio
     $('#montoTotalaCancelar').trigger('input');
+    $('#btnValidarCuotas').show();
+    $('#procesarCuotas').hide();
+});
+// Cuando el valor de moraTotalAPagar cambia
+$(document).on('input', '#moraTotalAPagar', function () {
+    // Mostrar el botón de validar cuotas
+    $('#btnValidarCuotas').show();
+    
+    // Esconder el botón de procesar cuotas
+    $('#procesarCuotas').hide();
 });
 
 // Evento para manejar cambios en el input #moraTotalAPagar
@@ -481,13 +503,11 @@ function validarMontosPago() {
     const moraTotal = parseFloat($('#moraTotalAPagar').val()); // Mora total a pagar
     const alertGeneral = $('.alert-general'); // Seleccionar el div de alert
     let saldo = montoIngresado;
-
-    // Reiniciar el contenido y la clase del div de alerta
+    console.log("saldo inicial::",saldo);
+    // Reiniciar contenido del div de alerta
     alertGeneral.removeClass('alert-success alert-danger').html('');
 
-    console.log("Valores iniciales -> Monto Ingresado:", montoIngresado, "Mora Total:", moraTotal);
-
-    // Validar que el monto ingresado sea válido
+    // Validar monto ingresado
     if (isNaN(montoIngresado) || montoIngresado <= 0) {
         alertGeneral
             .addClass('alert-danger')
@@ -496,7 +516,7 @@ function validarMontosPago() {
         return;
     }
 
-    // Validar que la mora sea válida
+    // Validar mora
     if (isNaN(moraTotal) || moraTotal < 0) {
         alertGeneral
             .addClass('alert-danger')
@@ -505,13 +525,13 @@ function validarMontosPago() {
         return;
     }
 
-    // Inicializar variables
     let cuotasCubiertas = 0;
     let mensaje = "";
 
     // Restar la mora del saldo disponible
     if (saldo >= moraTotal) {
         saldo -= moraTotal;
+        console.log("saldo al restar la mora:: ", saldo);
         mensaje += `<p>Del saldo ingresado, $${moraTotal.toFixed(2)} se usará para cubrir la mora.</p>`;
     } else {
         alertGeneral
@@ -521,57 +541,85 @@ function validarMontosPago() {
         return;
     }
 
-    console.log("Saldo después de cubrir mora:", saldo);
-
-    // Iterar sobre las filas de la tabla para procesar las cuotas
+    // Iterar sobre las cuotas en la tabla
     $('#cobrosList tr').each(function (index) {
-        const estado = $(this).find('td:nth-child(6)').text().trim(); // Estado de la fila
+        const estado = $(this).find('td:nth-child(8)').text().trim(); // Estado de la fila
         const montoCuota = parseFloat($(this).find('td:nth-child(5)').text().replace('$', '').trim()); // Monto de la cuota
+        let montoAbono = parseFloat($(this).find('td:nth-child(6)').text().replace('$', '').trim()) || 0; // Monto abonado
         const checkbox = $(this).find('input.cobroCheck'); // Checkbox de la fila
 
-        console.log(`Fila ${index + 1} -> Estado: ${estado}, Monto Cuota: ${montoCuota}`);
-
-        // Ignorar las filas con estado "Cancelado"
+        // Ignorar las cuotas canceladas
         if (estado.toLowerCase() === "cancelado") {
             checkbox.prop('checked', false);
             return;
         }
 
-        // Validar si el saldo restante es suficiente para cubrir la cuota
-        if (saldo >= montoCuota) {
-            checkbox.prop('checked', true); // Seleccionar el checkbox
+        let montoRestante = montoCuota - montoAbono; // Cuánto falta para cubrir la cuota
+        console.log("el saldo each es :::", saldo);
+        console.log("el montoRestante each es :::", montoRestante);
+        if (saldo >= montoRestante) {
+            // Si el saldo es suficiente para cubrir el restante de la cuota, se paga completa
+            checkbox.prop('checked', true);
             $(this).css('background-color', 'lightgreen');
-            saldo -= montoCuota; // Reducir el saldo disponible
-            cuotasCubiertas++; // Incrementar el contador de cuotas cubiertas
-        } else {
-            checkbox.prop('checked', false); // No seleccionar si el saldo no alcanza
-            $(this).css('background-color', '');
+            saldo -= montoRestante;
+            console.log("saldo si el saldo es suficiente para el restante de la cuota:: ",saldo);
+            montoAbono = montoCuota; // Se marca como totalmente pagada
+            cuotasCubiertas++;
+            mensaje += `<p>La cuota ${index} ha sido cubierta totalmente.</p>`;
+        } else if (saldo > 0) {
+            // Si no alcanza para cubrir toda la cuota, se abona lo que se pueda
+            montoAbono += saldo;
+            console.log("Saldo mayor que 0 ",saldo);
+            mensaje += `<p>Se ha abonado $${saldo.toFixed(2)} a la cuota ${index}, pero aún queda saldo pendiente en esa cuota.</p>`;
+            $('#saldoRestanteAFavor').val((saldo !=null && saldo != '') ? saldo.toFixed(2) : 0.00);
+            saldo = 0;
         }
+
+        //if (saldo === 0) return false; // Salir del loop si ya no hay saldo disponible
     });
 
-    // Construir mensaje final
-    if (cuotasCubiertas === 0) {
-        mensaje += `<p>El monto ingresado no cubre ninguna cuota.</p>`;
-    } else {
-        mensaje += `<p>El monto ingresado cubre ${cuotasCubiertas} cuota(s).</p>`;
-    }
-
+    // Mostrar mensaje si queda saldo restante
     if (saldo > 0) {
-        mensaje += `<p>El saldo restante es de $${saldo.toFixed(2)}, se usara para abonar la siguiente cuota</p>`;
+        mensaje += `<p>El saldo restante de $${saldo.toFixed(2)} se usará para abonar la siguiente cuota.</p>`;
     }
 
-    $('#cuotasCubiertas').val((cuotasCubiertas === "" || cuotasCubiertas === null) ? 0 : cuotasCubiertas);
-    $('#saldoRestanteAFavor').val(saldo.toFixed(2));
+    // Actualizar valores ocultos
+    $('#cuotasCubiertas').val(cuotasCubiertas || 0);
+    $('#procesarCuotas').show();
+    $('#btnValidarCuotas').hide();
 
-    // Mostrar mensaje final en el div `alert-general`
+    // Mostrar mensaje final
     alertGeneral
         .addClass('alert-success')
         .html(`<h4 class="alert-heading">¡Proceso completado!</h4>${mensaje}`)
         .show();
 }
 
+
+
 // Asociar la función a los eventos de los inputs
-$(document).on('input', '#montoTotalaCancelar, #moraTotalAPagar', validarMontosPago);
+//$(document).on('input', '#montoTotalaCancelar, #moraTotalAPagar', validarMontosPago);
+$(document).on('click', '#btnValidarCuotas', function() {
+    // Mostrar el modal de SweetAlert con un mensaje de validación
+    Swal.fire({
+        title: 'Validando...',
+        text: 'Por favor espere mientras validamos las cuotas...',
+        allowOutsideClick: false, // Evitar que el usuario cierre el modal
+        didOpen: () => {
+            Swal.showLoading(); // Mostrar el indicador de carga
+        }
+    });
+
+    // Esperar 3 segundos antes de ejecutar la validación
+    setTimeout(function() {
+        // Cerrar el modal
+        Swal.close();
+
+        // Ejecutar la validación
+        validarMontosPago();
+    }, 3000); // 3000 ms = 3 segundos
+});
+
 
 
 

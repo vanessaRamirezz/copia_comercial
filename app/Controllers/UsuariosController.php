@@ -39,7 +39,7 @@ class UsuariosController extends BaseController
             $session = session();
             if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
                 $UsuariosModel = new UsuariosModel();
-                $dataRsp = $UsuariosModel->getUsuarioXSucursal($_SESSION['sucursal'], $_SESSION['dui']);
+                $dataRsp = $UsuariosModel->getUsuarioXSucursal($_SESSION['sucursal'], $_SESSION['duiUsuario']);
                 echo json_encode(['success' => $dataRsp]);
             } else {
                 return redirect()->to(base_url());

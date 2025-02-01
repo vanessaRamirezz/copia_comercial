@@ -11,7 +11,6 @@
                     <div class="col-sm-6 d-flex justify-content-start">
                         <div class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 duiG" type="text" id="duiBuscarCliente" placeholder="Ingrese el DUI a buscar" aria-label="Search" autocomplete="off" value="">
-
                             <button class="btn btn-outline-primary my-2 my-sm-0" onclick="buscarClienteDeudas()">Buscar cliente</button>
                         </div>
                     </div>
@@ -61,6 +60,8 @@
                                                             <th>Fecha de Vencimiento</th>
                                                             <th>Fecha de Pago</th>
                                                             <th>Monto</th>
+                                                            <th>Abono</th>
+                                                            <th>Saldo restante</th>
                                                             <th>Estado</th>
                                                             <th style="width: 17%;">Mora generada</th>
                                                         </tr>
@@ -74,7 +75,9 @@
                                             <div class="alert alert-general" role="alert" style="display: none;"></div>
 
                                             </div></div>
-                                            <button type="button" class="btn btn-primary mt-3" onclick="submitSelectedPayments()">Procesar Pagos Seleccionados</button>
+                                            <button type="button" id="btnValidarCuotas" class="btn btn-primary">Validar cobro de Cuotas</button>
+
+                                            <button type="button" class="btn btn-primary mt-3" id="procesarCuotas" onclick="submitSelectedPayments()">Procesar Pagos Seleccionados</button>
                                         </form>
                                     </div>
                                 </div>

@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800"><b>DATOS DEL USUARIO:</b> <?= $_SESSION['dui'] ?></h1>
+    <h1 class="h3 mb-2 text-gray-800"><b>DATOS DEL USUARIO:</b> <?= $_SESSION['duiUsuario'] ?></h1>
     <p class="mb-4">Manten tus datos actualizados.</p>
 
     <!-- DataTales Example -->

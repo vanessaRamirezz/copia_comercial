@@ -277,25 +277,31 @@ class CobrosController extends BaseController
             $descripcionMora = "";
             $sumaCuotasPagadaYabono = 0.0;
             $valorInteres = 0.00;
-
+            $numeroFilas = 0;
             // Procesar los cobros cancelados o con abonos
             //Clonar filas en la tabla y reemplazar datos
-            $templateProcessor->cloneRow('descripcion', 2);
+            //$templateProcessor->cloneRow('descripcion', 2);
             foreach ($cobrosCancelados as $pago) {
                 if ($pago['estado'] === 'CANCELADO') {
                     $nCuotasAlmacen .= ($nCuotasAlmacen !== '' ? ', ' : '') . $pago['numero_cuota'];
                     $sumaCuotasPagadaYabono += $pago['cantAbono'];
+                    $numeroFilas++;
                 } elseif ($pago['estado'] === 'PENDIENTE' && $pago['cantAbono'] < $pago['monto_cuota']) {
                     $descripcionAbono .= " Abono a cuota número " . $pago['numero_cuota'].', la cantidad de '.$pago['cantAbono'];
                     $sumaCuotasPagadaYabono += $pago['cantAbono'];
+                    $numeroFilas++;
                 }
 
                 if ($pago['estado'] === 'CANCELADO' && $pago['interesGenerado'] > 0) {
                     $descripcionMora = "Cobro de interés por mora de $" . number_format($pago['interesGenerado'], 2);
                     $totalMonto += $pago['interesGenerado'];
                     $valorInteres = $pago['interesGenerado'];
+                    $numeroFilas++;
                 }
             }
+
+            // Clonar las filas según la cantidad calculada
+            $templateProcessor->cloneRow('descripcion', $numeroFilas);
 
             // Construir descripción de las cuotas
             $descripcionNew = "";
@@ -306,18 +312,32 @@ class CobrosController extends BaseController
                 $descripcionNew .=!empty($nCuotasAlmacen) ? ", Y ".$descripcionAbono : $descripcionAbono;
             }
 
+            $index = 1;
             // Configurar valores en el documento
-            $templateProcessor->setValue("descripcion#1", ucfirst(mb_strtolower($descripcionNew, 'UTF-8')));
-            $templateProcessor->setValue("cant#1", '1');
-            $templateProcessor->setValue("pUni#1", '$' . number_format($sumaCuotasPagadaYabono, 2));
-            $templateProcessor->setValue("totalU#1", '$' . number_format($sumaCuotasPagadaYabono, 2));
-            $totalMonto += $sumaCuotasPagadaYabono;
+            if (!empty($nCuotasAlmacen)) {
+                $descripcionNew = "Pago de cuota(s) número(s) " . $nCuotasAlmacen;
+                $templateProcessor->setValue("descripcion#$index", ucfirst(mb_strtolower($descripcionNew, 'UTF-8')));
+                $templateProcessor->setValue("cant#$index", '1');
+                $templateProcessor->setValue("pUni#$index", '$' . number_format($sumaCuotasPagadaYabono, 2));
+                $templateProcessor->setValue("totalU#$index", '$' . number_format($sumaCuotasPagadaYabono, 2));
+                $totalMonto += $sumaCuotasPagadaYabono;
+                $index++;
+            }
 
+            if (!empty($descripcionAbono)) {
+                $templateProcessor->setValue("descripcion#$index", ucfirst(mb_strtolower($descripcionAbono, 'UTF-8')));
+                $templateProcessor->setValue("cant#$index", '1');
+                $templateProcessor->setValue("pUni#$index", '$' . number_format($sumaCuotasPagadaYabono, 2));
+                $templateProcessor->setValue("totalU#$index", '$' . number_format($sumaCuotasPagadaYabono, 2));
+                $index++;
+            }
+            
+            // Si hay intereses generados
             if (!empty($descripcionMora)) {
-                $templateProcessor->setValue("descripcion#2", ucfirst(mb_strtolower($descripcionMora, 'UTF-8')));
-                $templateProcessor->setValue("cant#2", '1');
-                $templateProcessor->setValue("pUni#2", '$' . number_format($valorInteres, 2));
-                $templateProcessor->setValue("totalU#2", '$' . number_format($valorInteres, 2));
+                $templateProcessor->setValue("descripcion#$index", ucfirst(mb_strtolower($descripcionMora, 'UTF-8')));
+                $templateProcessor->setValue("cant#$index", '1');
+                $templateProcessor->setValue("pUni#$index", '$' . number_format($valorInteres, 2));
+                $templateProcessor->setValue("totalU#$index", '$' . number_format($valorInteres, 2));
             }
 
             log_message("info", "valor del datosCobros::: " . print_r($datosCobros, true));

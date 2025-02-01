@@ -65,6 +65,9 @@
                                                             </button>
                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?= $solicitud['id_solicitud']; ?>">
                                                                 <!-- Ver solicitud -->
+                                                                <a class="dropdown-item" href="#" onclick="redirectToCopySolicitud('<?= $solicitud['id_solicitud']; ?>')">
+                                                                    <i class="fa-solid fa-copy"></i> Copiar solicitud
+                                                                </a>
                                                                 <a class="dropdown-item" href="#" onclick="redirectToSolicitud('<?= $solicitud['id_solicitud']; ?>')">
                                                                     <i class="fas fa-eye"></i> Ver solicitud
                                                                 </a>
@@ -189,6 +192,9 @@
                                                             </button>
                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?= $solicitudVar['id_solicitud']; ?>">
                                                                 <!-- Ver solicitud -->
+                                                                <a class="dropdown-item" href="#" onclick="redirectToCopySolicitud('<?= $solicitudVar['id_solicitud']; ?>')">
+                                                                    <i class="fa-solid fa-copy"></i> Copiar solicitud
+                                                                </a>
                                                                 <a class="dropdown-item" href="#" onclick="redirectToSolicitud('<?= $solicitudVar['id_solicitud']; ?>')">
                                                                     <i class="fas fa-eye"></i> Ver solicitud
                                                                 </a>
