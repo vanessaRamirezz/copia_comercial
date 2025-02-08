@@ -51,8 +51,7 @@
     <div class="card shadow">
         <?php if (in_array($perfil, ['SUPERVISOR', 'ADMINISTRADOR', 'PROPIETARIO']) && $id_estado_actual == 1): ?>
             <div class="container mt-3">
-                <div class="row text-center">
-
+                <div class="row text-center mb-3">
                     <div class="col-sm">
                         <button class="btn btn-success w-100" onclick="handleAction('Aprobar')">Aprobar</button>
                     </div>
@@ -923,16 +922,16 @@
             <div class="container">
                 <div class="row text-center">
                     <?php if (in_array($perfil, ['SUPERVISOR', 'ADMINISTRADOR', 'PROPIETARIO']) && $id_estado_actual == 1): ?>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        <div class="col-sm">
                             <button class="btn btn-success w-100" onclick="handleAction('Aprobar')">Aprobar</button>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        <!-- <div class="col-sm">
                             <button class="btn btn-warning w-100" onclick="handleAction('AprobadoConObs')">Aprobado con Observaciones</button>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        </div> -->
+                        <div class="col-sm">
                             <button class="btn btn-danger w-100" onclick="handleAction('Denegada')">Denegada</button>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        <div class="col-sm">
                             <button class="btn btn-secondary w-100" onclick="handleAction('Anulada')">Anulada</button>
                         </div>
 

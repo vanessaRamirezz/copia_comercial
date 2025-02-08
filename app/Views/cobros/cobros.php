@@ -64,6 +64,7 @@
                                                             <th>Saldo restante</th>
                                                             <th>Estado</th>
                                                             <th style="width: 17%;">Mora generada</th>
+                                                            <th style="display: none;">Id</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="cobrosList">

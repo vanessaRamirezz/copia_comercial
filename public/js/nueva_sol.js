@@ -349,30 +349,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 Swal.showLoading();
             }
         });
-        fetch(baseURL + 'procesar_nueva_sol', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())  // Convertir la respuesta a JSON
-            .then(responseData => {
+        
+        $.ajax({
+            url: baseURL + 'procesar_nueva_sol',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            dataType: 'json',
+            success: function(responseData) {
+                console.log(responseData)
                 if (responseData.success) {
                     Swal.fire({
                         icon: 'success',
                         title: '¡Solicitud creada con éxito!',
-                        text: 'Estás siendo redireccionado.',
+                        text: 'Serás redirigido en breve...',
                         allowOutsideClick: false,
                         allowEscapeKey: false,
-                        allowEnterKey: false,
-                        showConfirmButton: false
+                        showConfirmButton: false,
+                        timer: 5000, // La alerta se cerrará automáticamente después de 3 segundos
+                        timerProgressBar: true // Muestra la barra de progreso
                     });
-
+        
                     // Esperar 3 segundos y luego redirigir
                     setTimeout(() => {
                         window.history.back();
-                    }, 2000);
+                    }, 5000);
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -380,16 +381,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         text: responseData.message,
                         confirmButtonText: 'Cerrar'
                     });
-                    //toastr.error("Error", responseData.message);
                 }
-            })
-            .catch(error => {
+            },
+            error: function(xhr, status, error) {
                 console.error('Error al enviar datos:', error);
                 toastr.error("Error al guardar", "Hubo un problema al guardar la solicitud.");
-            })
-            .finally(() => {
-                Swal.close(); // Cerrar el loading independientemente del resultado
-            });
+            }
+        });
+        
 
     });
 

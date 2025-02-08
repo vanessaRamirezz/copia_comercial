@@ -74,7 +74,8 @@ class RangoFacturaController extends BaseController
                 'id_sucursal' => $sucursal,
                 'estado' => $estado,
                 'id_usuario_creador' => $usuarioID,  // Aquí usamos el ID del usuario
-                'fecha_creacion' => date('Y-m-d H:i:s')
+                'fecha_creacion' => date('Y-m-d H:i:s'),
+                'estado' => 'Activo'
             ];
 
             // Crear una instancia del modelo

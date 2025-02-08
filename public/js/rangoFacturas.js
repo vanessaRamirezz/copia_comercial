@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     rango.numero_fin,                 // Número final
                     rango.nombre_sucursal,            // Nombre de la sucursal
                     rango.nombre_usuario,             // Nombre del usuario creador
-                    formatearFecha(rango.fecha_creacion)              // Fecha de creación
+                    formatearFecha(rango.fecha_creacion),// Fecha de creación
+                    rango.estado
                     // Aquí podrías agregar más operaciones como editar/eliminar si es necesario
                 ]).draw(false);  // Añadir fila sin redibujar toda la tabla
             });
@@ -131,13 +132,6 @@ function generarFormulario(opciones) {
                 </select>
             </div>
             <div class="form-group">
-                <label>Estado:</label>
-                <select class="form-control" id="estado">
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
-                </select>
-            </div>
-            <div class="form-group">
                 <label>Usuario Creador:</label>
                 <input type="text" class="form-control" id="usuarioCreador" value="${usuarioNombre}" readonly>
             </div>
@@ -151,10 +145,9 @@ function guardarRango() {
     const numeroInicio = $('#numeroInicio').val();
     const numeroFinal = $('#numeroFinal').val();
     const sucursal = $('#sucursal').val();
-    const estado = $('#estado').val();
     const usuarioID = $('#usuarioID').val();
 
-    if (!numeroInicio || !numeroFinal || !sucursal || !estado) {
+    if (!numeroInicio || !numeroFinal || !sucursal) {
         Swal.showValidationMessage('Todos los campos son obligatorios');
         return false;
     }
@@ -170,7 +163,6 @@ function guardarRango() {
                 numeroInicio: numeroInicio,
                 numeroFinal: numeroFinal,
                 sucursal: sucursal,
-                estado: estado,
                 usuarioID: usuarioID
             },
             dataType: "json",

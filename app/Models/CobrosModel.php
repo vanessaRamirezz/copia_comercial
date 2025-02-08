@@ -38,7 +38,7 @@ class CobrosModel extends Model
     public function getCobrosPendientesByNumeroSolicitud($numeroSolicitud)
     {
         $builder = $this->db->table('cobros c');
-        $builder->select('c.*');
+        $builder->select('c.*,s.id_solicitud');
         $builder->join('solicitud s', 'c.id_solicitud = s.id_solicitud');
         $builder->where('s.numero_solicitud', $numeroSolicitud);
         $builder->where('c.estado', 'PENDIENTE');

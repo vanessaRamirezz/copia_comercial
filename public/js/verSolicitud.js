@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function handleAction(tipoMov) {
+    document.querySelectorAll('[onclick^="handleAction"]').forEach(button => {
+        button.disabled = true;  // Se deshabilitan completamente
+    });
     if (tipoMov == 'Aprobar') {
         const urlParams = new URLSearchParams(window.location.search);
         const solicitud = urlParams.get('solicitud');
@@ -56,52 +59,75 @@ function handleAction(tipoMov) {
                     },
                     dataType: "json",
                     success: function (rsp) {
-                        console.log(rsp);
+                        console.log("Respuesta al editar:", JSON.stringify(rsp, null, 2));
+
                         if (rsp.success) {
                             toastr.success(rsp.message, "Success");
-                        
-                            // Mostrar el modal
-                            $('#modalDescarga').modal('show');
-                            
-                            var countdown = 5; // Segundos para la cuenta regresiva
-                            var interval = setInterval(function () {
-                                countdown--;
-                                $('#countdown').text(countdown); // Actualizar el contador en el modal
-                                
-                                if (countdown === 0) {
-                                    clearInterval(interval);
-                                    
-                                    // Descargar el archivo
-                                    var fileUrl = baseURL + 'archivo/descargar/' + rsp.solicitud;
-                                    window.open(fileUrl, '_blank');
-                                    
-                                    // Redirigir a solicitudes después de la descarga
-                                    /* Swal.fire({
-                                        icon: 'success',
-                                        title: '¡Solicitud aprobada con éxito!',
-                                        text: 'Estás siendo redireccionado.',
-                                        allowOutsideClick: false,
-                                        allowEscapeKey: false,
-                                        allowEnterKey: false,
-                                        showConfirmButton: false
-                                    });
+                    
+                            // Mostrar el modal con SweetAlert
+                            let countdown = 5; // Tiempo total de la cuenta regresiva
+                            const totalTime = countdown; // Tiempo total para calcular el porcentaje de la barra de progreso
+                    
+                            const swalTimer = Swal.fire({
+                                title: 'Descargando...',
+                                html: `
+                                    <div>Esperando... <span id="countdownText">${countdown} segundos</span></div>
+                                    <div class="progress" style="height: 25px;">
+                                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                `,
+                                icon: 'info',
+                                allowOutsideClick: false,
+                                showConfirmButton: false,
+                                didOpen: () => {
                                     setTimeout(() => {
-                                        window.history.back();
-                                    }, 3000); */
-                                    setTimeout(function () {
-                                        window.location.href = baseURL + 'solicitudes';
-                                    }, 2000); // 2 segundos de espera para que comience la descarga antes de redirigir
+                                        const countdownElement = document.getElementById('countdownText');
+                                        const progressBar = document.getElementById('progressBar');
+                                
+                                        if (!countdownElement || !progressBar) {
+                                            console.error("Elementos no encontrados en el DOM");
+                                            return;
+                                        }
+                                
+                                        const interval = setInterval(function () {
+                                            countdown--; // Decrementar el contador
+                                
+                                            // Actualizar el texto con el tiempo restante
+                                            countdownElement.textContent = `${countdown} segundos`;
+                                
+                                            // Calcular el porcentaje de la barra de progreso
+                                            let progress = ((totalTime - countdown) / totalTime) * 100;
+                                            progressBar.style.width = progress + '%';
+                                            progressBar.setAttribute('aria-valuenow', progress);
+                                
+                                            // Cuando el contador llegue a 0, cerrar el modal y descargar el archivo
+                                            if (countdown === 0) {
+                                                clearInterval(interval); // Detener el intervalo
+                                                swalTimer.close(); // Cerrar el modal de progreso
+                                
+                                                // Descargar el archivo
+                                                var fileUrl = baseURL + 'archivo/descargar/' + rsp.solicitud;
+                                                console.log(fileUrl); // Para depuración
+                                                window.open(fileUrl, '_blank'); // Abrir la descarga en una nueva ventana
+                                
+                                                // Redirigir a solicitudes después de la descarga
+                                                setTimeout(function () {
+                                                    window.location.href = baseURL + 'solicitudes';
+                                                }, 2000); // 2 segundos de espera antes de redirigir
+                                            }
+                                        }, 1000); // Intervalo de 1 segundo
+                                    }, 100); // Esperar 100ms para asegurarse de que el modal cargue
                                 }
-                            }, 1000); // Intervalo de 1 segundo para el conteo regresivo
+                                
+                            });
                         }
                          else if (rsp.error) {
                             Swal.close();
                             toastr.error(rsp.error, "ERROR");
                         }
                     },
-                    error: function () {
-                        Swal.close();
-                        toastr.error("Ocurrió un error al cargar los datos", "Error en carga de datos");
+                    error: function (xhr, status, error) {
+                        console.error("Error en la solicitud AJAX:", status, error);
                     },
                     complete: function () {
                         Swal.close();
@@ -168,6 +194,7 @@ function handleAction(tipoMov) {
         $('#accionAprob').modal('show');
     }
 }
+
 function guardarEstado() {
     let observacion = '';
     let error = false;

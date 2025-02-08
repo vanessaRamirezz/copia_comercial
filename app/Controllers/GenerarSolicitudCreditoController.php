@@ -315,7 +315,6 @@ class GenerarSolicitudCreditoController extends BaseController
 
                 // Obtener los datos de la solicitud y cliente
                 $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
-                log_message("info", "Valor que entra: ".print_r($solicitudEncontrada));
                 $clienteEncontrado = $this->clientesModel->buscarCliente(null, (int) $solicitudEncontrada['id_cliente']);
 
                 //obtener apoderado y reprelegal

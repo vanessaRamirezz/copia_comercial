@@ -26,6 +26,7 @@
                                     <th>Sucursal</th>
                                     <th>Usuario creador</th>
                                     <th>Creacion</th>
+                                    <th>Estado</th>
                                 </tr>
                             </thead>
                             <tbody>

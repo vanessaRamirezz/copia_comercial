@@ -866,7 +866,6 @@ class SolicitudesController extends BaseController
 
                 // Primero, validamos si el contrato ya existe
                 $rspContratoValidado = $this->generarDocController->validarContrato($numeroSoli['numero_solicitud']);
-                log_message("info", "Validando si el estado existe:: " . print_r($rspContratoValidado, true));
 
                 if ($rspContratoValidado['success'] && $rspContratoValidado['message'] == 'existe') {
                     log_message("info", "Entra en el if del contrato generado");
@@ -881,8 +880,6 @@ class SolicitudesController extends BaseController
                     log_message("info", "Entra en el else de generar contrato");
                     $rspContrato = $this->generarDocController->generarContrato($id_solicitud);
                 }
-
-                log_message("info", "valor de rspContrato:: " . print_r($rspContrato, true));
 
                 // Aquí continuamos con el flujo después de validar o generar el contrato
                 if ($rspContrato['success']) {
@@ -899,8 +896,6 @@ class SolicitudesController extends BaseController
                         $planPago = $this->planDePagoModel->buscarPorSolicitud($id_solicitud);
                         $this->crearCobros($planPago, $id_solicitud);
                         log_message('info', '********************************* FIN COBROS *********************************');
-                    } else {
-                        log_message("info", "no se actualizo");
                     }
 
                     // Retornamos la respuesta con el mensaje de éxito

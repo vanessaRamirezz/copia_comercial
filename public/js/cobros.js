@@ -157,16 +157,6 @@ function submitSelectedPayments() {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            // Pasar las variables a procesarPagos
-           /*  Swal.fire({
-                icon: 'info',
-                title: 'Módulo en mantenimiento',
-                text: 'El módulo de cobros está en mantenimiento para agregar nuevas funcionalidades.',
-                confirmButtonText: 'Entendido',
-                confirmButtonColor: '#3085d6',
-                allowOutsideClick: false,
-                allowEscapeKey: false
-            }); */
             procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPagar, deseaCobrarMora, montoTotalaCancelar);
         } else if (result.dismiss === Swal.DismissReason.cancel) {
             swalWithBootstrapButtons.fire({
@@ -198,7 +188,8 @@ function procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPa
         saldoRestante: saldoRestante,
         moraTotalAPagar: moraTotalAPagar,
         deseaCobrarMora: deseaCobrarMora,
-        montoTotalaCancelar: montoTotalaCancelar
+        montoTotalaCancelar: montoTotalaCancelar,
+        ArrayPago: cobrosProcesados
     });
 
     $.ajax({
@@ -240,8 +231,61 @@ function procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPa
     });
 }
 
-
 function descargarDocumento(ruta) {
+    let countdown = 5; // Tiempo total de la cuenta regresiva
+    const totalTime = countdown; // Tiempo total
+
+    Swal.fire({
+        title: 'Descargando...',
+        html: `
+            <div>Esperando... <span id="countdownText">${countdown} segundos</span></div>
+            <div class="progress" style="height: 25px;">
+                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        `,
+        icon: 'info',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        didOpen: () => {
+            const interval = setInterval(() => {
+                countdown--;
+
+                document.getElementById('countdownText').textContent = `${countdown} segundos`;
+                let progress = ((totalTime - countdown) / totalTime) * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+                document.getElementById('progressBar').setAttribute('aria-valuenow', progress);
+
+                if (countdown === 0) {
+                    clearInterval(interval);
+
+                    // Ejecutar la función antes de cerrar el modal
+                    buscarClienteDeudas();
+                    $('#modalCobros').modal('hide');
+                    
+                    document.getElementById('modalCobros').classList.remove('show');
+                    document.getElementById('modalCobros').setAttribute('aria-hidden', 'true');
+                    document.getElementById('modalCobros').style.display = 'none';
+                    document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+
+                    // Asegurar que el modal se cierre sí o sí
+                    Swal.fire({
+                        title: 'Completado',
+                        text: 'Procesando información...',
+                        icon: 'success',
+                        timer: 1000, // Se cierra automáticamente después de 1 segundo
+                        showConfirmButton: false
+                    }).then(() => {
+                        Swal.close(); // Asegura que se cierre si aún está abierto
+                    });
+                }
+            }, 1000);
+        }
+    });
+}
+
+
+
+/* function descargarDocumento(ruta) {
     let countdown = 5; // Tiempo total de la cuenta regresiva
     const totalTime = countdown; // Tiempo total
 
@@ -283,7 +327,7 @@ function descargarDocumento(ruta) {
             }, 1000); // Intervalo de 1 segundo
         }
     });
-}
+} */
 
 function buscarClienteDeudas() {
     var duiCliente = document.getElementById("duiBuscarCliente").value;
@@ -365,25 +409,26 @@ $(document).on('click', '.realizarCobro', function () {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (rsp) {
-            console.log("Respuesta completa:", rsp);
-
+            $('#btnValidarCuotas').show();
+            $('#procesarCuotas').hide();
+            const alertGeneral = $('.alert-general');
+            alertGeneral.hide();
             let cobrosHtml = `<input value="${solicitudNu}" id="solicitudNumero" readonly hidden>`;
-            const interestRate = 0.07; // Tasa de interés mensual
-            const daysInMonth = 30; // Mes comercial de 30 días
-
-            // Obtén la fecha actual
+            const interestRate = 0.07;
+            const daysInMonth = 30;
             const today = new Date();
-            today.setHours(0, 0, 0, 0); // Establece la hora a medianoche para evitar problemas con las horas
+            today.setHours(0, 0, 0, 0);
             let moraTotal = 0.0;
+            let allCancelled = true; // Variable para verificar si todos están cancelados
+
             rsp.forEach(function (cobro) {
                 $('#cuotasCubiertas').val(0);
                 $('#saldoRestanteAFavor').val("");
                 $('.alert-general').html('');
-                let mora = 0; // Inicializamos la mora como 0
-                let daysLate = 0; // Inicializamos los días de mora
+                let mora = 0;
+                let daysLate = 0;
 
                 if (cobro.estado === 'CANCELADO') {
-                    // Si el estado es CANCELADO, no calculamos mora y se deshabilita el input
                     cobrosHtml += `<tr>
                         <td class="text-center"><input class="form-check-input" type="checkbox" name="selectedPayments[]" value="${cobro.id_cobro}" disabled></td>
                         <td>${cobro.numero_cuota} ${cobro.esPrima == 1 ? '(Prima)' : ''}</td>
@@ -394,38 +439,35 @@ $(document).on('click', '.realizarCobro', function () {
                         <td>$0.00</td>
                         <td>CANCELADO</td>
                         <td><input type="text" disabled class="form-control" name="moraGenerada" value="$0"></td>
+                        <td style="display: none;">${cobro.id_cobro}</td>
                     </tr>`;
                 } else {
-                    // Para los cobros pendientes, calculamos la mora
-                    const paymentDateStr = cobro.fecha_vencimiento; // La fecha de pago que trae la respuesta
-                    const paymentDate = new Date(paymentDateStr + 'T23:59:59'); // Añadimos la hora al final de la fecha
-                    paymentDate.setHours(0, 0, 0, 0); // Establecemos la fecha de pago a medianoche
-
-                    // Calcular días de mora si la fecha de pago es anterior a hoy
+                    allCancelled = false; // Si hay un cobro pendiente, no están todos cancelados
+                    const paymentDateStr = cobro.fecha_vencimiento;
+                    const paymentDate = new Date(paymentDateStr + 'T23:59:59');
+                    paymentDate.setHours(0, 0, 0, 0);
                     const timeDifference = today - paymentDate;
                     daysLate = timeDifference > 0 ? Math.floor(timeDifference / (1000 * 60 * 60 * 24)) : 0;
 
-                    // Calcular mora si hay días de mora
                     if (daysLate > 0) {
-                        const amount = parseFloat(cobro.monto_cuota); // Aseguramos que el monto sea un número
+                        const amount = parseFloat(cobro.monto_cuota);
                         const dailyInterest = (amount * interestRate) / daysInMonth;
                         mora = dailyInterest * daysLate;
                         moraTotal += mora;
                     }
 
-                    // Crear el HTML para los cobros pendientes, con la mora calculada
                     cobrosHtml += `<tr>
-                        <td class="text-center"><input disabled class="form-check-input cobroCheck" type="checkbox" name="selectedPayments[]" value="${cobro.id_cobro}" data-monto="${cobro.monto_cuota}"></td>
+                        <td class="text-center"><input class="form-check-input cobroCheck" type="checkbox" name="selectedPayments[]" value="${cobro.id_cobro}" data-monto="${cobro.monto_cuota}"></td>
                         <td>${cobro.numero_cuota}</td>
                         <td>${cobro.fecha_vencimiento}</td>
                         <td>${cobro.fecha_pago != null ? cobro.fecha_pago : ''}</td>
                         <td>$${cobro.monto_cuota}</td>
                         <td>$${cobro.cantAbono}</td>
-                        <td>$${(cobro.monto_cuota-cobro.cantAbono).toFixed(2)}</td>
+                        <td>$${(cobro.monto_cuota - cobro.cantAbono).toFixed(2)}</td>
                         <td>${cobro.estado}</td>
-                        <td><input type="text" readonly class="form-control moraGenerada" name="moraGenerada" value="$${mora.toFixed(2)}"></td>
+                        <td><input type="text" readonly class="form-control moraGenerada" name="moraGenerada" value="$${cobro.interesGenerado != 0 ? 0 : mora.toFixed(2)}"></td>
+                        <td style="display: none;">${cobro.id_cobro}</td>
                     </tr>`;
-
                 }
             });
 
@@ -434,7 +476,6 @@ $(document).on('click', '.realizarCobro', function () {
                 <td colspan="1"><input type="text" class="form-control montosG" id="montoTotalaCancelar" name="montoTotalaCancelar"></td>
                 <td colspan="3" class="text-right"><strong>Mora total a cancelar:</strong></td>
                 <td colspan="1"><input type="text" disabled class="form-control montosG" id="moraTotalAPagar" value="${moraTotal.toFixed(2)}" name="moraTotalAPagar" data-original-value="${moraTotal.toFixed(2)}"></td>
-
             </tr>
             <tr>
                 <td colspan="3" class="text-right"><strong>¿Desea cobrar mora?</strong></td>
@@ -446,20 +487,26 @@ $(document).on('click', '.realizarCobro', function () {
                     </select>
                 </td>
             </tr>`;
-            // Coloca el HTML en la tabla y muestra el modal
+
             $('#cobrosList').html(cobrosHtml);
             $('#modalCobros').modal('show');
             $('.montosG').mask('000000000.00', { reverse: true, placeholder: "00.00" });
             Swal.close();
+
+            // Bloquear botones si todos los cobros están cancelados
+            if (allCancelled) {
+                $('#btnValidarCuotas, #procesarCuotas').prop('disabled', true);
+            } else {
+                $('#btnValidarCuotas, #procesarCuotas').prop('disabled', false);
+            }
         },
         error: function () {
             toastr.error("Ocurrió un error al cargar los cobros", "Error en carga de cobros");
             Swal.close();
         }
     });
-
-
 });
+
 
 // Evento para manejar cambios en #deseaCobrarMora
 $(document).on('change', '#deseaCobrarMora', function () {
@@ -486,19 +533,19 @@ $(document).on('change', '#deseaCobrarMora', function () {
     $('#btnValidarCuotas').show();
     $('#procesarCuotas').hide();
 });
-// Cuando el valor de moraTotalAPagar cambia
-$(document).on('input', '#moraTotalAPagar', function () {
-    // Mostrar el botón de validar cuotas
+
+$(document).on('input', '#moraTotalAPagar, #montoTotalaCancelar', function () {
     $('#btnValidarCuotas').show();
-    
-    // Esconder el botón de procesar cuotas
     $('#procesarCuotas').hide();
 });
 
 // Evento para manejar cambios en el input #moraTotalAPagar
 // Asegúrate de que el DOM esté listo antes de ejecutar el script
 // Función para procesar el monto ingresado
+
+let cobrosProcesados = [];
 function validarMontosPago() {
+    cobrosProcesados = [];
     const montoIngresado = parseFloat($('#montoTotalaCancelar').val()); // Monto ingresado
     const moraTotal = parseFloat($('#moraTotalAPagar').val()); // Mora total a pagar
     const alertGeneral = $('.alert-general'); // Seleccionar el div de alert
@@ -533,6 +580,11 @@ function validarMontosPago() {
         saldo -= moraTotal;
         console.log("saldo al restar la mora:: ", saldo);
         mensaje += `<p>Del saldo ingresado, $${moraTotal.toFixed(2)} se usará para cubrir la mora.</p>`;
+        cobrosProcesados.push({
+            id_cobro: 0, // Identificador temporal para la mora
+            monto_abonado: moraTotal.toFixed(2),
+            completo: 0
+        });
     } else {
         alertGeneral
             .addClass('alert-danger')
@@ -547,35 +599,46 @@ function validarMontosPago() {
         const montoCuota = parseFloat($(this).find('td:nth-child(5)').text().replace('$', '').trim()); // Monto de la cuota
         let montoAbono = parseFloat($(this).find('td:nth-child(6)').text().replace('$', '').trim()) || 0; // Monto abonado
         const checkbox = $(this).find('input.cobroCheck'); // Checkbox de la fila
+        const idCobro = $(this).find('td:nth-child(10)').text().trim();
 
         // Ignorar las cuotas canceladas
         if (estado.toLowerCase() === "cancelado") {
             checkbox.prop('checked', false);
             return;
         }
-
-        let montoRestante = montoCuota - montoAbono; // Cuánto falta para cubrir la cuota
-        console.log("el saldo each es :::", saldo);
-        console.log("el montoRestante each es :::", montoRestante);
+                                    //102.78-100
+        let montoRestante = parseFloat((montoCuota - montoAbono).toFixed(2)); // Cuánto falta para cubrir la cuota
+        // 2.78 >= 2.78
         if (saldo >= montoRestante) {
             // Si el saldo es suficiente para cubrir el restante de la cuota, se paga completa
             checkbox.prop('checked', true);
             $(this).css('background-color', 'lightgreen');
             saldo -= montoRestante;
-            console.log("saldo si el saldo es suficiente para el restante de la cuota:: ",saldo);
-            montoAbono = montoCuota; // Se marca como totalmente pagada
+            montoAbono += montoRestante; // Aquí solo sumamos el abono de esta transacción
+            //montoAbono = montoCuota; // Se marca como totalmente pagada
             cuotasCubiertas++;
-            mensaje += `<p>La cuota ${index} ha sido cubierta totalmente.</p>`;
+            mensaje += `<p>La cuota ${index} ha sido cubierta totalmente ${montoRestante}.</p>`;
+
+            cobrosProcesados.push({
+                id_cobro: idCobro,
+                monto_abonado: (montoRestante < montoCuota)? montoRestante :montoAbono.toFixed(2),
+                completo: 1
+            });
+    
         } else if (saldo > 0) {
             // Si no alcanza para cubrir toda la cuota, se abona lo que se pueda
+            let montoPendiente = (montoCuota - montoAbono - saldo).toFixed(2);
             montoAbono += saldo;
-            console.log("Saldo mayor que 0 ",saldo);
-            mensaje += `<p>Se ha abonado $${saldo.toFixed(2)} a la cuota ${index}, pero aún queda saldo pendiente en esa cuota.</p>`;
-            $('#saldoRestanteAFavor').val((saldo !=null && saldo != '') ? saldo.toFixed(2) : 0.00);
+            mensaje += `<p>Se ha abonado $${saldo.toFixed(2)} a la cuota ${index}, pero aún queda saldo pendiente en esa cuota (${montoPendiente}).</p>`;
+            $('#saldoRestanteAFavor').val((saldo !=null && saldo != '') ? saldo.toFixed(2) : 0.00);//
+
+            cobrosProcesados.push({
+                id_cobro: idCobro,
+                monto_abonado: saldo.toFixed(2),
+                completo: 0
+            });
             saldo = 0;
         }
-
-        //if (saldo === 0) return false; // Salir del loop si ya no hay saldo disponible
     });
 
     // Mostrar mensaje si queda saldo restante
@@ -593,6 +656,8 @@ function validarMontosPago() {
         .addClass('alert-success')
         .html(`<h4 class="alert-heading">¡Proceso completado!</h4>${mensaje}`)
         .show();
+
+        console.log(cobrosProcesados);
 }
 
 
