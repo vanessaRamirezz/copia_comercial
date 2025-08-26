@@ -51,17 +51,34 @@
                 <input type="text" class="form-control" id="id_cliente" name="id_cliente" disabled hidden>
                 <div id="datosPersonales" class="collapse show" aria-labelledby="headingOne" data-parent="#datosPersonales">
                     <div class="card-body">
-                        <div class="row  mb-4">
-                            <div class="col-sm-6 d-flex justify-content-start">
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <label for="tipoBusqueda" class="form-label">Buscar Cliente por:</label>
+                                <select class="form-control" id="tipoBusqueda">
+                                    <option selected>Seleccione forma de busqueda</option>
+                                    <option value="dui">DUI</option>
+                                    <option value="nombre">Nombre</option>
+                                </select>
+                            </div>
+                            <div class="col-md-8">
+                                <label for="campoBusqueda" class="form-label">Ingrese el dato:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="campoBusqueda" placeholder="Ingrese DUI o Nombre">
+                                    <button class="btn btn-primary" id="btnBuscar" style="display: none;">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <!-- <div class="col-sm-6 d-flex justify-content-start">
                                 <div class="form-inline my-2 my-lg-0">
                                     <input class="form-control mr-sm-2 duiG" type="text" value="" id="duiBuscarCliente">
                                     <button class="btn btn-outline-primary my-2 my-sm-0" onclick="buscarCliente()">Buscar cliente</button>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 d-flex justify-content-end">
+                            </div> -->
+                            <div class="col-sm-2">
                                 <div class="form-group">
                                     <label for="creacionDocumento">Fecha creación</label>
-                                    <input type="date" class="form-control" id="creacionDocumento" disabled>
+                                    <input type="date" class="form-control" id="creacionDocumento" disabled value="<?= isset($fechaVirtual) ? esc($fechaVirtual) : '' ?>">
                                 </div>
                             </div>
                         </div>
@@ -296,6 +313,11 @@
                                     <option value="TIO/A">TIO/A</option>
                                     <option value="PRIMO/A">PRIMO/A</option>
                                     <option value="ABUELO/A">ABUELO/A</option>
+                                    <option value="HIJO/A">HIJO/A</option>
+                                    <option value="CUÑADO/A">CUÑADO/A</option>
+                                    <option value="SUEGRO/A">SUEGRO/A</option>
+                                    <option value="SOBRINO/A">SOBRINO/A</option>
+                                    <option value="NIETO/A">NIETO/A</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-5">
@@ -332,6 +354,11 @@
                                     <option value="TIO/A">TIO/A</option>
                                     <option value="PRIMO/A">PRIMO/A</option>
                                     <option value="ABUELO/A">ABUELO/A</option>
+                                    <option value="HIJO/A">HIJO/A</option>
+                                    <option value="CUÑADO/A">CUÑADO/A</option>
+                                    <option value="SUEGRO/A">SUEGRO/A</option>
+                                    <option value="SOBRINO/A">SOBRINO/A</option>
+                                    <option value="NIETO/A">NIETO/A</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-5">
@@ -647,13 +674,22 @@
                                                 <select class="form-control" id="cantidadCuotas" name="cantidadCuotas">
                                                 </select>
                                             </div>
-                                            <div class="form-group col-12 col-sm-6 col-md-4">
+                                            <!-- <div class="form-group col-12 col-sm-6 col-md-4">
                                                 <label for="montoCuota">Monto cuotas de:</label>
                                                 <input type="text" class="form-control" id="montoCuota" name="montoCuota" disabled>
+                                            </div> -->
+                                            <div class="form-group col-12 col-sm-6 col-md-4">
+                                                <label for="montoCuota">Monto cuotas de:</label>
+                                                <input type="text" class="form-control montosG" id="montoCuota" name="montoCuota" disabled>
+
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" id="editarCuota">
+                                                    <label class="form-check-label" for="editarCuota">Editar cuota</label>
+                                                </div>
                                             </div>
                                             <div class="form-group col-12 col-sm-6 col-md-4">
                                                 <label for="montoTotalPagar">Monto total a pagar:</label>
-                                                <input type="text" class="form-control" id="montoTotalPagar" name="montoTotalPagar" disabled>
+                                                <input type="text" class="form-control montosG" id="montoTotalPagar" name="montoTotalPagar" disabled>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -663,6 +699,14 @@
                                             </div>
                                         </div>
 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="form-group">
+                                            <label for="numeroSerie">Ingrese numeros de series:</label>
+                                            <textarea class="form-control" id="numeroSerie" rows="3"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -805,6 +849,11 @@
                                             <option value="TIO/A">TIO/A</option>
                                             <option value="PRIMO/A">PRIMO/A</option>
                                             <option value="ABUELO/A">ABUELO/A</option>
+                                            <option value="HIJO/A">HIJO/A</option>
+                                            <option value="CUÑADO/A">CUÑADO/A</option>
+                                            <option value="SUEGRO/A">SUEGRO/A</option>
+                                            <option value="SOBRINO/A">SOBRINO/A</option>
+                                            <option value="NIETO/A">NIETO/A</option>
                                         </select>
                                     </div>
                                 </div>
@@ -835,6 +884,11 @@
                                             <option value="TIO/A">TIO/A</option>
                                             <option value="PRIMO/A">PRIMO/A</option>
                                             <option value="ABUELO/A">ABUELO/A</option>
+                                            <option value="HIJO/A">HIJO/A</option>
+                                    <option value="CUÑADO/A">CUÑADO/A</option>
+                                    <option value="SUEGRO/A">SUEGRO/A</option>
+                                    <option value="SOBRINO/A">SOBRINO/A</option>
+                                    <option value="NIETO/A">NIETO/A</option>
                                         </select>
                                     </div>
                                 </div>
@@ -865,6 +919,11 @@
                                             <option value="TIO/A">TIO/A</option>
                                             <option value="PRIMO/A">PRIMO/A</option>
                                             <option value="ABUELO/A">ABUELO/A</option>
+                                            <option value="HIJO/A">HIJO/A</option>
+                                    <option value="CUÑADO/A">CUÑADO/A</option>
+                                    <option value="SUEGRO/A">SUEGRO/A</option>
+                                    <option value="SOBRINO/A">SOBRINO/A</option>
+                                    <option value="NIETO/A">NIETO/A</option>
                                         </select>
                                     </div>
                                 </div>
@@ -898,18 +957,18 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="agregarProductoTempLabel">Modal title</h5>
+                <h5 class="modal-title" id="agregarProductoTempLabel">Agregar productos</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-                        <input type="text" class="form-control" id="buscar_producto" placeholder="Buscar producto">
+                <div class="row mb-4 mt-2">
+                    <div class="col-sm">
+                        <input type="text" class="form-control w-100" id="buscar_producto" placeholder="Buscar producto: Puede realizar la busqueda por nombre o por codigo de producto">
                     </div>
-                    <button type="button" class="btn btn-primary mb-2" onclick="buscarProducto()">Buscar</button>
                 </div>
+
                 <div class="row">
                     <div class="col sm">
                         <b>Productos agregados: <p id="prodAgregadosCant"></p></b>

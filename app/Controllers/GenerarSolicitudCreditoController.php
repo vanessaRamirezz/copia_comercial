@@ -68,16 +68,20 @@ class GenerarSolicitudCreditoController extends BaseController
     public function generarDocumento()
     {
         try {
+            $session = session();
             $request = service('request');
             $encryptedSolicitud = $request->getGet('solicitud');
             if ($encryptedSolicitud) {
                 log_message("info", "generarDocumento encryptedSolicitud::: " . $encryptedSolicitud);
-                $templatePath = FCPATH . 'public\documentos\solicitud_credito\solicitudCredito.docx';
+                $templatePath = FCPATH . 'public/documentos/solicitud_credito/solicitudCredito.docx';
 
                 $id_solicitud = base64_decode($encryptedSolicitud);
 
                 if (!file_exists($templatePath)) {
-                    throw new \Exception('El archivo de plantilla no se encuentra en la ruta especificada.');
+                     return [
+                        'success' => false,
+                        'message' => 'El archivo de plantilla no se encuentra en la ruta especificada.'
+                    ];
                 }
                 $templateProcessor = new TemplateProcessor($templatePath);
 
@@ -205,32 +209,32 @@ class GenerarSolicitudCreditoController extends BaseController
                     'totalEgreso' => isset($estSocioEconomico[0]['total_egresos']) ? $estSocioEconomico[0]['total_egresos'] : '0.00',
                     'diferencia' => isset($estSocioEconomico[0]['diferencia_ingresos_egresos']) ? $estSocioEconomico[0]['diferencia_ingresos_egresos'] : '0.00',
 
-                    'pM1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['marca']) ? $productosSolicitud[0]['marca'] : '',
-                    'pMod1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['modelo']) ? $productosSolicitud[0]['modelo'] : '',
+                    'pN1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['nombre']) ? $productosSolicitud[0]['nombre'] : '',
+                    'pCant1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['cantidad_producto']) ? $productosSolicitud[0]['cantidad_producto'] : '',
                     'pCol1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['color']) ? $productosSolicitud[0]['color'] : '',
                     'pCod1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['codigo_producto']) ? $productosSolicitud[0]['codigo_producto'] : '',
                     'pPre1' => isset($productosSolicitud[0]) && isset($productosSolicitud[0]['precio']) ? $productosSolicitud[0]['precio'] : '',
 
-                    'pM2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['marca']) ? $productosSolicitud[1]['marca'] : '',
-                    'pMod2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['modelo']) ? $productosSolicitud[1]['modelo'] : '',
+                    'pN2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['nombre']) ? $productosSolicitud[1]['nombre'] : '',
+                    'pCant2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['cantidad_producto']) ? $productosSolicitud[1]['cantidad_producto'] : '',
                     'pCol2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['color']) ? $productosSolicitud[1]['color'] : '',
                     'pCod2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['codigo_producto']) ? $productosSolicitud[1]['codigo_producto'] : '',
                     'pPre2' => isset($productosSolicitud[1]) && isset($productosSolicitud[1]['precio']) ? $productosSolicitud[1]['precio'] : '',
 
-                    'pM3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['marca']) ? $productosSolicitud[2]['marca'] : '',
-                    'pMod3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['modelo']) ? $productosSolicitud[2]['modelo'] : '',
+                    'pN3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['nombre']) ? $productosSolicitud[2]['nombre'] : '',
+                    'pCant3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['cantidad_producto']) ? $productosSolicitud[2]['cantidad_producto'] : '',
                     'pCol3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['color']) ? $productosSolicitud[2]['color'] : '',
                     'pCod3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['codigo_producto']) ? $productosSolicitud[2]['codigo_producto'] : '',
                     'pPre3' => isset($productosSolicitud[2]) && isset($productosSolicitud[2]['precio']) ? $productosSolicitud[2]['precio'] : '',
 
-                    'pM4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['marca']) ? $productosSolicitud[3]['marca'] : '',
-                    'pMod4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['modelo']) ? $productosSolicitud[3]['modelo'] : '',
+                    'pN4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['nombre']) ? $productosSolicitud[3]['nombre'] : '',
+                    'pCant4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['cantidad_producto']) ? $productosSolicitud[3]['cantidad_producto'] : '',
                     'pCol4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['color']) ? $productosSolicitud[3]['color'] : '',
                     'pCod4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['codigo_producto']) ? $productosSolicitud[3]['codigo_producto'] : '',
                     'pPre4' => isset($productosSolicitud[3]) && isset($productosSolicitud[3]['precio']) ? $productosSolicitud[3]['precio'] : '',
 
-                    'pM5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['marca']) ? $productosSolicitud[4]['marca'] : '',
-                    'pMod5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['modelo']) ? $productosSolicitud[4]['modelo'] : '',
+                    'pN5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['nombre']) ? $productosSolicitud[4]['nombre'] : '',
+                    'pCant5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['cantidad_producto']) ? $productosSolicitud[4]['cantidad_producto'] : '',
                     'pCol5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['color']) ? $productosSolicitud[4]['color'] : '',
                     'pCod5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['codigo_producto']) ? $productosSolicitud[4]['codigo_producto'] : '',
                     'pPre5' => isset($productosSolicitud[4]) && isset($productosSolicitud[4]['precio']) ? $productosSolicitud[4]['precio'] : '',
@@ -278,7 +282,7 @@ class GenerarSolicitudCreditoController extends BaseController
                 ];
 
                 $numeroSolicitud = $solicitudEncontrada['numero_solicitud'];
-                $rutaCarpeta = FCPATH . 'public/documentos/' . $numeroSolicitud . '/';
+                $rutaCarpeta = FCPATH . 'public/documentos/' . $numeroSolicitud .'_SucID_'.$_SESSION['sucursal']. '/';
                 if (!is_dir($rutaCarpeta)) {
                     mkdir($rutaCarpeta, 0755, true);
                 }
@@ -304,6 +308,7 @@ class GenerarSolicitudCreditoController extends BaseController
         $session = session();
         log_message("info", "Valor que entra: ".$id_solicitud);
         try {
+            $sucursal = session('sucursal');
             if ($id_solicitud) {
                 $templatePath = FCPATH . 'public/documentos/contrato/contratoV1.docx';
 
@@ -318,7 +323,7 @@ class GenerarSolicitudCreditoController extends BaseController
                 $clienteEncontrado = $this->clientesModel->buscarCliente(null, (int) $solicitudEncontrada['id_cliente']);
 
                 //obtener apoderado y reprelegal
-                $datosLegales = $this->apoderadoModel->getApoderados();
+                $datosLegales = $this->apoderadoModel->getUltimoApoderadoCreado();
 
                 //productos solicitados
                 $productosSolicitud = $this->prodSolicitudModel->buscarPorSolicitud($id_solicitud);
@@ -331,7 +336,7 @@ class GenerarSolicitudCreditoController extends BaseController
 
                 // Crear carpeta de destino si no existe
                 $numeroSolicitud = $solicitudEncontrada['numero_solicitud'];
-                $rutaCarpeta = FCPATH . 'public/documentos/' . $numeroSolicitud . '/';
+                $rutaCarpeta = FCPATH . 'public/documentos/' . $numeroSolicitud .'_SucID_'.$_SESSION['sucursal']. '/';
                 if (!is_dir($rutaCarpeta)) {
                     mkdir($rutaCarpeta, 0755, true);
                 }
@@ -344,12 +349,12 @@ class GenerarSolicitudCreditoController extends BaseController
 
                 // Datos a reemplazar en la plantilla
                 $datos = [
-                    'representanteLegal' => $datosLegales[0]['representante_legal'],
-                    'edadRepresentanteLet' => $this->convertidoresController->calcularEdadEnLetras($datosLegales[0]['fecha_nacimiento_rLegal']),
-                    'duiRepresentante' => $datosLegales[0]['dui_representante'],
+                    'representantelegal' => $datosLegales['representante_legal'],
+                    'edadRepresentanteLet' => $this->convertidoresController->calcularEdadEnLetras($datosLegales['fecha_nacimiento_rLegal']),
+                    'duiRepresentante' => $datosLegales['dui_representante'],
                     'mueblesSolicitados' => $resultadoProdLista,
-                    'sucursal' => $_SESSION['sucursalN'],
-                    'cantidadCuotas' => $planPago[0]['cuotas'],
+                    'sucursal' => $_SESSION['sucDirCompleta'],
+                    'cantidadCuotas' => $this->convertidoresController->convertirNumeroALetras($planPago[0]['cuotas']),
                     'precioTotal' => '$'.$planPago[0]['monto_total_pagar'],
                     'valorPrima' => '$'.$planPago[0]['valor_prima'],
                     'montoCuotas' => '$'.$planPago[0]['monto_cuotas'],
@@ -370,7 +375,7 @@ class GenerarSolicitudCreditoController extends BaseController
                     'diaCreacionSol' => (new \DateTime($solicitudEncontrada['fecha_creacion']))->format('j'),
                     'mesCreacionSol' => $meses[(new \DateTime($solicitudEncontrada['fecha_creacion']))->format('n') - 1],
                     'anioCreacionSol' => (new \DateTime($solicitudEncontrada['fecha_creacion']))->format('Y'),
-                    'nombreApoderado' => $datosLegales[0]['nombre_apoderado'],
+                    'nombreApoderado' => $datosLegales['nombre_apoderado'],
                     'domicilioApoderado' => 'Calle Central, San Salvador',
                     'duiCliente' => !empty($clienteEncontrado['dui']) ? $clienteEncontrado['dui'] : ''
                 ];
@@ -378,7 +383,7 @@ class GenerarSolicitudCreditoController extends BaseController
                 foreach ($datos as $clave => $valor) {
                     $valorMayusculas = mb_strtoupper($valor, 'UTF-8'); // Convertir a mayúsculas respetando la codificación
                     log_message("info", "Reemplazando {$clave} con {$valorMayusculas}");
-                    $templateProcessor->setValue(trim("{{$clave}}"), $valorMayusculas);
+                    $templateProcessor->setValue("{{$clave}}", $valorMayusculas);
                 }
 
                 // Guardar el archivo de contrato generado
@@ -389,7 +394,8 @@ class GenerarSolicitudCreditoController extends BaseController
                     'dir_contrato' => $rutaArchivo,
                     'id_sucursal' => $solicitudEncontrada['id_sucursal'],
                     'num_contrato' => $numero_contrato,
-                    'numero_solicitud' => $numeroSolicitud
+                    'numero_solicitud' => $numeroSolicitud,
+                    'id_solicitud'=> $id_solicitud
                 ];
                 $this->contratoSolicitud->insert($datosInsert);
 
@@ -414,9 +420,9 @@ class GenerarSolicitudCreditoController extends BaseController
         }
     }
 
-    public function validarContrato($solicitud){
+    public function validarContrato($solicitud,$id_solicitud){
         try {
-            $existeContrato = $this->contratoSolicitud->existeContratoPorSolicitud($solicitud);
+            $existeContrato = $this->contratoSolicitud->existeContratoPorSolicitud($id_solicitud);
             if ($existeContrato) {
                 return [
                     'success' => true,
@@ -490,10 +496,11 @@ class GenerarSolicitudCreditoController extends BaseController
         return $nuevo_num_contrato;
     }
 
-    public function descargar($solicitud)
+    public function descargar($id_solicitud)
     {
-        log_message("info", "llega la sol::: " . $solicitud);
-        $rspRuta = $this->contratoSolicitud->where('numero_solicitud', $solicitud)->first();
+        log_message("info", "llega la sol::: " . $id_solicitud);
+        /* $rspRuta = $this->contratoSolicitud->where('id_solicitud', $id_solicitud)->first(); */
+        $rspRuta = $this->contratoSolicitud->groupStart()->where('id_solicitud', $id_solicitud)->orWhere('numero_solicitud', $id_solicitud)->groupEnd()->first();
         log_message("info", "respuesta del select::: " . $rspRuta["dir_contrato"]);
         $rutaArchivo = $rspRuta["dir_contrato"];
 

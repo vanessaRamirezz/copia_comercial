@@ -25,6 +25,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const alquiladaSelect = document.getElementById('COalquilada');
     const estadoCivilSelect = document.getElementById('COestadoCivil');
     const nombreConyugueInput = document.getElementById('nombreConyugueCN');
+    const tipoBusqueda = document.getElementById("tipoBusqueda");
+    const campoBusqueda = document.getElementById("campoBusqueda");
+    const idCliente = document.getElementById("id_cliente");
+
+    // Asegurarse de que id_cliente esté vacío después de que todo se cargue
+    setTimeout(function () {
+        idCliente.value = "";  // Limpiar explícitamente después de un pequeño retraso
+    }, 50);
+
+    // Inicialmente deshabilitar campo de búsqueda y DUI
+    campoBusqueda.disabled = true;
+    idCliente.disabled = true;
+
+    // Manejo del tipo de búsqueda
+    tipoBusqueda.addEventListener("change", function () {
+        campoBusqueda.value = "";
+        btnBuscar.style.display = "none";
+
+        if (this.value === "dui") {
+            $(campoBusqueda).addClass('duiG').mask('00000000-0', { placeholder: "00000000-0" });
+            campoBusqueda.disabled = false;
+        } else if (this.value === "nombre") {
+            $(campoBusqueda).removeClass('duiG').unmask();
+            campoBusqueda.disabled = false;
+        } else {
+            campoBusqueda.disabled = true;
+        }
+    });
+
+    document.getElementById('editarCuota').disabled = true;
 
     function updateFields() {
         const viveEnCasaPropia = viveEnCasaPropiaSelect.value === 'SI';
@@ -54,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializa el estado de los campos al cargar la página
     updateFields();
     /* **************************************************************************************** */
-    const valorPagoPrimaInput = document.getElementById('valorPagoPrima');
+    /* const valorPagoPrimaInput = document.getElementById('valorPagoPrima');
     const saldoAPagarInput = document.getElementById('saldoAPagar');
 
     const montoCuotaInput = document.getElementById('montoCuota');
@@ -62,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cantidadCuotasSelect = document.getElementById('cantidadCuotas');
     const montoTotalPagarInput = document.getElementById('montoTotalPagar');
     const valorPrimaInput = document.getElementById('valorPagoPrima');
+
+    const editarCuotaCheckbox = document.getElementById('editarCuota');
 
     valorPagoPrimaInput.addEventListener('input', actualizarSaldoAPagar);
     cantidadCuotasSelect.addEventListener('change', actualizarMontoCuota);
@@ -90,19 +122,141 @@ document.addEventListener('DOMContentLoaded', function () {
         const valorPrima = parseFloat(valorPrimaInput.value);
         const valorTotalAPagar = (parseFloat(valorCuota) * cant_meses) + valorPrima;
         montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
+        document.getElementById('montoCuota').setAttribute('data-monto-cuota', valorCuota.toFixed(2));
+        document.getElementById('editarCuota').disabled = false;
     }
+
+
+    editarCuotaCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            // Habilitar el input sin modificar el valor
+            montoCuotaInput.disabled = false;
+        } else {
+            // Restaurar el valor original desde data-monto-cuota y deshabilitar el input
+            montoCuotaInput.value = montoCuotaInput.dataset.montoCuota || "";
+            montoCuotaInput.disabled = true;
+
+            actualizarMontoCuota();
+        }
+    });
+
+    // Evento input para detectar cambios mientras escribes
+    montoCuotaInput.addEventListener('input', function () {
+        // Si el valor del input es diferente al valor guardado en data-monto-cuota
+        if (montoCuotaInput.value !== montoCuotaInput.dataset.montoCuota) {
+            recalcularCuotaEditada();
+        }
+    });
+
+    function recalcularCuotaEditada() {
+        var opcionSeleccionada = cantidadCuotasSelect.options[cantidadCuotasSelect.selectedIndex];
+        var cant_meses = parseInt(opcionSeleccionada.text) || 0;
+        var nuevoValorCuota = parseFloat(document.getElementById('montoCuota').value);
+        const valorPrima = parseFloat(valorPrimaInput.value);
+
+        var valorTotalAPagar = (parseFloat(nuevoValorCuota) * cant_meses) + valorPrima;
+        console.log("El valor de la cuota ha sido editado, recalculando...", valorTotalAPagar);
+        montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
+        // Aquí puedes agregar la lógica de recalculo que necesites
+    } */
+   // Elementos
+const valorPagoPrimaInput = document.getElementById('valorPagoPrima');
+const saldoAPagarInput = document.getElementById('saldoAPagar');
+const montoCuotaInput = document.getElementById('montoCuota');
+const valorArticuloInput = document.getElementById('valorArticulo');
+const cantidadCuotasSelect = document.getElementById('cantidadCuotas');
+const montoTotalPagarInput = document.getElementById('montoTotalPagar');
+const editarCuotaCheckbox = document.getElementById('editarCuota');
+
+// Eventos
+valorPagoPrimaInput.addEventListener('input', () => {
+    limpiarCampoSiVacio(valorPagoPrimaInput);
+    actualizarSaldoAPagar();
+});
+
+cantidadCuotasSelect.addEventListener('change', actualizarMontoCuota);
+
+montoCuotaInput.addEventListener('input', () => {
+    limpiarCampoSiVacio(montoCuotaInput);
+    if (editarCuotaCheckbox.checked) {
+        recalcularCuotaEditada();
+    }
+});
+
+editarCuotaCheckbox.addEventListener('change', function () {
+    if (this.checked) {
+        montoCuotaInput.disabled = false;
+    } else {
+        montoCuotaInput.value = montoCuotaInput.dataset.montoCuota || "0.00";
+        montoCuotaInput.disabled = true;
+        actualizarMontoCuota();
+    }
+});
+
+// Función auxiliar para limpiar campos vacíos
+function limpiarCampoSiVacio(input) {
+    if (input.value.trim() === "") {
+        input.value = "0.00";
+    }
+}
+
+// Actualizar saldo a pagar
+function actualizarSaldoAPagar() {
+    const valorArticulo = parseFloat(valorArticuloInput.value) || 0;
+    const valorPrima = parseFloat(valorPagoPrimaInput.value) || 0;
+
+    const saldoAPagar = valorArticulo - valorPrima;
+    saldoAPagarInput.value = saldoAPagar.toFixed(2);
+
+    if (cantidadCuotasSelect.selectedIndex > -1) {
+        actualizarMontoCuota();
+    }
+}
+
+// Calcular el monto de la cuota automáticamente
+function actualizarMontoCuota() {
+    const saldoAPagar = parseFloat(saldoAPagarInput.value) || 0;
+    const valor_porcentual = parseFloat(cantidadCuotasSelect.value) || 0;
+
+    const opcionSeleccionada = cantidadCuotasSelect.options[cantidadCuotasSelect.selectedIndex];
+    const cant_meses = parseInt(opcionSeleccionada?.text) || 0;
+
+    const valorCuota = cant_meses > 0 ? Math.round((saldoAPagar * valor_porcentual) * 100) / 100 : 0;
+    montoCuotaInput.value = valorCuota.toFixed(2);
+    montoCuotaInput.setAttribute('data-monto-cuota', valorCuota.toFixed(2));
+
+    const valorPrima = parseFloat(valorPagoPrimaInput.value) || 0;
+    const valorTotalAPagar = (valorCuota * cant_meses) + valorPrima;
+    montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
+
+    editarCuotaCheckbox.disabled = false;
+}
+
+// Si la cuota se edita manualmente
+function recalcularCuotaEditada() {
+    const opcionSeleccionada = cantidadCuotasSelect.options[cantidadCuotasSelect.selectedIndex];
+    const cant_meses = parseInt(opcionSeleccionada?.text) || 0;
+
+    const nuevoValorCuota = parseFloat(montoCuotaInput.value) || 0;
+    const valorPrima = parseFloat(valorPagoPrimaInput.value) || 0;
+
+    const valorTotalAPagar = (nuevoValorCuota * cant_meses) + valorPrima;
+    montoTotalPagarInput.value = valorTotalAPagar.toFixed(2);
+}
 
 
     cargarDepartamentos();
     cargarComisiones();
     cargarProfesiones();
     var today = new Date().toISOString().split('T')[0];
-    document.getElementById('creacionDocumento').value = today;
+    /* document.getElementById('creacionDocumento').value = today; */
 
     document.getElementById('guardar_solicitud').addEventListener('click', function () {
+        var detalleSeries = document.getElementById('numeroSerie').value.trim();
         var accordion = document.getElementById('accordionSolicitud');
         var cards = accordion.querySelectorAll('.card');
         var data = {
+            detalleSeries: detalleSeries,
             datos_personales: {},
             referencias_laborales: {},
             referencias_familiares: {},
@@ -275,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         errorFound = true;
                         return;
                     }
-                    console.log("Flag de errorFound:: ",errorFound);
+                    console.log("Flag de errorFound:: ", errorFound);
                     data['plan_de_pago'] = planDePagoData;
                     console.log('Datos del plan de pago:', data['plan_de_pago']);
                 } else if (cardClass === 'co_deudor') {
@@ -328,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-        console.log("Flag de errorFound:::: ",errorFound);
+        console.log("Flag de errorFound:::: ", errorFound);
         if (errorFound) return;
 
         if (productosAgregados.length <= 0) {
@@ -349,14 +503,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 Swal.showLoading();
             }
         });
-        
+
         $.ajax({
             url: baseURL + 'procesar_nueva_sol',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(data),
             dataType: 'json',
-            success: function(responseData) {
+            success: function (responseData) {
                 console.log(responseData)
                 if (responseData.success) {
                     Swal.fire({
@@ -369,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         timer: 5000, // La alerta se cerrará automáticamente después de 3 segundos
                         timerProgressBar: true // Muestra la barra de progreso
                     });
-        
+
                     // Esperar 3 segundos y luego redirigir
                     setTimeout(() => {
                         window.history.back();
@@ -383,12 +537,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 console.error('Error al enviar datos:', error);
                 toastr.error("Error al guardar", "Hubo un problema al guardar la solicitud.");
             }
         });
-        
+
 
     });
 
@@ -398,6 +552,127 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     calculateSums();
+
+    tipoBusqueda.addEventListener("change", function () {
+        campoBusqueda.value = "";
+        btnBuscar.style.display = "none";
+
+        if (this.value === "dui") {
+            $(campoBusqueda).addClass('duiG').mask('00000000-0', { placeholder: "00000000-0" });
+            campoBusqueda.disabled = false;
+        } else if (this.value === "nombre") {
+            $(campoBusqueda).removeClass('duiG').unmask();
+            campoBusqueda.disabled = false;
+        } else {
+            campoBusqueda.disabled = true;
+        }
+    });
+
+    $(campoBusqueda).autocomplete({
+
+        source: function (request, response) {
+            // Mostrar opción de "Buscando resultados..."
+            response([{ label: "Buscando resultados...", value: "" }]);
+            $.ajax({
+                url: baseURL + "searchClient",
+                type: "POST",
+                dataType: "json",
+                data: request.term, // Asegurar que se envía correctamente
+                success: function (data) {
+                    console.log("Respuesta del servidor:", data);
+
+                    // Asegurar que la respuesta sea un array de objetos
+                    response(data.map(item => ({
+                        label: item.nombre_completo + " - " + item.dui, // Lo que se muestra en la lista
+                        value: item.nombre_completo, // Lo que se coloca en el input
+                        dui: item.dui // Guardamos el DUI en la selección
+                    })));
+                },
+                error: function () {
+                    console.error("Error en la búsqueda de clientes");
+                }
+            });
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            campoBusqueda.value = ui.item.value; // Mostrar el nombre en el input
+            idCliente.value = "";
+            buscarCliente(ui.item.dui); // Pasar el DUI como parámetro
+        }
+    });
+
+    const campoBusquedaProducto = $("#buscar_producto");
+
+    $('#agregarProductoTemp').on('shown.bs.modal', function () {
+        // 🔹 Re-inicializa el autocomplete cada vez que se abre el modal
+        campoBusquedaProducto.autocomplete({
+            appendTo: "#agregarProductoTemp", // 🔹 Soluciona el problema de visualización en el modal
+            source: function (request, response) {
+                response([{ label: "Buscando resultados...", value: "" }]);
+                $.ajax({
+                    url: baseURL + "getProductoDesc",
+                    type: "POST",
+                    dataType: "json",
+                    data: request.term, // Asegurar que se envía correctamente
+                    success: function (data) {
+                        console.log("Datos recibidos:", data);
+
+                        response(data.map(item => ({
+                            label: item.nombre + " - " + item.codigo_producto,
+                            value: item.nombre,
+                            codigo_producto: item.codigo_producto
+                        })));
+                    },
+                    error: function () {
+                        console.error("Error en la búsqueda de clientes");
+                    }
+                });
+            },
+            minLength: 3,
+            select: function (event, ui) {
+                console.log("Seleccionaste:", ui.item.value);
+                campoBusquedaProducto.val(ui.item.value); // 🔹 Asigna el valor seleccionado
+                buscarProducto(ui.item.codigo_producto);
+            }
+        });
+
+        // 🔹 Asegura que el input recibe foco automáticamente
+        setTimeout(() => {
+            campoBusquedaProducto.focus();
+        }, 300);
+    });
+
+    // Mostrar botón "Buscar" al escribir en el campo
+    campoBusqueda.addEventListener("input", function () {
+        if (tipoBusqueda.value === "dui" && campoBusqueda.value.trim().length >= 9) {
+            btnBuscar.style.display = "inline-block";
+        } else {
+            btnBuscar.style.display = "none";
+        }
+    });
+
+    // Evento para buscar cliente
+    btnBuscar.addEventListener("click", function () {
+        // Obtener el valor de búsqueda dependiendo del tipo seleccionado
+        const valorBusqueda = campoBusqueda.value.trim();
+
+        if (valorBusqueda === "") {
+            Swal.fire('Error', 'Debe ingresar un valor para buscar.', 'error');
+            return;
+        }
+
+        if (tipoBusqueda.value === "dui") {
+            // Si es búsqueda por DUI, verificar que el formato sea correcto
+            if (valorBusqueda.length === 10) {
+                buscarCliente(valorBusqueda); // Pasar el DUI
+            } else {
+                Swal.fire('Error', 'El DUI debe tener un formato válido (00000000-0).', 'error');
+            }
+        } else if (tipoBusqueda.value === "nombre") {
+            // Si es búsqueda por nombre, buscar por el nombre completo
+            buscarClientePorNombre(valorBusqueda);
+        }
+    });
 });
 
 function validarClienteAgregado(datoCliente) {
@@ -588,8 +863,8 @@ function calculateSums() {
     $('#diferencia').val((totalIngresos - totalEgresos).toLocaleString());
 }
 
-function buscarCliente() {
-    var dui = document.getElementById('duiBuscarCliente').value;
+function buscarCliente(dui) {
+    //    var dui = document.getElementById('duiBuscarCliente').value;
 
     Swal.fire({
         title: 'Espere...',
@@ -835,8 +1110,8 @@ function llenarFormularioReferenciasNoFamiliares(datos) {
 
 
 
-function buscarProducto() {
-    var search = $('#buscar_producto').val();
+function buscarProducto(search) {
+    //var search = $('#buscar_producto').val();
     console.log(search);
     Swal.fire({
         title: 'Espere...',
@@ -1031,32 +1306,66 @@ function confirmarAgregarProducto() {
 
 function cargarProductosSeleccionado(productosAgregados) {
     var tbody = $('#productosSeleccionadosTbl tbody');
-
     tbody.empty();
+
     var sumaTotalProductos = 0;
+
     productosAgregados.forEach(function (producto, index) {
         var precio_total = (producto.precio * producto.cantidad).toFixed(2);
         sumaTotalProductos += parseFloat(precio_total);
 
-        var row = `<tr>
+        // Agregar la fila del producto
+        var rowProducto = `<tr>
             <td>${producto.codigo_producto}</td>
             <td>${producto.nombre}</td>
             <td>${producto.precio}</td>
             <td>${producto.cantidad}</td>
-            <td>${precio_total}</td>
+            <td class="precioTotal">${precio_total}</td>
             <td>
-                <button id="eliminarBtnS${index}" style="display: block;" class="btn btn-danger" onclick='eliminarProductosSeleccionados(${JSON.stringify(producto).replace(/"/g, '&quot;')})'>
+                <button id="eliminarBtnS${index}" class="btn btn-danger" onclick='eliminarProductosSeleccionados(${JSON.stringify(producto).replace(/"/g, '&quot;')})'>
                     <i class="fa fa-trash"></i>
                 </button>
             </td>
         </tr>`;
-        tbody.append(row);
+
+        // Agregar la fila del checkbox "Pique"
+        var rowPique = `<tr>
+            <td colspan="4"><strong>Pique</strong></td>
+            <td>
+                <input type="checkbox" class="pique-checkbox" data-precio="${precio_total}" data-index="${index}">
+            </td>
+        </tr>`;
+
+        tbody.append(rowProducto);
+        tbody.append(rowPique);
     });
 
-    document.getElementById("valorArticulo").value = sumaTotalProductos.toFixed(2);
-    document.getElementById("valorPagoPrima").value = 0;
-    document.getElementById("saldoAPagar").value = sumaTotalProductos.toFixed(2);
+    actualizarTotales(sumaTotalProductos);
+
+    // Evento para actualizar el total al seleccionar o deseleccionar Pique
+    $('.pique-checkbox').change(function () {
+        var precio = parseFloat($(this).data('precio'));
+        var saldoActual = parseFloat(document.getElementById("saldoAPagar").value);
+
+        if ($(this).is(':checked')) {
+            saldoActual -= precio;  // Resta el precio si se marca
+        } else {
+            saldoActual += precio;  // Suma el precio si se desmarca
+        }
+
+        actualizarTotales(saldoActual);
+    });
 }
+
+// Función para actualizar los totales
+function actualizarTotales(saldo) {
+    document.getElementById("valorArticulo").value = saldo.toFixed(2);
+    document.getElementById("valorPagoPrima").value = 0;
+    document.getElementById("saldoAPagar").value = saldo.toFixed(2);
+}
+
+
+
 
 function limpiarTablaProdSeleccionados() {
     $('#productosSeleccionadosTbl tbody').empty();
@@ -1071,8 +1380,8 @@ function eliminarProductosSeleccionados(producto) {
     document.getElementById("valorPagoPrima").value = 0;
     document.getElementById("saldoAPagar").value = "";
     document.getElementById('prodAgregadosCant').textContent = 0;
-
-    limpiarTablaProdSeleccionados();
+    cargarProductosSeleccionado(productosAgregados);
+    //limpiarTablaProdSeleccionados();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

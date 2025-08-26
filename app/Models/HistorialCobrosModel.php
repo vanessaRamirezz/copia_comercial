@@ -9,5 +9,5 @@ class HistorialCobrosModel extends Model
     protected $primaryKey = 'id_historial_cobro';
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
-    protected $allowedFields = ['abono', 'id_cobro', 'descripcion', 'id_factura'];
+    protected $allowedFields = ['abono', 'id_cobro', 'descripcion', 'id_factura', 'id_sucursal_proceso'];
 }

@@ -66,8 +66,9 @@ class UsuariosController extends BaseController
                 $dui = $this->request->getPost('duiNew');
                 $telefono = $this->request->getPost('telefono');
                 $perfil = $this->request->getPost('id_perfil');
+                $pwd = $this->request->getPost('password');
                 $sucursal = $_SESSION['sucursal'];
-                $contrasena = base64_encode($this->encrypter->encrypt($this->request->getPost('telefono')));
+                $contrasena = base64_encode($this->encrypter->encrypt($pwd));
 
                 $data = [
                     'nombres' => $nombres,
@@ -164,7 +165,7 @@ class UsuariosController extends BaseController
             $UsuariosModel = new UsuariosModel();
 
             $usuario = $UsuariosModel->getUsuarioPorDui($dui);
-            log_message("debug", "data usuario:: ".print_r($usuario, true));
+            log_message("debug", "data usuario:: " . print_r($usuario, true));
             log_message("info", "token usuario: " . $usuario['token'] . ' token post: ' . $token);
             if ($usuario['token'] == $token) {
                 log_message("info", "el token es igual: " . $token);
@@ -175,19 +176,66 @@ class UsuariosController extends BaseController
                 // Actualizar la contraseña y resetear el token
                 $rspUpdate = $UsuariosModel->updatePWD($dui, $data);
 
-                log_message("info", "la respuesta de actualizar es:: ".$rspUpdate);
+                log_message("info", "la respuesta de actualizar es:: " . $rspUpdate);
                 if ($rspUpdate == 1) {
                     echo json_encode(['success' => "Contraseña actualizada correctamente."]);
-                }else {
+                } else {
                     echo json_encode(['error' => "Error al actualizar la contraseña."]);
                 }
-                
             } else {
                 echo json_encode(['error' => "El token no es correcto, ingrese el token correcto."]);
             }
         } catch (\Throwable $e) {
             log_message('error', $e);
             echo json_encode(['error' => "Ocurrió un error en la base de datos."]);
+        }
+    }
+
+    public function actualizarEstado()
+    {
+        $dui    = $this->request->getPost('dui');
+        $estado = $this->request->getPost('estado');
+
+        // Log para depuración
+        log_message('debug', 'POST recibido en actualizarEstado -> DUI: {dui}, Estado: {estado}', [
+            'dui'    => $dui,
+            'activo' => $estado
+        ]);
+
+        if (!$dui || !$estado) {
+            log_message('error', 'Datos incompletos en actualizarEstado. DUI: {dui}, Estado: {estado}', [
+                'dui'    => $dui,
+                'activo' => $estado
+            ]);
+
+            return $this->response->setJSON([
+                'status'  => 'error',
+                'message' => 'Datos incompletos'
+            ]);
+        }
+
+        $usuarioModel = new UsuariosModel();
+
+        $data = [
+            'activo' => $estado
+        ];
+
+        log_message('debug', 'Array de actualización -> ' . print_r($data, true));
+
+        if ($usuarioModel->updateEstado($dui, $data)) {
+            log_message('info', 'Estado actualizado correctamente para DUI: ' . $dui);
+
+            return $this->response->setJSON([
+                'status'  => 'success',
+                'message' => 'Estado actualizado correctamente'
+            ]);
+        } else {
+            log_message('error', 'No se pudo actualizar el estado para DUI: ' . $dui);
+
+            return $this->response->setJSON([
+                'status'  => 'error',
+                'message' => 'No se pudo actualizar el estado'
+            ]);
         }
     }
 }

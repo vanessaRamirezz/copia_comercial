@@ -9,6 +9,8 @@ use App\Models\MovimientosModel;
 use App\Models\SucursalesModel;
 use App\Models\DisponibilidadProductosModel;
 
+use App\Controllers\SucursalController;
+
 class ProductosController extends BaseController
 {
     private $nameClass = "ProductosController";
@@ -272,21 +274,21 @@ class ProductosController extends BaseController
             $session = session();
             if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
                 $search = $this->request->getPost('search');
-                $sucursal_origen = $_SESSION['sucursal'];
+                $sucursal_origen = $this->request->getPost('sucursal_origen') ?? $_SESSION['sucursal'];
 
                 log_message("info", "A buscar es:: " . $search . ' origen suc ' . $sucursal_origen);
 
                 $disponibilidadProductos = new DisponibilidadProductosModel();
-                $resultDisponible = $disponibilidadProductos->getDisponibilidadProductosSucursal($search, $sucursal_origen);
+                $resultDisponible = $disponibilidadProductos->getDisponibilidadProductosSucursal($sucursal_origen,$search);
+                log_message("info", "resultDisponible:: " . print_r($resultDisponible, true));
+                /* $resultTotalSalidas = $disponibilidadProductos->getTotalSalidasPorSolicitud($sucursal_origen,$search);
+                log_message("info", "resultDisponible:: " . print_r($resultDisponible, true));
+                log_message("info", "resultTotalSalidas:: " . print_r($resultTotalSalidas, true));
 
-                $resultTotalSalidas = $disponibilidadProductos->getTotalSalidasPorSolicitud($search, $sucursal_origen);
-                log_message("info", "resultDisponible:: ".print_r($resultDisponible, true));
-                log_message("info", "resultTotalSalidas:: ".print_r($resultTotalSalidas, true));
+                $ajusteDisponibilidad = $this->nuevaDisponibilidad($resultDisponible, $resultTotalSalidas); */
 
-                $ajusteDisponibilidad = $this->nuevaDisponibilidad($resultDisponible, $resultTotalSalidas);
-
-                if (!empty($ajusteDisponibilidad)) {
-                    $productos = $ajusteDisponibilidad;
+                if (!empty($resultDisponible)) {
+                    $productos = $resultDisponible;
                     echo json_encode(['success' => $productos]);
                 } else {
                     /* $productosModel = new ProductosModel();
@@ -294,8 +296,6 @@ class ProductosController extends BaseController
                     $productos = [];
                     echo json_encode(['error' => "No se encontraron productos, verifique existencia en sucursal"]);
                 }
-
-                
             } else {
                 return redirect()->to(base_url());
             }
@@ -326,9 +326,11 @@ class ProductosController extends BaseController
         return $resultDisponible;
     }
 
-    public function buscarProductoIngCompra(){
+    public function buscarProductoIngCompra()
+    {
         try {
             $codigoProducto = $this->request->getPost('search');
+            log_message("info", "Datos llega a buscarProductoIngCompra:: " . print_r($codigoProducto, true));
             $productosModel = new ProductosModel();
             $productos = $productosModel->getProductosPorCodigoONombre($codigoProducto);
             echo json_encode(['success' => $productos]);
@@ -337,4 +339,77 @@ class ProductosController extends BaseController
             echo json_encode(['error' => "Ocurrió un error al extraer datos."]);
         }
     }
+
+    public function buscarProductosDescription()
+    {
+        try {
+            $session = session();
+            if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
+                $search = $this->request->getBody();
+                $productosModel = new ProductosModel();
+                $productos = $productosModel->getProductosDescCodigoONombre($search);
+                return $this->response->setJSON($productos);
+            } else {
+                return redirect()->to(base_url());
+            }
+        } catch (\Throwable $e) {
+            log_message('error', $e->getMessage());
+            echo json_encode(['error' => "Ocurrió un error al extraer datos buscarProductosDescription."]);
+        }
+    }
+
+    public function consultarExistenciaPorSucursal()
+{
+    try {
+        $session = session();
+
+        if (isset($_SESSION['sesion_activa']) && $_SESSION['sesion_activa'] === true) {
+            $search = $this->request->getPost('search');
+
+            // Obtener producto base por código o nombre
+            $productosModel = new ProductosModel();
+            $producto = $productosModel->getProductoPorCodigo($search);
+
+            if (!$producto) {
+                echo json_encode(['error' => "Producto no encontrado."]);
+                return;
+            }
+
+            // Obtener todas las sucursales
+            $sucursalModel = new SucursalesModel();
+            $sucursales = $sucursalModel->getSucursalesAll();
+
+            // Consultar existencia por sucursal
+            $disponibilidadModel = new DisponibilidadProductosModel();
+            $existencias = [];
+
+            foreach ($sucursales as $sucursal) {
+                $existencia = $disponibilidadModel->getDisponibilidadProductosSucursal($sucursal['id_sucursal'], $search);
+                /* log_message('info', 'Consulta de existencias: ' . print_r($existencia, true)); */
+
+                $existencias[] = [
+                    'sucursal'   => $sucursal['sucursal'],
+                    'existencia' => isset($existencia[0]) ? $existencia[0]->disponibilidad : 0
+                ];
+            }
+
+            $response = [
+                'codigo'    => $producto['codigo_producto'],
+                'nombre'    => $producto['nombre'],
+                'precio'    => $producto['precio'],
+                'existencias' => $existencias
+            ];
+            
+            log_message('info', 'Consulta de existencias: ' . print_r($response, true));
+            echo json_encode(['data' => $response]);
+            
+        } else {
+            return redirect()->to(base_url());
+        }
+    } catch (\Throwable $e) {
+        log_message('error', $e->getMessage());
+        echo json_encode(['error' => "Ocurrió un error al consultar existencias."]);
+    }
+}
+
 }

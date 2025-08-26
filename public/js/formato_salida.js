@@ -3,8 +3,13 @@ let productosEncontrados = [];
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.btn-validarDatosIXC').addEventListener('click', guardarDatosIngresos);
 
+    setTimeout(() => {
+        document.getElementById("campoBusqueda").value = "";
+        document.getElementById("documento").value = "";
+    }, 400);
+
     var today = new Date().toISOString().split('T')[0];
-    document.getElementById('fecha').value = today;
+    /* document.getElementById('fecha').value = today; */
 
     var tipoMovimientoSelect = document.getElementById('tipoMovimiento');
     var sucursalOrigenGroup = document.getElementById('sucursalOrigenGroup');
@@ -31,83 +36,122 @@ document.addEventListener("DOMContentLoaded", function () {
             cargarDocumentos(selectedValue);
         }
     });
-});
-function addProduct() {
-    var sucursal_origen;
 
-    let productInput = $('#buscar_producto').val();
+    $(campoBusqueda).autocomplete({
+        source: function (request, response) {
+            // Mostrar opción de "Buscando resultados..."
+            response([{ label: "Buscando resultados...", value: "" }]);
+            $.ajax({
+                url: baseURL + "getProducts",
+                type: "POST",
+                dataType: "json",
+                data: { search: request.term}, // Asegurar que se envía correctamente
+                success: function (data) {
+                    console.log("Respuesta del servidor:", data);
 
-    var search = productInput
-
-    sucursal_origen = document.getElementById("sucursal_origen").value;
-
-    if (sucursal_origen == '-1') {
-        toastr.error("La sucursal de origen es requerida para la busqueda", "Campo requerido");
-        Swal.close();
-        return;
-    }
-
-    Swal.fire({
-        title: 'Espere...',
-        html: 'buscando producto...',
-        allowEscapeKey: false,
-        allowOutsideClick: false,
-        didOpen: () => {
-            Swal.showLoading();
-        }
-    });
-
-    if (productInput.length == 0) {
-        toastr.error("Ingrese el codigo del producto", "Campo vacio");
-        Swal.close();
-        return;
-    }
-
-    $.ajax({
-        type: "POST",
-        url: baseURL + 'getProducts',
-        data: {
-            search: search,
-            sucursal_origen: sucursal_origen
-        },
-        dataType: "json",
-        success: function (rsp) {
-            console.log(rsp.success.length);
-            if (rsp.success && Array.isArray(rsp.success)) {
-                if (rsp.success.length > 1) {
-                    console.log("entro porque trae dos")
-                    toastr.error("Al parecer hay mas de un producto, ingrese el codigo completo", "Ingrese codigo");
-                    return;
-                } if (rsp.success.length === 0) {
-                    mostrarError("Verifique el codigo o nombre ingresado", `No hay registros con ${search}`);
-                    return;
-                } else if (rsp.success.length === 1) {
-                    let codigoProducto = rsp.success[0].codigo_producto;
-                    if (isProductInTable(codigoProducto)) {
-                        Swal.close();
-                        toastr.error("El producto ya está en la tabla.", "Codigo existente");
-                        return;
+                    // Asegurar que la respuesta sea un array de objetos
+                    if (Array.isArray(data.success)) {
+                        response(data.success.slice(0, 10).map(item => ({
+                            label: item.nombre + " - " + item.codigo_producto,
+                            value: item.nombre,
+                            codPro: item.codigo_producto
+                        })));
+                    } else {
+                        // Si no es un array, retornar mensaje amigable
+                        response([{ label: "No se encontraron resultados", value: "" }]);
                     }
-                    console.log(rsp.success);
-                    llenarTablaSalidas(rsp.success);
+                },
+                error: function () {
+                    console.error("Error en la búsqueda de clientes");
                 }
-            } else if (rsp.error) {
-                Swal.close();
-                toastr.error(rsp.error, "ERROR");
-            } else {
-                Swal.close();
-                toastr.error("La respuesta del servidor no es válida.", "Error en carga de datos");
-            }
+            });
         },
-        error: function () {
-            Swal.close();
-            toastr.error("Ocurrió un error al cargar los datos", "Error en carga de datos");
-        },
-        complete: function () {
-            Swal.close();
+        minLength: 3,
+        select: function (event, ui) {
+            campoBusqueda.value = ui.item.value; // Mostrar el nombre en el input
+            //duiBuscarCliente(ui.item.dui); // Pasar el DUI como parámetro
+            addProduct(ui.item.codPro);
         }
     });
-}
+
+    function addProduct(inputProduct) {
+        var sucursal_origen;
+    
+        let productInput = inputProduct;//$('#buscar_producto').val();
+    
+        var search = productInput
+    
+        sucursal_origen = document.getElementById("sucursal_origen").value;
+    
+        if (sucursal_origen == '-1') {
+            toastr.error("La sucursal de origen es requerida para la busqueda", "Campo requerido");
+            Swal.close();
+            return;
+        }
+    
+        Swal.fire({
+            title: 'Espere...',
+            html: 'buscando producto...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+    
+        if (productInput.length == 0) {
+            toastr.error("Ingrese el codigo del producto", "Campo vacio");
+            Swal.close();
+            return;
+        }
+    
+        $.ajax({
+            type: "POST",
+            url: baseURL + 'getProducts',
+            data: {
+                search: search,
+                sucursal_origen: sucursal_origen
+            },
+            dataType: "json",
+            success: function (rsp) {
+                console.log(rsp.success.length);
+                if (rsp.success && Array.isArray(rsp.success)) {
+                    if (rsp.success.length > 1) {
+                        console.log("entro porque trae dos")
+                        toastr.error("Al parecer hay mas de un producto, ingrese el codigo completo", "Ingrese codigo");
+                        return;
+                    } if (rsp.success.length === 0) {
+                        mostrarError("Verifique el codigo o nombre ingresado", `No hay registros con ${search}`);
+                        return;
+                    } else if (rsp.success.length === 1) {
+                        let codigoProducto = rsp.success[0].codigo_producto;
+                        if (isProductInTable(codigoProducto)) {
+                            Swal.close();
+                            toastr.error("El producto ya está en la tabla.", "Codigo existente");
+                            return;
+                        }
+                        console.log(rsp.success);
+                        llenarTablaSalidas(rsp.success);
+                    }
+                } else if (rsp.error) {
+                    Swal.close();
+                    toastr.error(rsp.error, "ERROR");
+                } else {
+                    Swal.close();
+                    toastr.error("La respuesta del servidor no es válida.", "Error en carga de datos");
+                }
+            },
+            error: function () {
+                Swal.close();
+                toastr.error("Ocurrió un error al cargar los datos", "Error en carga de datos");
+            },
+            complete: function () {
+                Swal.close();
+            }
+        });
+    }
+});
+
 
 function llenarTablaSalidas(datos) {
     datos.forEach(product => {
@@ -214,6 +258,7 @@ function guardarDatosIngresos() {
             success: function (rsp) {
                 if (rsp.success) {
                     toastr.success(rsp.message, "Success");
+                    location.reload();
                     //cargarTablaProductos();
                 } else if (rsp.error) {
                     Swal.close();

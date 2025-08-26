@@ -8,8 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="<?= base_url('public/img/logo.ico'); ?>" type="image/x-icon">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Comercial TPH</title>
 
   <!-- Custom fonts for this template-->
   <link rel="stylesheet" href="<?= base_url('public/vendor/fontawesome-free/css/all.min.css') ?>">
@@ -28,7 +29,7 @@
       <div class="col-md-4">
         <div class="card shadow">
           <div class="card-body">
-            <h3 class="card-title text-center">Login</h3>
+            <h3 class="card-title text-center">Iniciar Sesion</h3>
             <hr />
             <form>
               <div class="form-group">

@@ -9,6 +9,7 @@ use App\Models\SucursalesModel;
 use App\Models\TiposMovimientosModel;
 use TCPDF;
 use Dompdf\Dompdf;
+use App\Models\ConfigFechaModel;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -28,6 +29,15 @@ class IngresoPorComprasController extends BaseController
                 $proveedoresController = new ProveedorController();
                 $sucursalesModel = new SucursalesModel();
                 $tiposMovimientosModel = new TiposMovimientosModel();
+                $fechaModel = new ConfigFechaModel();
+                $fechaActiva = $fechaModel->obtenerActivosXSucursal($_SESSION['sucursal']);
+
+                $fechaVirtual = null;
+                if (!empty($fechaActiva)) {
+                    $fechaVirtual = $fechaActiva[0]['fecha_virtual'];  // tomar solo la fecha virtual del primer registro
+                }
+
+                log_message('info', 'El valor de la fecha virtual es: ' . $fechaVirtual);
 
                 $proveedoresActivos = $proveedoresController->getProveedoresAllActives();
                 $sucursales = $sucursalesModel->getSucursalesAll();
@@ -36,7 +46,8 @@ class IngresoPorComprasController extends BaseController
                 $data = [
                     'proveedoresActivos' => $proveedoresActivos,
                     'sucursales' => $sucursales,
-                    'tiposMovimientos' => $tiposMovimientos
+                    'tiposMovimientos' => $tiposMovimientos,
+                    'fechaVirtual' => $fechaVirtual
                 ];
 
 
@@ -71,8 +82,9 @@ class IngresoPorComprasController extends BaseController
 
                 // Extraer datos del JSON
                 $idUsuarioCreacion = $_SESSION['id_usuario']; // Asumiendo que el ID del usuario está almacenado en la sesión
-                $fecha = $input['fecha'];
-                $estado = $input['estado'];
+                /* $fecha = $input['fecha']; */
+                /* $estado = $input['estado']; */
+                $estado = ($input['estado'] === 'Procesado') ? 'Aceptado' : $input['estado'];
                 $correlativo = $input['correlativo'];
                 $noDocumento = $input['noDocumento'];
                 $sucursal = $input['id_sucursal_destino'];
@@ -85,6 +97,11 @@ class IngresoPorComprasController extends BaseController
                 // Guardar datos en la base de datos
                 $documentosModel = new DocumentosModel();
                 $movimientosModel = new MovimientosModel();
+                $noCorrelativo = $documentosModel->obtenerCorrelativoAutomatico($sucursal,$tipo_Movimiento);
+
+                if ($noCorrelativo !== null) {
+                    $correlativo = $noCorrelativo;
+                }
 
                 $dataDocumento = [
                     'id_usuario_creacion' => $idUsuarioCreacion,
@@ -117,7 +134,8 @@ class IngresoPorComprasController extends BaseController
                         'cantidad' => $producto['cantidad'],
                         'descripcion' => 'Ingreso por compra',
                         'id_solicitud' => null, // Asumiendo que no hay solicitud en este contexto
-                        'id_documento' => $id_documento
+                        'id_documento' => $id_documento,
+                        'id_sucursal_movimiento' => $sucursal
                     ];
                     $movimientosModel->insertMovimiento($dataMovimiento);
                 }
@@ -139,14 +157,18 @@ class IngresoPorComprasController extends BaseController
     public function obtenerDocumentos($idTipoDoc = null)
     {
         try {
+            $session = session();
             log_message('debug', 'el valor del idTipoDoc es--->  '.$idTipoDoc);
             $documentosModel = new DocumentosModel();
 
-            $documentos = $documentosModel->obtenerDocumentos();
-
             if ($idTipoDoc !== null) {
-                log_message('debug', 'entro porque idTipoDoc es diferente de null');
-                $documentos = $documentosModel->obtenerDocumentosPorId($idTipoDoc);
+                if ($idTipoDoc ==0) {
+                    log_message('debug', 'entro porque a obtener notas de remision procesadas');
+                    $documentos = $documentosModel->obtenerProcesadosSucursal();
+                }else {
+                    log_message('debug', 'entro porque idTipoDoc es diferente de null');
+                    $documentos = $documentosModel->obtenerDocumentosPorId($idTipoDoc);
+                }
             } else {
                 log_message('debug', 'entro al else porque idTipoDoc es null');
                 $documentos = $documentosModel->obtenerDocumentos();
@@ -154,7 +176,8 @@ class IngresoPorComprasController extends BaseController
 
             $response = [
                 'success' => true,
-                'documentos' => $documentos
+                'documentos' => $documentos,
+                'sucActual' => $_SESSION['sucursal']
             ];
 
             return $this->response->setJSON($response);
@@ -184,6 +207,7 @@ class IngresoPorComprasController extends BaseController
                 log_message('debug', "Información del documento: " . print_r($documento, true));
     
                 $idDocumentoExtraido = $documento['id_documento'] ?? null;
+                $tipo_mov = $documento['tipo_mov'] ?? null;
 
                 if ($idDocumentoExtraido != null && !empty($idDocumentoExtraido)) {
                     $productos = $documentosModel->obtenerProductosXDocumentos($idDocumentoExtraido);
@@ -221,20 +245,24 @@ class IngresoPorComprasController extends BaseController
                     ]);
                 }
                 
-    
-                
-    
                 $dompdf->loadHtml($html);
                 $dompdf->setPaper('A4', 'portrait');
                 $dompdf->render();
+
+                $pathDir = FCPATH . 'public/documentos/movimientos/pdf/';
+                if (!is_dir($pathDir)) {
+                    mkdir($pathDir, 0777, true);
+                }
     
-                $pdfFilePath = WRITEPATH . 'pdf/' . $documento['noDocumento'] . '.pdf';
+                /* $pdfFilePath = WRITEPATH . 'pdf/' . $documento['noDocumento'] . '.pdf'; */
+                $pdfFilePath = FCPATH . 'public/documentos/movimientos/pdf/' . $documento['noDocumento'] .'-'.$tipo_mov . '.pdf';
+
                 file_put_contents($pdfFilePath, $dompdf->output());
     
                 $filename = 'documento_' . $documento['noDocumento'] . '.pdf';
                 return $this->response->setJSON([
                     'success' => true,
-                    'url' => base_url('writable/pdf/' . $documento['noDocumento'] . '.pdf')
+                    'url' => base_url('public/documentos/movimientos/pdf/' . $documento['noDocumento'] .'-'.$tipo_mov . '.pdf')
                 ]);
             } else {
                 return redirect()->to(base_url());

@@ -28,10 +28,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'srv750.hstgr.io',
-        'username'     => 'u735812367_pruebaU',
-        'password'     => '7oFfBcQB=',
-        'database'     => 'u735812367_pruebaU',
+        'hostname'     => '127.0.0.1',
+        'username'     => 'root',
+        'password'     => '111213',
+        'database'     => 'tph_bd_2025',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -43,7 +43,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 3306,
+        'port'         => 3307,
         'numberNative' => false,
     ];
 
@@ -53,27 +53,27 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-    public array $tests = [
-        'DSN'         => '',
-        'hostname'    => '127.0.0.1',
-        'username'    => '',
-        'password'    => '',
-        'database'    => ':memory:',
-        'DBDriver'    => 'SQLite3',
-        'DBPrefix'    => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
-        'pConnect'    => false,
-        'DBDebug'     => true,
-        'charset'     => 'utf8',
-        'DBCollat'    => 'utf8_general_ci',
-        'swapPre'     => '',
-        'encrypt'     => false,
-        'compress'    => false,
-        'strictOn'    => false,
-        'failover'    => [],
-        'port'        => 3306,
-        'foreignKeys' => true,
-        'busyTimeout' => 1000,
-    ];
+    // public array $tests = [
+    //     'DSN'         => '',
+    //     'hostname'    => '127.0.0.1',
+    //     'username'    => '',
+    //     'password'    => '',
+    //     'database'    => ':memory:',
+    //     'DBDriver'    => 'SQLite3',
+    //     'DBPrefix'    => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
+    //     'pConnect'    => false,
+    //     'DBDebug'     => true,
+    //     'charset'     => 'utf8',
+    //     'DBCollat'    => 'utf8_general_ci',
+    //     'swapPre'     => '',
+    //     'encrypt'     => false,
+    //     'compress'    => false,
+    //     'strictOn'    => false,
+    //     'failover'    => [],
+    //     'port'        => 3306,
+    //     'foreignKeys' => true,
+    //     'busyTimeout' => 1000,
+    // ];
 
     public function __construct()
     {

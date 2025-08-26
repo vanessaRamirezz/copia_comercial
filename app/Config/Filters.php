@@ -24,6 +24,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'setSucursal' => \App\Filters\SucursalFilter::class,
+        'estadoUsuario' => \App\Filters\EstadoUsuarioFilter::class, 
     ];
 
     /**
@@ -34,6 +36,7 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
+            'setSucursal',
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',

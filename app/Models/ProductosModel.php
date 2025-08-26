@@ -8,7 +8,7 @@ class ProductosModel extends Model
 {
     protected $table = 'productos';
     protected $primaryKey = 'id_producto';
-    protected $allowedFields = ['nombre', 'marca', 'modelo', 'color', 'medidas', 'precio','costo_unitario','disponible', 'id_categoria', 'codigo_producto', 'estado','id_usuario_creacion','fecha_creacion','upc'];
+    protected $allowedFields = ['nombre', 'marca', 'modelo', 'color', 'medidas', 'precio', 'costo_unitario', 'disponible', 'id_categoria', 'codigo_producto', 'estado', 'id_usuario_creacion', 'fecha_creacion', 'upc'];
 
     public function getProductos()
     {
@@ -17,20 +17,39 @@ class ProductosModel extends Model
         $this->join('usuarios', 'usuarios.id_usuario = productos.id_usuario_creacion');
         $this->orderBy('productos.id_producto', 'DESC');
         return $this->findAll();
-    }    
+    }
 
-    public function getProductosPorCodigoONombre($search){
+    public function getProductoPorCodigo($codigo_producto)
+    {
+        return $this->where('codigo_producto', $codigo_producto)
+            ->first();
+    }
+
+    public function getProductosPorCodigoONombre($search)
+    {
         $this->select('productos.*, categorias.nombre as nombre_categoria, usuarios.nombres as nombre_usuario');
         $this->join('categorias', 'categorias.id_categoria = productos.id_categoria');
         $this->join('usuarios', 'usuarios.id_usuario = productos.id_usuario_creacion');
         $this->where('productos.estado', 1);
         $this->groupStart(); // Inicio del grupo de condiciones
         $this->like('productos.nombre', $search);
-        $this->orLike('productos.codigo_producto', $search);
+        $this->orWhere('productos.codigo_producto', $search);
         $this->groupEnd(); // Fin del grupo de condiciones
         $this->orderBy('productos.id_producto', 'DESC');
         return $this->findAll();
     }
+
+    public function getProductosDescCodigoONombre($search)
+    {
+        return $this->select('nombre, codigo_producto')
+            ->where('estado', 1)
+            ->groupStart()
+            ->like('nombre', $search)
+            ->orLike('codigo_producto', $search)
+            ->groupEnd()
+            ->findAll();
+    }
+
 
     public function getProductosXid($id_producto)
     {

@@ -18,6 +18,9 @@ use App\Models\MunicipiosModel;
 use App\Models\DepartamentosModel;
 use App\Models\ColoniasModel;
 use App\Models\CobrosModel;
+use App\Models\SucursalesModel;
+use App\Models\ContratoModel;
+use App\Models\ConfigFechaModel;
 use DateTime;
 
 use App\Controllers\GenerarSolicitudCreditoController;
@@ -45,6 +48,10 @@ class SolicitudesController extends BaseController
     private $coloniaModel;
     private $generarDocController;
     private $cobrosModel;
+    private $sucursalModel;
+    private $contratoModel;
+    protected $fechaModel;
+    protected $db;
 
     public function __construct()
     {
@@ -66,6 +73,10 @@ class SolicitudesController extends BaseController
         $this->coloniaModel = new ColoniasModel();
         $this->generarDocController = new GenerarSolicitudCreditoController();
         $this->cobrosModel = new CobrosModel();
+        $this->sucursalModel = new SucursalesModel();
+        $this->contratoModel = new ContratoModel();
+        $this->fechaModel = new ConfigFechaModel();
+        $this->db = \Config\Database::connect();
     }
 
     public function index()
@@ -77,14 +88,14 @@ class SolicitudesController extends BaseController
             $accesos = json_decode($_SESSION['accesos'], true);
             $allowedUrls = array_column($accesos, 'url_acceso');
             if (in_array($url, $allowedUrls)) {
-                $solicitudesCreadas = $this->solicitudesModel->solicitudPorSucursalEstadoCreadas($_SESSION['sucursal']);
+                /* $solicitudesCreadas = $this->solicitudesModel->solicitudPorSucursalEstadoCreadas($_SESSION['sucursal']);
                 $solicitudesEstVarios = $this->solicitudesModel->solicitudPorSucursalEstadoVarias($_SESSION['sucursal']);
                 $data = [
                     'perfil' => $_SESSION['perfilN'],
                     'solicitudesCreadas' => $solicitudesCreadas,
                     'solicitudesVarias' => $solicitudesEstVarios
-                ];
-                $content4 = view('solicitudes/solicitudes', $data);
+                ]; */
+                $content4 = view('solicitudes/solicitudes');
                 $fullPage = $this->renderPage($content4);
                 return $fullPage;
             } else {
@@ -94,6 +105,64 @@ class SolicitudesController extends BaseController
             }
         } else {
             return redirect()->to(base_url());
+        }
+    }
+
+    public function getSolicitudXSucursalCreadas()
+    {
+        $session = session();
+        try {
+            $solicitudesCreadas = $this->solicitudesModel->solicitudPorSucursalEstadoCreadas($_SESSION['sucursal']);
+            return $this->response->setJSON([
+                'status' => 'success',
+                'data' => $solicitudesCreadas
+            ]);
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+            log_message('error', $errorMessage);
+            return false;
+        }
+    }
+
+    public function getSolicitudXSucursalVarias()
+    {
+        $session = session();
+        try {
+            $solicitudesEstVarios = $this->solicitudesModel->solicitudPorSucursalEstadoVarias($_SESSION['sucursal']);
+            return $this->response->setJSON([
+                'data' => $solicitudesEstVarios
+            ]);
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+            log_message('error', $errorMessage);
+            return false;
+        }
+    }
+
+
+    public function getDataContado()
+    {
+        $session = session();
+        try {
+            $solicitudesEstVarios = $this->solicitudesModel->solCreadaContado($_SESSION['sucursal']);
+
+            // Agregar los productos a cada solicitud
+            foreach ($solicitudesEstVarios as &$solicitud) {
+                $id_solicitud = $solicitud->id_solicitud;
+                $productos = $this->prodSolicitudModel->buscarPorSolicitud($id_solicitud);
+                $solicitud->productos = $productos;
+            }
+
+            return $this->response->setJSON([
+                'data' => $solicitudesEstVarios
+            ]);
+        } catch (\Throwable $e) {
+            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
+            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
+            log_message('error', $errorMessage);
+            return $this->response->setStatusCode(500)->setJSON(['error' => 'Error interno del servidor']);
         }
     }
 
@@ -106,7 +175,20 @@ class SolicitudesController extends BaseController
             $accesos = json_decode($_SESSION['accesos'], true);
             $allowedUrls = array_column($accesos, 'url_acceso');
             if (in_array($url, $allowedUrls)) {
-                $content4 = view('solicitudes/nueva_sol');
+                $fechaActiva = $this->fechaModel->obtenerActivosXSucursal($_SESSION['sucursal']);
+
+                $fechaVirtual = null;
+                if (!empty($fechaActiva)) {
+                    $fechaVirtual = $fechaActiva[0]['fecha_virtual'];  // tomar solo la fecha virtual del primer registro
+                }
+
+                log_message('info', 'El valor de la fecha virtual es: ' . $fechaVirtual);
+
+                $data = [
+                    'fechaVirtual' => $fechaVirtual
+                ];
+
+                $content4 = view('solicitudes/nueva_sol', $data);
                 $fullPage = $this->renderPage($content4);
                 return $fullPage;
             } else {
@@ -118,151 +200,6 @@ class SolicitudesController extends BaseController
             return redirect()->to(base_url());
         }
     }
-
-    /* public function procesarSolicitud()
-    {
-        try {
-            $session = session();
-            $data = $this->request->getJSON(true);
-            log_message('info', 'Datos recibidos: ' . print_r($data, true));
-            # Paso 1: Crear la solicitud
-            log_message('info', '*********************************** PASO 1 ***********************************');
-            $saldoRestante = (float)$data['plan_de_pago']['montoTotalPagar'] - (float)$data['plan_de_pago']['valorPagoPrima'];
-            $dataSoli = [
-                'id_cliente' => $data['datos_personales']['id_cliente'],
-                'id_usuario_creacion' => $_SESSION['id_usuario'],
-                'id_estado_actual' => 1,
-                'id_sucursal' => $_SESSION['sucursal'],
-                'monto_solicitud' => $data['plan_de_pago']['montoTotalPagar'],
-                'montoApagar' => $saldoRestante
-            ];
-
-            $this->solicitudesModel->insert($dataSoli);
-            $id_solicitud_creada = $this->solicitudesModel->insertID();
-            log_message('info', 'solicitud creada id_solicitud: ' . $id_solicitud_creada);
-
-            $solicitud = $this->solicitudesModel->find($id_solicitud_creada);
-            $numero_solicitud = $solicitud['numero_solicitud'];
-            log_message('info', 'numero solicitud creada: ' . $numero_solicitud);
-
-            if (!$id_solicitud_creada) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear la solicitud. Inténtalo de nuevo.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 1 *********************************');
-
-            # Paso 2: Crear las referencias laborales del cliente
-            log_message('info', '*********************************** PASO 2 ***********************************');
-            $resultadoReferenciaLaboral = $this->crearReferenciasLaborales($data['referencias_laborales'], $id_solicitud_creada);
-            if (!$resultadoReferenciaLaboral) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear las referencias laborales. Inténtalo de nuevo.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 2 *********************************');
-
-            # Paso 3: Aquí se crean las referencias familiares
-            log_message('info', '*********************************** PASO 3 ***********************************');
-            $resultadoReferenciasFamiliares = $this->crearReferenciasFamiliares($data['referencias_familiares'], $id_solicitud_creada);
-            if (!empty($resultadoReferenciasFamiliares)) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear las referencias familiares. Inténtalo de nuevo.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 3 *********************************');
-
-            # paso 4: se crean las referencias no familiares del cliente amarrado con el id_solicitud
-            log_message('info', '*********************************** PASO 4 ***********************************');
-            $resultadoReferenciasNoFamiliares = $this->crearReferenciasNoFamiliares($data['referencias_personas_no_familiar'], $id_solicitud_creada);
-            if (!empty($resultadoReferenciasNoFamiliares)) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear las referencias no familiares. Inténtalo de nuevo.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 4 *********************************');
-
-            # paso 5: se crean las referencias crediticias amarrado con el id_solicitud (si hay referencias)
-            log_message('info', '*********************************** PASO 5 ***********************************');
-            $resultadoReferenciasCrediticias = $this->crearReferenciasCrediticias($data['referencias_crediticias'], $id_solicitud_creada);
-            if (!empty($resultadoReferenciasCrediticias)) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear las referencias crediticias.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 5 *********************************');
-
-            # paso 6: se crea el analisis socieconomido amarrado al clientes 
-            log_message('info', '*********************************** PASO 6 ***********************************');
-            $resultEstadoSocioEconomico = $this->crearEstudioSocioEconomico($data['analisis_socioeconomico'], $id_solicitud_creada, $data['datos_personales']['id_cliente']);
-            if (!$resultEstadoSocioEconomico) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear el estudio socioeconomico.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 6 *********************************');
-
-            # paso 7: El articulo a contratar y el plan de pago ira amarrado a la sol
-            log_message('info', '*********************************** PASO 7 ***********************************');
-            $resulCrearProductos = $this->crearProductosSolicitud($data['productosSolicitud'], $id_solicitud_creada);
-            if (!empty($resulCrearProductos)) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear los productos por sol.'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 7 *********************************');
-
-            # paso 8: El plan de pago ira amarrado a la sol
-            log_message('info', '*********************************** PASO 8 ***********************************');
-            $resultPlagPago = $this->crearPlanPago($data['plan_de_pago'], $id_solicitud_creada);
-            if (!$resultPlagPago) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear el plan de pago'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 8 *********************************');
-
-            # paso 9: el codeudor se amarra con la solicitud
-            log_message('info', '*********************************** PASO 9 ***********************************');
-            $restCodeudor = $this->crearCodeudor($data['co_deudor'], $id_solicitud_creada);
-            if (!$restCodeudor) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al crear el codeudor'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 9 *********************************');
-
-            # paso 10: se genera el movimiento amarrado a la sol
-            log_message('info', '*********************************** PASO 10 ***********************************');
-            $resMovi = $this->registrarMovimientoSalidaVenta($data['productosSolicitud'], $id_solicitud_creada, $numero_solicitud);
-            if (!$resMovi) {
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al generar los movimientos'
-                ]);
-            }
-            log_message('info', '********************************* FIN PASO 10 *********************************');
-
-            return $this->response->setJSON([
-                'success' => true,
-                'message' => 'La solicitud se genero exitosamente'
-            ]);
-        } catch (\Throwable $e) {
-            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
-            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
-            log_message('error', $errorMessage);
-            return $this->response->setJSON(['error' => 'Error al procesar la solicitud.']);
-        }
-    } */
 
     public function procesarSolicitud()
     {
@@ -276,14 +213,16 @@ class SolicitudesController extends BaseController
 
             # Paso 1: Crear la solicitud
             log_message('info', '*********************************** PASO 1 ***********************************');
-            $saldoRestante = (float)$data['plan_de_pago']['montoTotalPagar'] - (float)$data['plan_de_pago']['valorPagoPrima'];
+            //$saldoRestante = (float)$data['plan_de_pago']['montoTotalPagar'] - (float)$data['plan_de_pago']['valorPagoPrima'];
+            $saldoRestante = (float)$data['plan_de_pago']['montoTotalPagar'];
             $dataSoli = [
                 'id_cliente' => $data['datos_personales']['id_cliente'],
                 'id_usuario_creacion' => $_SESSION['id_usuario'],
                 'id_estado_actual' => 1,
                 'id_sucursal' => $_SESSION['sucursal'],
                 'monto_solicitud' => $data['plan_de_pago']['montoTotalPagar'],
-                'montoApagar' => $saldoRestante
+                'montoApagar' => $saldoRestante,
+                'detalle_series' => !empty(trim($data['detalleSeries'])) ? trim($data['detalleSeries']) : '-'
             ];
 
             $this->solicitudesModel->insert($dataSoli);
@@ -357,7 +296,7 @@ class SolicitudesController extends BaseController
 
             # Paso 10: Registrar el movimiento de salida
             log_message('info', '*********************************** PASO 10 ***********************************');
-            if (!$this->registrarMovimientoSalidaVenta($data['productosSolicitud'], $id_solicitud_creada, $numero_solicitud)) {
+            if (!$this->registrarMovimientoSalidaVenta($data['productosSolicitud'], $id_solicitud_creada, $numero_solicitud, $_SESSION['sucursal'])) {
                 throw new \Exception('Error al generar los movimientos.');
             }
             log_message('info', '********************************* FIN PASO 10 *********************************');
@@ -443,8 +382,6 @@ class SolicitudesController extends BaseController
         return $errores;
     }
 
-
-
     private function crearReferenciasNoFamiliares(array $referenciasNoFamiliares, int $idSolicitud): array
     {
         $errores = [];
@@ -500,7 +437,6 @@ class SolicitudesController extends BaseController
         return $errores;  // Asegúrate de que siempre retorne el array de errores.
     }
 
-
     private function crearEstudioSocioEconomico(array $analisis_socioeconomico, int $idSolicitud, $idCliente): bool
     {
         try {
@@ -552,6 +488,33 @@ class SolicitudesController extends BaseController
                         'id_solicitud'       => $idSolicitud,
                         'id_producto'        => $producto['id_producto'],
                         'cantidad_producto'  => $producto['cantidad']
+                    ];
+
+                    $this->prodSolicitudModel->insert($data);
+                } catch (\Throwable $th) {
+                    $errores[] = [
+                        'index' => $index,
+                        'error' => $th->getMessage(),
+                        'producto' => $producto
+                    ];
+                }
+            }
+        }
+
+        return $errores;
+    }
+
+    private function crearProductosSolicitudContado(array $productosSolicitud, int $idSolicitud): array
+    {
+        $errores = [];
+        if (!empty($productosSolicitud)) {
+            foreach ($productosSolicitud as $index => $producto) {
+                try {
+                    $data = [
+                        'id_solicitud'       => $idSolicitud,
+                        'id_producto'        => $producto['id_producto'],
+                        'cantidad_producto'  => $producto['cantidad'],
+                        'precio_producto'    => $producto['precio']
                     ];
 
                     $this->prodSolicitudModel->insert($data);
@@ -639,7 +602,7 @@ class SolicitudesController extends BaseController
     }
 
 
-    public function registrarMovimientoSalidaVenta($datos, $id_solicitud, $numSol): bool
+    public function registrarMovimientoSalidaVenta($datos, $id_solicitud, $numSol, $id_sucursal): bool
     {
         try {
             log_message("info", $this->nameClass . " registrarMovimientoSalidaVenta");
@@ -655,7 +618,8 @@ class SolicitudesController extends BaseController
                         'cantidad' => $producto['cantidad'],
                         'descripcion' => 'Salida por venta, No-solicitud ' . $numSol,
                         'id_solicitud' => $id_solicitud,
-                        'id_documento' => null // Es null porque se realizó una salida por venta, o sea por solicitud
+                        'id_documento' => null, // Es null porque se realizó una salida por venta, o sea por solicitud
+                        'id_sucursal_movimiento' => $id_sucursal
                     ];
                     $this->movimientosModel->insertMovimiento($dataMovimiento);
                 }
@@ -672,7 +636,6 @@ class SolicitudesController extends BaseController
             return false;
         }
     }
-
 
     public function ver_solicitud()
     {
@@ -743,8 +706,12 @@ class SolicitudesController extends BaseController
                         'codeudor' => $codeudor,
                         'refCodeudor' => $refCodeudor,
                         'observacionSol' => !empty($solicitudEncontrada['observacion']) ? $solicitudEncontrada['observacion'] : "",
+                        'detalles_series' => !empty($solicitudEncontrada['detalle_series']) ? $solicitudEncontrada['detalle_series'] : "",
                         'id_estado_actual' => $solicitudEncontrada['id_estado_actual']
                     ];
+
+                    log_message('info', 'Datos de la solicitud: ' . json_encode($datosSolicitud));
+
                     $content4 = view('solicitudes/ver_solicitud', $datosSolicitud);
                     $fullPage = $this->renderPage($content4);
                     return $fullPage;
@@ -787,7 +754,7 @@ class SolicitudesController extends BaseController
                     $municipioCliente = $this->muniModel->getMunicipioPorCodigo($clienteEncontrado['municipio']);
                     $distritoCliente = $this->distritoModel->getDistritosBId($clienteEncontrado['distrito']);
                     $coloniaCliente = $this->coloniaModel->getColoniasByCliente($clienteEncontrado['colonia']);
-                    
+
                     # paso 3: se recuperan las referencias laborales del cliente
                     $refLaboralEncontrado = $this->refLaboralModel->obtenerReferenciasPorSolicitud($id_solicitud);
 
@@ -813,7 +780,13 @@ class SolicitudesController extends BaseController
                     # paso 10: se traen los datos del codeudor
                     $codeudor = $this->codeudorModel->buscarPorSolicitud($id_solicitud);
 
-                    $refCodeudor = $this->refcodeudorModel->buscarPorCodeudor($codeudor[0]['id_codeudor']);
+                    //$refCodeudor = $this->refcodeudorModel->buscarPorCodeudor($codeudor[0]['id_codeudor']);
+                    if (!empty($codeudor) && isset($codeudor[0]['id_codeudor'])) {
+                        $refCodeudor = $this->refcodeudorModel->buscarPorCodeudor($codeudor[0]['id_codeudor']);
+                    } else {
+                        // Manejar el caso en que no haya codeudor
+                        $refCodeudor = [];
+                    }
 
                     # Ultimo paso: se guardaran todos los resultado
                     $datosSolicitud = [
@@ -859,13 +832,14 @@ class SolicitudesController extends BaseController
             $id_estado = $this->request->getPost('id_estado');
             $observacion = $this->request->getPost('observacion');
             $id_solicitud = $this->request->getPost('id_solicitud');
+            $numeroSerie = $this->request->getPost('detalleSeries');
 
             if ($id_solicitud && !$id_estado && !$observacion) {
                 // Obtienes la solicitud
                 $numeroSoli = $this->solicitudesModel->find($id_solicitud);
 
                 // Primero, validamos si el contrato ya existe
-                $rspContratoValidado = $this->generarDocController->validarContrato($numeroSoli['numero_solicitud']);
+                $rspContratoValidado = $this->generarDocController->validarContrato($numeroSoli['numero_solicitud'], $numeroSoli['id_solicitud']);
 
                 if ($rspContratoValidado['success'] && $rspContratoValidado['message'] == 'existe') {
                     log_message("info", "Entra en el if del contrato generado");
@@ -887,12 +861,21 @@ class SolicitudesController extends BaseController
 
                     // Actualizamos el estado de la solicitud
                     $dataUpdate = [
-                        'id_estado_actual' => 2
+                        'id_estado_actual' => 2,
+                        'detalle_series'=> $numeroSerie
                     ];
 
                     // Si se actualiza el estado correctamente
                     if ($this->solicitudesModel->update($id_solicitud, $dataUpdate)) {
                         log_message('info', '*********************************** COBROS ***********************************');
+                        try {
+                            $this->db->query('SELECT 1');
+                        } catch (\Exception $e) {
+                            log_message('info', 'Conexión MySQL caída, reconectando antes de crear cobros...');
+                            $this->db->reconnect();
+                        }
+
+
                         $planPago = $this->planDePagoModel->buscarPorSolicitud($id_solicitud);
                         $this->crearCobros($planPago, $id_solicitud);
                         log_message('info', '********************************* FIN COBROS *********************************');
@@ -925,6 +908,8 @@ class SolicitudesController extends BaseController
 
                 $updated = $this->solicitudesModel->update($id_solicitud, $data);
                 if ($updated) {
+                    $eliminados = $this->solicitudesModel->eliminarMovimientosPorSolicitud($id_solicitud);
+                    log_message('info', 'Se eliminaron: ' . $eliminados . ' registros de movimientos con id_solicitud ' . $id_solicitud);
                     return $this->response->setJSON([
                         'success' => true,
                         'message' => 'Estado y observación actualizados correctamente'
@@ -948,47 +933,6 @@ class SolicitudesController extends BaseController
         }
     }
 
-    /* private function crearCobros($planPago, $id_solicitud)
-    {
-        try {
-            $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
-            $fechaCompleta = $solicitudEncontrada["fecha_creacion"];
-            $fechaSol = explode(" ", $fechaCompleta)[0];
-            $fecha = new \DateTime($fechaSol);
-
-            $cantMeses = $planPago[0]["cuotas"];
-            for ($i = 0; $i <= $cantMeses; $i++) {
-                $fechaPago = clone $fecha;
-
-                if ($i != 0) {
-                    $fechaPago->modify("+{$i} month");
-                }
-                $fechaVencimiento = clone $fechaPago;
-                //$fechaVencimiento->modify("+1 day");
-
-                $data = [
-                    'id_solicitud'      => $id_solicitud,
-                    'numero_cuota'      => $i,
-                    'monto_cuota'       => $i == 0 ? $planPago[0]["valor_prima"] : $planPago[0]["monto_cuotas"],
-                    'descripcion'       => $i == 0 ? "Pago de prima o cuota numero " . $i . " de " . $planPago[0]["cuotas"] : "",
-                    'estado'            => $i == 0 ? "CANCELADO" : "PENDIENTE",
-                    'fecha_pago'        => "",
-                    'fecha_vencimiento' => $fechaVencimiento->format("Y-m-d")
-                ];
-
-                if($this->cobrosModel->insert($data)){
-                    log_message('info', "Guardado");
-                }else {
-                    log_message('info', "no guardado");
-                }
-            }
-        } catch (\Throwable $e) {
-            $errorMessage = 'Ocurrió un error: ' . $e->getMessage() . PHP_EOL;
-            $errorMessage .= 'Trace: ' . $e->getTraceAsString();
-            log_message('error', $errorMessage);
-            return $this->response->setJSON(['error' => 'Error al procesar la generación de cobros']);
-        }
-    } */
     private function crearCobros($planPago, $id_solicitud)
     {
         try {
@@ -1011,13 +955,13 @@ class SolicitudesController extends BaseController
                 // Construir los datos del cobro
                 $data = [
                     'id_solicitud'      => $id_solicitud,
-                    'numero_cuota'      => $i,
+                    'numero_cuota'      => $i, // Del 0 a la ultima es decir si son 5 del 0 al 4
                     'monto_cuota'       => $esPagoPrima ? $planPago[0]["valor_prima"] : $planPago[0]["monto_cuotas"],
                     'descripcion'       => $esPagoPrima ? "Pago de prima o cuota numero " . $i . " de " . $planPago[0]["cuotas"] : "",
-                    'estado'            => $esPagoPrima ? "CANCELADO" : "PENDIENTE",
+                    'estado'            => "PENDIENTE",
                     'fecha_pago'        => "",
                     'fecha_vencimiento' => $fechaVencimiento->format("Y-m-d"),
-                    'esPrima'           => $esPagoPrima ? 1 : 0
+                    'esPrima'           => $esPagoPrima ? 1 : 0 //1 si es prima
                 ];
 
                 // Evitar registrar una cuota de prima si su valor es 0
@@ -1098,6 +1042,146 @@ class SolicitudesController extends BaseController
                 'success' => false,
                 'message' => 'Error al procesar la búsqueda de referencias.',
                 'error' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function datosPagare()
+    {
+        try {
+            log_message('info', 'Iniciando búsqueda de datos del cliente.');
+
+            // Obtén el ID del cliente desde el POST
+            $id_solicitud = $this->request->getPost('id_solicitud');
+            $solicitudEncontrada = $this->solicitudesModel->find($id_solicitud);
+            $datoContrato = $this->contratoModel->getContratoPorSolicitud($solicitudEncontrada['id_solicitud']);
+
+            $datosSucursal = $this->sucursalModel->getSucursales($solicitudEncontrada['id_sucursal']);
+            $clienteEncontrado = $this->clientesModel->buscarCliente(null, (int) $solicitudEncontrada['id_cliente']);
+
+            $primerCobro = $this->cobrosModel->getPrimerCobroNoPrima($solicitudEncontrada['id_solicitud']);
+
+            // Estructura la respuesta JSON
+            return $this->response->setJSON([
+                'success' => true,
+                'datosClientes' => [
+                    'data' => $clienteEncontrado,
+                    'success' => !empty($clienteEncontrado),
+                ],
+                'dataSol' => [
+                    'data' => $solicitudEncontrada,
+                    'success' => !empty($solicitudEncontrada),
+                ],
+                'sucursal' => [
+                    'data' => $datosSucursal,
+                    'success' => !empty($datosSucursal),
+                ],
+                'contrato' => [
+                    'data' => $datoContrato,
+                    'success' => !empty($datoContrato),
+                ],
+                'primerCobro' => [
+                    'data' => $primerCobro,
+                    'success' => !empty($primerCobro),
+                ]
+            ]);
+        } catch (\Throwable $e) {
+            // Manejo de errores
+            log_message('error', 'Ocurrió un error en la búsqueda del cliente: {error}', ['error' => $e->getMessage()]);
+            log_message('error', 'Trace del error: {trace}', ['trace' => $e->getTraceAsString()]);
+
+            // Respuesta de error en JSON
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Error al procesar la búsqueda de referencias.',
+                'error' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function generarFacturaContado()
+    {
+        $db = \Config\Database::connect();
+        $db->transBegin();
+
+        try {
+            // Se llama al controllador de cobros
+            $cobrosController = new CobrosController();
+            $contadoController = new ContadoController();
+            $prodSolicitudModel = new ProductoSolicitudModel();
+
+            $data = $this->request->getJSON(true);
+            log_message("info", "El valor del data es::: " . print_r($data, true));
+
+            //$json['productos']
+
+            if (empty($data['idSolicitud']) || empty($data['productos'])) {
+                throw new \Exception('Solicitud o productos vacíos.');
+            }
+
+            $id_solicitud = $data['idSolicitud'];
+            $productos = $data['productos'];
+            $saldoApagar = $data['saldoAPagar'] ?? null;
+            $detalleNumeroSeries = $data['detalleNumeroSeries'] ?? '';
+
+            // Buscar la solicitud
+            $solicitud = $this->solicitudesModel->find($id_solicitud);
+            if (!$solicitud) {
+                throw new \Exception('No se encontró la solicitud con ID ' . $id_solicitud);
+            }
+
+            $numero_solicitud = $solicitud['numero_solicitud'];
+            log_message('info', 'Reprocesando solicitud con número: ' . $numero_solicitud);
+
+            // ELIMINAR registros anteriores
+            $this->prodSolicitudModel->where('id_solicitud', $id_solicitud)->delete();
+            $this->movimientosModel->where('id_solicitud', $id_solicitud)->delete();
+            $this->cobrosModel->where('id_solicitud', $id_solicitud)->delete();
+
+            // CREAR nuevos productos
+            if (!empty($this->crearProductosSolicitudContado($productos, $id_solicitud))) {
+                throw new \Exception('Error al crear los productos por solicitud.');
+            }
+
+            // CREAR movimientos
+            if (!$contadoController->registrarMovimientoSalidaVenta($productos, $id_solicitud, $numero_solicitud)) {
+                throw new \Exception('Error al registrar movimientos.');
+            }
+
+            // CREAR cobros
+            if (!$contadoController->crearCobroContado($id_solicitud)) {
+                throw new \Exception('Error al registrar cobros.');
+            }
+
+            // ACTUALIZAR montos
+            if (!is_null($saldoApagar)) {
+                $this->solicitudesModel->actualizarMontosPorId($id_solicitud, $saldoApagar);
+                $this->cobrosModel->actualizarMontoCuotaPorSolicitud($id_solicitud, $saldoApagar);
+            }
+
+            $this->solicitudesModel->actualizarDetalleSeries($id_solicitud, $detalleNumeroSeries);
+
+
+            $ruta = $cobrosController->procesarPagosContado($id_solicitud);
+
+            if ($ruta === false) {
+                throw new \Exception('Error al generar el documento del cobro.');
+            }
+
+            $db->transCommit();
+
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Solicitud reprocesada y factura generada correctamente.',
+                'documento' => $ruta
+            ]);
+        } catch (\Throwable $th) {
+            $db->transRollback();
+            log_message('error', 'Error en reProcesarDataSolContado: ' . $th->getMessage());
+
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Ocurrió un error al reprocesar la solicitud.'
             ]);
         }
     }

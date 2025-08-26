@@ -8,6 +8,7 @@ use App\Models\SucursalesModel;
 use App\Models\TiposMovimientosModel;
 use Dompdf\Dompdf;
 use TCPDF;
+use App\Models\ConfigFechaModel;
 
 class SalidasController extends BaseController
 {
@@ -36,11 +37,22 @@ class SalidasController extends BaseController
                 $sucursales = $this->sucursalesModel->getSucursalesAll();
                 $tiposMovimientos = $this->tiposMovimientosModel->findAll();
 
+                $fechaModel = new ConfigFechaModel();
+                $fechaActiva = $fechaModel->obtenerActivosXSucursal($session->get('sucursal'));
+
+                $fechaVirtual = null;
+                if (!empty($fechaActiva)) {
+                    $fechaVirtual = $fechaActiva[0]['fecha_virtual'];  // tomar solo la fecha virtual del primer registro
+                }
+
+                log_message('info', 'El valor de la fecha virtual es: ' . $fechaVirtual);
+
                 $data = [
                     'proveedoresActivos' => $proveedoresActivos,
                     'sucursales' => $sucursales,
                     'tiposMovimientos' => $tiposMovimientos,
-                    'tiposMovimientosM' => $tiposMovimientos
+                    'tiposMovimientosM' => $tiposMovimientos,
+                    'fechaVirtual' => $fechaVirtual
                 ];
 
                 $content4 = view('movimientos/formato_salida', $data);

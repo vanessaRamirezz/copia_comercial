@@ -16,6 +16,7 @@
                             <th>Correo</th>
                             <th>Telefono</th>
                             <th>Tipo perfil</th>
+                            <th>Activo</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -43,6 +44,10 @@
                             <label for="duiNew">DUI:</label>
                             <input type="text" class="form-control form-control-user dui" placeholder="________-_" id="duiNew">
                         </div>
+                        <div class="col-sm-4 mb-3 mb-sm-0">
+                            <label for="estadoInput">Estado Activo:</label>
+                            <input type="text" readonly class="form-control form-control-user" placeholder="" id="estadoInput">
+                        </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
@@ -68,12 +73,12 @@
                         <div class="col-sm-7 mb-3 mb-sm-0">
                             <label for="perfilesCmb">Perfil:</label>
                             <select class="form-control form-control-user" id="perfilesCmb">
-                                
+
                                 <?php
                                 foreach ($perfiles as $perfil) {
                                     echo '<option value="' . $perfil['id_perfil'] . '">' . $perfil['tipo_perfil'] . '</option>';
                                 }
-                                
+
                                 ?>
                             </select>
                         </div>
@@ -84,10 +89,25 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group generador-pwd">
+                        <label for="passwordUsuario">Contraseña:</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control form-control-user" id="passwordUsuario">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    👁️
+                                </button>
+                                <button class="btn btn-outline-primary" type="button" id="generatePassword">
+                                    Generar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="cerraMntUsuarios">Cerrar</button>
+                <button type="button" class="modalEditarUsuario btn btn-danger" onclick="actualizarEstado()" id="actualizarEstadoUser">Desactivar usuario</button>
                 <button type="button" class="modalEditarUsuario btn btn-warning" onclick="guardarNuevoUsuario('2')" id="actualizarDatosMntUsuario">Actualizar datos</button>
                 <button type="button" class="modalGuardar btn btn-primary" onclick="guardarNuevoUsuario('1')" id="guardarRegistroUsuario">Guardar registro</button>
             </div>

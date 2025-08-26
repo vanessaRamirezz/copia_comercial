@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Swal.showLoading();
         }
     });
-
+    const divGenerador = document.querySelector('.generador-pwd');
     cargarTablaUsuarios();
 
     $('#btnAgregarUsuarioModal').click(function () {
@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#apellidosUsuarioMtn').val('');
         $('#emailUsuarioMtn').val('');
         $('#numTelefonoMtn').val('');
-
+        $('#passwordUsuario').val('');
+        divGenerador.style.display = 'block';
         // Mostrar modal de Bootstrap
         $('#mntUsuarios').modal('show');
     });
@@ -30,7 +31,102 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#cerraMntUsuarios").click(() => {
         $('#mntUsuarios').modal('hide');
     })
+
+
+    if (divGenerador) {
+        $('#passwordUsuario').val('');
+        divGenerador.style.display = 'none';
+    }
 });
+
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const input = document.getElementById('passwordUsuario');
+    const isPassword = input.type === 'password';
+    input.type = isPassword ? 'text' : 'password';
+    this.textContent = isPassword ? '🙈' : '👁️';
+});
+
+document.getElementById('generatePassword').addEventListener('click', function () {
+    const password = generarContrasena(8); // Podés cambiar la longitud
+    document.getElementById('passwordUsuario').value = password;
+});
+
+function generarContrasena(longitud) {
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let contrasena = '';
+    for (let i = 0; i < longitud; i++) {
+        const randomIndex = Math.floor(Math.random() * caracteres.length);
+        contrasena += caracteres[randomIndex];
+    }
+    return contrasena;
+}
+
+function actualizarEstado() {
+    var dui = $('#duiNew').val();
+    var estadoActual = $('#estadoInput').val().trim().toUpperCase();
+    var nuevoEstado = (estadoActual === "SI") ? "NO" : "SI";
+
+    var accionTexto = (estadoActual === "SI")
+        ? "desactivar al usuario"
+        : "activar al usuario";
+
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: `¿Deseas ${accionTexto}?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, confirmar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            title: 'Espere...',
+            html: 'Procesando actualización...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+            // Aquí mandas la petición AJAX
+            $.ajax({
+                url: baseURL + 'updateEstadoUser',
+                type: 'POST',
+                data: {
+                    dui: dui,
+                    estado: nuevoEstado
+                },
+                success: function (response) {
+                    if (response.status === 'success') {
+                        Swal.close();
+                        Swal.fire({
+                            title: 'Éxito',
+                            text: response.message,
+                            icon: 'success',
+                            timer: 2000,
+                            showConfirmButton: false
+                        }).then(() => {
+                            // Recargar toda la página después del mensaje
+                            location.reload();
+                        });
+                    } else {
+                        Swal.close();
+                        Swal.fire('Error', response.message, 'error');
+                    }
+                },
+                error: function () {
+                    Swal.close();
+                    Swal.fire(
+                        'Error',
+                        'No se pudo actualizar el estado del usuario.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
+}
+
 
 function guardarNuevoUsuario(tipoSolicitud) {
     var nombres = $('#nombreUsuarioMtn').val().trim();
@@ -39,6 +135,7 @@ function guardarNuevoUsuario(tipoSolicitud) {
     var telefono = $('#numTelefonoMtn').val().trim();
     var perfileSelect = $("#perfilesCmb").val();
     var dui = $("#duiNew").val().trim();
+    var password = $("#passwordUsuario").val().trim();
 
     const nameRegex = /^[a-zA-Z\s]+$/;
     const emailRegex = /^\S+@\S+\.\S+$/;
@@ -88,6 +185,11 @@ function guardarNuevoUsuario(tipoSolicitud) {
         return false;
     }
 
+    if (tipoSolicitud === '1' && password === '') {
+        toastr.info("Debe ingresar una contraseña para el usuario", "Campo incompleto");
+        return false;
+    }
+
     // Si todas las validaciones pasan, continuar con el código aquí
     Swal.fire({
         title: 'Espere...',
@@ -109,7 +211,8 @@ function guardarNuevoUsuario(tipoSolicitud) {
             "telefono": telefono,
             "perfil": perfileSelect,
             "duiNew": dui,
-            "id_perfil": perfileSelect
+            "id_perfil": perfileSelect,
+            "password": password
         },
         dataType: "json",
         success: function (rsp) {
@@ -145,7 +248,7 @@ function cargarTablaUsuarios() {
                     var table = $(dataTable).DataTable();
                     table.clear().draw(); // Limpiar y volver a dibujar la tabla
                     data.success.forEach(function (row) {
-                        var keysToShow = ['dui', 'nombres', 'apellidos', 'correo', 'telefono', 'tipo_perfil'];
+                        var keysToShow = ['dui', 'nombres', 'apellidos', 'correo', 'telefono', 'tipo_perfil', 'activo'];
                         var rowData = keysToShow.map(function (key) {
                             return row[key];
                         });
@@ -170,6 +273,7 @@ function cargarTablaUsuarios() {
                         $('#apellidosUsuarioMtn').val(rowData[2]); // apellidos
                         $('#emailUsuarioMtn').val(rowData[3]); // correo
                         $('#numTelefonoMtn').val(rowData[4]); // telefono
+                        $('#estadoInput').val(rowData[6])
 
                         // Verificar si el tipo_perfil está en la lista de opciones
                         var tipoPerfil = rowData[5];
@@ -181,6 +285,19 @@ function cargarTablaUsuarios() {
                                 $(this).prop('selected', false);
                             }
                         });
+
+                        var $btnEstado = $('#actualizarEstadoUser');
+                        if (rowData[6].trim().toUpperCase() === 'SI') {
+                            $btnEstado
+                                .removeClass('btn-success')
+                                .addClass('btn-danger')
+                                .text('Desactivar usuario');
+                        } else {
+                            $btnEstado
+                                .removeClass('btn-danger')
+                                .addClass('btn-success')
+                                .text('Activar usuario');
+                        }
 
                         $('#mntUsuarios').modal('show');
                     });

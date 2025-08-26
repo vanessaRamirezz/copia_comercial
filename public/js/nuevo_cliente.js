@@ -283,7 +283,7 @@ function manejarCamposConyuge() {
             campo.removeAttribute("readonly");
             campo.removeAttribute("disabled");
         });
-    } else if(estadoCivil != '-1'){
+    } else if (estadoCivil != '-1') {
         // Deshabilitar los campos y limpiar sus valores
         inputsConyuge.forEach(function (campoId) {
             var campo = document.getElementById(campoId);
@@ -331,6 +331,15 @@ function validarDatos() {
     var esPromesaVenta = document.getElementById('CpromesaVentaCN').value === 'SI';
     var esAlquilada = document.getElementById('CalquiladaCN').value === 'SI';
 
+    // Obtener los archivos seleccionados
+    var duiClienteFrontFile = document.getElementById('duiClienteFront').files[0];
+    var duiClienteReversaFile = document.getElementById('duiClienteReversa').files[0];
+
+    // Validar con ternaria
+    var duiClienteFront = duiClienteFrontFile ? duiClienteFrontFile : ""; // Si hay archivo, se asigna el archivo, si no, asigna vacío
+    var duiClienteReversa = duiClienteReversaFile ? duiClienteReversaFile : ""; // Lo mismo para el reverso
+
+
     if (esPropia) {
         CpromesaVentaCN.required = false;
         CalquiladaCN.required = false;
@@ -373,7 +382,7 @@ function validarDatos() {
             }
         });
 
-        var data = {
+        /* var data = {
             idPersonaEditar: idPersonaEditar,
             nombrePersonalCN: obtenerValor("nombrePersonalCN"),
             duiPersonal: obtenerValor("duiPersonal"),
@@ -397,10 +406,50 @@ function validarDatos() {
             CalquiladaCN: (obtenerValor("CalquiladaCN") == '-1' ? 'NO' : obtenerValor("CalquiladaCN")),
             aQuienPerteneceCN: obtenerValor("aQuienPerteneceCN"),
             telPropietarioCN: obtenerValor("telPropietarioCN"),
-            tiempoDeVivirDomicilioCN: obtenerValor("tiempoDeVivirDomicilioCN")
-        };
+            tiempoDeVivirDomicilioCN: obtenerValor("tiempoDeVivirDomicilioCN"),
+            duiClienteFront: duiClienteFront, 
+            duiClienteReversa: duiClienteReversa
+        }; */
+        var formData = new FormData();
 
-        guardarDatos(data);
+        // Agregar datos de texto al FormData
+        formData.append("idPersonaEditar", obtenerValor("idPersonaEditar"));
+        formData.append("nombrePersonalCN", obtenerValor("nombrePersonalCN"));
+        formData.append("duiPersonal", obtenerValor("duiPersonal"));
+        formData.append("fechaNacimientoCN", obtenerValor("fechaNacimientoCN"));
+        formData.append("direccionActualCN", obtenerValor("direccionActualCN"));
+        formData.append("deptoClienteCN", obtenerValor("deptoClienteCN"));
+        formData.append("muniClienteCN", obtenerValor("muniClienteCN"));
+        formData.append("distritoClienteCN", obtenerValor("distritoClienteCN"));
+        formData.append("coloniaClienteCN", obtenerValor("coloniaClienteCN"));
+        formData.append("estadoCivilCN", obtenerValor("estadoCivilCN"));
+        formData.append("nombreConyugueCN", obtenerValor("nombreConyugueCN"));
+        formData.append("dirTrabajoConyugueCN", obtenerValor("dirTrabajoConyugueCN"));
+        formData.append("telTrabajoConyugueCN", obtenerValor("telTrabajoConyugueCN"));
+        formData.append("nombresPadresCN", obtenerValor("nombresPadresCN"));
+        formData.append("direccionDeLosPadresCN", obtenerValor("direccionDeLosPadresCN"));
+        formData.append("telPadresCN", obtenerValor("telPadresCN"));
+        formData.append("correoCN", obtenerValor("correoCN"));
+        formData.append("telPersonal", obtenerValor("telPersonal"));
+        formData.append("CpropiaCN", obtenerValor("CpropiaCN"));
+        formData.append("CpromesaVentaCN", (obtenerValor("CpromesaVentaCN") == '-1' ? 'NO' : obtenerValor("CpromesaVentaCN")));
+        formData.append("CalquiladaCN", (obtenerValor("CalquiladaCN") == '-1' ? 'NO' : obtenerValor("CalquiladaCN")));
+        formData.append("aQuienPerteneceCN", obtenerValor("aQuienPerteneceCN"));
+        formData.append("telPropietarioCN", obtenerValor("telPropietarioCN"));
+        formData.append("tiempoDeVivirDomicilioCN", obtenerValor("tiempoDeVivirDomicilioCN"));
+
+        // Agregar los archivos (si existen)
+        var duiClienteFrontFile = document.getElementById('duiClienteFront').files[0];
+        var duiClienteReversaFile = document.getElementById('duiClienteReversa').files[0];
+
+        if (duiClienteFrontFile) {
+            formData.append("duiClienteFront", duiClienteFrontFile);
+        }
+        if (duiClienteReversaFile) {
+            formData.append("duiClienteReversa", duiClienteReversaFile);
+        }
+
+        guardarDatos(formData);
     }
 }
 
@@ -423,6 +472,8 @@ function guardarDatos(data) {
         url: url,
         data: data,
         dataType: 'json',
+        processData: false, // No proceses los datos (impide que jQuery intente convertir el FormData)
+        contentType: false, // Deja que el navegador gestione el contenido
         success: function (rsp) {
             Swal.close();
             console.log(rsp);

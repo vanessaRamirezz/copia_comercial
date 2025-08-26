@@ -24,13 +24,14 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="fecha" class="form-label">Fecha:</label>
-                    <input type="date" class="form-control form-control-sm" id="fecha" name="fecha" readonly>
+                    <!-- <input type="date" class="form-control form-control-sm" id="fecha" name="fecha" readonly> -->
+                    <input type="date" class="form-control form-control-sm" id="fecha" readonly value="<?= isset($fechaVirtual) ? esc($fechaVirtual) : '' ?>">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="estado" class="form-label">Estado:</label>
-                    <select class="form-control form-control-sm" id="estado" name="estado">
+                    <select class="form-control form-control-sm" id="estado" name="estado" readonly disabled>
                         <option value="-1">Seleccione...</option>
-                        <option value="Procesado">Procesado</option>
+                        <option value="Procesado" selected>Procesado</option>
                         <option value="Anulado">Anulado</option>
                         <option value="Cerrado">Cerrado</option>
                     </select>
@@ -63,7 +64,8 @@
                     <select class="form-control form-control-sm" id="sucursal_origen" name="sucursal_origen" disabled>
                         <option value="-1">Seleccione...</option>
                         <?php foreach ($sucursales as $sucursal) : ?>
-                            <option value="<?= htmlspecialchars($sucursal['id_sucursal']); ?>">
+                            <option value="<?= htmlspecialchars($sucursal['id_sucursal']); ?>"
+                                <?= $sucursal['id_sucursal'] == $idSucursalActual ? 'selected' : '' ?>>
                                 <?= htmlspecialchars($sucursal['sucursal']); ?>
                             </option>
                         <?php endforeach; ?>
@@ -98,14 +100,38 @@
                     <textarea class="form-control form-control-sm" id="observacion" name="observacion" rows="2"></textarea>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-3">
+            <!-- <div class="form-row"> -->
+                <!-- <div class="container mb-4"> -->
+                    <div class="row mb-2">
+                        <!-- Filtro de tipo de búsqueda -->
+                        <!-- <div class="col-md-3">
+                            <label for="tipoBusqueda" class="form-label">Buscar Cliente por:</label>
+                            <select class="form-control" id="tipoBusqueda">
+                                <option selected disabled>Seleccione filtro</option>
+                                <option value="codpro">Codigo producto</option>
+                                <option value="nombre">Nombre</option>
+                            </select>
+                        </div> -->
+
+                        <!-- Campo de búsqueda -->
+                        <div class="col-md-6">
+                            <label for="campoBusqueda" class="form-label">Busqueda por nombre o codigo de producto:</label>
+                            <input type="text" class="form-control" id="campoBusqueda">
+                        </div>
+
+                        <!-- Botón separado del input -->
+                        <!-- <div class="col-md-3 d-flex align-items-end">
+                            <button class="btn btn-primary w-100" id="btnBuscar" style="display: none;">Buscar</button>
+                        </div> -->
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="form-group col-md-3">
                     <input type="text" class="form-control" id="buscar_producto" placeholder="Buscar producto">
                 </div>
                 <div class="form-group col-md-2">
                     <button type="button" class="btn btn-primary" onclick="addProduct()">Buscar</button>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
 
             <div class="table-responsive" id="tablaContainer">
 
@@ -139,6 +165,7 @@
                         <label for="filtrotipoMovimiento" class="form-label">Filto por tipo de movimiento:</label>
                         <select class="form-control form-control-sm" id="filtrotipoMovimiento" name="filtro_tipo_Movimiento">
                             <option value="-1">Seleccione...</option>
+                            <option value="0">Notas de remision pendientes</option>
                             <?php foreach ($tiposMovimientosM as $tiposMovimientos) : ?>
                                 <?php if ($tiposMovimientos['id_tipo_movimiento'] != 1) : ?>
                                     <option value="<?php echo esc($tiposMovimientos['id_tipo_movimiento']); ?>"><?php echo esc($tiposMovimientos['descripcion']); ?></option>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV a SQL INSERT</title>
+</head>
+<body>
+    <h2>Subir CSV y convertir a INSERT</h2>
+    <input type="file" id="fileInput" accept=".csv">
+    <button onclick="procesarCSV()">Convertir</button>
+    <textarea id="output" rows="10" cols="100" readonly></textarea>
+
+    <script>
+        function procesarCSV() {
+            const archivo = document.getElementById('fileInput').files[0];
+            if (!archivo) {
+                alert('Por favor, selecciona un archivo CSV.');
+                return;
+            }
+            
+            const lector = new FileReader();
+            lector.onload = function(evento) {
+                const lineas = evento.target.result.split('\n').map(linea => linea.trim()).filter(linea => linea);
+                if (lineas.length < 2) {
+                    alert('El archivo CSV debe contener encabezados y datos.');
+                    return;
+                }
+                
+                const columnas = lineas[0].toLowerCase().split(';'); // Encabezados en minúsculas
+                let inserts = "";
+                
+                for (let i = 1; i < lineas.length; i++) {
+                    let valores = lineas[i].split(';');
+                    if (valores.length !== columnas.length) continue; // Evitar líneas incompletas
+                    
+                    valores = valores.map((valor, index) => {
+                        valor = valor.trim();
+                        if (columnas[index] === 'fecha_creacion') {
+                            // Formatear la fecha a timestamp si es necesario
+                            return `'${formatearTimestamp(valor)}'`;
+                        }
+                        if (columnas[index] === 'telefono') {
+                            return `'${formatearTelefono(valor)}'`;
+                        }
+                        return `'${valor.replace(/'/g, "''")}'`;
+                    });
+                    
+                    inserts += `INSERT INTO clientes (${columnas.join(', ')}) VALUES (${valores.join(', ')});\n`;
+                }
+                
+                document.getElementById('output').value = inserts;
+            };
+            
+            lector.readAsText(archivo);
+        }
+
+        function formatearTimestamp(fecha) {
+            console.log(fecha); // Imprimir la fecha para debug
+
+            // Verificar si la fecha ya está en el formato correcto (YYYY-MM-DD HH:MM:SS)
+            const regexTimestamp = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/;
+            if (regexTimestamp.test(fecha)) {
+                return fecha; // Si ya está en formato timestamp, lo devolvemos tal cual
+            }
+            
+            // Intentar convertir la fecha de formato DD/MM/YYYY a YYYY-MM-DD
+            const partes = fecha.split('/');
+            if (partes.length === 3) {
+                let dia = partes[0].padStart(2, '0'); // Asegurarse de que el día tenga dos dígitos
+                let mes = partes[1].padStart(2, '0'); // Asegurarse de que el mes tenga dos dígitos
+                let anio = partes[2];
+                return `${anio}-${mes}-${dia}`; // Formato YYYY-MM-DD
+            }
+
+            return '0000-00-00 00:00:00'; // Valor por defecto si la fecha es inválida
+        }
+
+        function formatearTelefono(numero) {
+            return numero.replace(/(\d{4})(\d{4})/, "$1-$2");
+        }
+    </script>
+</body>
+</html>

@@ -17,6 +17,8 @@ function handleAction(tipoMov) {
     document.querySelectorAll('[onclick^="handleAction"]').forEach(button => {
         button.disabled = true;  // Se deshabilitan completamente
     });
+
+    var detalleSeries = document.getElementById('numeroSerie').value.trim();
     if (tipoMov == 'Aprobar') {
         const urlParams = new URLSearchParams(window.location.search);
         const solicitud = urlParams.get('solicitud');
@@ -55,7 +57,8 @@ function handleAction(tipoMov) {
                     type: "POST",
                     url: baseURL + "actualizarEstado",
                     data: {
-                        "id_solicitud": decodedSolicitud
+                        "id_solicitud": decodedSolicitud,
+                        "detalleSeries": detalleSeries
                     },
                     dataType: "json",
                     success: function (rsp) {

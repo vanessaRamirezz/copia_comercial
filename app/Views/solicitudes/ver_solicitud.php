@@ -697,6 +697,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="form-group">
+                                            <label for="numeroSerie">Ingrese numeros de series:</label>
+                                            <textarea class="form-control" id="numeroSerie" rows="3"><?php echo htmlspecialchars($detalles_series); ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

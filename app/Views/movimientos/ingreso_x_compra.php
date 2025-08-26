@@ -22,7 +22,8 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="fecha" class="form-label">Fecha:</label>
-                    <input type="date" class="form-control form-control-sm" id="fecha" name="fecha" readonly>
+                    <!-- <input type="date" class="form-control form-control-sm" id="fecha" name="fecha" readonly> -->
+                    <input type="date" class="form-control" id="fecha" readonly value="<?= isset($fechaVirtual) ? esc($fechaVirtual) : '' ?>">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="estado" class="form-label">Estado:</label>
@@ -82,14 +83,38 @@
                     <textarea class="form-control form-control-sm" id="observacion" name="observacion" rows="2"></textarea>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-                        <input type="text" class="form-control" id="buscar_producto" placeholder="Buscar producto">
+            <!-- <div class="form-row"> -->
+                <!-- <div class="container mb-4"> -->
+                <div class="row mb-2">
+                        <!-- Filtro de tipo de búsqueda -->
+                        <!-- <div class="col-md-3">
+                            <label for="tipoBusqueda" class="form-label">Buscar Cliente por:</label>
+                            <select class="form-control" id="tipoBusqueda">
+                                <option selected disabled>Seleccione filtro</option>
+                                <option value="codpro">Codigo producto</option>
+                                <option value="nombre">Nombre</option>
+                            </select>
+                        </div> -->
+
+                        <!-- Campo de búsqueda -->
+                        <div class="col-md-6">
+                            <label for="campoBusqueda" class="form-label">Busqueda por nombre o codigo de producto:</label>
+                            <input type="text" class="form-control" id="campoBusqueda">
+                        </div>
+
+                        <!-- Botón separado del input -->
+                        <!-- <div class="col-md-3 d-flex align-items-end">
+                            <button class="btn btn-primary w-100" id="btnBuscar" style="display: none;">Buscar</button>
+                        </div> -->
                     </div>
-                    <button type="button" class="btn btn-primary mb-2" onclick="addProduct()">Buscar</button>
+                <!-- </div> -->
+                <!-- <div class="form-group col-md-3">
+                    <input type="text" class="form-control" id="buscar_producto" placeholder="Buscar producto">
                 </div>
-            </div>
+                <div class="form-group col-md-2">
+                    <button type="button" class="btn btn-primary" onclick="addProduct()">Buscar</button>
+                </div> -->
+            <!-- </div> -->
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
@@ -97,7 +122,7 @@
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Cantidad</th>
-                            <th>Precio</th>
+                            <th>Costo</th>
                             <th>Total</th>
                         </tr>
                     </thead>

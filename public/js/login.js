@@ -81,13 +81,100 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Maneja la respuesta del login
     function handleLoginResponse(response) {
-        Swal.close();
+        console.log("Respuesta del servidor:", response);
         if (response.error) {
+            Swal.close();
             alertError(response.error);
         } else if (response.redirect) {
-            window.location.href = response.redirect;
+            Swal.close();
+            const sucursalActual = response.sucursal;
+    
+            $.ajax({
+                type: 'GET',
+                url: baseURL + 'getSucursales',
+                dataType: 'json',
+                success: function(sucursales) {
+                    let sucursalOptions = sucursales.map(s => 
+                        `<option value="${s.id_sucursal}" ${s.id_sucursal == sucursalActual ? 'selected' : ''}>${s.sucursal}</option>`
+                    ).join('');
+    
+                    Swal.fire({
+                        title: "Selecciona tu sucursal",
+                        html: `
+                            <p>Actualmente estás en la sucursal: <strong>${sucursalActual}</strong></p>
+                            <p>¿Quieres cambiar de sucursal?</p>
+                            <select id="sucursalSelect" class="swal2-select">${sucursalOptions}</select>
+                            
+                        `,
+                        showCancelButton: true,
+                        confirmButtonText: "Confirmar",
+                        cancelButtonText: "Mantener sucursal",
+                        allowOutsideClick: false,  // Evita que se cierre al hacer clic fuera del modal
+                        allowEscapeKey: false,     // Evita que se cierre con la tecla Escape
+                        focusConfirm: false,       // Evita que el modal cierre al presionar Enter
+                    }).then((result) => {    
+                        if (result.isConfirmed) {
+                            // El usuario ha confirmado, entonces cambiará la sucursal
+                            const selectedSucursal = document.getElementById('sucursalSelect').value;
+                            const selectedSucursalName = document.querySelector('#sucursalSelect option:checked').text;
+    
+                            if (selectedSucursal) {
+                                cambiarSucursal(selectedSucursalName, selectedSucursal);
+                            } else {
+                                alertError("No se seleccionó una sucursal válida.");
+                            }
+                        } else {
+                            window.location.href = response.redirect;
+                        }
+                    });
+                },
+                error: function() {
+                    alertError("Error al obtener las sucursales.");
+                }
+            });
         }
     }
+    
+    function cambiarSucursal(nuevaSucursal, idSucursal) {
+        console.log(nuevaSucursal);
+        console.log(idSucursal)
+        $.ajax({
+            type: "POST",
+            url: baseURL + "cambiarSucursal",
+            data: {
+                sucursal: idSucursal,      // ID de la nueva sucursal
+                sucursalN: nuevaSucursal  // Nombre de la nueva sucursal
+            },
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    Swal.fire({
+                        title: "Sucursal cambiada",
+                        text: "Has cambiado a la sucursal: " + nuevaSucursal,
+                        icon: "success"
+                    }).then(() => {
+                        Swal.fire({
+                            title: 'Espere...',
+                            text: 'Redireccionando...',
+                            allowEscapeKey: false,
+                            allowOutsideClick: false,
+                            didOpen: () => {
+                                Swal.showLoading();
+                            }
+                        });
+                        window.location.href = response.redirect; // Redirige después de cambiar sucursal
+                    });
+                } else {
+                    alertError(response.error);
+                }
+            },
+            error: function () {
+                alertError("Error al cambiar la sucursal.");
+            }
+        });
+    }
+    
+    
 
     // Maneja el clic en el botón de recuperación de contraseña
     function handleRecuperarPass() {

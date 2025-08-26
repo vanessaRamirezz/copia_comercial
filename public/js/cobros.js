@@ -1,106 +1,103 @@
+var duiClienteBusqueda = '';
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("duiBuscarCliente").value = "";
+    setTimeout(() => {
+        document.getElementById("campoBusqueda").value = "";
+    }, 100);
     $('#procesarCuotas').hide();
+
+    const tipoBusqueda = document.getElementById("tipoBusqueda");
+    const campoBusqueda = document.getElementById("campoBusqueda");
+
+    campoBusqueda.disabled = true;
+
+    tipoBusqueda.addEventListener("change", function () {
+        campoBusqueda.value = "";
+        btnBuscar.style.display = "none";
+
+        if (this.value === "dui") {
+            $(campoBusqueda).addClass('duiG').mask('00000000-0', { placeholder: "00000000-0" });
+            campoBusqueda.disabled = false;
+        } else if (this.value === "nombre") {
+            $(campoBusqueda).removeClass('duiG').unmask();
+            campoBusqueda.disabled = false;
+        } else {
+            campoBusqueda.disabled = true;
+        }
+    });
+
+    $(campoBusqueda).autocomplete({
+        source: function (request, response) {
+            // Mostrar opción de "Buscando resultados..."
+            response([{ label: "Buscando resultados...", value: "" }]);
+            $.ajax({
+                url: baseURL + "searchClient",
+                type: "POST",
+                dataType: "json",
+                data: request.term, // Asegurar que se envía correctamente
+                success: function (data) {
+                    console.log("Respuesta del servidor:", data);
+
+                    // Asegurar que la respuesta sea un array de objetos
+                    if (Array.isArray(data)) {
+                        response(data.map(item => ({
+                            label: item.nombre_completo + " - " + item.dui, // Lo que se muestra en la lista
+                            value: item.nombre_completo, // Lo que se coloca en el input
+                            dui: item.dui // Guardamos el DUI en la selección
+                        })));
+                    } else {
+                        // Si no es un array, retornar mensaje amigable
+                        response([{ label: "No se encontraron resultados", value: "" }]);
+                    }
+                },
+                error: function () {
+                    console.error("Error en la búsqueda de clientes");
+                }
+            });
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            campoBusqueda.value = ui.item.value; // Mostrar el nombre en el input
+            //duiBuscarCliente(ui.item.dui); // Pasar el DUI como parámetro
+            duiClienteBusqueda = ui.item.dui;
+            buscarClienteDeudas(ui.item.dui);
+        }
+    });
+
+    // Mostrar botón "Buscar" al escribir en el campo
+    campoBusqueda.addEventListener("input", function () {
+        if (tipoBusqueda.value === "dui" && campoBusqueda.value.trim().length >= 9) {
+            btnBuscar.style.display = "inline-block";
+        } else {
+            btnBuscar.style.display = "none";
+        }
+    });
+
+    // Evento para buscar cliente dui
+    btnBuscar.addEventListener("click", function () {
+        // Obtener el valor de búsqueda dependiendo del tipo seleccionado
+        const valorBusqueda = campoBusqueda.value.trim();
+
+        if (valorBusqueda === "") {
+            Swal.fire('Error', 'Debe ingresar un valor para buscar.', 'error');
+            return;
+        }
+
+        if (tipoBusqueda.value === "dui") {
+            // Si es búsqueda por DUI, verificar que el formato sea correcto
+            if (valorBusqueda.length === 10) {
+                buscarClienteDeudas(valorBusqueda); // Pasar el DUI
+            } else {
+                Swal.fire('Error', 'El DUI debe tener un formato válido (00000000-0).', 'error');
+            }
+        } /* else if (tipoBusqueda.value === "nombre") {
+            // Si es búsqueda por nombre, buscar por el nombre completo
+            buscarClienteDeudas(valorBusqueda);
+        } */
+    });
 });
 $('#selectAll').click(function () {
     $('input[name="selectedPayments[]"]').prop('checked', this.checked);
 });
-
-/* function submitSelectedPayments() {
-
-    const selectedPayments = [];
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // Establece la fecha de hoy a medianoche para una comparación precisa
-
-    const interestRate = 0.07; // 7% de interés mensual
-    const daysInMonth = 30; // Mes comercial de 30 días
-    const solicitudNu = $("#solicitudNumero").val();
-
-    const cuotasCubiertas = $('#cuotasCubiertas').val();
-    const saldoRestante = $('#saldoRestanteAFavor').val();
-    const moraTotalAPagar = $('#moraTotalAPagar').val();
-    const deseaCobrarMora = $('#deseaCobrarMora').val();
-    const montoTotalaCancelar = $('#montoTotalaCancelar').val();
-
-    $('input[name="selectedPayments[]"]:checked').each(function () {
-        const row = $(this).closest('tr');
-        const paymentDateStr = row.find('td').eq(2).text().trim(); // Obtener la fecha de pago
-        const amount = parseFloat(row.find('td').eq(4).text().replace('$', '').trim()); // Obtener el monto de la cuota
-        const status = row.find('td').eq(5).text().trim(); // Obtener el estado de la cuota
-        const numCuota = parseFloat(row.find('td').eq(1).text().trim()); // Obtener el numero cuota
-        console.log("la fecha es:: " + paymentDateStr);
-        // Solo calcular mora si el estado es "PENDIENTE"
-        if (status === 'PENDIENTE') {
-            const paymentDate = new Date(paymentDateStr + 'T23:59:59');
-            console.log(paymentDate);
-            paymentDate.setHours(0, 0, 0, 0); // Establece la fecha de pago a medianoche
-
-            // Calcular días de mora si la fecha de pago es anterior a hoy
-            const timeDifference = today - paymentDate;
-            const daysLate = timeDifference > 0 ? Math.floor(timeDifference / (1000 * 60 * 60 * 24)) : 0;
-
-            // Calcular mora si hay días de mora
-            let mora = 0;
-            if (daysLate > 0) {
-                const dailyInterest = (amount * interestRate) / daysInMonth;
-                mora = dailyInterest * daysLate;
-            }
-
-            selectedPayments.push({
-                id: $(this).val(),
-                diasMora: daysLate,
-                mora: mora.toFixed(2),
-                montoTotalCuotaInteres: parseFloat(amount) + parseFloat(mora.toFixed(2)),
-                montoCuota: parseFloat(amount),
-                numero_cuota: numCuota
-            });
-        }
-    });
-
-    // Verificar si hay pagos seleccionados
-    if (selectedPayments.length > 0) {
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: "btn btn-success",
-                cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: false
-        });
-
-        let alertMessage = "";
-        let numItera = 1;
-        selectedPayments.forEach(payment => {
-            alertMessage += `<p><strong>Cuota número:</strong> ${numItera} - <strong>Cuota:</strong> $${payment.montoCuota}<br>
-            <strong>Días en mora:</strong> ${payment.diasMora} -
-            <strong>Mora:</strong> $${payment.mora} -
-            <strong>Monto total:</strong> $${payment.montoTotalCuotaInteres}</p>`;
-            numItera++;
-        });
-
-        swalWithBootstrapButtons.fire({
-            title: "¿Estás seguro de pagar?",
-            html: alertMessage,
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Sí, pagar",
-            cancelButtonText: "No, cancelar",
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                procesarPagos(selectedPayments, solicitudNu);
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                swalWithBootstrapButtons.fire({
-                    title: "Cancelado",
-                    text: "El pago no se ha realizado.",
-                    icon: "error"
-                });
-            }
-        });
-    } else {
-        toastr.error("Por favor, selecciona al menos un pago.", "");
-        Swal.close();
-    }
-} */
 
 function submitSelectedPayments() {
 
@@ -110,21 +107,26 @@ function submitSelectedPayments() {
     const interestRate = 0.07; // 7% de interés mensual
     const daysInMonth = 30; // Mes comercial de 30 días
     const solicitudNu = $("#solicitudNumero").val();
+    const idSolicitudSelect = $("#idSolicitud").val();
 
     const cuotasCubiertas = $('#cuotasCubiertas').val();
     const saldoRestante = $('#saldoRestanteAFavor').val();
     const moraTotalAPagar = $('#moraTotalAPagar').val();
     const deseaCobrarMora = $('#deseaCobrarMora').val();
     const montoTotalaCancelar = $('#montoTotalaCancelar').val();
-
-    // Validar que montoTotalaCancelar no esté vacío o sea 0
-    if (!montoTotalaCancelar || parseFloat(montoTotalaCancelar) <= 0) {
-        toastr.error("Por favor, ingresa un monto válido para cancelar.", "Error");
-        return; // Detener la ejecución de la función si el monto no es válido
-    }
-
-    // Construir el mensaje con los valores fijos
+    const esProntoPago = $('#prontoPago').val();
     let alertMessage = '';
+    if (esProntoPago == 'si') {
+        alertMessage += `<p><strong>Es pronto pago, con el monto ingresado ($${montoTotalaCancelar}), se cancelara la totalidad del credito</strong></p>`;
+    } else {
+        // Validar que montoTotalaCancelar no esté vacío o sea 0
+        if (!montoTotalaCancelar || parseFloat(montoTotalaCancelar) <= 0) {
+            toastr.error("Por favor, ingresa un monto válido para cancelar.", "Error");
+            return; // Detener la ejecución de la función si el monto no es válido
+        }
+
+        // Construir el mensaje con los valores fijos
+        
         if (cuotasCubiertas > 0) {
             alertMessage += `<p><strong>El monto ingresado cubre ${cuotasCubiertas} cuota(s)</strong></p>`;
         }
@@ -136,6 +138,7 @@ function submitSelectedPayments() {
         if (moraTotalAPagar !== null && moraTotalAPagar !== 0 && moraTotalAPagar !== '') {
             alertMessage += `<p><strong>Del saldo ingresado, $${parseFloat(moraTotalAPagar).toFixed(2)} se usará para cubrir la mora</strong></p>`;
         }
+    }
 
     // Aquí no se valida si hay pagos seleccionados, se asume que siempre hay un monto a pagar
     // Mostrar el mensaje de confirmación
@@ -157,7 +160,7 @@ function submitSelectedPayments() {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
-            procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPagar, deseaCobrarMora, montoTotalaCancelar);
+            procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPagar, deseaCobrarMora, montoTotalaCancelar, idSolicitudSelect,esProntoPago);
         } else if (result.dismiss === Swal.DismissReason.cancel) {
             swalWithBootstrapButtons.fire({
                 title: "Cancelado",
@@ -169,7 +172,7 @@ function submitSelectedPayments() {
 }
 
 
-function procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPagar, deseaCobrarMora, montoTotalaCancelar) {
+function procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPagar, deseaCobrarMora, montoTotalaCancelar, idSolicitudSelect,esProntoPago) {
     // Mostrar alerta de carga mientras se procesa el pago
     Swal.fire({
         title: 'Espere...',
@@ -189,7 +192,9 @@ function procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPa
         moraTotalAPagar: moraTotalAPagar,
         deseaCobrarMora: deseaCobrarMora,
         montoTotalaCancelar: montoTotalaCancelar,
-        ArrayPago: cobrosProcesados
+        ArrayPago: cobrosProcesados,
+        idSolicitudSelect: idSolicitudSelect,
+        esProntoPago: esProntoPago
     });
 
     $.ajax({
@@ -198,6 +203,7 @@ function procesarPagos(solicitudNu, cuotasCubiertas, saldoRestante, moraTotalAPa
         contentType: 'application/json',
         data: datos,
         success: function (response) {
+            console.log(response);
             Swal.close();
             if (response.ok) {
                 Swal.fire({
@@ -259,9 +265,18 @@ function descargarDocumento(ruta) {
                     clearInterval(interval);
 
                     // Ejecutar la función antes de cerrar el modal
-                    buscarClienteDeudas();
+                    buscarClienteDeudas(duiClienteBusqueda);
+                    // Descargar el archivo
+                    // Descargar automáticamente el archivo
+                    const fileUrl = baseURL + ruta;
+                    const link = document.createElement('a');
+                    link.href = fileUrl;
+                    link.download = 'Factura.pdf'; // Puedes poner un nombre personalizado si quieres
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                     $('#modalCobros').modal('hide');
-                    
+
                     document.getElementById('modalCobros').classList.remove('show');
                     document.getElementById('modalCobros').setAttribute('aria-hidden', 'true');
                     document.getElementById('modalCobros').style.display = 'none';
@@ -329,8 +344,8 @@ function descargarDocumento(ruta) {
     });
 } */
 
-function buscarClienteDeudas() {
-    var duiCliente = document.getElementById("duiBuscarCliente").value;
+function buscarClienteDeudas(valorEntrada) {
+    var duiCliente = valorEntrada;
 
     console.log(duiCliente);
 
@@ -365,18 +380,49 @@ function buscarClienteDeudas() {
             success: function (rsp) {
                 console.log("los datos de rsp son:: ", rsp);
                 let solicitudesHtml = '';
+                // Ordenar por fecha_creacion descendente (más reciente primero)
+                rsp.sort((a, b) => new Date(b.fecha_creacion) - new Date(a.fecha_creacion));
+
                 rsp.forEach(function (solicitud) {
+                    const estadoCuenta = parseFloat(solicitud.montoApagar) === 0
+                        ? 'Cuenta Cancelada'
+                        : 'Cuenta Activa';
+
+                    const deshabilitarBotones = solicitud.tipo_solicitud === 'CONTADO' ? 'disabled' : '';
+                    const claseBoton = solicitud.tipo_solicitud === 'CREDITO' ? 'btn-danger' : 'btn-success';
+
                     solicitudesHtml += `<tr data-id="${solicitud.id_solicitud}">
-                        <td>${solicitud.numero_solicitud}</td>
-                        <td>${solicitud.dui}</td>
-                        <td>${solicitud.nombre_completo}</td>
-                        <td>${solicitud.fecha_creacion}</td>
-                        <td>${solicitud.estado}</td>
-                        <td>${solicitud.user_creador}</td>
-                        <td>$${solicitud.montoApagar}</td>
-                        <td><button class="btn btn-danger realizarCobro" data-soli="${solicitud.numero_solicitud}" data-id="${solicitud.id_solicitud}"> <i class="fa-solid fa-cash-register"></i> Cobro </button></td>
-                    </tr>`;
+                    <td>${solicitud.numero_solicitud}</td>
+                    <td>${solicitud.dui}</td>
+                    <td>${solicitud.nombre_completo}</td>
+                    <td>${solicitud.fecha_creacion}</td>
+                    <td>${solicitud.productos_descripcion ? solicitud.productos_descripcion : solicitud.codigos_productos}</td>
+                    <td>${solicitud.sucursal}</td>
+                    <td>$${solicitud.montoApagar}</td>
+                    <td>${estadoCuenta}</td>
+                    <td>${solicitud.tipo_solicitud}</td>
+                    <td>
+                        <div style="display: flex; gap: 6px; justify-content: center;">
+                            <button class="btn ${claseBoton} btn-sm realizarCobro" 
+                                    title="Cobro"
+                                    data-soli="${solicitud.numero_solicitud}" 
+                                    data-id="${solicitud.id_solicitud}"
+                                    data-codProd="${solicitud.productos_descripcion}">
+                                <i class="fa-solid fa-cash-register"></i>
+                            </button>
+                            <button class="btn btn-info btn-sm text-white" 
+                                    title="Estado de Cuenta"
+                                    data-id="${solicitud.id_solicitud}"
+                                    onclick="buscarEstadoDecuenta('${solicitud.numero_solicitud}', '${solicitud.id_solicitud}')"
+                                    ${deshabilitarBotones}>
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td style="display: none;">${solicitud.productos_descripcion}</td>
+                </tr>`;
                 });
+
                 $('#cuerpoSolicitudes').html(solicitudesHtml);
                 Swal.close();
             },
@@ -391,6 +437,7 @@ function buscarClienteDeudas() {
 $(document).on('click', '.realizarCobro', function () {
     var solicitudId = $(this).data('id');
     var solicitudNu = $(this).data('soli');
+    var codProd = $(this).data('codprod');
 
     Swal.fire({
         title: 'Espere...',
@@ -424,6 +471,7 @@ $(document).on('click', '.realizarCobro', function () {
             rsp.forEach(function (cobro) {
                 $('#cuotasCubiertas').val(0);
                 $('#saldoRestanteAFavor').val("");
+                $('#idSolicitud').val("");
                 $('.alert-general').html('');
                 let mora = 0;
                 let daysLate = 0;
@@ -457,7 +505,7 @@ $(document).on('click', '.realizarCobro', function () {
                     }
 
                     cobrosHtml += `<tr>
-                        <td class="text-center"><input class="form-check-input cobroCheck" type="checkbox" name="selectedPayments[]" value="${cobro.id_cobro}" data-monto="${cobro.monto_cuota}"></td>
+                        <td class="text-center"><input disabled class="form-check-input cobroCheck" type="checkbox" name="selectedPayments[]" value="${cobro.id_cobro}" data-monto="${cobro.monto_cuota}"></td>
                         <td>${cobro.numero_cuota}</td>
                         <td>${cobro.fecha_vencimiento}</td>
                         <td>${cobro.fecha_pago != null ? cobro.fecha_pago : ''}</td>
@@ -486,10 +534,24 @@ $(document).on('click', '.realizarCobro', function () {
                         <option value="no_cobrar">No cobrar</option>
                     </select>
                 </td>
+                <td colspan="3" class="text-right"><strong>¿Cancelación por pronto pago?</strong></td>
+                <td colspan="1">
+                    <select class="form-control" id="prontoPago" name="prontoPago">
+                        <option value="si">Si</option>
+                        <option value="no" selected>No</option>
+                    </select>
+                </td>
             </tr>`;
+
+            if (codProd) {
+                $('#codigosProductosTexto').text(codProd);
+            } else {
+                $('#codigosProductosTexto').text('No hay productos');
+            }
 
             $('#cobrosList').html(cobrosHtml);
             $('#modalCobros').modal('show');
+            $('#idSolicitud').val(solicitudId);
             $('.montosG').mask('000000000.00', { reverse: true, placeholder: "00.00" });
             Swal.close();
 
@@ -548,9 +610,10 @@ function validarMontosPago() {
     cobrosProcesados = [];
     const montoIngresado = parseFloat($('#montoTotalaCancelar').val()); // Monto ingresado
     const moraTotal = parseFloat($('#moraTotalAPagar').val()); // Mora total a pagar
+    const esProntoPago = $('#prontoPago').val(); // valida si es pronto pago
     const alertGeneral = $('.alert-general'); // Seleccionar el div de alert
     let saldo = montoIngresado;
-    console.log("saldo inicial::",saldo);
+    console.log("saldo inicial::", saldo);
     // Reiniciar contenido del div de alerta
     alertGeneral.removeClass('alert-success alert-danger').html('');
 
@@ -574,76 +637,86 @@ function validarMontosPago() {
 
     let cuotasCubiertas = 0;
     let mensaje = "";
-
-    // Restar la mora del saldo disponible
-    if (saldo >= moraTotal) {
-        saldo -= moraTotal;
-        console.log("saldo al restar la mora:: ", saldo);
-        mensaje += `<p>Del saldo ingresado, $${moraTotal.toFixed(2)} se usará para cubrir la mora.</p>`;
-        cobrosProcesados.push({
-            id_cobro: 0, // Identificador temporal para la mora
-            monto_abonado: moraTotal.toFixed(2),
-            completo: 0
-        });
+    if (esProntoPago === 'si') {
+        mensaje += `<p>Se ha seleccionado pronto pago, el saldo ingresado cancelara por completo el credito</p>`;
     } else {
-        alertGeneral
-            .addClass('alert-danger')
-            .html(`<h4 class="alert-heading">Error</h4><p>El monto ingresado no es suficiente para cubrir la mora total.</p>`)
-            .show();
-        return;
-    }
-
-    // Iterar sobre las cuotas en la tabla
-    $('#cobrosList tr').each(function (index) {
-        const estado = $(this).find('td:nth-child(8)').text().trim(); // Estado de la fila
-        const montoCuota = parseFloat($(this).find('td:nth-child(5)').text().replace('$', '').trim()); // Monto de la cuota
-        let montoAbono = parseFloat($(this).find('td:nth-child(6)').text().replace('$', '').trim()) || 0; // Monto abonado
-        const checkbox = $(this).find('input.cobroCheck'); // Checkbox de la fila
-        const idCobro = $(this).find('td:nth-child(10)').text().trim();
-
-        // Ignorar las cuotas canceladas
-        if (estado.toLowerCase() === "cancelado") {
-            checkbox.prop('checked', false);
-            return;
+        // Restar la mora del saldo disponible
+        const cobrarMora = $('#deseaCobrarMora').val();
+        if (cobrarMora !== "no_cobrar") {
+            if (saldo >= moraTotal) {
+                saldo -= moraTotal;
+                console.log("saldo al restar la mora:: ", saldo);
+                mensaje += `<p>Del saldo ingresado, $${moraTotal.toFixed(2)} se usará para cubrir la mora.</p>`;
+                cobrosProcesados.push({
+                    id_cobro: 0, // Identificador temporal para la mora
+                    monto_abonado: moraTotal.toFixed(2),
+                    completo: 0
+                });
+            } else {
+                alertGeneral
+                    .addClass('alert-danger')
+                    .html(`<h4 class="alert-heading">Error</h4><p>El monto ingresado no es suficiente para cubrir la mora total.</p>`)
+                    .show();
+                return;
+            }
+        } else {
+            mensaje += `<p>No se cobrará mora según lo seleccionado.</p>`;
         }
-                                    //102.78-100
-        let montoRestante = parseFloat((montoCuota - montoAbono).toFixed(2)); // Cuánto falta para cubrir la cuota
-        // 2.78 >= 2.78
-        if (saldo >= montoRestante) {
-            // Si el saldo es suficiente para cubrir el restante de la cuota, se paga completa
-            checkbox.prop('checked', true);
-            $(this).css('background-color', 'lightgreen');
-            saldo -= montoRestante;
-            montoAbono += montoRestante; // Aquí solo sumamos el abono de esta transacción
-            //montoAbono = montoCuota; // Se marca como totalmente pagada
-            cuotasCubiertas++;
-            mensaje += `<p>La cuota ${index} ha sido cubierta totalmente ${montoRestante}.</p>`;
 
-            cobrosProcesados.push({
-                id_cobro: idCobro,
-                monto_abonado: (montoRestante < montoCuota)? montoRestante :montoAbono.toFixed(2),
-                completo: 1
-            });
-    
-        } else if (saldo > 0) {
-            // Si no alcanza para cubrir toda la cuota, se abona lo que se pueda
-            let montoPendiente = (montoCuota - montoAbono - saldo).toFixed(2);
-            montoAbono += saldo;
-            mensaje += `<p>Se ha abonado $${saldo.toFixed(2)} a la cuota ${index}, pero aún queda saldo pendiente en esa cuota (${montoPendiente}).</p>`;
-            $('#saldoRestanteAFavor').val((saldo !=null && saldo != '') ? saldo.toFixed(2) : 0.00);//
+        // Iterar sobre las cuotas en la tabla
 
-            cobrosProcesados.push({
-                id_cobro: idCobro,
-                monto_abonado: saldo.toFixed(2),
-                completo: 0
-            });
-            saldo = 0;
+        $('#cobrosList tr').each(function (index) {
+            const estado = $(this).find('td:nth-child(8)').text().trim(); // Estado de la fila
+            const montoCuota = parseFloat($(this).find('td:nth-child(5)').text().replace('$', '').trim()); // Monto de la cuota
+            let montoAbono = parseFloat($(this).find('td:nth-child(6)').text().replace('$', '').trim()) || 0; // Monto abonado
+            const checkbox = $(this).find('input.cobroCheck'); // Checkbox de la fila
+            const idCobro = $(this).find('td:nth-child(10)').text().trim();
+            const noCuota = $(this).find('td:nth-child(2)').text().trim();
+
+            // Ignorar las cuotas canceladas
+            if (estado.toLowerCase() === "cancelado") {
+                checkbox.prop('checked', false);
+                return;
+            }
+            //102.78-100
+            let montoRestante = parseFloat((montoCuota - montoAbono).toFixed(2)); // Cuánto falta para cubrir la cuota
+            // 2.78 >= 2.78
+            if (saldo >= montoRestante) {
+                // Si el saldo es suficiente para cubrir el restante de la cuota, se paga completa
+                checkbox.prop('checked', true);
+                $(this).css('background-color', 'lightgreen');
+                saldo -= montoRestante;
+                montoAbono += montoRestante; // Aquí solo sumamos el abono de esta transacción
+                //montoAbono = montoCuota; // Se marca como totalmente pagada
+                cuotasCubiertas++;
+                mensaje += `<p>La cuota ${noCuota != 0 ? noCuota : index} ha sido cubierta totalmente $${montoRestante}.</p>`;
+
+                cobrosProcesados.push({
+                    id_cobro: idCobro,
+                    monto_abonado: (montoRestante < montoCuota) ? montoRestante : montoAbono.toFixed(2),
+                    completo: 1
+                });
+
+            } else if (saldo > 0) {
+                // Si no alcanza para cubrir toda la cuota, se abona lo que se pueda
+                let montoPendiente = (montoCuota - montoAbono - saldo).toFixed(2);
+                montoAbono += saldo;
+                mensaje += `<p>Se ha abonado $${saldo.toFixed(2)} a la cuota ${noCuota != 0 ? noCuota : index}, pero aún queda saldo pendiente en esa cuota (${montoPendiente}).</p>`;
+                $('#saldoRestanteAFavor').val((saldo != null && saldo != '') ? saldo.toFixed(2) : 0.00);//
+
+                cobrosProcesados.push({
+                    id_cobro: idCobro,
+                    monto_abonado: saldo.toFixed(2),
+                    completo: 0
+                });
+                saldo = 0;
+            }
+        });
+
+        // Mostrar mensaje si queda saldo restante
+        if (saldo > 0) {
+            mensaje += `<p>El saldo restante de $${saldo.toFixed(2)} se usará para abonar la siguiente cuota.</p>`;
         }
-    });
-
-    // Mostrar mensaje si queda saldo restante
-    if (saldo > 0) {
-        mensaje += `<p>El saldo restante de $${saldo.toFixed(2)} se usará para abonar la siguiente cuota.</p>`;
     }
 
     // Actualizar valores ocultos
@@ -657,14 +730,14 @@ function validarMontosPago() {
         .html(`<h4 class="alert-heading">¡Proceso completado!</h4>${mensaje}`)
         .show();
 
-        console.log(cobrosProcesados);
+    console.log(cobrosProcesados);
 }
 
 
 
 // Asociar la función a los eventos de los inputs
 //$(document).on('input', '#montoTotalaCancelar, #moraTotalAPagar', validarMontosPago);
-$(document).on('click', '#btnValidarCuotas', function() {
+$(document).on('click', '#btnValidarCuotas', function () {
     // Mostrar el modal de SweetAlert con un mensaje de validación
     Swal.fire({
         title: 'Validando...',
@@ -676,7 +749,7 @@ $(document).on('click', '#btnValidarCuotas', function() {
     });
 
     // Esperar 3 segundos antes de ejecutar la validación
-    setTimeout(function() {
+    setTimeout(function () {
         // Cerrar el modal
         Swal.close();
 

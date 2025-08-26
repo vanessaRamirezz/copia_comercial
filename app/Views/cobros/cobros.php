@@ -6,16 +6,32 @@
             <h6 class="m-0 font-weight-bold text-primary">Buscar cliente</h6>
         </div>
         <div class="card-body">
-            <div class="row mb-2">
-                <div class="container">
-                    <div class="col-sm-6 d-flex justify-content-start">
-                        <div class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2 duiG" type="text" id="duiBuscarCliente" placeholder="Ingrese el DUI a buscar" aria-label="Search" autocomplete="off" value="">
-                            <button class="btn btn-outline-primary my-2 my-sm-0" onclick="buscarClienteDeudas()">Buscar cliente</button>
-                        </div>
+            <div class="container mb-4">
+                <div class="row mb-2">
+                    <!-- Filtro de tipo de búsqueda -->
+                    <div class="col-md-3">
+                        <label for="tipoBusqueda" class="form-label">Buscar Cliente por:</label>
+                        <select class="form-control" id="tipoBusqueda">
+                            <option selected disabled>Seleccione filtro</option>
+                            <option value="dui">DUI</option>
+                            <option value="nombre">Nombre</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo de búsqueda -->
+                    <div class="col-md-6">
+                        <label for="campoBusqueda" class="form-label">Ingrese el dato:</label>
+                        <input type="text" class="form-control" id="campoBusqueda" placeholder="Ingrese DUI o Nombre">
+                    </div>
+
+                    <!-- Botón separado del input -->
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button class="btn btn-primary w-100" id="btnBuscar" style="display: none;">Buscar</button>
                     </div>
                 </div>
             </div>
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="container mt-5">
@@ -26,10 +42,13 @@
                                     <th>DUI</th>
                                     <th>Cliente</th>
                                     <th>Fecha creación</th>
+                                    <th>Cod productos</th>
+                                    <th>Sucursal</th>
+                                    <th>Saldo</th>
                                     <th>Estado</th>
-                                    <th>Usuario creador</th>
-                                    <th>Monto a pagar</th>
+                                    <th>Tipo</th>
                                     <th>Operaciones</th>
+                                    <th style="display: none;">Prodcuto</th>
                                 </tr>
                             </thead>
                             <tbody id="cuerpoSolicitudes">
@@ -48,9 +67,14 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                        <div id="contenedorCodigosProductos" class="mb-3">
+                                            <strong>Códigos de productos:</strong>
+                                            <span id="codigosProductosTexto" class="text-primary"></span>
+                                        </div>
                                         <form id="paymentSelectionForm">
                                             <input type="hidden" disabled id="cuotasCubiertas">
                                             <input type="hidden" disabled id="saldoRestanteAFavor">
+                                            <input type="text" disabled id="idSolicitud">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered table-striped">
                                                     <thead class="thead-dark">
@@ -72,10 +96,12 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <div class="row"><div class="col-sm">
-                                            <div class="alert alert-general" role="alert" style="display: none;"></div>
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <div class="alert alert-general" role="alert" style="display: none;"></div>
 
-                                            </div></div>
+                                                </div>
+                                            </div>
                                             <button type="button" id="btnValidarCuotas" class="btn btn-primary">Validar cobro de Cuotas</button>
 
                                             <button type="button" class="btn btn-primary mt-3" id="procesarCuotas" onclick="submitSelectedPayments()">Procesar Pagos Seleccionados</button>
@@ -91,4 +117,35 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="modalEstadoCuenta" tabindex="-1" aria-labelledby="modalEstadoCuentaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="margin: 0; max-width: 100%; height: 100vh;">
+
+        <div class="modal-content estado-cuenta" style="height: 100vh; display: flex; flex-direction: column; border-radius: 0;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEstadoCuentaLabel">Estado de Cuenta</h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button> -->
+            </div>
+
+            <div class="modal-body" style="flex: 1; overflow-y: auto;">
+                <div class="contenido-estado-cuenta">
+                    <!-- Aquí se carga el estado de cuenta -->
+                </div>
+            </div>
+
+            <div class="modal-footer justify-content-center">
+                <div id="footerBoton" class="d-none">
+                    <button type="button" class="btn btn-primary" onclick="imprimirEstadoCuenta()">Imprimir</button>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
 <script src="<?= base_url('public/js/cobros.js') ?>"></script>
+<script src="<?= base_url('public/js/estadoDeCuentas.js') ?>"></script>
